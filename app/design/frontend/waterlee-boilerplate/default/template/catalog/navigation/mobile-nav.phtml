@@ -1,0 +1,19 @@
+<?php
+$categories = Mage::getModel('catalog/category')->load(Mage::registry('current_category')->getID())->getChildren();
+$categoryIDs = explode(',',$categories);
+?>
+<ul class="show-on-phones">
+
+<?php //Zend_Debug::dump(Mage::registry('current_category')->getID()); ?>
+
+<?php foreach($categoryIDs as $categoryID): ?>
+	<li>
+    	<?php $category = Mage::getModel('catalog/category')->load($categoryID);?>
+                <a href="<?php echo $category->getUrl()?>">
+	                <?php echo $category->getName()?>
+                </a>
+		<?php $subCategories = Mage::getModel('catalog/category')->load($category->getId())->getChildren();
+			$subCategoryIDs = explode(',',$subCategories);?>
+    </li>
+<?php endforeach; ?>
+</ul>

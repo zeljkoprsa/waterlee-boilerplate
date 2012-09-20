@@ -1,0 +1,31 @@
+<header class="columns twelve">
+
+        <?php if ($this->getIsHomePage()):?>
+        <h1 class="logo columns nine">
+            <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+        </a>
+        </h1>
+        <?php else:?>
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo columns nine">
+            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+        <?php endif?>
+
+        <div class="utilities three columns">
+        <div class="top-links">
+            <a class="flyout-toggle" href="#">My Account</a>
+            <div class="flyout small"> <?php echo $this->getChildHtml('topLinks') ?></div>
+        </div>
+        <div class="store-select"><?php echo $this->getChildHtml('store_language') ?></div>
+        </div>
+
+
+</header>
+
+
+<div class="nav-search columns twelve">
+<?php echo $this->getChildHtml('topMenu') ?>
+<div class="top-search columns four"><?php echo $this->getChildHtml('topSearch') ?></div>
+</div>
+
+
