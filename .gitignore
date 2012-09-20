@@ -92,6 +92,7 @@
 /skin/frontend/default/german/
 /skin/frontend/default/iphone/
 /skin/frontend/default/modern/
+/skin/frontend/waterlee-boilerplate/default/.sass-cache/*
 /skin/install/
 /var/
 /.htaccess
