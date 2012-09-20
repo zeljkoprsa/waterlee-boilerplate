@@ -1,4 +1,6 @@
-#Note#
+#Magento HTML5 responsive boilerplate
+ - Built on latest Foundation 3 by ZURB.
+
 ##This is an alpha version
 
 Released into the wild before it's time has come.
