@@ -4,6 +4,7 @@
  * @category    design
  * @package     waterlee
  * CC BY 3.0    2012 Željko Prša. (http://www.zeljkoprsa.com)
+ * modified by Alexander Kaiser (@alexksr)
  * Attribute this work:  <div xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" about="http://waterlee.zeljkoprsa.com/1tb-7200rpm"><span property="dct:title">WaterleeBoilerplate</span> (<a rel="cc:attributionURL" property="cc:attributionName" href="http://zeljkoprsa.com">Želko Prša</a>) / <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></div>
  */
 -->
@@ -41,11 +42,7 @@
     <!-- Add js/css globally -->
     <reference name="head">
         <action method="removeItem"><type>skin_css</type><name>css/style.js</name><params/></action>
-        <!-- Included CSS Files -->
-        <!-- Combine and Compress These CSS Files -->
-        <action method="removeItem"><type>skin_css</type><name>css/style.css</name></action>
-        <action method="addItem"><type>skin_css</type><name>css/app.css</name></action>
-        <!-- End Combine and Compress These CSS Files -->
+
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery-1.8.1.min.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/modernizr.foundation.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.topbar.js</name><params/></action>
@@ -60,6 +57,8 @@
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.tooltips.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.offcanvas.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.placeholder.js</name><params/></action>
+        <!-- press "m" to see device ratios, remove after development -->
+        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.mediaQueryToggle.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/app.js</name><params/></action>
     </reference>
     <!-- //Add js/css globally -->
