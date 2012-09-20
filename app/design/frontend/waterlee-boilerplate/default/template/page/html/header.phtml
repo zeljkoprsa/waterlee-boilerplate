@@ -1,31 +1,49 @@
-<header class="columns twelve">
-
+<header class="row">
+<div class="columns twelve">
         <?php if ($this->getIsHomePage()):?>
-        <h1 class="logo columns nine">
+        <h1 class="logo columns four">
             <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
             <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
         </a>
         </h1>
         <?php else:?>
-        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo columns nine">
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo columns four">
             <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
         <?php endif?>
+        <nav class="top-links top-bar eight columns">
+            <ul class="right">
+                <li><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></li>
+                <li>
+                    <a href="<?php echo $this->getUrl('checkout/cart') ?>">
+                    <?php echo $this->__('Cart') ?> <strong><?php $cart = Mage::helper('checkout/cart')->getCart()->getItemsCount(); echo  $cart;?></strong>
+                    </a>
+                </li>
+                <li><?php echo $this->getChildHtml('store_language') ?></li>
+                <li class="has-dropdown">
+                    <a href="#">My Account</a>
+                    <ul class="dropdown">
+                        <li class="title back js-generated"><h5><a href="#">Item 2</a></h5></li>
+                        <li><label>My Account</label></li>
+                        <?php echo $this->getChildHtml('topLinks')?>
+                        <li class="divider"></li>
+                        <li class="divider"></li>
+                        <li><a href="#">See all →</a></li>
+                    </ul>
+                </li>
+                <li><?php echo $this->getChildHtml('topSearch') ?></li>
 
-        <div class="utilities three columns">
-        <div class="top-links">
-            <a class="flyout-toggle" href="#">My Account</a>
-            <div class="flyout small"> <?php echo $this->getChildHtml('topLinks') ?></div>
-        </div>
-        <div class="store-select"><?php echo $this->getChildHtml('store_language') ?></div>
-        </div>
+            </ul>
+        </nav>
 
-
+</div>
 </header>
 
-
+<div class="row">
 <div class="nav-search columns twelve">
-<?php echo $this->getChildHtml('topMenu') ?>
-<div class="top-search columns four"><?php echo $this->getChildHtml('topSearch') ?></div>
+    <?php echo $this->getChildHtml('topMenu') ?>
+
 </div>
+</div>
+
 
 

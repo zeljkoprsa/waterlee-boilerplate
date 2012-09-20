@@ -42,24 +42,22 @@
 </head>
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
 <?php echo $this->getChildHtml('after_body_start') ?>
-<div class="container">
     <?php echo $this->getChildHtml('global_notices') ?>
-    <div class="page row">
         <?php echo $this->getChildHtml('header') ?>
-        <div class="main-container col2-left-layout columns twelve">
-            <div class="main display">
+
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="col-left sidebar three columns"><?php echo $this->getChildHtml('left') ?></div>
-                <div class="col-main nine columns">
-                    <?php echo $this->getChildHtml('global_messages') ?>
-                    <?php echo $this->getChildHtml('content') ?>
+                <div class="main-container col2-left-layout row">
+                    <div class="columns twelve">
+                        <div class="col-left sidebar three columns"><?php echo $this->getChildHtml('left') ?></div>
+                        <div class="col-main nine columns">
+                            <?php echo $this->getChildHtml('global_messages') ?>
+                            <?php echo $this->getChildHtml('content') ?>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-        </div>
+
         <?php echo $this->getChildHtml('footer') ?>
-        <?php echo $this->getChildHtml('before_body_end') ?>
-    </div>
-</div>
 <?php echo $this->getAbsoluteFooter() ?>
 
 </body>

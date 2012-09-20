@@ -33,7 +33,7 @@
 ?>
 <?php if($this->getCollection()->getSize()): ?>
 
-    <div class="pager row">
+    <div class="pager columns twelve">
         <p class="amount">
             <?php if($this->getLastPageNum()>1): ?>
                 <?php echo $this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
@@ -60,7 +60,7 @@
     </div>
 
     <?php if( $this->isExpanded() ): ?>
-    <div class="sorter row">
+    <div class="sorter columns twelve">
         <?php if( $this->isEnabledViewSwitcher() ): ?>
         <p class="view-mode">
             <?php $_modes = $this->getModes(); ?>

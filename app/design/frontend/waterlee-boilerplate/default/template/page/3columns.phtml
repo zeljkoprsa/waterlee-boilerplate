@@ -42,11 +42,11 @@
 </head>
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
 <?php echo $this->getChildHtml('after_body_start') ?>
-<div class="container">
+
     <?php echo $this->getChildHtml('global_notices') ?>
-    <div class="page row">
+
         <?php echo $this->getChildHtml('header') ?>
-        <div class="main-container col3-layout columns twelve">
+        <div class="main-container col3-layout row">
             <?php echo $this->getChildHtml('breadcrumbs') ?>
                 <div class="nine columns display">
                     <div class="col-left sidebar three columns"><?php echo $this->getChildHtml('left') ?></div>
@@ -59,8 +59,8 @@
         </div>
         <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('before_body_end') ?>
-    </div>
-</div>
+
+
 <?php echo $this->getAbsoluteFooter() ?>
 
 </body>

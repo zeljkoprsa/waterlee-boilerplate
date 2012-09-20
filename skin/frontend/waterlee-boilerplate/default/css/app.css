@@ -4324,7 +4324,7 @@ form label {
 /* line 125, ../sass/app.scss */
 header {
   position: relative;
-  height: 90px;
+  height: 110px;
 }
 
 /* line 126, ../sass/app.scss */
@@ -4342,63 +4342,32 @@ header a.logo {
   margin: 13px 0 0 -15px;
 }
 
-/* line 129, ../sass/app.scss */
-header.row {
-  margin-bottom: 0;
-  position: relative;
-  height: 90px;
-  background: #fafafa;
-}
-
 /* line 130, ../sass/app.scss */
 label + input.input-text, label + textarea, label + select, label + div.dropdown, select + div.dropdown {
   margin: 0;
 }
 
-/* line 131, ../sass/app.scss */
-.top-links {
-  border: none;
-  position: relative;
-  float: left;
-}
-
 /* line 132, ../sass/app.scss */
-.top-links .flyout.small {
-  display: none;
-  z-index: 10000;
-  padding: 9px;
-  left: -10px;
-  top: 25px;
-  width: 160px;
-  border-color: #ededed;
-}
-
-/* line 133, ../sass/app.scss */
-.top-links li {
-  margin: 0 4px 0 0;
-}
-
-/* line 134, ../sass/app.scss */
 .store-select {
   float: right;
 }
 
-/* line 135, ../sass/app.scss */
+/* line 133, ../sass/app.scss */
 .store-select label {
   display: none;
 }
 
-/* line 136, ../sass/app.scss */
+/* line 134, ../sass/app.scss */
 header .form-language label {
   display: none;
 }
 
-/* line 137, ../sass/app.scss */
+/* line 135, ../sass/app.scss */
 h1.logo {
   margin-bottom: 0;
 }
 
-/* line 138, ../sass/app.scss */
+/* line 136, ../sass/app.scss */
 .top-promo {
   float: right;
   border: none;
@@ -4406,43 +4375,21 @@ h1.logo {
   padding-right: 5px;
 }
 
-/* line 139, ../sass/app.scss */
-header.row .utilities {
-  position: absolute;
-  width: 200px;
-  height: 30px;
-  border: 1px solid #e8e8e8;
-  border-top: none;
-  top: 0;
-  right: 0;
-  background: #fff;
-  padding: 4px 9px;
-}
-
-/* line 140, ../sass/app.scss */
-header.row .utilities {
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -o-border-radius: 3px;
-  box-shadow: #f6f6f6 1px 1px 1px;
-}
-
-/* line 141, ../sass/app.scss */
+/* line 138, ../sass/app.scss */
 .utilities {
   padding: 12px;
   background: #fff;
 }
 
 /* Main nav  */
-/* line 143, ../sass/app.scss */
+/* line 140, ../sass/app.scss */
 ul#nav, ul#nav li, ul#nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 144, ../sass/app.scss */
+/* line 141, ../sass/app.scss */
 ul#nav {
   position: relative;
   z-index: 7;
@@ -4450,9 +4397,10 @@ ul#nav {
   border: 1px solid #F0F0F0;
   border-radius: 5px;
   box-shadow: 0 1px 1px #f0f0f0;
+  background: #f9f9f7;
 }
 
-/* line 145, ../sass/app.scss */
+/* line 142, ../sass/app.scss */
 ul#nav li {
   float: left;
   line-height: 1.3em;
@@ -4462,14 +4410,14 @@ ul#nav li {
   margin-right: 1px;
 }
 
-/* line 146, ../sass/app.scss */
+/* line 143, ../sass/app.scss */
 ul#nav li.hover, ul#nav li:hover {
   position: relative;
   z-index: 9;
   cursor: default;
 }
 
-/* line 147, ../sass/app.scss */
+/* line 144, ../sass/app.scss */
 ul#nav ul {
   visibility: hidden;
   position: absolute;
@@ -4479,43 +4427,41 @@ ul#nav ul {
   width: 100%;
 }
 
-/* line 148, ../sass/app.scss */
+/* line 145, ../sass/app.scss */
 ul#nav ul li {
   float: none;
 }
 
-/* line 149, ../sass/app.scss */
+/* line 146, ../sass/app.scss */
 ul#nav ul ul {
   top: 1px;
   left: 99%;
 }
 
-/* line 150, ../sass/app.scss */
+/* line 147, ../sass/app.scss */
 ul#nav li:hover > ul {
   visibility: visible;
 }
 
-/* line 151, ../sass/app.scss */
+/* line 148, ../sass/app.scss */
 ul#nav li.level0 a span {
   padding: 12px;
   display: inline-block;
   font-weight: 700;
 }
 
-/* line 153, ../sass/app.scss */
+/* line 150, ../sass/app.scss */
 ul#nav ul {
-  background: #fff;
-  width: 10em;
-  padding: 0 12px;
+  width: 12em;
 }
 
 /* Top Search */
-/* line 159, ../sass/app.scss */
-.top-search {
-  margin-top: 7px;
+/* line 156, ../sass/app.scss */
+#search_mini_form {
+  margin: 6px 12px 0 0;
 }
 
-/* line 160, ../sass/app.scss */
+/* line 157, ../sass/app.scss */
 #search_mini_form input#search {
   width: 100%;
   float: left;
@@ -4523,23 +4469,23 @@ ul#nav ul {
   border: 1px solid #E8E8E8;
 }
 
-/* line 161, ../sass/app.scss */
+/* line 158, ../sass/app.scss */
 #search_mini_form button[type=submit], #search_mini_form label {
   display: none;
 }
 
 /* Top Navigation */
-/* line 165, ../sass/app.scss */
+/* line 162, ../sass/app.scss */
 header .links li {
   margin-right: 0.8rem;
 }
 
-/* line 166, ../sass/app.scss */
+/* line 163, ../sass/app.scss */
 header .links li.last {
   margin-right: 0;
 }
 
-/* line 168, ../sass/app.scss */
+/* line 165, ../sass/app.scss */
 nav {
   padding: 0;
   float: left;
@@ -4548,22 +4494,22 @@ nav {
   top: 3px;
 }
 
-/* line 170, ../sass/app.scss */
+/* line 167, ../sass/app.scss */
 .quick-access ul li, header .links li, .breadcrumbs li, .limiter li, .pages li {
   float: left;
 }
 
-/* line 171, ../sass/app.scss */
+/* line 168, ../sass/app.scss */
 #mobi-nav nav {
   border: 0 none;
 }
 
-/* line 172, ../sass/app.scss */
+/* line 169, ../sass/app.scss */
 #mobi-nav ul li .level0 {
   display: none;
 }
 
-/* line 173, ../sass/app.scss */
+/* line 170, ../sass/app.scss */
 #wub-wub-nav {
   padding-top: 12px;
   clear: both;
@@ -4571,43 +4517,43 @@ nav {
   margin-bottom: 0;
 }
 
-/* line 178, ../sass/app.scss */
+/* line 175, ../sass/app.scss */
 ul.tabs-content > li.level-top {
   display: block;
 }
 
-/* line 179, ../sass/app.scss */
+/* line 176, ../sass/app.scss */
 ul.tabs-content > li.level-top a {
   display: block;
   padding: 5px;
 }
 
-/* line 181, ../sass/app.scss */
+/* line 178, ../sass/app.scss */
 ul.tabs-content .level0 a.level-top {
   background: #efefef;
   padding: 10px;
   margin: 0;
 }
 
-/* line 182, ../sass/app.scss */
+/* line 179, ../sass/app.scss */
 .super-header.row.show-on-phones .top-links {
   width: 48%;
   float: left;
 }
 
-/* line 183, ../sass/app.scss */
+/* line 180, ../sass/app.scss */
 .super-header.row.show-on-phones .store-select {
   width: 21%;
   float: right;
 }
 
 /* Page */
-/* line 187, ../sass/app.scss */
+/* line 184, ../sass/app.scss */
 .main-container {
   position: relative;
 }
 
-/* line 188, ../sass/app.scss */
+/* line 185, ../sass/app.scss */
 ul, ol {
   list-style-type: none;
 }
@@ -4616,13 +4562,13 @@ ul, ol {
    Footer
 ----------------------------------------- */
 /*.footer-container { border-top: solid 1px #EEE;padding-top: 12px; }*/
-/* line 193, ../sass/app.scss */
+/* line 190, ../sass/app.scss */
 .footer ul {
   float: left;
   margin-bottom: 0;
 }
 
-/* line 194, ../sass/app.scss */
+/* line 191, ../sass/app.scss */
 .footer ul li {
   float: left;
   margin-right: 1rem;
@@ -4632,7 +4578,7 @@ ul, ol {
 /* -----------------------------------------
    Home Page
 ----------------------------------------- */
-/* line 200, ../sass/app.scss */
+/* line 197, ../sass/app.scss */
 .video-embed {
   position: relative;
   padding-bottom: 54%;
@@ -4643,7 +4589,7 @@ ul, ol {
   overflow: hidden;
 }
 
-/* line 209, ../sass/app.scss */
+/* line 206, ../sass/app.scss */
 .video-embed iframe,
 .video-embed object,
 .video-embed embed {
@@ -4657,64 +4603,65 @@ ul, ol {
 /* -----------------------------------------
    Page
 ----------------------------------------- */
-/* line 219, ../sass/app.scss */
+/* line 216, ../sass/app.scss */
 .page {
   padding-bottom: 20px;
 }
 
-/* line 222, ../sass/app.scss */
+/* line 219, ../sass/app.scss */
 #inner-wrapper {
   margin-top: 16px;
 }
 
-/* line 223, ../sass/app.scss */
+/* line 220, ../sass/app.scss */
 .page-title h1 {
   font-size: 24px;
   color: #444;
   font-weight: normal;
   margin: 0;
-  padding: 0 0 0 14px;
+  padding: 0;
+  margin: 24px 0;
 }
 
 /* -----------------------------------------
    Product Page
 ----------------------------------------- */
-/* line 229, ../sass/app.scss */
+/* line 226, ../sass/app.scss */
 .product-essential .product-shop .product-name h1 {
   font-size: 18px;
 }
 
-/* line 231, ../sass/app.scss */
+/* line 228, ../sass/app.scss */
 .product-essential .price-box {
   float: none;
 }
 
-/* line 232, ../sass/app.scss */
+/* line 229, ../sass/app.scss */
 .product-view h2, .box-collateral h3 {
   font-size: 14px;
 }
 
-/* line 233, ../sass/app.scss */
+/* line 230, ../sass/app.scss */
 .product-essential .or {
   display: none;
 }
 
-/* line 234, ../sass/app.scss */
+/* line 231, ../sass/app.scss */
 .product-essential hr {
   visibility: hidden;
 }
 
-/* line 235, ../sass/app.scss */
+/* line 232, ../sass/app.scss */
 .product-shop p.email-friend, .product-shop p.no-rating {
   margin-bottom: 0px;
 }
 
-/* line 236, ../sass/app.scss */
+/* line 233, ../sass/app.scss */
 .product-shop .availability {
   margin: 6px 0;
 }
 
-/* line 237, ../sass/app.scss */
+/* line 234, ../sass/app.scss */
 .product-shop .add-to-cart, .product-shop .add-to-links, .product-options-bottom .add-to-cart, .product-options-bottom .add-to-links {
   width: 100%;
   clear: both;
@@ -4722,20 +4669,20 @@ ul, ol {
   overflow: hidden;
 }
 
-/* line 238, ../sass/app.scss */
+/* line 235, ../sass/app.scss */
 .product-shop .add-to-cart label, .product-shop .add-to-cart input#qty, .product-shop .add-to-cart button.button {
   display: block;
   float: left;
 }
 
-/* line 239, ../sass/app.scss */
+/* line 236, ../sass/app.scss */
 .product-shop .add-to-cart label, .product-options-bottom label {
   margin-top: 10px;
   margin-right: 4px;
   float: left;
 }
 
-/* line 241, ../sass/app.scss */
+/* line 238, ../sass/app.scss */
 .product-shop .add-to-cart input#qty, .product-options-bottom input#qty {
   width: 32px;
   margin-top: 6px;
@@ -4743,17 +4690,23 @@ ul, ol {
   float: left;
 }
 
-/* line 244, ../sass/app.scss */
+/* line 240, ../sass/app.scss */
+.short-description {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* line 241, ../sass/app.scss */
 .short-description br {
   display: none;
 }
 
-/* line 249, ../sass/app.scss */
+/* line 246, ../sass/app.scss */
 .product-options dt label {
   line-height: 23px;
 }
 
-/* line 252, ../sass/app.scss */
+/* line 249, ../sass/app.scss */
 #product-options-wrapper {
   box-shadow: #F6F6F6 1px 1px 1px;
   border: 1px solid #E8E8E8;
@@ -4761,25 +4714,25 @@ ul, ol {
   margin-bottom: 12px;
 }
 
-/* line 259, ../sass/app.scss */
+/* line 256, ../sass/app.scss */
 #product-options-wrapper span.label {
   color: #333;
   display: inline-block;
   background: inherit;
 }
 
-/* line 263, ../sass/app.scss */
+/* line 260, ../sass/app.scss */
 .product-options dd .input-box, .product-options dd .qty-holder {
   display: inline-block;
 }
 
-/* line 266, ../sass/app.scss */
+/* line 263, ../sass/app.scss */
 .product-options dd .qty-holder {
   margin-left: 12px;
   float: right;
 }
 
-/* line 270, ../sass/app.scss */
+/* line 267, ../sass/app.scss */
 .product-options dd {
   background: #F9F9F9;
   padding: 8px;
@@ -4787,7 +4740,7 @@ ul, ol {
   border-bottom: 1px dashed #e8e8e8;
 }
 
-/* line 276, ../sass/app.scss */
+/* line 273, ../sass/app.scss */
 .product-options li {
   margin-bottom: 0;
 }
@@ -4795,24 +4748,25 @@ ul, ol {
 /* -----------------------------------------
    Catalog Page
 ----------------------------------------- */
-/* line 282, ../sass/app.scss */
+/* line 279, ../sass/app.scss */
 .toolbar, .toolbar-bottom {
   clear: both;
 }
 
-/* line 283, ../sass/app.scss */
+/* line 280, ../sass/app.scss */
 .sorter {
   padding-bottom: 6px;
   margin-bottom: 6px;
 }
 
-/* line 284, ../sass/app.scss */
+/* line 281, ../sass/app.scss */
 .page-title.category-title h1 {
   font-size: 1.8em;
   font-weight: 600;
+  margin: 0;
 }
 
-/* line 287, ../sass/app.scss */
+/* line 284, ../sass/app.scss */
 .price-box {
   float: left;
   line-height: 34px;
@@ -4822,12 +4776,12 @@ ul, ol {
   margin-bottom: 6px;
 }
 
-/* line 288, ../sass/app.scss */
+/* line 285, ../sass/app.scss */
 .price-box p {
   margin-bottom: 2px;
 }
 
-/* line 290, ../sass/app.scss */
+/* line 287, ../sass/app.scss */
 .minimal-price-link {
   background: #efefef;
   font-size: 11px;
@@ -4835,30 +4789,30 @@ ul, ol {
   line-height: 14px;
 }
 
-/* line 291, ../sass/app.scss */
+/* line 288, ../sass/app.scss */
 .col-main nine columns {
   width: 71.9%;
 }
 
-/* line 292, ../sass/app.scss */
+/* line 289, ../sass/app.scss */
 .add-to-links {
   margin: 12px 0;
 }
 
-/* line 293, ../sass/app.scss */
+/* line 290, ../sass/app.scss */
 .add-to-links li {
   margin: 0 4px 0 0;
   float: left;
 }
 
-/* line 295, ../sass/app.scss */
+/* line 292, ../sass/app.scss */
 .ratings {
   font-size: 11px;
   line-height: 1.25;
   margin: 7px 0;
 }
 
-/* line 296, ../sass/app.scss */
+/* line 293, ../sass/app.scss */
 .rating-box {
   width: 69px;
   height: 13px;
@@ -4871,7 +4825,7 @@ ul, ol {
   margin-right: 3px;
 }
 
-/* line 307, ../sass/app.scss */
+/* line 304, ../sass/app.scss */
 .rating-box .rating {
   float: left;
   height: 13px;
@@ -4879,63 +4833,57 @@ ul, ol {
 }
 
 /* Temporary */
-/* line 312, ../sass/app.scss */
+/* line 309, ../sass/app.scss */
 form.custom div.custom.dropdown {
   display: inline-block;
 }
 
 /* Ze Blocks */
-/* line 315, ../sass/app.scss */
+/* line 312, ../sass/app.scss */
 .block-title {
   margin: 12px 0 6px 0;
 }
 
-/* line 317, ../sass/app.scss */
+/* line 314, ../sass/app.scss */
 .block-cart .block-subtitle {
   margin: 12px 0 0 0;
 }
 
-/* line 321, ../sass/app.scss */
+/* line 318, ../sass/app.scss */
 .block-subscribe label {
   display: none;
 }
 
-/* line 322, ../sass/app.scss */
+/* line 319, ../sass/app.scss */
 .block-content {
   margin-top: 6px;
 }
 
-/* line 323, ../sass/app.scss */
+/* line 320, ../sass/app.scss */
 .block-content li, .block-content li p {
   margin-bottom: 6px;
 }
 
 /* Poll */
-/* line 327, ../sass/app.scss */
+/* line 324, ../sass/app.scss */
 #poll-answers input[type=radio] {
   float: left;
   margin-right: 6px;
 }
 
 /* --- Grid View --- */
-/* line 333, ../sass/app.scss */
-.products-grid .item.last {
-  margin-right: 0;
-  float: right;
-}
-
-/* line 337, ../sass/app.scss */
+/* line 334, ../sass/app.scss */
 .products-grid h2.product-name {
   font-size: 16px;
 }
 
-/* line 338, ../sass/app.scss */
+/* line 335, ../sass/app.scss */
 .products-grid .price-box, .products-grid .actions {
   width: 90%;
   clear: both;
 }
 
-/* line 340, ../sass/app.scss */
+/* line 337, ../sass/app.scss */
 .products-grid .add-to-links li {
   float: left;
   margin: 0;
@@ -4943,38 +4891,38 @@ form.custom div.custom.dropdown {
   padding-right: 5px;
 }
 
-/* line 341, ../sass/app.scss */
+/* line 338, ../sass/app.scss */
 .products-grid .add-to-links a {
   font-size: 11px;
   font-weight: 700;
 }
 
 /* --- List View --- */
-/* line 345, ../sass/app.scss */
+/* line 342, ../sass/app.scss */
 .category-products ol.products-list {
   list-style-type: none;
   margin: 22px 0 0 0;
 }
 
-/* line 348, ../sass/app.scss */
+/* line 345, ../sass/app.scss */
 .category-products ol.products-list .product-shop h2 {
   font-size: 18px;
 }
 
-/* line 349, ../sass/app.scss */
+/* line 346, ../sass/app.scss */
 .category-products ol.products-list .item {
   border-bottom: 1px solid #efefef;
   margin-bottom: 12px;
   overflow: hidden;
 }
 
-/* line 350, ../sass/app.scss */
+/* line 347, ../sass/app.scss */
 .category-products ol.products-list .item.last {
   border-bottom: none;
 }
 
 /* --- Layer navigation --- */
-/* line 354, ../sass/app.scss */
+/* line 351, ../sass/app.scss */
 .block-layered-nav ol {
   list-style-type: none;
   margin-left: 0px;
@@ -4982,40 +4930,41 @@ form.custom div.custom.dropdown {
   padding: 0;
 }
 
-/* line 361, ../sass/app.scss */
+/* line 358, ../sass/app.scss */
 #narrow-by-list li {
-  margin-bottom: 6px;
+  margin-bottom: 0px;
 }
 
-/* line 364, ../sass/app.scss */
+/* line 361, ../sass/app.scss */
 .block-layered-nav .block-subtitle {
   margin-bottom: 9px;
 }
 
-/* line 367, ../sass/app.scss */
+/* line 364, ../sass/app.scss */
 #narrow-by-list dt {
-  margin: 12px 0;
-  border-bottom: 1px solid #EEE;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 12px 0 4px;
 }
 
-/* line 372, ../sass/app.scss */
+/* line 370, ../sass/app.scss */
 .block-layered-nav .currently .label {
   display: none;
 }
 
-/* line 376, ../sass/app.scss */
+/* line 374, ../sass/app.scss */
 .block-layered-nav .currently {
   border-bottom: 1px solid #efefef;
   padding-bottom: 4px;
   margin-bottom: 6px;
 }
 
-/* line 381, ../sass/app.scss */
+/* line 379, ../sass/app.scss */
 .block-layered-nav .currently li {
   margin-bottom: 6px;
 }
 
-/* line 388, ../sass/app.scss */
+/* line 386, ../sass/app.scss */
 .round-inline, .round-box, .round-inline-bare {
   display: inline-block;
   padding: 6px 7px;
@@ -5031,12 +4980,12 @@ form.custom div.custom.dropdown {
   position: relative;
 }
 
-/* line 389, ../sass/app.scss */
+/* line 387, ../sass/app.scss */
 .round-box {
   display: box;
 }
 
-/* line 390, ../sass/app.scss */
+/* line 388, ../sass/app.scss */
 .round-inline-bare {
   background: none;
   border: 0 none;
@@ -5045,89 +4994,88 @@ form.custom div.custom.dropdown {
 /* ---  --- Toolbar, Pagination, Sort by --- --- */
 /* --- Prices --- */
 /*--- Breadcrumbs ---*/
-/* line 397, ../sass/app.scss */
+/* line 395, ../sass/app.scss */
 .pager, .sort-by {
   font-size: 11px;
   text-align: center;
 }
 
-/* line 403, ../sass/app.scss */
+/* line 401, ../sass/app.scss */
 .toolbar .pager {
   padding-bottom: 6px;
   border-bottom: 1px solid #EFEFEF;
   margin-bottom: 6px;
 }
 
-/* line 409, ../sass/app.scss */
+/* line 407, ../sass/app.scss */
 .pager .amount {
   margin: 0;
 }
 
-/* line 413, ../sass/app.scss */
+/* line 411, ../sass/app.scss */
 .pager .limiter {
   float: right;
 }
 
-/* line 417, ../sass/app.scss */
+/* line 415, ../sass/app.scss */
 .pager .limiter select, .pager .limiter label {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 421, ../sass/app.scss */
+/* line 419, ../sass/app.scss */
 .pager .limiter select {
   width: 60px;
 }
 
-/* line 422, ../sass/app.scss */
+/* line 420, ../sass/app.scss */
 .view-mode {
   float: left;
   margin-bottom: 0;
 }
 
-/* line 423, ../sass/app.scss */
+/* line 421, ../sass/app.scss */
 .view-mode label {
   display: inline-block;
 }
 
-/* line 424, ../sass/app.scss */
+/* line 422, ../sass/app.scss */
 .sort-by {
   float: right;
 }
 
-/* line 425, ../sass/app.scss */
+/* line 423, ../sass/app.scss */
 .sort-by label, .sort-by select {
   display: inline-block;
   line-height: 22px;
 }
 
-/* line 426, ../sass/app.scss */
+/* line 424, ../sass/app.scss */
 .sort-by select {
-  width: 50%;
+  width: 70%;
 }
 
-/* line 429, ../sass/app.scss */
-.breadcrumbs {
-  margin: 0;
-  width: auto;
-  font-size: 13px;
-  padding-top: 0.8em;
-  padding-bottom: 0.4em;
+/* line 426, ../sass/app.scss */
+ul.breadcrumbs {
+  margin-top: 12px;
+  background: 0 none;
+  border: 0;
+  border-bottom: 1px solid #E9E9E9;
 }
 
-/* line 430, ../sass/app.scss */
+/* line 427, ../sass/app.scss */
 .breadcrumbs li {
   margin-bottom: 0;
   font-size: 12px;
   color: #666;
 }
 
-/* line 431, ../sass/app.scss */
+/* line 428, ../sass/app.scss */
 .breadcrumbs strong {
   font-weight: normal;
 }
 
-/* line 432, ../sass/app.scss */
+/* line 429, ../sass/app.scss */
 .breadcrumbs span {
   padding-right: 0.5rem;
 }
@@ -5136,13 +5084,13 @@ form.custom div.custom.dropdown {
 /* -----------------------------------------
    Cart Page
 ----------------------------------------- */
-/* line 440, ../sass/app.scss */
+/* line 437, ../sass/app.scss */
 #shopping-cart-table .product-name, .cart-collaterals h2 {
   font-size: 16px;
   margin-bottom: 0;
 }
 
-/* line 441, ../sass/app.scss */
+/* line 438, ../sass/app.scss */
 #shopping-cart-table {
   border-spacing: 0;
   empty-cells: show;
@@ -5151,100 +5099,100 @@ form.custom div.custom.dropdown {
   border-collapse: separate;
 }
 
-/* line 443, ../sass/app.scss */
+/* line 440, ../sass/app.scss */
 .cart-collaterals .product-name {
   font-size: 14px;
 }
 
-/* line 444, ../sass/app.scss */
+/* line 441, ../sass/app.scss */
 #shopping-cart-table, #shopping-cart-totals-table {
   width: 100%;
 }
 
-/* line 445, ../sass/app.scss */
+/* line 442, ../sass/app.scss */
 #shopping-cart-table tbody tr td {
   vertical-align: middle;
 }
 
-/* line 446, ../sass/app.scss */
+/* line 443, ../sass/app.scss */
 #shopping-cart-table thead tr th {
   padding: 8px 0;
   text-align: left;
 }
 
-/* line 447, ../sass/app.scss */
+/* line 444, ../sass/app.scss */
 #shopping-cart-table thead tr th.a-center {
   padding: 8px 0;
   text-align: center;
 }
 
-/* line 448, ../sass/app.scss */
+/* line 445, ../sass/app.scss */
 #shopping-cart-table tbody tr td.cart-image {
   width: 90px;
 }
 
-/* line 450, ../sass/app.scss */
+/* line 447, ../sass/app.scss */
 #shopping-cart-table tbody tr td .product-image {
   display: block;
   float: left;
 }
 
-/* line 451, ../sass/app.scss */
+/* line 448, ../sass/app.scss */
 #shopping-cart-table tbody tr td .product-name {
   display: block;
   float: left;
 }
 
-/* line 452, ../sass/app.scss */
+/* line 449, ../sass/app.scss */
 .cart-table td {
   padding: 10px;
 }
 
-/* line 455, ../sass/app.scss */
+/* line 452, ../sass/app.scss */
 #shopping-cart-table .item-options {
   clear: both;
 }
 
-/* line 458, ../sass/app.scss */
+/* line 455, ../sass/app.scss */
 form fieldset {
   padding: 0;
   border: none;
 }
 
-/* line 461, ../sass/app.scss */
+/* line 458, ../sass/app.scss */
 .coupon.shipping h2 {
   font-size: 16px;
 }
 
-/* line 463, ../sass/app.scss */
+/* line 460, ../sass/app.scss */
 .checkout-types {
   text-align: right;
 }
 
-/* line 467, ../sass/app.scss */
+/* line 464, ../sass/app.scss */
 .cart-collaterals {
   border-top: 1px dashed #efefef;
   padding-top: 12px;
   margin-top: 8px;
 }
 
-/* line 472, ../sass/app.scss */
+/* line 469, ../sass/app.scss */
 .cart-collaterals h2 {
   margin-bottom: 12px;
 }
 
-/* line 475, ../sass/app.scss */
+/* line 472, ../sass/app.scss */
 #crosssell-products-list li.item {
   float: left;
 }
 
-/* line 476, ../sass/app.scss */
+/* line 473, ../sass/app.scss */
 #crosssell-products-list li.item .product-image {
   float: left;
   display: block;
 }
 
-/* line 477, ../sass/app.scss */
+/* line 474, ../sass/app.scss */
 .crosssell-products-list li.item .product-details {
   float: left;
   margin-left: 8px;
@@ -5254,50 +5202,50 @@ form fieldset {
    Checkout Page
 ----------------------------------------- */
 /* OPC - One Page Checkout */
-/* line 483, ../sass/app.scss */
+/* line 480, ../sass/app.scss */
 #checkoutSteps.opc p, #checkoutSteps.opc ul, #checkoutSteps.opc ul li {
   margin-bottom: 6px;
 }
 
-/* line 484, ../sass/app.scss */
+/* line 481, ../sass/app.scss */
 #checkoutSteps.opc #checkout-step-login ul.ul li {
   list-style-type: disc;
   list-style-position: inside;
 }
 
-/* line 485, ../sass/app.scss */
+/* line 482, ../sass/app.scss */
 #checkoutSteps.opc ul.form-list {
   margin: 12px 0;
 }
 
-/* line 486, ../sass/app.scss */
+/* line 483, ../sass/app.scss */
 #checkoutSteps.opc input {
   margin-right: 4px;
 }
 
-/* line 487, ../sass/app.scss */
+/* line 484, ../sass/app.scss */
 #checkoutSteps.opc input[type=text], #checkoutSteps.opc input[type=password] {
   width: 100%;
 }
 
-/* line 488, ../sass/app.scss */
+/* line 485, ../sass/app.scss */
 .opc label {
   display: inline-block;
 }
 
-/* line 489, ../sass/app.scss */
+/* line 486, ../sass/app.scss */
 #checkoutSteps {
   list-style-type: none;
   margin-left: 0;
 }
 
-/* line 490, ../sass/app.scss */
+/* line 487, ../sass/app.scss */
 #checkoutSteps .step-title {
   border-bottom: 1px solid #efefef;
   margin-bottom: 8px;
 }
 
-/* line 491, ../sass/app.scss */
+/* line 488, ../sass/app.scss */
 #checkoutSteps .step-title h2, #checkoutSteps span.number {
   font-size: 18px;
   display: inline-block;
@@ -5308,36 +5256,36 @@ form fieldset {
   *display: inline !important;
 }
 
-/* line 498, ../sass/app.scss */
+/* line 495, ../sass/app.scss */
 #checkoutSteps h3 {
   font-size: 16px;
   font-weight: normal;
 }
 
-/* line 499, ../sass/app.scss */
+/* line 496, ../sass/app.scss */
 #checkoutSteps h4 {
   font-size: 14px;
 }
 
-/* line 501, ../sass/app.scss */
+/* line 498, ../sass/app.scss */
 #checkoutSteps .fields {
   width: 48%;
   float: left;
   margin-right: 10px;
 }
 
-/* line 502, ../sass/app.scss */
+/* line 499, ../sass/app.scss */
 #checkoutSteps .wide {
   width: 97.3%;
   float: left;
 }
 
-/* line 503, ../sass/app.scss */
+/* line 500, ../sass/app.scss */
 #checkoutSteps #billing-new-address-form label {
   margin-bottom: 0;
 }
 
-/* line 504, ../sass/app.scss */
+/* line 501, ../sass/app.scss */
 .step {
   border-bottom: 1px solid #0192DD;
   padding-bottom: 12px;
@@ -5351,21 +5299,790 @@ form fieldset {
    My Account
 ----------------------------------------- */
 /* Messages */
-/* line 528, ../sass/app.scss */
+/* line 525, ../sass/app.scss */
 .validation-advice, p.required {
   color: #C76711;
   clear: both;
 }
 
 /* Form elements */
-/* line 533, ../sass/app.scss */
+/* line 530, ../sass/app.scss */
 input.input-text, textarea {
   box-shadow: #F6F6F6 1px 1px 1px;
   border: 1px solid #E8E8E8;
   width: 100%;
 }
 
-/* line 538, ../sass/app.scss */
+/* line 535, ../sass/app.scss */
 input.input-text.qty {
   width: 40px;
+}
+
+/* Top Bar  */
+/* Foundation Top Bar
+ Requires: -jquery.foundation.topbar.js
+ Notes: - <nav class="top-bar"> can have .fixed added to make it stick to the top of viewport. Can add .contain-to-grid to top-bar to make it full width but content on grid. - <li class="name"> creates a branding area that can be linked to homepage - Can include text, image or both inside this <li>. - <li class="divider"> creates a divider between nav items, add margins for space - <li class="search"> Needs to hold a <form> which can use .row.collapse and pre/postfix buttons or default type="search"
+*/
+/* Element that controls breakpoint, no need to change this ever */
+/* line 547, ../sass/app.scss */
+.top-bar-js-breakpoint {
+  width: 940px !important;
+  visibility: hidden;
+}
+
+/* Wrapped around .top-bar to contain to grid width */
+/* line 550, ../sass/app.scss */
+.contain-to-grid {
+  width: 100%;
+  background: #222222;
+}
+
+/* Wrapped around .top-bar to make it fixed at the top */
+/* line 553, ../sass/app.scss */
+.fixed {
+  width: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+}
+
+/* <nav> */
+/* line 556, ../sass/app.scss */
+.top-bar {
+  background: #f9f9f7;
+  height: 45px;
+  line-height: 45px;
+  margin: 0 0 30px;
+  padding: 0;
+  width: 100%;
+  -moz-box-shadow: 0 1px 1px #F0F0F0;
+  -webkit-box-shadow: 0 1px 1px #F0F0F0;
+  box-shadow: 0 1px 1px #F0F0F0;
+  /* Contain width to .row width */
+  /* First <ul> for branding, title, name, etc */
+  /* topbar global <ul> styles */
+}
+
+/* line 557, ../sass/app.scss */
+.contain-to-grid .top-bar {
+  width: 940px;
+  margin: 0 auto;
+}
+
+/* line 558, ../sass/app.scss */
+.top-bar > ul .name h1 {
+  line-height: 45px;
+  margin: 0;
+}
+
+/* line 559, ../sass/app.scss */
+.top-bar > ul .name h1 a {
+  font-weight: bold;
+  padding: 0 22.5px;
+  font-size: 17px !important;
+}
+
+/* line 560, ../sass/app.scss */
+.top-bar > ul .name img {
+  margin-top: -5px;
+  vertical-align: middle;
+}
+
+/* line 561, ../sass/app.scss */
+.top-bar ul {
+  display: inline;
+  height: 45px;
+  line-height: 45px;
+  list-style: none;
+  /* Main Navigation links style */
+  /* Left Side <ul> */
+  /* Right Side <ul> */
+}
+
+/* line 562, ../sass/app.scss */
+.top-bar ul > li {
+  float: left;
+  /* Dividers between navigation */
+  /* Put a button in an <li> but give is a class */
+  /* Put a search bar or text input in the bar */
+  /* Hide the triangle for breakpoint menu */
+  /* li.has-dropdown */
+}
+
+/* line 563, ../sass/app.scss */
+.top-bar ul > li a:not(.button) {
+  color: #000;
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 15px;
+}
+
+/* line 564, ../sass/app.scss */
+.top-bar ul > li:hover, .top-bar ul > li.active {
+  background: #f5f5f3;
+}
+
+/* line 565, ../sass/app.scss */
+.top-bar ul > li:hover a, .top-bar ul > li.active a {
+  color: #2BA6CB;
+}
+
+/* line 566, ../sass/app.scss */
+.top-bar ul > li.divider {
+  background: #f5f5f3;
+  -webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
+  -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
+  height: 100%;
+  margin-right: 1px;
+  width: 1px;
+}
+
+/* line 567, ../sass/app.scss */
+.top-bar ul > li.has-button a.button {
+  margin: 0 11.25px;
+}
+
+/* line 568, ../sass/app.scss */
+.top-bar ul > li.has-button:hover {
+  background: #f5f5f3;
+}
+
+/* line 569, ../sass/app.scss */
+.top-bar ul > li.has-button:hover a {
+  color: #fff;
+}
+
+/* line 570, ../sass/app.scss */
+.top-bar ul > li.search {
+  padding: 0 15px;
+}
+
+/* line 571, ../sass/app.scss */
+.top-bar ul > li.search form {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  width: 200px;
+}
+
+/* line 572, ../sass/app.scss */
+.top-bar ul > li.search form input[type=text] {
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  float: left;
+  font-size: 13px;
+  margin-top: -1px;
+  height: 22.5px;
+}
+
+/* line 573, ../sass/app.scss */
+.top-bar ul > li.search form input[type=text] + .button {
+  border-left: none;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  float: left;
+  font-size: 12px;
+  margin-top: -1px;
+  padding: 5px 12px 4px;
+}
+
+/* line 574, ../sass/app.scss */
+.top-bar ul > li.search form input[type=search] {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+/* line 575, ../sass/app.scss */
+.top-bar ul > li.search:hover {
+  background: #f5f5f3;
+}
+
+/* line 576, ../sass/app.scss */
+.top-bar ul > li.toggle-topbar {
+  display: none;
+}
+
+/* line 577, ../sass/app.scss */
+.top-bar ul > li.has-dropdown {
+  position: relative;
+  /* Dropdown Level 2+ */
+}
+
+/* line 578, ../sass/app.scss */
+.top-bar ul > li.has-dropdown:hover > .dropdown {
+  display: block;
+  visibility: visible;
+}
+
+/* line 579, ../sass/app.scss */
+.top-bar ul > li.has-dropdown a {
+  padding-right: 33.75px;
+}
+
+/* line 580, ../sass/app.scss */
+.top-bar ul > li.has-dropdown a:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 5px;
+  border-color: white transparent transparent transparent;
+  margin-right: 15px;
+  margin-top: -2.5px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+/* line 581, ../sass/app.scss */
+.top-bar ul > li.has-dropdown .dropdown {
+  background: #f5f5f3;
+  left: 0;
+  margin: 0;
+  padding: 9px 0 0 0;
+  position: absolute;
+  visibility: hidden;
+  z-index: 99;
+}
+
+/* line 582, ../sass/app.scss */
+.top-bar ul > li.has-dropdown .dropdown li {
+  background: #f5f5f3;
+  line-height: 1;
+  min-width: 100%;
+  padding-bottom: 5px;
+}
+
+/* line 583, ../sass/app.scss */
+.top-bar ul > li.has-dropdown .dropdown li a {
+  font-weight: normal;
+  height: 100%;
+  line-height: 1;
+  padding: 5px 17px 5px 15px;
+  white-space: nowrap;
+}
+
+/* line 584, ../sass/app.scss */
+.top-bar ul > li.has-dropdown .dropdown li a:after {
+  border: none;
+}
+
+/* line 585, ../sass/app.scss */
+.top-bar ul > li.has-dropdown .dropdown li a:hover {
+  background: #ececea;
+}
+
+/* line 586, ../sass/app.scss */
+.top-bar ul > li.has-dropdown .dropdown li label {
+  color: #6f6f6f;
+  font-size: 10px;
+  font-weight: bold;
+  margin: 0;
+  padding-left: 15px;
+  text-transform: uppercase;
+}
+
+/* line 587, ../sass/app.scss */
+.top-bar ul > li.has-dropdown .dropdown li.divider {
+  border-top: solid 1px black;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+  height: 10px;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 588, ../sass/app.scss */
+.top-bar ul > li.has-dropdown .dropdown li:last-child {
+  padding-bottom: 10px;
+}
+
+/* line 589, ../sass/app.scss */
+.top-bar ul > li.has-dropdown .dropdown li.has-dropdown > a {
+  padding-right: 30px;
+}
+
+/* line 590, ../sass/app.scss */
+.top-bar ul > li.has-dropdown .dropdown li.has-dropdown > a:after {
+  border: none;
+  content: "\00bb";
+  right: 5px;
+  top: 6px;
+}
+
+/* line 591, ../sass/app.scss */
+.top-bar ul > li.has-dropdown .dropdown li.has-dropdown .dropdown {
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+/* line 592, ../sass/app.scss */
+.top-bar ul > li.has-dropdown .dropdown li.has-dropdown:hover > .dropdown {
+  display: block;
+}
+
+/* line 593, ../sass/app.scss */
+.top-bar ul.left {
+  float: left;
+  width: auto;
+  margin-bottom: 0;
+}
+
+/* line 594, ../sass/app.scss */
+.top-bar ul.right {
+  float: right;
+  width: auto;
+  margin-bottom: 0;
+  /* Dropdown Right Side Alignment */
+}
+
+/* line 595, ../sass/app.scss */
+.top-bar ul.right .has-dropdown .dropdown {
+  left: auto;
+  right: -1px;
+}
+
+/* line 596, ../sass/app.scss */
+.top-bar ul.right .has-dropdown .dropdown li.has-dropdown > .dropdown {
+  right: 100%;
+  left: auto;
+  width: 100%;
+}
+
+/* line 597, ../sass/app.scss */
+.top-bar .js-generated {
+  display: none;
+}
+
+/* Firefox Fixes */
+@-moz-document url-prefix() {
+  /* line 600, ../sass/app.scss */
+  .top-bar ul li .button.small {
+    padding-bottom: 6px;
+  }
+
+  /* line 601, ../sass/app.scss */
+  .top-bar ul li.search form input[type=search] {
+    font-size: 14px;
+    height: 22px;
+    padding: 3px;
+  }
+}
+
+/* IE8 Fixes */
+/* line 604, ../sass/app.scss */
+.lt-ie9 .top-bar ul li a {
+  color: white;
+  display: block;
+  font-weight: bold;
+  font-size: 13px;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 15px;
+}
+
+/* line 605, ../sass/app.scss */
+.lt-ie9 .top-bar ul li a.button {
+  height: auto;
+  line-height: 30px;
+  margin-top: 7px;
+}
+
+/* line 606, ../sass/app.scss */
+.lt-ie9 .top-bar ul li a:hover {
+  color: #cccccc;
+}
+
+/* line 607, ../sass/app.scss */
+.lt-ie9 .top-bar ul li a img {
+  margin-top: -5px;
+  vertical-align: middle;
+}
+
+/* line 608, ../sass/app.scss */
+.lt-ie9 .top-bar ul li a.active {
+  background: #151515;
+  color: #d9d9d9;
+}
+
+/* line 610, ../sass/app.scss */
+.lt-ie9 .top-bar ul li.has-dropdown {
+  padding-right: 33.75px;
+}
+
+/* line 611, ../sass/app.scss */
+.lt-ie9 .top-bar ul li.has-dropdown > ul li {
+  padding-right: 0;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 940px) {
+  /* line 614, ../sass/app.scss */
+  .top-bar {
+    margin-bottom: 0;
+    overflow: hidden;
+    /* Override contain to grid stuff for breakpoint */
+    /* Setting up the sliding area */
+    /* When the Small Nav is Showing */
+  }
+
+  /* line 615, ../sass/app.scss */
+  .top-bar .js-generated {
+    display: block;
+  }
+
+  /* line 616, ../sass/app.scss */
+  .contain-to-grid .top-bar {
+    width: auto;
+  }
+
+  /* line 617, ../sass/app.scss */
+  .top-bar section {
+    left: 0;
+    position: relative;
+    width: auto;
+    -webkit-transition: left 300ms;
+    -moz-transition: left 300ms;
+    -o-transition: left 300ms;
+    transition: left 300ms;
+  }
+
+  /* line 618, ../sass/app.scss */
+  .top-bar ul {
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    margin-bottom: 0;
+    display: block;
+  }
+
+  /* line 619, ../sass/app.scss */
+  .top-bar ul li {
+    float: none;
+    /* Branding and name */
+    /* Dropdown Toggle */
+    /* Divider for breakpoint */
+    /* Search Overrides for breakpoint size */
+    /* Dropdown Level 1 */
+    /* Dropdown Level 2 */
+  }
+
+  /* line 620, ../sass/app.scss */
+  .top-bar ul li.active, .top-bar ul li:hover {
+    background: #151515;
+  }
+
+  /* line 621, ../sass/app.scss */
+  .top-bar ul li.name {
+    background: black;
+  }
+
+  /* line 622, ../sass/app.scss */
+  .top-bar ul li.name h1 {
+    line-height: 1;
+  }
+
+  /* line 623, ../sass/app.scss */
+  .top-bar ul li.name h1 a {
+    padding-left: 22.5px;
+  }
+
+  /* line 624, ../sass/app.scss */
+  .top-bar ul li.toggle-topbar {
+    cursor: pointer;
+    display: block;
+    height: 45px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+  }
+
+  /* line 625, ../sass/app.scss */
+  .top-bar ul li.toggle-topbar a {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 8px;
+    border-color: white transparent transparent transparent;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    right: 22.5px;
+    margin-top: -4px;
+  }
+
+  /* line 626, ../sass/app.scss */
+  .top-bar ul li.toggle-topbar:hover {
+    background: black;
+  }
+
+  /* line 627, ../sass/app.scss */
+  .top-bar ul li.toggle-topbar a {
+    padding: 0 !important;
+  }
+
+  /* line 628, ../sass/app.scss */
+  .top-bar ul li.divider {
+    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+    border-top: solid 1px black;
+    clear: both;
+    height: 1px !important;
+    margin: 8px 0 !important;
+    width: 100%;
+  }
+
+  /* line 629, ../sass/app.scss */
+  .top-bar ul li.search {
+    padding: 0 22.5px;
+  }
+
+  /* line 630, ../sass/app.scss */
+  .top-bar ul li.search form {
+    width: 100%;
+  }
+
+  /* line 631, ../sass/app.scss */
+  .top-bar ul li.search form input[type=text] {
+    width: 75%;
+  }
+
+  /* line 632, ../sass/app.scss */
+  .top-bar ul li.search form .button {
+    top: 0;
+    width: 25%;
+  }
+
+  /* line 633, ../sass/app.scss */
+  .top-bar ul li.has-dropdown a {
+    padding-right: 33.75px;
+  }
+
+  /* line 634, ../sass/app.scss */
+  .top-bar ul li.has-dropdown a:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 5px;
+    border-color: transparent transparent transparent rgba(255, 255, 255, 0.5);
+    margin-right: 15px;
+    margin-top: -4.5px;
+    position: absolute;
+    top: 50%;
+  }
+
+  /* line 635, ../sass/app.scss */
+  .top-bar ul li.has-dropdown:hover > .dropdown {
+    display: block;
+    visibility: hidden;
+  }
+
+  /* line 636, ../sass/app.scss */
+  .top-bar ul li.has-dropdown .dropdown {
+    visibility: hidden;
+    z-index: 0 !important;
+  }
+
+  /* line 637, ../sass/app.scss */
+  .top-bar ul li.has-dropdown.moved {
+    position: static;
+  }
+
+  /* line 638, ../sass/app.scss */
+  .top-bar ul li.has-dropdown.moved .dropdown {
+    top: 0;
+    visibility: visible;
+  }
+
+  /* line 639, ../sass/app.scss */
+  .top-bar ul li.has-dropdown.moved .dropdown li label {
+    margin-bottom: 6px;
+    padding-top: 6px !important;
+    font-size: 11px;
+  }
+
+  /* line 640, ../sass/app.scss */
+  .top-bar ul li.has-dropdown.moved .dropdown li:not(.title) {
+    padding-bottom: 0;
+  }
+
+  /* line 641, ../sass/app.scss */
+  .top-bar ul li.has-dropdown.moved .dropdown li:not(.title) a {
+    padding: 8px 22.5px;
+    font-size: 14px;
+  }
+
+  /* line 642, ../sass/app.scss */
+  .top-bar ul li.has-dropdown.moved .dropdown li a, .top-bar ul li.has-dropdown.moved .dropdown li label {
+    padding: 0 22.5px;
+  }
+
+  /* line 643, ../sass/app.scss */
+  .top-bar ul li.has-dropdown.moved .dropdown li a:hover {
+    background: transparent;
+    display: block;
+  }
+
+  /* line 644, ../sass/app.scss */
+  .top-bar ul li.has-dropdown.moved .dropdown li.divider {
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* line 645, ../sass/app.scss */
+  .top-bar ul li.has-dropdown.moved .back.title {
+    padding-bottom: 0;
+  }
+
+  /* line 646, ../sass/app.scss */
+  .top-bar ul li.has-dropdown.moved .back.title a:before {
+    position: absolute;
+    top: 50%;
+    left: 17.5px;
+    margin-top: -5px;
+    width: 0;
+    height: 0;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 5px;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* line 647, ../sass/app.scss */
+  .top-bar ul li.has-dropdown.moved .back.title h5 {
+    margin: 0;
+    padding-left: 15px;
+    position: relative;
+  }
+
+  /* line 648, ../sass/app.scss */
+  .top-bar ul li.has-dropdown.moved .back.title h5 a {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 23px;
+    font-weight: bold;
+  }
+
+  /* line 649, ../sass/app.scss */
+  .top-bar ul li.has-dropdown .dropdown li {
+    background: transparent;
+  }
+
+  /* line 650, ../sass/app.scss */
+  .top-bar ul li.has-dropdown .dropdown li.has-dropdown .dropdown {
+    left: 100% !important;
+    top: 0;
+    right: auto !important;
+  }
+
+  /* line 651, ../sass/app.scss */
+  .top-bar ul li.has-dropdown .dropdown li.has-dropdown > a {
+    padding-right: 33.75px;
+  }
+
+  /* line 652, ../sass/app.scss */
+  .top-bar ul li.has-dropdown .dropdown li.has-dropdown > a:after {
+    content: "";
+    margin-right: 15px;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 5px;
+    border-color: transparent transparent transparent rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    margin-top: -4.5px;
+  }
+
+  /* line 653, ../sass/app.scss */
+  .top-bar ul li.has-dropdown .dropdown li.has-dropdown.moved {
+    position: static;
+  }
+
+  /* line 654, ../sass/app.scss */
+  .top-bar ul li.has-dropdown .dropdown li.has-dropdown.moved .dropdown {
+    top: 0;
+    visibility: visible;
+  }
+
+  /* line 655, ../sass/app.scss */
+  .top-bar ul li.has-dropdown .dropdown li.has-dropdown:hover {
+    display: block;
+  }
+
+  /* line 656, ../sass/app.scss */
+  .top-bar ul.left, .top-bar ul.right {
+    float: none;
+    width: 100%;
+  }
+
+  /* line 657, ../sass/app.scss */
+  .top-bar ul.left > li, .top-bar ul.right > li {
+    display: block;
+    float: none;
+    margin: 0 !important;
+  }
+
+  /* line 658, ../sass/app.scss */
+  .top-bar ul.left > li.has-dropdown .dropdown, .top-bar ul.right > li.has-dropdown .dropdown {
+    left: 100% !important;
+    top: 0;
+    right: auto !important;
+  }
+
+  /* line 659, ../sass/app.scss */
+  .top-bar section > ul li a:not(.button) {
+    padding-left: 22.5px !important;
+  }
+
+  /* line 660, ../sass/app.scss */
+  .top-bar.expanded {
+    height: 100%;
+  }
+
+  /* line 661, ../sass/app.scss */
+  .top-bar.expanded ul li.toggle-topbar a {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 8px;
+    border-color: transparent transparent rgba(255, 255, 255, 0.5) transparent;
+    top: auto;
+    bottom: 50%;
+    margin-bottom: -4px;
+  }
+
+  /* line 662, ../sass/app.scss */
+  .top-bar ul li.has-button {
+    padding: 0 20px 5px;
+  }
+
+  /* line 663, ../sass/app.scss */
+  .top-bar ul li .button.small {
+    margin: 0 !important;
+    display: inline-block;
+    width: 100%;
+  }
 }
