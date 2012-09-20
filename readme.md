@@ -6,7 +6,7 @@
 Released into the wild before it's time has come.
 Ment as a starting base of your *responsive* Magento theme.
 
-!Important! - I worked hard on implementing the foundation responsivness
+**!Important!** - I worked hard on implementing the foundation responsivness
 but the theme itself is not *styled* yet as such. That's planned for next
 seven days when *Beta* is released. 
  
