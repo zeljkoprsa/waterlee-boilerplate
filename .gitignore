@@ -98,3 +98,5 @@ var/
 /.htaccess.sample
 /.idea/
 /api.php
+/app/etc/
+/media/
