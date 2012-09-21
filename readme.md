@@ -1,4 +1,4 @@
-#Magento HTML5 responsive boilerplate
+#Magento HTML5 responsive boilerplate [![endorse](http://api.coderwall.com/zeljkoprsa/endorsecount.png)](http://coderwall.com/zeljkoprsa)
  - Built on latest Foundation 3 by ZURB.
 
 ##This is an alpha version
