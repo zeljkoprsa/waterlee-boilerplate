@@ -22,6 +22,7 @@
 
     <!-- Remove callouts and rarely used stuff globally -->
 
+<!--
     <remove name="right.poll"/>
     <remove name="right.permanent.callout"/>
     <remove name="left.permanent.callout"/>
@@ -30,10 +31,11 @@
     <remove name="catalog.compare.sidebar"/>
     <remove name="checkout.cart.shipping" />
     <remove name="left.newsletter"/>
-    <!--<remove name="catalog.leftnav"/>-->
+    &lt;!&ndash;<remove name="catalog.leftnav"/>&ndash;&gt;
     <remove name="catalogsearch.leftnav"/>
     <remove name="right.reports.product.viewed"/>
     <remove name="left.reports.product.viewed"/>
+-->
 
 
     <!-- //Remove callouts and rarely used stuff globally -->
@@ -53,7 +55,6 @@
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.accordion.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.tabs.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.tooltips.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.offcanvas.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.placeholder.js</name><params/></action>
         <!-- press "m" to see device ratios, remove after development -->
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.mediaQueryToggle.js</name><params/></action>

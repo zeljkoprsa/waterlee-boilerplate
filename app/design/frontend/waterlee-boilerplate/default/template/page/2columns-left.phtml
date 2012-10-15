@@ -40,23 +40,18 @@
 <head>
 <?php echo $this->getChildHtml('head') ?>
 </head>
-<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<body class="off-canvas slide-nav">
 <?php echo $this->getChildHtml('after_body_start') ?>
     <?php echo $this->getChildHtml('global_notices') ?>
         <?php echo $this->getChildHtml('header') ?>
-
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
                 <div class="main-container col2-left-layout row">
-                    <div class="columns twelve">
-                        <div class="col-left sidebar three columns"><?php echo $this->getChildHtml('left') ?></div>
-                        <div class="col-main nine columns">
+                        <section role="main">
                             <?php echo $this->getChildHtml('global_messages') ?>
                             <?php echo $this->getChildHtml('content') ?>
-                        </div>
-                    </div>
-
+                        </section>
+                        <section id="sidebar" role="complementary"><?php echo $this->getChildHtml('left') ?></section>
                 </div>
-
         <?php echo $this->getChildHtml('footer') ?>
 <?php echo $this->getAbsoluteFooter() ?>
 
