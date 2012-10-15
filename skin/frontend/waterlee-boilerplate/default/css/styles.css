@@ -5791,7 +5791,7 @@ input.input-text.qty {
 
   /* line 591, ../sass/styles.scss */
   .top-bar ul li.name {
-    background: black;
+    background: inherit;
   }
 
   /* line 592, ../sass/styles.scss */
@@ -5822,7 +5822,7 @@ input.input-text.qty {
     width: 0;
     height: 0;
     border: solid 8px;
-    border-color: white transparent transparent transparent;
+    border-color: black transparent transparent transparent;
     padding: 0;
     position: absolute;
     top: 50%;
@@ -5832,7 +5832,7 @@ input.input-text.qty {
 
   /* line 596, ../sass/styles.scss */
   .top-bar ul li.toggle-topbar:hover {
-    background: black;
+    background: inherit;
   }
 
   /* line 597, ../sass/styles.scss */
@@ -6070,7 +6070,7 @@ input.input-text.qty {
     width: 0;
     height: 0;
     border: solid 8px;
-    border-color: transparent transparent rgba(255, 255, 255, 0.5) transparent;
+    border-color: transparent transparent black transparent;
     top: auto;
     bottom: 50%;
     margin-bottom: -4px;
