@@ -12,10 +12,9 @@ seven days when *Beta* is released.
  
 
 What's inside:
-*NEW*:
-- Off Canvas menu (http://www.zurb.com/playground/off-canvas-layouts)
-- Current SubCategory menu for mobile view
----------------------------------------------------------------------
+
+- **NEW**: Off Canvas menu (http://www.zurb.com/playground/off-canvas-layouts)
+- **NEW**: Current SubCategory menu for mobile view
 - Foundation 3 by ZURB built in (http://foundation.zurb.com/)  
 - SASS implemented (http://compass-style.org/)
 - Templates files ridden of divitis
