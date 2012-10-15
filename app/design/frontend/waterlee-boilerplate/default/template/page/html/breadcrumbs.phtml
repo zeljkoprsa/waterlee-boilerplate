@@ -26,9 +26,7 @@
 ?>
 <?php if($crumbs && is_array($crumbs)): ?>
 <div class="row">
-<div class="columns twelve">
-
-    <ul class="breadcrumbs">
+    <ul class="breadcrumbs columns twelve">
         <?php foreach($crumbs as $_crumbName=>$_crumbInfo): ?>
         <li class="<?php echo $_crumbName ?>">
             <?php if($_crumbInfo['link']): ?>
@@ -39,13 +37,9 @@
             <?php echo $this->htmlEscape($_crumbInfo['label']) ?>
             <?php endif; ?>
             <?php if(!$_crumbInfo['last']): ?>
-
             <?php endif; ?>
         </li>
         <?php endforeach; ?>
     </ul>
-
-
-</div>
 </div>
 <?php endif; ?>
