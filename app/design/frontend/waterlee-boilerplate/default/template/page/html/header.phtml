@@ -1,49 +1,76 @@
 <header class="row">
-<div class="columns twelve">
-        <?php if ($this->getIsHomePage()):?>
-        <h1 class="logo columns four">
+
+<nav class="top-bar">
+    <ul>
+        <li class="name">
+            <?php if ($this->getIsHomePage()):?>
+            <h1 class="logo">
+                <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+                </a>
+            </h1>
+            <?php else:?>
             <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
-            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
-        </a>
-        </h1>
-        <?php else:?>
-        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo columns four">
-            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
-        <?php endif?>
-        <nav class="top-links top-bar eight columns">
-            <ul class="right">
-                <li><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></li>
+                <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+            <?php endif?>
+        </li>
+        <li class="toggle-topbar"><a href="#"></a></li>
+    </ul>
+    <section>
+        <ul class="left">
+            <li><?php echo $this->getChildHtml('topSearch') ?></li>
+        </ul>
+        <ul class="right">
                 <li>
-                    <a href="<?php echo $this->getUrl('checkout/cart') ?>">
-                    <?php echo $this->__('Cart') ?> <strong><?php $cart = Mage::helper('checkout/cart')->getCart()->getItemsCount(); echo  $cart;?></strong>
-                    </a>
+                <?php
+                $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
+                $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
+                ?>
+                <?php if($count == 0):?>
+                <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('0 Items', $count) ?></a>
+                <?php endif; ?>
+                <?php if($count == 1):?>
+                <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('1 Item', $count) ?></a>
+                <?php endif; ?>
+                <?php if($count >= 2):?>
+                <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('%s Items', $count) ?></a>
+                <?php endif; ?>
+                </span>
                 </li>
-                <li><?php echo $this->getChildHtml('store_language') ?></li>
-                <li class="has-dropdown">
-                    <a href="#">My Account</a>
-                    <ul class="dropdown">
-                        <li class="title back js-generated"><h5><a href="#">Item 2</a></h5></li>
-                        <li><label>My Account</label></li>
-                        <?php echo $this->getChildHtml('topLinks')?>
-                        <li class="divider"></li>
-                        <li class="divider"></li>
-                        <li><a href="#">See all →</a></li>
-                    </ul>
+                <li>
+                <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
                 </li>
-                <li><?php echo $this->getChildHtml('topSearch') ?></li>
+                <li>
+                <a class="mc-checkout" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
+                </li>
+            <li class="has-dropdown">
+                <a href="#">My Account</a>
+                <ul class="dropdown"><li class="title"><h5><a href="#">Item 2</a></h5></li>
+                    <li><label>Section Name</label></li>
+                    <li><a class="" href="#">Has Dropdown, Level 1</a></li>
+                    <li><a href="#">Dropdown Option</a></li>
+                    <li><a href="#">Dropdown Option</a></li>
+                    <li class="divider"></li>
+                    <li><label>Section Name</label></li>
+                    <li><a href="#">Dropdown Option</a></li>
+                    <li><a href="#">Dropdown Option</a></li>
+                    <li><a href="#">Dropdown Option</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">See all →</a></li>
+                </ul>
+            </li>
+        </ul>
 
-            </ul>
-        </nav>
+    </section>
+</nav>
 
-</div>
 </header>
 
-<div class="row">
-<div class="nav-search columns twelve">
+<div class="row hide-for-small">
     <?php echo $this->getChildHtml('topMenu') ?>
-
-</div>
 </div>
 
-
-
+<p class="show-for-small">
+    <a href="#bottomNav" id="menuButton" class="menu-button button">Menu</a>
+    <a href="#sidebar" id="sidebarButton" class="sidebar-button button">Extra</a>
+</p>
