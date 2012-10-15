@@ -61,6 +61,7 @@ ul.messages .notice-msg li{ background-color: #C76711; color: #fff; text-shadow:
 ul.messages .error-msg li{ background-color: #c00000; color: #fff; text-shadow: 0 -1px rgba(0,0,0,0.3); }
 
 a {color: #27a2e1}
+a:hover {color: #000;}
 
 h1, h2, h3, h4, h5, h6 {
   color: #444;
@@ -79,10 +80,10 @@ form label{margin-bottom: 0}
    Header
 ----------------------------------------- */
 /* Header Elements*/
-header {position: relative;height: 110px;}
+header {position: relative;}
 header .notice {position: absolute; left: 300px; top: 30px; color: #666;}
 header .logo{}
-header a.logo{display: block;display: block; margin: 13px 0 0 -15px;}
+header a.logo{display: block;display: block; margin: 0;}
 
 label + input.input-text, label + textarea, label + select, label + div.dropdown, select + div.dropdown{margin: 0;}
 
@@ -95,19 +96,35 @@ h1.logo { margin-bottom: 0; }
 .utilities                        { padding: 12px; background: #fff; }
 /* Main nav  */
 ul#nav, ul#nav li, ul#nav ul      {list-style: none; margin: 0; padding: 0; }
-ul#nav                            {position: relative; z-index: 7; float: left;border: 1px solid #F0F0F0;border-radius: 5px;box-shadow: 0 1px 1px #f0f0f0;background: #f9f9f7; }
-ul#nav li                         {float: left; line-height: 1.3em; vertical-align: middle; zoom: 1; background: #F9F9F9;margin-right: 1px;}
+ul#nav                            {
+
+  background: url("../images/bg_nav-bar.png") repeat-x scroll 0 0 transparent;
+  border-top: 1px solid #F0F0F0;
+  box-shadow: 0 1px 1px rgba(0, 83, 109, 0.22);
+  float: left;
+  position: relative;
+  z-index: 7;
+
+}
+ul#nav li                         {float: left; line-height: 1.3em; vertical-align: middle; zoom: 1; margin-right: 1px;}
+ul#nav li ul li                   {background: #fff;}
 ul#nav li.hover, ul#nav li:hover  {position: relative; z-index: 9; cursor: default; }
-ul#nav ul                         {visibility: hidden; position: absolute; top: 100%; left: 0; z-index: 598; width: 100%; }
+ul#nav ul                         {visibility: hidden; position: absolute; top: 100%; left: 0; z-index: 598; width: 100%; box-shadow: 0 1px 1px rgba(0, 83, 109, 0.29);}
 ul#nav ul li                      {float: none }
 ul#nav ul ul                      {top: 1px; left: 99%; }
-ul#nav li:hover > ul              {visibility: visible }
+ul#nav li:hover > ul              {visibility: visible; }
 ul#nav li.level0 a span           {padding: 12px;display: inline-block;font-weight: 700;}
+ul#nav li.level0 ul.level0 a span {padding: 0 12px 12px 12px;}
+ul#nav li.level0 ul.level0 li.first a span {padding-top:12px;}
+
+
 ul#nav li.level0.first            {}
 ul#nav ul                         {width: 12em;}
 ul#nav ul.level0                  {}
-
-
+a.level-top {
+  border-right: 1px solid #EDEDED;
+}
+ul#nav li:last-child a.level-top{border: none;}
 /* Top Search */
 
 #search_mini_form{margin: 6px 12px 0 0;}
@@ -237,8 +254,7 @@ ul, ol{list-style-type: none;}
 .sorter												{padding-bottom: 6px;margin-bottom: 6px;}
 .page-title.category-title h1	{font-size: 1.8em;font-weight: 600;margin: 0;  }
 
-
-.price-box                  {float: left;line-height: 34px; min-height: 34px;  margin-right: 12px;font-size: 18px;margin-bottom: 6px}
+.price-box                  {}
 .price-box p                {margin-bottom: 2px}
 
 .minimal-price-link         {  background: #efefef; font-size: 11px; padding: 2px 4px; line-height: 14px }
@@ -382,7 +398,7 @@ ul, ol{list-style-type: none;}
 
 ul.breadcrumbs { margin-top: 12px;background: 0 none;border: 0;border-bottom: 1px solid #E9E9E9; }
 .breadcrumbs li{ margin-bottom: 0; font-size: 12px;color: #666; }
-.breadcrumbs strong{ font-weight: normal;}
+.breadcrumbs strong{ font-weight: 700;}
 .breadcrumbs span{ padding-right: 0.5rem;}
 
 /* Footer */
@@ -493,9 +509,6 @@ input.input-text.qty{
   width: 40px;
 }
 
-
-/* Top Bar  */
-
 /* Foundation Top Bar
  Requires: -jquery.foundation.topbar.js
  Notes: - <nav class="top-bar"> can have .fixed added to make it stick to the top of viewport. Can add .contain-to-grid to top-bar to make it full width but content on grid. - <li class="name"> creates a branding area that can be linked to homepage - Can include text, image or both inside this <li>. - <li class="divider"> creates a divider between nav items, add margins for space - <li class="search"> Needs to hold a <form> which can use .row.collapse and pre/postfix buttons or default type="search"
@@ -510,36 +523,36 @@ input.input-text.qty{
 .fixed { width: 100%; left: 0; position: fixed; top: 0; z-index: 99; }
 
 /* <nav> */
-.top-bar { background: #f9f9f7; height: 45px; line-height: 45px; margin: 0 0 30px; padding: 0; width: 100%; -moz-box-shadow: 0 1px 1px #F0F0F0; -webkit-box-shadow: 0 1px 1px #F0F0F0; box-shadow: 0 1px 1px #F0F0F0; /* Contain width to .row width */ /* First <ul> for branding, title, name, etc */ /* topbar global <ul> styles */ }
+.top-bar { background: #fff; height: 45px; line-height: 45px; margin: 15px 0 40px 0; padding: 0; width: 100%; /* Contain width to .row width */ /* First <ul> for branding, title, name, etc */ /* topbar global <ul> styles */ }
 .contain-to-grid .top-bar { width: 940px; margin: 0 auto; }
 .top-bar > ul .name h1 { line-height: 45px; margin: 0; }
 .top-bar > ul .name h1 a { font-weight: bold; padding: 0 22.5px; font-size: 17px !important; }
 .top-bar > ul .name img { margin-top: -5px; vertical-align: middle; }
 .top-bar ul { display: inline; height: 45px; line-height: 45px; list-style: none; /* Main Navigation links style */ /* Left Side <ul> */ /* Right Side <ul> */ }
 .top-bar ul > li { float: left; /* Dividers between navigation */ /* Put a button in an <li> but give is a class */ /* Put a search bar or text input in the bar */ /* Hide the triangle for breakpoint menu */ /* li.has-dropdown */ }
-.top-bar ul > li a:not(.button) { color: #000; display: block; font-size: 13px; font-weight: bold; height: 45px; line-height: 45px; padding: 0 15px; }
-.top-bar ul > li:hover, .top-bar ul > li.active { background: #f5f5f3; }
-.top-bar ul > li:hover a, .top-bar ul > li.active a { color: #2BA6CB; }
-.top-bar ul > li.divider { background: #f5f5f3; -webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); height: 100%; margin-right: 1px; width: 1px; }
+.top-bar ul > li a:not(.button) { color: #000; display: block; font-size: 15px; font-weight: 700; height: 45px; line-height: 45px; padding: 0 15px; }
+.top-bar ul > li:hover, .top-bar ul > li.active {  }
+.top-bar ul > li:hover a, .top-bar ul > li.active a { color: #000; }
+.top-bar ul > li.divider { background: black; -webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); height: 100%; margin-right: 1px; width: 1px; }
 .top-bar ul > li.has-button a.button { margin: 0 11.25px; }
-.top-bar ul > li.has-button:hover { background: #f5f5f3; }
+.top-bar ul > li.has-button:hover {  }
 .top-bar ul > li.has-button:hover a { color: #fff; }
 .top-bar ul > li.search { padding: 0 15px; }
 .top-bar ul > li.search form { display: inline-block; margin-bottom: 0; vertical-align: middle; width: 200px; }
 .top-bar ul > li.search form input[type=text] { -moz-border-radius-topright: 0; -webkit-border-top-right-radius: 0; border-top-right-radius: 0; -moz-border-radius-bottomright: 0; -webkit-border-bottom-right-radius: 0; border-bottom-right-radius: 0; float: left; font-size: 13px; margin-top: -1px; height: 22.5px; }
 .top-bar ul > li.search form input[type=text] + .button { border-left: none; -moz-border-radius-topleft: 0; -webkit-border-top-left-radius: 0; border-top-left-radius: 0; -moz-border-radius-bottomleft: 0; -webkit-border-bottom-left-radius: 0; border-bottom-left-radius: 0; float: left; font-size: 12px; margin-top: -1px; padding: 5px 12px 4px; }
 .top-bar ul > li.search form input[type=search] { font-size: 16px; margin-bottom: 0; }
-.top-bar ul > li.search:hover { background: #f5f5f3; }
+.top-bar ul > li.search:hover {  }
 .top-bar ul > li.toggle-topbar { display: none; }
 .top-bar ul > li.has-dropdown { position: relative; /* Dropdown Level 2+ */ }
 .top-bar ul > li.has-dropdown:hover > .dropdown { display: block; visibility: visible; }
 .top-bar ul > li.has-dropdown a { padding-right: 33.75px; }
-.top-bar ul > li.has-dropdown a:after { content: ""; display: block; width: 0; height: 0; border: solid 5px; border-color: white transparent transparent transparent; margin-right: 15px; margin-top: -2.5px; position: absolute; right: 0; top: 50%; }
-.top-bar ul > li.has-dropdown .dropdown { background: #f5f5f3; left: 0; margin: 0; padding: 9px 0 0 0; position: absolute; visibility: hidden; z-index: 99; }
-.top-bar ul > li.has-dropdown .dropdown li { background: #f5f5f3; line-height: 1; min-width: 100%; padding-bottom: 5px; }
+.top-bar ul > li.has-dropdown a:after { content: ""; display: block; width: 0; height: 0; border: solid 5px; border-color: #333 transparent transparent transparent; margin-right: 15px; margin-top: -2.5px; position: absolute; right: 0; top: 50%; }
+.top-bar ul > li.has-dropdown .dropdown { background: #efefef; left: 0; margin: 0; padding: 9px 0 0 0; position: absolute; visibility: hidden; z-index: 99; }
+.top-bar ul > li.has-dropdown .dropdown li { background: #efefef; line-height: 1; min-width: 100%; padding-bottom: 5px; }
 .top-bar ul > li.has-dropdown .dropdown li a { font-weight: normal; height: 100%; line-height: 1; padding: 5px 17px 5px 15px; white-space: nowrap; }
 .top-bar ul > li.has-dropdown .dropdown li a:after { border: none; }
-.top-bar ul > li.has-dropdown .dropdown li a:hover { background: #ececea; }
+.top-bar ul > li.has-dropdown .dropdown li a:hover { background: #efefef; }
 .top-bar ul > li.has-dropdown .dropdown li label { color: #6f6f6f; font-size: 10px; font-weight: bold; margin: 0; padding-left: 15px; text-transform: uppercase; }
 .top-bar ul > li.has-dropdown .dropdown li.divider { border-top: solid 1px black; -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset; -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset; height: 10px; padding: 0; width: 100%; }
 .top-bar ul > li.has-dropdown .dropdown li:last-child { padding-bottom: 10px; }
@@ -547,7 +560,7 @@ input.input-text.qty{
 .top-bar ul > li.has-dropdown .dropdown li.has-dropdown > a:after { border: none; content: "\00bb"; right: 5px; top: 6px; }
 .top-bar ul > li.has-dropdown .dropdown li.has-dropdown .dropdown { position: absolute; left: 100%; top: 0; }
 .top-bar ul > li.has-dropdown .dropdown li.has-dropdown:hover > .dropdown { display: block; }
-.top-bar ul.left { float: left; width: auto; margin-bottom: 0; }
+.top-bar ul.left { float: left; width: auto; margin-bottom: 0; margin-left: 1%; border-left:1px solid #efefef;padding-left: 3%;}
 .top-bar ul.right { float: right; width: auto; margin-bottom: 0; /* Dropdown Right Side Alignment */ }
 .top-bar ul.right .has-dropdown .dropdown { left: auto; right: -1px; }
 .top-bar ul.right .has-dropdown .dropdown li.has-dropdown > .dropdown { right: 100%; left: auto; width: 100%; }
@@ -618,3 +631,55 @@ input.input-text.qty{
   .top-bar.expanded ul li.toggle-topbar a { content: ""; display: block; width: 0; height: 0; border: solid 8px; border-color: transparent transparent rgba(255, 255, 255, 0.5) transparent; top: auto; bottom: 50%; margin-bottom: -4px; }
   .top-bar ul li.has-button { padding: 0 20px 5px; }
   .top-bar ul li .button.small { margin: 0 !important; display: inline-block; width: 100%; } }
+
+/* Off Canvas */
+body.off-canvas { padding: 0; margin: 0; }
+.container { width: 100%; }
+
+.row .row { overflow: visible; }
+
+footer { background: #555; color: #fff; padding: 10px 0; }
+
+.paneled .container { overflow: hidden; }
+
+.paneled .row { width: 100%; }
+
+[role="main"]:before { content: " "; position: absolute; z-index: -1; top: 0; left: -100%; width: 100%; height: 100%;  }
+
+[role="complementary"], [role="main"] { width: 100%; padding: 0 15px; display: block; position: relative; z-index: 1; -webkit-transition: 0.25s all ease-in; -moz-transition: 0.25s all ease-in; -ms-transition: 0.25s all ease-in; -o-transition: 0.25s all ease-in; transition: 0.25s all ease-in; }
+
+.paneled [role="main"] { padding: 0; }
+
+.page-panel { width: 100%; padding: 0 15px; -webkit-transition: 0.3s margin ease-in-out; -moz-transition: 0.3s margin ease-in-out; -ms-transition: 0.3s margin ease-in-out; -o-transition: 0.3s margin ease-in-out; transition: 0.3s margin ease-in-out; }
+
+#switchPanels { margin: 0 -15px; }
+
+.hide-extras [role="complementary"] { display: block; }
+
+[role="navigation"]#topMenu { -webkit-transition: 0.25s all ease-in; -moz-transition: 0.25s all ease-in; -ms-transition: 0.25s all ease-in; -o-transition: 0.25s all ease-in; transition: 0.25s all ease-in; }
+
+[role="navigation"]#topMenu ul { margin-top: 0; }
+
+.js [role="complementary"] { margin-left: -100%; width: 80%; float: left; z-index: 2; }
+.js [role="main"] { margin-left: 0;  -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; float: right; z-index: 1; position: relative; }
+.js .paneled [role="main"] { width: 500%; overflow: hidden; float: none; position: relative; left: 0; -webkit-transition: 0.15s all ease-in; -moz-transition: 0.15s all ease-in; -ms-transition: 0.15s all ease-in; -o-transition: 0.15s all ease-in; transition: 0.15s all ease-in; }
+.js .page-panel { min-height: 400px; float: left; margin: 0; width: 20%; }
+
+.active [role="complementary"] {
+  margin-left: 0;
+}
+.active [role="main"] {
+  margin-right: -80%;
+}
+.active-menu #topMenu[role="navigation"] {
+  margin-top: 0 !important;
+}
+@media all and (min-width: 768px) { .js menu-button, .js .sidebar-button { display: none; }
+  .js [role="complementary"] { width: 33.34%; margin-left: 0; float: left; padding: 0 15px; }
+  .js [role="main"] { width: 66.66%; padding: 0 15px; }
+  .js .paneled [role="main"] { width: 100%; padding: 0; background: #f4f4f4; left: 0 !important; }
+  .js .page-panel { display: block; min-height: 800px; float: none; margin: 0; width: 100%; background: #f4f4f4; }
+  .js .hide-extras [role="main"] { width: 100%; }
+  .js .hide-extras [role="complementary"] { display: none; }
+  .js [role="navigation"]#topMenu { display: none; } }
+
