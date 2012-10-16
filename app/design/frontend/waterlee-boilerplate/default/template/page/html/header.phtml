@@ -13,6 +13,8 @@
             <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
                 <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
             <?php endif?>
+
+
         </li>
         <li class="toggle-topbar"><a href="#"></a></li>
     </ul>
@@ -21,7 +23,26 @@
             <li><?php echo $this->getChildHtml('topSearch') ?></li>
         </ul>
         <ul class="right">
-                <li>
+
+            <li class="has-dropdown">
+                <a href="#"><span data-icon="&#x22;" aria-hidden="true" class="fs1"></span></a>
+                <ul class="dropdown">
+                    <li class="title"><h5><a href="#">My account</a></h5></li>
+                    <li class="login-link">
+                        <?php if($this->helper('customer')->isLoggedIn()):   ?>
+                        <a href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
+                        <?php else: ?>
+                        <a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Log in') ?></a>
+                        <?php endif; ?>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <?php echo $this->getChildHtml('store_currency_selector') ?>
+            </li>
+            <li>
+                <span data-icon="&#x28;" aria-hidden="true" class="fs1"></span>
                 <?php
                 $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
                 $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
@@ -35,30 +56,16 @@
                 <?php if($count >= 2):?>
                 <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('%s Items', $count) ?></a>
                 <?php endif; ?>
-                </span>
-                </li>
-                <li>
                 <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
-                </li>
-                <li>
-                <a class="mc-checkout" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
-                </li>
-            <li class="has-dropdown">
-                <a href="#">My Account</a>
-                <ul class="dropdown"><li class="title"><h5><a href="#">Item 2</a></h5></li>
-                    <li><label>Section Name</label></li>
-                    <li><a class="" href="#">Has Dropdown, Level 1</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li class="divider"></li>
-                    <li><label>Section Name</label></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">See all →</a></li>
-                </ul>
+                <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
+
+                <br />
+
+                <?php echo $this->getChildHtml('store_language') ?>
+
             </li>
+
+
         </ul>
 
     </section>
