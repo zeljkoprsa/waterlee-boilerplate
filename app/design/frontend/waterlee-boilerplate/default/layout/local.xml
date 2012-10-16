@@ -22,20 +22,20 @@
 
     <!-- Remove callouts and rarely used stuff globally -->
 
-<!--
     <remove name="right.poll"/>
     <remove name="right.permanent.callout"/>
     <remove name="left.permanent.callout"/>
     <remove name="paypal.partner.right.logo"/>
     <remove name="tags_popular"/>
+    <remove name="product_tag_list" />
+
     <remove name="catalog.compare.sidebar"/>
     <remove name="checkout.cart.shipping" />
     <remove name="left.newsletter"/>
-    &lt;!&ndash;<remove name="catalog.leftnav"/>&ndash;&gt;
-    <remove name="catalogsearch.leftnav"/>
+    <!--<remove name="catalog.leftnav"/>-->
+    <!--<remove name="catalogsearch.leftnav"/>-->
     <remove name="right.reports.product.viewed"/>
     <remove name="left.reports.product.viewed"/>
--->
 
 
     <!-- //Remove callouts and rarely used stuff globally -->
@@ -46,6 +46,8 @@
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery-1.8.1.min.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/modernizr.foundation.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.topbar.js</name><params/></action>
+        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.mediaQueryToggle.js</name><params/></action>
+        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.navigation.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.alerts.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.buttons.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.forms.js</name><params/></action>
@@ -57,14 +59,14 @@
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.tooltips.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.placeholder.js</name><params/></action>
         <!-- press "m" to see device ratios, remove after development -->
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.mediaQueryToggle.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/app.js</name><params/></action>
     </reference>
     <!-- //Add js/css globally -->
 
+
+
     <!-- Add/Remove Top Links -->
     <reference name="root">
-
 
         <remove name="global_messages" />    <!-- Remove Global Messages in favor of "inchoo_global_messages" -->
         <reference name="top.links">
@@ -137,6 +139,7 @@ just in case I want to add the block somewhere else -->
       Contact Us" -->
         <action method="unsetChild"><name>footer_links</name></action> <!-- Magento 1.4.x -->
         <block type="newsletter/subscribe" after="-" name="footer.newsletter" template="newsletter/subscribe.phtml"/>
+        <block type="core/template" name="mobile.menu.footer" template="page/mobile-menu-footer.phtml"/>
     </reference>
     <!-- //Add/Remove Footer Links -->
 
@@ -193,8 +196,6 @@ Category layered navigation layout
 <catalog_category_layered translate="label">
     <label>Catalog Category (Anchor)</label>
     <reference name="root">
-        <block type="catalog/navigation" name="catalog.mobnav" before="-" template="catalog/navigation/mobile-nav.phtml"/>
-        <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
     </reference>
     <reference name="left">
         <remove name="left.permanent.callout" />
@@ -228,5 +229,7 @@ Category layered navigation layout
 
     </reference>
 </customer_account>
+
+
 
 </layout>
