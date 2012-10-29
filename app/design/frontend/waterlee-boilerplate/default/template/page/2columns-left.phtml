@@ -40,7 +40,7 @@
 <head>
 <?php echo $this->getChildHtml('head') ?>
 </head>
-<body class="off-canvas slide-nav">
+<body<?php echo $this->getBodyClass()?' class="off-canvas slide-nav'.$this->getBodyClass().'"':'' ?>>
 <?php echo $this->getChildHtml('after_body_start') ?>
     <?php echo $this->getChildHtml('global_notices') ?>
         <?php echo $this->getChildHtml('header') ?>
