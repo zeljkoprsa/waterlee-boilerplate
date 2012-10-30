@@ -18,6 +18,12 @@
 <default>
     <reference name="root">
         <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        <reference name="root">
+            <remove name="global_messages" />
+        </reference>
+        <reference name="after_body_start">
+            <block type="core/template" name="inchoo_global_messages" template="core/inchoo_global_messages.phtml" before="-" />
+        </reference>
     </reference>
 
     <!-- Remove callouts and rarely used stuff globally -->
@@ -58,6 +64,7 @@
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.tabs.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.tooltips.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.placeholder.js</name><params/></action>
+        <action method="addItem"><type>skin_js</type><name>js/jquery.isotope.min.js</name><params/></action>
         <!-- press "m" to see device ratios, remove after development -->
         <action method="addItem"><type>skin_js</type><name>js/foundation/app.js</name><params/></action>
     </reference>
