@@ -27,7 +27,7 @@
             <li class="has-dropdown">
                 <a href="#"><span data-icon="&#x22;" aria-hidden="true" class="fs1"></span></a>
                 <ul class="dropdown">
-                    <li class="title"><h5><a href="#">My account</a></h5></li>
+                    <li class="title"><h5><a href="<?php echo $this->getUrl('customer/account') ?>">My account</a></h5></li>
                     <li class="login-link">
                         <?php if($this->helper('customer')->isLoggedIn()):   ?>
                         <a href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
@@ -76,8 +76,9 @@
 <div class="row hide-for-small">
     <?php echo $this->getChildHtml('topMenu') ?>
 </div>
-
-<p class="show-for-small">
-    <a href="#bottomNav" id="menuButton" class="menu-button button">Menu</a>
-    <a href="#sidebar" id="sidebarButton" class="sidebar-button button">Extra</a>
-</p>
+<div class="column">
+<ul class="show-for-small block-grid mobile-two-up">
+    <li><a href="#sidebar" id="sidebarButton" class="sidebar-button button">Sidebar</a></li>
+    <li><a href="#bottomNav" id="menuButton" class="menu-button button">Shop</a></li>
+</ul>
+</div>
