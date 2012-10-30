@@ -65,7 +65,7 @@ $_helper = $this->helper('catalog/output');
                     <?php endif; ?>
                     <?php echo $this->getPriceHtml($_product, true) ?>
                     <?php if($_product->isSaleable()): ?>
-                    <p><button type="button" title="<?php echo $this->__('Buy Now') ?>" class="small orange nice button radius" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Buy Now') ?></span></span></button></p>
+                    <p><button type="button" title="<?php echo $this->__('Buy Now') ?>" class="orange nice button radius" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Buy Now') ?></span></span></button></p>
                     <?php else: ?>
                     <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                     <?php endif; ?>
