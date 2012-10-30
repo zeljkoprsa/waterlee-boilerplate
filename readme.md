@@ -1,15 +1,14 @@
 #Magento HTML5 responsive boilerplate [![endorse](http://api.coderwall.com/zeljkoprsa/endorsecount.png)](http://coderwall.com/zeljkoprsa)
  - Built on latest Foundation 3 by ZURB.
 
-##This is an alpha version
+##Public Beta
 
-Released into the wild before it's time has come.
-Ment as a starting base of your *responsive* Magento theme.
+The theme itself is still rough around the edges but you now have 
+pretty much everything you need to start creating your own theme.
 
-**!Important!** - I worked hard on implementing the foundation responsivness
-but the theme itself is not *styled* yet as such. That's planned for next
-seven days when *Beta* is released. 
- 
+Remeber thisis a boilerplate not a production ready theme ;)
+
+You can see the demo at http://waterlee.jakesharp.co
 
 What's inside:
 
