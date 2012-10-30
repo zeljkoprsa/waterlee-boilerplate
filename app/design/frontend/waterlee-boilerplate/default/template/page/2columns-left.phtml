@@ -43,17 +43,18 @@
 <body<?php echo $this->getBodyClass()?' class="off-canvas slide-nav'.$this->getBodyClass().'"':'' ?>>
 <?php echo $this->getChildHtml('after_body_start') ?>
     <?php echo $this->getChildHtml('global_notices') ?>
+        <div class="page">
         <?php echo $this->getChildHtml('header') ?>
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
                 <div class="main-container col2-left-layout row">
-                        <section role="main">
-                            <?php echo $this->getChildHtml('global_messages') ?>
-                            <?php echo $this->getChildHtml('content') ?>
-                        </section>
-                        <section id="sidebar" role="complementary"><?php echo $this->getChildHtml('left') ?></section>
+                    <section role="main">
+                        <?php echo $this->getChildHtml('global_messages') ?>
+                        <?php echo $this->getChildHtml('content') ?>
+                    </section>
+                    <section id="sidebar" role="complementary"><?php echo $this->getChildHtml('left') ?></section>
                 </div>
         <?php echo $this->getChildHtml('footer') ?>
 <?php echo $this->getAbsoluteFooter() ?>
-
+        </div>
 </body>
 </html>
