@@ -231,6 +231,7 @@ ul#nav{
   float: left;
   position: relative;
   z-index: 7;
+  margin-bottom: 12px;
 }
 ul#nav li                         {float: left; line-height: 1.3em; vertical-align: middle; zoom: 1; margin-right: 1px;}
 ul#nav li ul li                   {background: #fff;}
@@ -323,20 +324,52 @@ ul, ol{list-style-type: none;}
    Product Page
 ----------------------------------------- */
 .product-essential .product-shop{}
-.product-essential .product-shop .product-name h1{font-size: 18px}
+.product-essential .product-shop .product-name h1{
+  font-size: 26px;
+  font-weight: 300;
+  margin-top: 0;
+  line-height: 28px;
+  margin-bottom: 0;
+
+}
 .product-essential .product-img-box{}
-.product-essential .price-box{float: none;}
+.product-essential .price-box{
+  float: none;
+  font-size: 18px;
+  margin: 10px 0 16px 0;
+  font-weight: 700;}
 .product-view h2, .box-collateral h3{font-size: 14px}
 .product-essential .or {display: none;}
 .product-essential hr {visibility: hidden;}
 .product-shop p.email-friend, .product-shop p.no-rating {margin-bottom: 0px;}
-.product-shop .availability {margin: 6px 0;}
+.product-shop .availability {margin: 6px 0;font-weight: 600;}
+.product-shop .availability span{font-weight: 300;}
 .product-shop .add-to-cart, .product-shop .add-to-links, .product-options-bottom .add-to-cart, .product-options-bottom .add-to-links{width: 100%; clear: both; margin-bottom: 12px; overflow: hidden;}
+.product-shop .add-to-links{margin-top: 0px;}
+.product-shop .add-to-cart{
+  background: none repeat scroll 0 0 #F0F0F0;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
+  -webkit-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
+  -moz-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
+  display: inline-block;
+
+  padding: 6px 12px 10px 12px;
+  width: inherit;
+}
 .product-shop .add-to-cart label,.product-shop .add-to-cart input#qty, .product-shop .add-to-cart button.button {display: block;float: left}
-.product-shop .add-to-cart label, .product-options-bottom label {margin-top: 10px; margin-right: 4px;float: left;
+.product-shop .add-to-cart label, .product-options-bottom label {
+  margin-top: 15px; margin-right: 4px;float: left;
+  font-weight: 600;
 }
 .product-shop .add-to-cart input#qty, .product-options-bottom input#qty{width: 32px;margin-top: 6px; margin-right: 4px;float: left; }
-.product-shop .add-to-cart button.button {}
+.product-shop .add-to-cart button.button {
+  margin-top: 6px;
+  margin-left: 6px;
+  padding: 8px 40px 8px;
+  font-weight: 600;
+}
 .short-description{font-size: 14px; line-height: 1.4;}
 .short-description br{
   display: none;
@@ -352,6 +385,7 @@ ul, ol{list-style-type: none;}
   border: 1px solid #E8E8E8;
   padding: 12px 12px 0px 12px;
   margin-bottom: 12px;
+  background: #fff;
 }
 #product-options-wrapper span.label{color: #333;display: inline-block;
   background: inherit;
@@ -400,6 +434,7 @@ ul, ol{list-style-type: none;}
   overflow: hidden;
   float: left;
   margin-right: 3px;
+  margin-top: 4px;
 }
 .rating-box .rating {
   float: left;
@@ -685,7 +720,7 @@ input.input-text.qty{
 .top-bar > ul .name img { margin-top: -5px; vertical-align: middle; }
 .top-bar ul { display: inline; height: 45px;  list-style: none; /* Main Navigation links style */ /* Left Side <ul> */ /* Right Side <ul> */ }
 .top-bar ul > li { float: left; /* Dividers between navigation */ /* Put a button in an <li> but give is a class */ /* Put a search bar or text input in the bar */ /* Hide the triangle for breakpoint menu */ /* li.has-dropdown */ }
-.top-bar ul > li a:not(.button) {  display: block; font-size: 15px; font-weight: 600; padding: 0 15px; }
+.top-bar ul > li a:not(.button) {  display: block; font-size: 15px; font-weight: 600; padding: 0 15px; color: #27a2e1;}
 .top-bar ul > li:hover, .top-bar ul > li.active {  }
 .top-bar ul > li:hover a, .top-bar ul > li.active a { color: #000; }
 .top-bar ul > li.divider { background: black; -webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); height: 100%; margin-right: 1px; width: 1px; }
@@ -720,7 +755,8 @@ input.input-text.qty{
 .top-bar ul.right .has-dropdown .dropdown { left: auto; right: -1px; }
 .top-bar ul.right .has-dropdown .dropdown li.has-dropdown > .dropdown { right: 100%; left: auto; width: 100%; }
 .top-bar .js-generated { display: none; }
-
+.top-bar ul > li:not(.name):hover, .top-bar ul > li:not(.name).active{background: transparent;}
+.top-bar ul > li:not(.name):hover a, .top-bar ul > li:not(.name).active a{color: #333}
 .top-bar ul > li a.cartgo:not(.button){display: inline-block;}
 
 /* Firefox Fixes */
@@ -941,3 +977,6 @@ footer { background: #555; color: #fff; padding: 10px 0; }
   -o-transition-duration: 0s;
   transition-duration: 0s;
 }
+
+
+

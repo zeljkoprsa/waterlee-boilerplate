@@ -58,12 +58,8 @@
                 <?php endif; ?>
                 <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
                 <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
-
-                <br />
-
-                <?php echo $this->getChildHtml('store_language') ?>
-
             </li>
+            <li><?php echo $this->getChildHtml('store_language') ?></li>
 
 
         </ul>
