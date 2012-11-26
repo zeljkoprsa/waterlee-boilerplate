@@ -1,20 +1,22 @@
 <?php if(Mage::registry('current_category') ):?>
 <?php
     $categories = Mage::getModel('catalog/category')->load(Mage::registry('current_category')->getID())->getChildren();
-    $categoryIDs = explode(',',$categories);
-    ?>
-<nav role="navigation" id="bottomMenu" style="" class="show-for-small columns twelve">
-    <ul class="nav-bar" id="bottomNav">
-        <?php foreach($categoryIDs as $categoryID): ?>
-        <li>
-            <?php $category = Mage::getModel('catalog/category')->load($categoryID);?>
-            <a href="<?php echo $category->getUrl()?>">
-                <?php echo $category->getName()?>
-            </a>
-        </li>
-        <?php endforeach; ?>
-    </ul>
-</nav>
+    if (!empty($categories)):
+        $categoryIDs = explode(',',$categories);
+        ?>
+    <nav role="navigation" id="bottomMenu" style="" class="show-for-small columns twelve">
+        <ul class="nav-bar" id="bottomNav">
+            <?php foreach($categoryIDs as $categoryID): ?>
+            <li>
+                <?php $category = Mage::getModel('catalog/category')->load($categoryID);?>
+                <a href="<?php echo $category->getUrl()?>">
+                    <?php echo $category->getName()?>
+                </a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </nav>
+    <?php endif; ?>
 <?php else: ?>
 <nav role="navigation" id="bottomMenu" style="" class="show-for-small columns twelve">
     <?php $_helper = Mage::helper('catalog/category') ?>
