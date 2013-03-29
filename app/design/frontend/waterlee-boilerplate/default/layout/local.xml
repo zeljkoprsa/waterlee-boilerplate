@@ -49,24 +49,22 @@
 
     <!-- Add js/css globally -->
     <reference name="head">
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery-1.8.1.min.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/modernizr.foundation.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.topbar.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.mediaQueryToggle.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.navigation.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.alerts.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.buttons.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.forms.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.reveal.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.tooltips.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.orbit.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.accordion.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.tabs.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.foundation.tooltips.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.placeholder.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/jquery.isotope.min.js</name><params/></action>
-        <!-- press "m" to see device ratios, remove after development -->
-        <action method="addItem"><type>skin_js</type><name>js/foundation/app.js</name><params/></action>
+        <action method="setTitle" translate="title"><title>Magento Admin</title></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/modernizr.foundation.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.topbar.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.tooltips.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.reveal.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/responsive-tables.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/app.js</script></action>
+
+        <action method="addItem"><type>skin_css</type><name>css/normalize.css</name><params/></action>
+
+        <action method="addItem"><type>skin_css</type><name>css/styles.css</name><params/></action>
+        <action method="addItem"><type>skin_css</type><name>css/font-awesome.min.css</name><params/></action>
+        <action method="addItem"><type>skin_css</type><name>css/responsive-tables.css</name><params/></action>
+
+
     </reference>
     <!-- //Add js/css globally -->
 

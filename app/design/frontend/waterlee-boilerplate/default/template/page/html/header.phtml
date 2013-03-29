@@ -1,17 +1,17 @@
 <header class="row">
-            <?php if ($this->getIsHomePage()):?>
-            <h1 class="logo">
-                <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
-                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
-                </a>
-            </h1>
-            <?php else:?>
+    <div class="columns four">
+    <?php if ($this->getIsHomePage()):?>
+        <h1 class="logo">
             <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
-                <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
-            <?php endif?>
-
-             <?php echo $this->getChildHtml('topSearch') ?></li>
-                <a href="#"><span data-icon="&#x22;" aria-hidden="true" class="fs1"></span></a>
+                <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+            </a>
+        </h1>
+    <?php else:?>
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+    <?php endif?>
+    </div>
+    <div class="columns eight">
             <a href="<?php echo $this->getUrl('customer/account') ?>">My account</a>
             <?php if($this->helper('customer')->isLoggedIn()):   ?>
             <a href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
@@ -19,7 +19,7 @@
             <a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Log in') ?></a>
             <?php endif; ?>
             <?php echo $this->getChildHtml('store_currency_selector') ?>
-            <span data-icon="&#x28;" aria-hidden="true" class="fs1"></span>
+
             <?php
             $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
             $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
@@ -36,11 +36,25 @@
             <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
             <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
             <?php echo $this->getChildHtml('store_language') ?>
-</header>
 
-<nav class="top-bar">
-    <?php echo $this->getChildHtml('topMenu') ?>
-</nav>
+        <?php echo $this->getChildHtml('topSearch') ?>
+    </div>
+</header>
+<div class="row">
+    <div class="columns twelve">
+    <nav class="top-bar">
+        <ul>
+
+            <li class="toggle-topbar"><a href="#"></a></li>
+        </ul>
+        <section>
+            <ul class="left">
+        <?php echo $this->getChildHtml('topMenu') ?>
+            </ul>
+        </section>
+    </nav>
+    </div>
+</div>
 <div class="column">
 <ul class="show-for-small block-grid mobile-two-up">
     <li><a href="#sidebar" id="sidebarButton" class="sidebar-button button">Sidebar</a></li>

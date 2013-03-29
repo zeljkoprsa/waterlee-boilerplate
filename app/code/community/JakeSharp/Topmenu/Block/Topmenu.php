@@ -92,7 +92,7 @@ class JakeSharp_Topmenu_Block_Topmenu extends Mage_Page_Block_Html_Topmenu {
     protected function getHaseDropdown(Varien_Data_Tree_Node $item){
         if ($item->hasChildren()) {
             //return "";
-            return '<a href="#" id="custom-has-dropdown"></a>';
+            //return '<a href="#" id="custom-has-dropdown"></a>';
         }
     }
 
