@@ -31,10 +31,9 @@
  * @see Mage_Page_Block_Html_Topmenu
  */
 ?>
-<?php $_menu = $this->getHtml('level-top') ?>
+<?php $_menu = $this->getHtml('level-top', '') ?>
 <?php if($_menu): ?>
-    <ul id="nav" class="columns twelve" role="navigation">
+    <ul class="dropdown">
         <?php echo $_menu ?>
     </ul>
 <?php endif ?>
-

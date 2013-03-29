@@ -1,7 +1,26 @@
-<blocks>
-    <page>
-        <rewrite>
-            <html_topmenu>JakeSharp_Topmenu_Block_Topmenu</html_topmenu>
-        </rewrite>
-    </page>
-</blocks>
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <JakeSharp_Topmenu>
+            <version>1.0.0</version>
+            <depends>
+                <!-- no dependencies -->
+            </depends>
+        </JakeSharp_Topmenu>
+    </modules>
+
+    <global>
+
+        <blocks>
+            <page>
+                <rewrite>
+                    <html_topmenu>JakeSharp_Topmenu_Block_Topmenu</html_topmenu>
+                </rewrite>
+            </page>
+        </blocks>
+
+
+    </global>
+
+</config>
+
