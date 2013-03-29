@@ -1,0 +1,7 @@
+<blocks>
+    <page>
+        <rewrite>
+            <html_topmenu>JakeSharp_Topmenu_Block_Topmenu</html_topmenu>
+        </rewrite>
+    </page>
+</blocks>
