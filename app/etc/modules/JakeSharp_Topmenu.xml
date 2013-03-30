@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <JakeSharp_Topmenu>
+            <active>false</active>
+            <codePool>community</codePool>
+        </JakeSharp_Topmenu>
+    </modules>
+</config>
