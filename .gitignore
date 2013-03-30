@@ -99,6 +99,11 @@
 /.htaccess.sample
 /.idea/
 /api.php
-/app/etc/
+
 /media/
 /trt.html
+/app/etc/modules/Mage_Oauth.xml
+/app/etc/modules/Mage_CurrencySymbol.xml
+/app/etc/modules/Mage_Captcha.xml
+/app/etc/modules/Mage_Api2.xml
+/app/etc/local.xml

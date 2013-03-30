@@ -2,7 +2,7 @@
 <config>
     <modules>
         <JakeSharp_Topmenu>
-            <active>false</active>
+            <active>true</active>
             <codePool>community</codePool>
         </JakeSharp_Topmenu>
     </modules>
