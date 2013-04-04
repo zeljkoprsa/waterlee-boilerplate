@@ -37,14 +37,16 @@
             <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
             <?php echo $this->getChildHtml('store_language') ?>
 
-        <?php echo $this->getChildHtml('topSearch') ?>
+
     </div>
 </header>
 <div class="row">
     <div class="columns twelve">
     <nav class="top-bar">
         <ul>
-
+            <li class="name">
+                <?php echo $this->getChildHtml('topSearch') ?>
+            </li>
             <li class="toggle-topbar"><a href="#"></a></li>
         </ul>
         <section>
@@ -55,9 +57,4 @@
     </nav>
     </div>
 </div>
-<div class="column">
-<ul class="show-for-small block-grid mobile-two-up">
-    <li><a href="#sidebar" id="sidebarButton" class="sidebar-button button">Sidebar</a></li>
-    <li><a href="#bottomNav" id="menuButton" class="menu-button button">Shop</a></li>
-</ul>
-</div>
+
