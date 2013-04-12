@@ -1,0 +1,22 @@
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <waterleesection ranslate="title" module="waterlee">
+                                        <title>JakeSharp custom title</title>
+                                        <sort_order>100</sort_order>
+                                    </waterleesection>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
