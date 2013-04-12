@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <JakeSharp_Waterlee>
+            <active>true</active>
+            <codePool>community</codePool>
+        </JakeSharp_Waterlee>
+    </modules>
+</config>
