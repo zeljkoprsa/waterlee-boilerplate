@@ -3,6 +3,11 @@ class JakeSharp_Waterlee_Block_Topmenu extends Mage_Page_Block_Html_Topmenu {
 
     protected function _getHtml(Varien_Data_Tree_Node $menuTree, $childrenWrapClass)
     {
+
+        if (!Mage::helper('waterleehelper')->getIsActive()){
+            return parent::_getHtml($menuTree,$childrenWrapClass);
+        }
+
         $html = '';
 
         $children = $menuTree->getChildren();
@@ -61,6 +66,10 @@ class JakeSharp_Waterlee_Block_Topmenu extends Mage_Page_Block_Html_Topmenu {
 
     protected function _getMenuItemClasses(Varien_Data_Tree_Node $item)
     {
+        if (!Mage::helper('waterleehelper')->getIsActive()){
+            return parent::_getMenuItemClasses($item);
+        }
+
         $classes = array();
 
         $classes[] = 'level' . $item->getLevel();
@@ -87,13 +96,6 @@ class JakeSharp_Waterlee_Block_Topmenu extends Mage_Page_Block_Html_Topmenu {
         }
 
         return $classes;
-    }
-
-    protected function getHaseDropdown(Varien_Data_Tree_Node $item){
-        if ($item->hasChildren()) {
-            //return "";
-            //return '<a href="#" id="custom-has-dropdown"></a>';
-        }
     }
 
 
