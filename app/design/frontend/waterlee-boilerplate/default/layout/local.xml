@@ -228,6 +228,11 @@ Category layered navigation layout
     <reference name="head">
         <block type="catalog/product_view_description" name="facebook.og" as="facebook_og" template="catalog/product/view/fb-og.phtml" />
     </reference>
+
+    <reference name="content">
+        <block type="review/form" name="product.review.form" as="review_form"/>
+    </reference>
+
 </catalog_product_view>
 <customer_account>
     <reference name="customer_account_navigation">
