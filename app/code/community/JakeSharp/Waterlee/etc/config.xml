@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <JakeSharp_Topmenu>
+        <JakeSharp_Waterlee>
             <version>1.0.0</version>
             <depends>
                 <!-- no dependencies -->
             </depends>
-        </JakeSharp_Topmenu>
+        </JakeSharp_Waterlee>
     </modules>
 
     <global>
@@ -14,7 +14,7 @@
         <blocks>
             <page>
                 <rewrite>
-                    <html_topmenu>JakeSharp_Topmenu_Block_Topmenu</html_topmenu>
+                    <html_topmenu>JakeSharp_Waterlee_Block_Topmenu</html_topmenu>
                 </rewrite>
             </page>
         </blocks>
