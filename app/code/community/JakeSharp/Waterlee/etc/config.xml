@@ -19,6 +19,11 @@
             </page>
         </blocks>
 
+        <helpers>
+            <waterleehelper>
+                <class>JakeSharp_Waterlee_Helper</class>
+            </waterleehelper>
+        </helpers>
 
     </global>
 
