@@ -1,5 +1,5 @@
 <header class="row">
-    <div class="columns four">
+    <div class="columns two">
     <?php if ($this->getIsHomePage()):?>
         <h1 class="logo">
             <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
@@ -11,33 +11,53 @@
             <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
     <?php endif?>
     </div>
-    <div class="columns eight">
-            <a href="<?php echo $this->getUrl('customer/account') ?>">My account</a>
-            <?php if($this->helper('customer')->isLoggedIn()):   ?>
-            <a href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
-            <?php else: ?>
-            <a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Log in') ?></a>
-            <?php endif; ?>
-            <?php echo $this->getChildHtml('store_currency_selector') ?>
+    <div class="columns ten">
+        <div class="row">
+        <div class="columns four">
+            <?php echo $this->getChildHtml('topSearch') ?>
+        </div>
 
-            <?php
-            $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
-            $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
-            ?>
-            <?php if($count == 0):?>
-            <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('0 Items', $count) ?></a>
-            <?php endif; ?>
-            <?php if($count == 1):?>
-            <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('1 Item', $count) ?></a>
-            <?php endif; ?>
-            <?php if($count >= 2):?>
-            <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('%s Items', $count) ?></a>
-            <?php endif; ?>
-            <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
-            <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
-            <?php echo $this->getChildHtml('store_language') ?>
+            <div class="columns three">
 
 
+
+                <?php
+                $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
+                $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
+                ?>
+                <?php if($count == 0):?>
+                    <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('0 Items', $count) ?></a>
+                <?php endif; ?>
+                <?php if($count == 1):?>
+                    <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('1 Item', $count) ?></a>
+                <?php endif; ?>
+                <?php if($count >= 2):?>
+                    <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('%s Items', $count) ?></a>
+                <?php endif; ?>
+                <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
+                <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
+
+            </div>
+            <div class="columns three">
+                <ul class="nav-bar">
+                    <li class="has-flyout">
+                        <a href="<?php echo $this->getUrl('customer/account') ?>">My account</a>
+                        <a href="#" class="flyout-toggle"><span> </span></a>
+                        <ul class="flyout">
+                            <li>
+                                <?php if($this->helper('customer')->isLoggedIn()):   ?>
+                                    <a href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
+                                <?php else: ?>
+                                    <a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Log in') ?></a>
+                                <?php endif; ?>
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
     </div>
 </header>
 <div class="row">
@@ -45,7 +65,7 @@
     <nav class="top-bar">
         <ul>
             <li class="name">
-                <?php echo $this->getChildHtml('topSearch') ?>
+
             </li>
             <li class="toggle-topbar"><a href="#"></a></li>
         </ul>
