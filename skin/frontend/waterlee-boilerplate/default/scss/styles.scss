@@ -43,7 +43,7 @@
 // Control which common styles get compiled
 
 @import "foundation/common/typography";
-//@import "foundation/common/forms";
+@import "foundation/common/forms";
 
 // Control which components you get if customizing
 
@@ -62,8 +62,10 @@
 @import "foundation/components/modules/mqueries";
 
 // Magento UI elements
-
 @import "magento/common/ui";
+
+// Font Awesome
+@import "font-awesome";
 
 /* --------------------------------------------------
    Table of Contents
@@ -186,16 +188,10 @@ h1.logo { margin-bottom: 0; }
   font-weight: 600;
 }
 .short-description{font-size: 14px; line-height: 1.4;}
-.short-description br{
-  display: none;
-}
 
 
-.product-options dt label{ line-height: 23px;
-}
 
 #product-options-wrapper {
-
   box-shadow: #F6F6F6 1px 1px 1px;
   border: 1px solid #E8E8E8;
   padding: 12px 12px 0px 12px;
