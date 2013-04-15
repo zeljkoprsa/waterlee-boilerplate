@@ -59,10 +59,7 @@
         <action method="addItem"><type>skin_js</type><script>js/foundation/responsive-tables.js</script></action>
         <action method="addItem"><type>skin_js</type><script>js/foundation/app.js</script></action>
 
-        <action method="addItem"><type>skin_css</type><name>css/normalize.css</name><params/></action>
-
         <action method="addItem"><type>skin_css</type><name>css/styles.css</name><params/></action>
-        <action method="addItem"><type>skin_css</type><name>css/font-awesome.min.css</name><params/></action>
         <action method="addItem"><type>skin_css</type><name>css/responsive-tables.css</name><params/></action>
 
 
