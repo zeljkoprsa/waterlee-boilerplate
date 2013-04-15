@@ -107,6 +107,26 @@ figure {
   margin: 0;
 }
 
+.video-embed {
+  position: relative;
+  padding-bottom: 54%;
+  /* 16/9 ratio */
+  padding-top: 30px;
+  /* IE6 workaround*/
+  height: 0;
+  overflow: hidden;
+}
+
+.video-embed iframe,
+.video-embed object,
+.video-embed embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* The Grid ---------------------- */
 .row {
   width: 1000px;
@@ -4948,56 +4968,12 @@ table.hide-for-medium {
     margin: 0;
   }
 }
-/* --------------------------------------------------
-   Table of Contents
------------------------------------------------------
-:: Header
-
-:: Footer
-
-:: Top Navigation
-
-:: Product Page
-:::: Simple Product
-:::: Simple Product with options
-:::: Configurable product
-:::: Grouped product
-:::: Downloadable product
-
-:: Catalog Page
-    :::: Grid View
-    :::: List View
-    :::::::: Toolbar | Pagination | Sort by
-    :::::::: Prices
-    :::::::: Layer Navigation
-    :::::::: Sidebar Blocks
-    :::: Compare Products
-:: Cart Page
-
-:: Checkout
-
-
-:: Success Page
-:::: Print Receipt Page
-
-:: My Account
-
-*/
-body {
-  background: url("../images/cream_dust.png") repeat scroll 0 0;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.sidebar ol {
-  list-style-type: none;
-  margin-left: 0;
-}
-
 .required em {
   color: #c00000;
   padding-right: 3px;
 }
 
+/* Messages */
 ul.messages li, ul.messages {
   margin-bottom: 0;
   border-bottom: 2px solid #DDDDDD;
@@ -5041,32 +5017,44 @@ ul.messages .error-msg li {
   text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
 }
 
-a {
-  color: #27a2e1;
-}
+/* --------------------------------------------------
+   Table of Contents
+-----------------------------------------------------
+:: Header
 
-a:hover {
-  text-decoration: underline;
-}
+:: Footer
 
-h1, h2, h3, h4, h5, h6 {
-  color: #444;
-  font-weight: normal;
-  line-height: 1.25;
-}
+:: Top Navigation
 
-h2 {
-  font-size: 22px;
-  font-size: 2.2rem;
-  margin-bottom: 9px;
-}
+:: Product Page
+:::: Simple Product
+:::: Simple Product with options
+:::: Configurable product
+:::: Grouped product
+:::: Downloadable product
 
-strong, b {
-  font-weight: 600;
-}
+:: Catalog Page
+    :::: Grid View
+    :::: List View
+    :::::::: Toolbar | Pagination | Sort by
+    :::::::: Prices
+    :::::::: Layer Navigation
+    :::::::: Sidebar Blocks
+    :::: Compare Products
+:: Cart Page
 
-form label {
-  margin-bottom: 0;
+:: Checkout
+
+
+:: Success Page
+:::: Print Receipt Page
+
+:: My Account
+
+*/
+body {
+  background: url("../images/cream_dust.png") repeat scroll 0 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* -----------------------------------------
@@ -5084,151 +5072,19 @@ header .notice {
   color: #666;
 }
 
-.store-select label {
-  display: none;
-}
-
-header .form-language label {
-  display: none;
-}
-
 h1.logo {
   margin-bottom: 0;
 }
 
-.top-promo {
-  float: right;
-  border: none;
-  border-right: 1px solid #b7b7b7;
-  padding-right: 5px;
-}
-
-.utilities {
-  padding: 12px;
-  background: #fff;
-}
-
 /* Main nav  */
 /* Top Search */
-#search_mini_form {
-  margin: 6px 12px 0 0;
-}
-
-#search_mini_form input#search {
-  width: 100%;
-  float: left;
-  box-shadow: #F6F6F6 1px 1px 1px;
-  border: 1px solid #E8E8E8;
-}
-
-#search_mini_form button[type=submit], #search_mini_form label {
-  display: none;
-}
-
-/* Top Navigation */
-header .links li {
-  margin-right: 0.8rem;
-}
-
-header .links li.last {
-  margin-right: 0;
-}
-
-nav {
-  padding: 0;
-  float: left;
-  width: 80%;
-  position: relative;
-  top: 3px;
-}
-
-.quick-access ul li, header .links li, .breadcrumbs li, .limiter li, .pages li {
-  float: left;
-}
-
-#mobi-nav nav {
-  border: 0 none;
-}
-
-#mobi-nav ul li .level0 {
-  display: none;
-}
-
-#wub-wub-nav {
-  padding-top: 12px;
-  clear: both;
-  display: block;
-  margin-bottom: 0;
-}
-
-ul.tabs-content > li.level-top {
-  display: block;
-}
-
-ul.tabs-content > li.level-top a {
-  display: block;
-  padding: 5px;
-}
-
-ul.tabs-content .level0 a.level-top {
-  background: #efefef;
-  padding: 10px;
-  margin: 0;
-}
-
-.super-header.row.show-on-phones .top-links {
-  width: 48%;
-  float: left;
-}
-
-.super-header.row.show-on-phones .store-select {
-  width: 21%;
-  float: right;
-}
-
 /* Page */
-ul, ol {
-  list-style-type: none;
-}
-
 /* -----------------------------------------
    Footer
 ----------------------------------------- */
-/*.footer-container { border-top: solid 1px #EEE;padding-top: 12px; }*/
-.footer ul {
-  float: left;
-  margin-bottom: 0;
-}
-
-.footer ul li {
-  float: left;
-  margin-right: 1rem;
-  margin-bottom: 0;
-}
-
 /* -----------------------------------------
    Home Page
 ----------------------------------------- */
-.video-embed {
-  position: relative;
-  padding-bottom: 54%;
-  /* 16/9 ratio */
-  padding-top: 30px;
-  /* IE6 workaround*/
-  height: 0;
-  overflow: hidden;
-}
-
-.video-embed iframe,
-.video-embed object,
-.video-embed embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 /* -----------------------------------------
    Page
 ----------------------------------------- */
