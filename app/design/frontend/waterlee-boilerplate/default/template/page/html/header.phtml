@@ -13,18 +13,19 @@
     </div>
     <div class="columns ten">
         <div class="row">
-        <div class="columns four">
+        <div class="columns six">
             <?php echo $this->getChildHtml('topSearch') ?>
         </div>
 
             <div class="columns three">
 
-
+            <i class="icon-shopping-cart"></i>
 
                 <?php
                 $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
                 $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
                 ?>
+
                 <?php if($count == 0):?>
                     <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('0 Items', $count) ?></a>
                 <?php endif; ?>
@@ -43,7 +44,7 @@
                     <li class="has-flyout">
                         <a href="<?php echo $this->getUrl('customer/account') ?>">My account</a>
                         <a href="#" class="flyout-toggle"><span> </span></a>
-                        <ul class="flyout">
+                        <ul class="flyout small left">
                             <li>
                                 <?php if($this->helper('customer')->isLoggedIn()):   ?>
                                     <a href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
