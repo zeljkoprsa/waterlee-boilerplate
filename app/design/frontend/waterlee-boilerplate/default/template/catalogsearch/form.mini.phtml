@@ -28,7 +28,9 @@
     <div class="form-search">
         <label for="search" class="radius label"><?php echo $this->__('Search:') ?></label>
         <input id="search" type="text" name="<?php echo $this->helper('catalogsearch')->getQueryParamName() ?>" value="<?php echo $this->helper('catalogsearch')->getEscapedQueryText() ?>" class="input-text" />
-        <button type="submit" title="<?php echo $this->__('Search') ?>" class="nice small radius blue button"><?php echo $this->__('Search') ?></button>
+        <button type="submit" title="<?php echo $this->__('Search') ?>" class="nice small radius blue button">
+        <i class="icon-search"></i>
+        </button>
         <div id="search_autocomplete" class="search-autocomplete"></div>
         <script type="text/javascript">
         //<![CDATA[
