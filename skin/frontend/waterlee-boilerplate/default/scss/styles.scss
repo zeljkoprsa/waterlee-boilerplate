@@ -5,6 +5,7 @@
  To look at water, to grasp its rhythm and feel its flow, is to be calmed.
 
 	by Levi Asher
+
 */
 
 
@@ -103,23 +104,94 @@
 
 */
 
-body{ background: url("../images/cream_dust.png") repeat scroll 0 0; font-family: 'Open Sans', sans-serif;}
-
-
+body{ background: url("../images/subtle_dots.png") repeat scroll 0 0; font-family: 'Open Sans', sans-serif;}
 
 
 /* -----------------------------------------
    Header
 ----------------------------------------- */
 /* Header Elements*/
-header {position: relative;}
-header .notice {position: absolute; left: 300px; top: 30px; color: #666;}
-h1.logo { margin-bottom: 0; }
+
+.super-header{
+  @include outerRow();
+
+}
+.site-header {
+  @include outerRow();
+  padding: 1em 0 1em 0;
+  background: $siteBackground;
+  @include box-shadow(0 -3px -2px rgba(0, 143, 255, 0.04));
+  border-top: 1px solid #A9D9FF;
+}
+.site-language{
+  @include column(1,collapse);
+  padding: 1em 0;
+  float: right;
+}
+.site-language label{
+  display: none;
+}
+.site-account{
+  @include column(1,collapse);
+  float: right;
+}
+
+
+.site-header .notice {
+  position: absolute;
+  left: 300px;
+  top: 30px;
+  color: #666;
+}
+
+.site-identity{
+  @include column(3);
+}
+
+.site-cart{
+  @include column(4);
+  text-align: right;
+}
+
+
 /* Main nav  */
-/* Top Search */
 
+.site-nav{
+  @include outerRow();
+  background: lighten(#000, 94%);
+}
+
+/* Site Search */
+
+.site-search{
+  @include column(5, collapse);
+  font-size: ms(0);
+
+}
+.site-search form{
+  margin: 0.8em 0 0 0;
+}
 /* Page */
+.site-breadcrumbs{
+  @include outerRow();
+  background: $siteBackground;
+}
+.site-breadcrumbs .breadcrumbs{
+  @include column(12);
+}
 
+.main-container{
+  @include outerRow();
+  background: $siteBackground;
+}
+.site-footer{
+  @include outerRow();
+  background: $siteBackground;
+}
+
+.site-footer footer{
+  @include column(12);
+}
 
 /* -----------------------------------------
    Footer
@@ -133,10 +205,6 @@ h1.logo { margin-bottom: 0; }
 /* -----------------------------------------
    Page
 ----------------------------------------- */
-.page{padding-bottom: 20px; }
-#inner-wrapper          { margin-top: 16px; }
-.page-title h1          {font-size: 24px;color: #444;font-weight: normal;margin: 0;padding: 0; margin: 24px 0;}
-
 /* -----------------------------------------
    Product Page
 ----------------------------------------- */
@@ -254,7 +322,7 @@ h1.logo { margin-bottom: 0; }
 }
 /* Temporary */ form.custom div.custom.dropdown{display: inline-block;}
 /* Ze Blocks */
-#sidebar .block{padding: 4px 12px 6px 12px;}
+#sidebar .block{}
 .block-title{margin: 0 0 6px 0 ;}
 
 .block-cart .block-subtitle{margin:12px 0 0 0 ;}
