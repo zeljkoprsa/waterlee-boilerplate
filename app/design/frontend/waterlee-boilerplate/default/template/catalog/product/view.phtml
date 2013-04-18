@@ -52,17 +52,18 @@
 <div class="product-view columns twelve">
 
     <div class="product-essential row">
-        <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
-            <div class="no-display">
-                <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
-                <input type="hidden" name="related_product" id="related-products-field" value="" />
-            </div>
 
-            <div class="product-img-box columns six">
-                <?php echo $this->getChildHtml('media') ?>
-                <?php echo $this->getChildHtml('product_review') ?>
-            </div>
-            <div class="product-shop columns six">
+        <div class="product-img-box columns six">
+            <?php echo $this->getChildHtml('media') ?>
+            <?php echo $this->getChildHtml('product_review') ?>
+        </div>
+
+        <div class="product-shop columns six">
+            <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+                <div class="no-display">
+                    <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+                    <input type="hidden" name="related_product" id="related-products-field" value="" />
+                </div>
 
                 <div class="product-name row">
                     <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
@@ -114,11 +115,10 @@
                     <?php echo $html; ?>
                 </div>
                 <?php endforeach;?>
+            </form>
 
+        </div>
 
-
-            </div>
-        </form>
         <script type="text/javascript">
             //<![CDATA[
             var productAddToCartForm = new VarienForm('product_addtocart_form');
