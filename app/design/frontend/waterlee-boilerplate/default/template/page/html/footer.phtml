@@ -25,14 +25,11 @@
  */
 ?>
 
-<div class="footer-container row">
-
+<div class="site-footer">
     <?php echo $this->getChildHtml("mobile.menu.footer") ?>
-
-    <div class="footer columns twelve">
+    <footer>
         <?php echo $this->getChildHtml("footer.newsletter") ?>
-    </div>
-    <hr />
-    <address class="columns twelve"><?php echo $this->getCopyright() ?></address>
-
+        <hr />
+        <address><?php echo $this->getCopyright() ?></address>
+    </footer>
 </div>
