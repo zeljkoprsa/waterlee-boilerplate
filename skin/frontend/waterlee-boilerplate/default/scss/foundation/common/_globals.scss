@@ -33,3 +33,8 @@
 
   /* Reset for strange margins by default on <figure> elements */
   figure { margin: 0; }
+
+.video-embed   {position: relative; padding-bottom: 54%; /* 16/9 ratio */ padding-top: 30px; /* IE6 workaround*/ height: 0; overflow: hidden;}
+.video-embed iframe,
+.video-embed object,
+.video-embed embed { position: absolute; top: 0; left: 0;width: 100%;height: 100%;}

@@ -25,16 +25,23 @@
  */
 ?>
 <form id="search_mini_form" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get">
-    <div class="form-search">
-        <label for="search" class="radius label"><?php echo $this->__('Search:') ?></label>
+
+<div class="row collapse form-search">
+    <div class="four mobile-three columns">
         <input id="search" type="text" name="<?php echo $this->helper('catalogsearch')->getQueryParamName() ?>" value="<?php echo $this->helper('catalogsearch')->getEscapedQueryText() ?>" class="input-text" />
-        <button type="submit" title="<?php echo $this->__('Search') ?>" class="nice small radius blue button"><?php echo $this->__('Search') ?></button>
-        <div id="search_autocomplete" class="search-autocomplete"></div>
-        <script type="text/javascript">
-        //<![CDATA[
-            var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?php echo $this->__('Find me some...') ?>');
-            searchForm.initAutocomplete('<?php echo $this->helper('catalogsearch')->getSuggestUrl() ?>', 'search_autocomplete');
-        //]]>
-        </script>
     </div>
+    <div class="one mobile-one columns">
+        <button type="submit" title="<?php echo $this->__('Search') ?>" class="button expand postfix">
+            <i class="icon-search"></i>
+        </button>
+    </div>
+    <div id="search_autocomplete" class="search-autocomplete"></div>
+    <script type="text/javascript">
+        //<![CDATA[
+        var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?php echo $this->__('Find me some...') ?>');
+        searchForm.initAutocomplete('<?php echo $this->helper('catalogsearch')->getSuggestUrl() ?>', 'search_autocomplete');
+        //]]>
+    </script>
+
+</div>
 </form>

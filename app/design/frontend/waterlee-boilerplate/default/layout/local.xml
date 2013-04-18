@@ -53,15 +53,14 @@
         <action method="addItem"><type>skin_js</type><script>js/foundation/modernizr.foundation.js</script></action>
         <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.js</script></action>
         <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.topbar.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.navigation.js</script></action>
         <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.tooltips.js</script></action>
         <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.reveal.js</script></action>
         <action method="addItem"><type>skin_js</type><script>js/foundation/responsive-tables.js</script></action>
         <action method="addItem"><type>skin_js</type><script>js/foundation/app.js</script></action>
 
         <action method="addItem"><type>skin_css</type><name>css/normalize.css</name><params/></action>
-
         <action method="addItem"><type>skin_css</type><name>css/styles.css</name><params/></action>
-        <action method="addItem"><type>skin_css</type><name>css/font-awesome.min.css</name><params/></action>
         <action method="addItem"><type>skin_css</type><name>css/responsive-tables.css</name><params/></action>
 
 
@@ -124,11 +123,11 @@
         <!-- //Add Footer Links -->
 
         <!-- Remove 'Site Map' Link -->
-        <action method="removeLinkByUrl"><url helper="catalog/map/getCategoryUrl" /></action>
+        <!--<action method="removeLinkByUrl"><url helper="catalog/map/getCategoryUrl" /></action>-->
         <!-- Remove 'Search Terms' Link -->
-        <action method="removeLinkByUrl"><url helper="catalogsearch/getSearchTermUrl" /></action>
+        <!--<action method="removeLinkByUrl"><url helper="catalogsearch/getSearchTermUrl" /></action>-->
         <!-- Remove 'Advanced Search' -->
-        <action method="removeLinkByUrl"><url helper="catalogsearch/getAdvancedSearchUrl" /></action>
+        <!--<action method="removeLinkByUrl"><url helper="catalogsearch/getAdvancedSearchUrl" /></action>-->
 
     </reference>
 
@@ -139,10 +138,12 @@
 to add your custom and inline links.  I use the 'unsetChild' method as often as
 possible as opposed using the more final <remove name="cms_footer_links"/>
 just in case I want to add the block somewhere else -->
-        <action method="unsetChild"><name>cms_footer_links</name></action>
+
+        <!--<action method="unsetChild"><name>cms_footer_links</name></action>-->
+
         <!-- Remove all the other Magento links - "Site Map, Search Terms, Advanced Search, and
       Contact Us" -->
-        <action method="unsetChild"><name>footer_links</name></action> <!-- Magento 1.4.x -->
+        <!--<action method="unsetChild"><name>footer_links</name></action> &lt;!&ndash; Magento 1.4.x &ndash;&gt;-->
         <block type="newsletter/subscribe" after="-" name="footer.newsletter" template="newsletter/subscribe.phtml"/>
         <block type="core/template" name="mobile.menu.footer" template="page/mobile-menu-footer.phtml"/>
     </reference>

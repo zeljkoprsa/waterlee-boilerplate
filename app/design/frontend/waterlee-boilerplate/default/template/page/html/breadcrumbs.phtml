@@ -25,8 +25,8 @@
  */
 ?>
 <?php if($crumbs && is_array($crumbs)): ?>
-<div class="row">
-    <ul class="breadcrumbs columns twelve">
+<div class="site-breadcrumbs">
+    <ul class="breadcrumbs">
         <?php foreach($crumbs as $_crumbName=>$_crumbInfo): ?>
         <li class="<?php echo $_crumbName ?>">
             <?php if($_crumbInfo['link']): ?>

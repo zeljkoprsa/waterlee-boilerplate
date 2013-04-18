@@ -3,11 +3,12 @@
 
 // Grid Settings
 
-//$rowWidth: 100%;
-//$columnGutter: 60px;
+$rowWidth: 1000px;
+//$columnGutter: 30px;
 //$totalColumns: 12;
-// $mobileTotalColumns: 4;
-// $blockGridElements: 12; // Highest number of block grid elements, Maximum of 24 supported
+//$mobileTotalColumns: 4;
+//$blockGridElements: 12; // Highest number of block grid elements, Maximum of 24 supported
+
 
 // Colors Settings
 
@@ -22,7 +23,7 @@ $mainColor: #4183c4;
 // $white: #fff;
 // $shinyEdge: rgba(#fff, .5);
 // $darkEdge: rgba(#000, .2);
-
+   $siteBackground: #fff;
 
 // Typography Settings
 
@@ -90,32 +91,33 @@ $fontSmoothing: antialiased;
 
 // Nav Bar Settings
 
-// $navBarHeight: 40px;
+   $navBarHeight: 30px;
 // $navFlyoutBaseWidth: 250px;
+   $navBarMarginTop: 1em;
 
 // Top Bar Settings
 
-$topBarBgColor: #fff;
+$topBarBgColor: lighten(#000, 98%);
 $topBarHeight: 37px;
 //$topBarHeightMobile: 37px;
-$topBarBtmMargin: 30px;
+$topBarBtmMargin: 0;
 // $topBarTitleWeight: bold;
 // $topBarTitleSize: 17px;
 $topBarLinkColor: $mainColor;
 //$topBarLinkWeight: 500;
 //$topBarLinkSize: 14px;
-//$topBarDropBgColor: rgba(243, 243, 243, 0.91);
-//$topBarDropLinkColor: $mainColor;
+$topBarDropBgColor: lighten(#000, 98%);
+   $topBarDropLinkColor: $mainColor;
 // $topBarDropToggleSize: 5px;
-//$topBarDropToggleColor: $mainColor;
-// $topBarDropToggleAlpha: 0.5;
-//$topBarSearchWidth: 400px;
+   $topBarDropToggleColor: $mainColor;
+   $topBarDropToggleAlpha: 0.5;
+// $topBarSearchWidth: 400px;
 // $topBarLoginWidth: 300px;
 // $topBarLoginButtonWidth: 60px;
 // $topBarLoginInputWidth: ($topBarLoginWidth - $topBarLoginButtonWidth) / 2;
 // $topBarBreakPoint: 940px; // Change to 9999px for always mobile layout
 // $topBarNavToggleSize: 8px;
-//$topBarNavToggleColor: $mainColor;
+   $topBarNavToggleColor: $mainColor;
 
 // UI Settings
 

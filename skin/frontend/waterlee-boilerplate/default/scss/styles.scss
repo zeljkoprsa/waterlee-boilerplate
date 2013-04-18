@@ -5,6 +5,7 @@
  To look at water, to grasp its rhythm and feel its flow, is to be calmed.
 
 	by Levi Asher
+
 */
 
 
@@ -12,7 +13,7 @@
 @import "settings";
 
 // Comment out this import if you are customizing you imports below
-//@import "foundation";
+// @import "foundation";
 
 // ----------------------------------------
 // Import specific parts of Foundation by commenting the import "foundation"
@@ -43,7 +44,7 @@
 // Control which common styles get compiled
 
 @import "foundation/common/typography";
-//@import "foundation/common/forms";
+@import "foundation/common/forms";
 
 // Control which components you get if customizing
 
@@ -61,8 +62,11 @@
 // Media Queries Overrides
 @import "foundation/components/modules/mqueries";
 
+// Magento UI elements
+@import "magento/common/ui";
 
-
+// Font Awesome
+@import "font-awesome";
 
 /* --------------------------------------------------
    Table of Contents
@@ -100,119 +104,107 @@
 
 */
 
-body{ background: url("../images/cream_dust.png") repeat scroll 0 0; font-family: 'Open Sans', sans-serif;}
+body{ background: url("../images/subtle_dots.png") repeat scroll 0 0; font-family: 'Open Sans', sans-serif;}
 
-.sidebar ol{ list-style-type: none; margin-left: 0 }
-.required em{color: #c00000; padding-right: 3px}
-ul.messages li, ul.messages {margin-bottom: 0;  border-bottom: 2px solid #DDDDDD;
-  border-radius: 0 0 0 0;
-  box-shadow: 0 0 6px inherit;
-  margin-bottom: 0;}
-.success-msg{}
-ul.messages li{ display: block; padding:0; font-weight: bold; font-size: 13px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; text-shadow: 0 1px rgba(255,255,255,0.9); position: relative; }
-ul.messages li li {border-radius: 0;padding: 10px 12px}
-ul.messages .success-msg li{ background-color: #7fae00; color: #fff; text-shadow: 0 -1px rgba(0,0,0,0.3); }
-ul.messages .notice-msg li{ background-color: #C76711; color: #fff; text-shadow: 0 -1px rgba(0,0,0,0.3); }
-ul.messages .error-msg li{ background-color: #c00000; color: #fff; text-shadow: 0 -1px rgba(0,0,0,0.3); }
-
-a {color: #27a2e1}
-a:hover {text-decoration: underline;}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #444;
-  font-weight: normal;
-  line-height: 1.25;
-}
-h2 {
-  font-size: 22px;
-  font-size: 2.2rem;
-  margin-bottom: 9px;
-}
-strong, b{font-weight: 600}
-form label{margin-bottom: 0}
 
 /* -----------------------------------------
    Header
 ----------------------------------------- */
 /* Header Elements*/
-header {position: relative;}
-header .notice {position: absolute; left: 300px; top: 30px; color: #666;}
+
+.super-header{
+  @include outerRow();
+
+}
+.site-header {
+  @include outerRow();
+  padding: 1em 0 1em 0;
+  background: $siteBackground;
+  @include box-shadow(0 -3px -2px rgba(0, 143, 255, 0.04));
+  border-top: 1px solid #A9D9FF;
+}
+.site-language{
+  @include column(1,collapse);
+  padding: 1em 0;
+  float: right;
+}
+.site-language label{
+  display: none;
+}
+.site-account{
+  @include column(1,collapse);
+  float: right;
+}
 
 
-.store-select label{ display: none; }
-header .form-language label{display: none;}
-h1.logo { margin-bottom: 0; }
-.top-promo {float: right; border: none;border-right: 1px solid #b7b7b7; padding-right:5px;  }
+.site-header .notice {
+  position: absolute;
+  left: 300px;
+  top: 30px;
+  color: #666;
+}
 
-.utilities                        { padding: 12px; background: #fff; }
+.site-identity{
+  @include column(3);
+}
+
+.site-cart{
+  @include column(4);
+  text-align: right;
+}
+
+
 /* Main nav  */
-/* Top Search */
 
-#search_mini_form{margin: 6px 12px 0 0;}
-#search_mini_form input#search{ width: 100%;float: left;box-shadow: #F6F6F6 1px 1px 1px;border: 1px solid #E8E8E8; }
-#search_mini_form button[type=submit], #search_mini_form label {display:none;}
+.site-nav{
+  @include outerRow();
+  background: lighten(#000, 94%);
+}
 
-/* Top Navigation */
-.nav-search{}
-header .links li { margin-right: 0.8rem;}
-header .links li.last { margin-right: 0;}
+/* Site Search */
 
-nav { padding: 0;float:left;width:80%;position: relative;top: 3px;}
+.site-search{
+  @include column(5, collapse);
+  font-size: ms(0);
 
-.quick-access ul li, header .links li, .breadcrumbs li, .limiter li, .pages li{ float:left;}
-#mobi-nav nav {border:0 none;}
-#mobi-nav ul li .level0 {display: none;}
-#wub-wub-nav{padding-top: 12px;
-  clear: both;
-  display: block;
-  margin-bottom: 0;}
-
-ul.tabs-content > li.level-top {display: block;}
-ul.tabs-content > li.level-top a{display: block;padding:5px;}
-
-ul.tabs-content .level0 a.level-top{background: #efefef;padding: 10px; margin: 0 }
-.super-header.row.show-on-phones .top-links{width: 48%; float: left;}
-.super-header.row.show-on-phones .store-select{width: 21%;float: right;}
-
+}
+.site-search form{
+  margin: 0.8em 0 0 0;
+}
 /* Page */
+.site-breadcrumbs{
+  @include outerRow();
+  background: $siteBackground;
+}
+.site-breadcrumbs .breadcrumbs{
+  @include column(12);
+}
 
+.main-container{
+  @include outerRow();
+  background: $siteBackground;
+}
+.site-footer{
+  @include outerRow();
+  background: $siteBackground;
+}
 
-ul, ol{list-style-type: none;}
+.site-footer footer{
+  @include column(12);
+}
 
 /* -----------------------------------------
    Footer
 ----------------------------------------- */
-/*.footer-container { border-top: solid 1px #EEE;padding-top: 12px; }*/
-.footer ul { float:left;margin-bottom: 0; }
-.footer ul li{ float:left;margin-right: 1rem;margin-bottom: 0; }
+
 
 /* -----------------------------------------
    Home Page
 ----------------------------------------- */
 
-.video-embed{
-  position: relative;
-  padding-bottom: 54%; /* 16/9 ratio */
-  padding-top: 30px; /* IE6 workaround*/
-  height: 0;
-  overflow: hidden;
-}
-.video-embed iframe,
-.video-embed object,
-.video-embed embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 /* -----------------------------------------
    Page
 ----------------------------------------- */
-.page{padding-bottom: 20px; }
-#inner-wrapper          { margin-top: 16px; }
-.page-title h1          {font-size: 24px;color: #444;font-weight: normal;margin: 0;padding: 0; margin: 24px 0;}
-
 /* -----------------------------------------
    Product Page
 ----------------------------------------- */
@@ -264,16 +256,10 @@ ul, ol{list-style-type: none;}
   font-weight: 600;
 }
 .short-description{font-size: 14px; line-height: 1.4;}
-.short-description br{
-  display: none;
-}
 
 
-.product-options dt label{ line-height: 23px;
-}
 
 #product-options-wrapper {
-
   box-shadow: #F6F6F6 1px 1px 1px;
   border: 1px solid #E8E8E8;
   padding: 12px 12px 0px 12px;
@@ -336,7 +322,7 @@ ul, ol{list-style-type: none;}
 }
 /* Temporary */ form.custom div.custom.dropdown{display: inline-block;}
 /* Ze Blocks */
-#sidebar .block{padding: 4px 12px 6px 12px;}
+#sidebar .block{}
 .block-title{margin: 0 0 6px 0 ;}
 
 .block-cart .block-subtitle{margin:12px 0 0 0 ;}
