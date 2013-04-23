@@ -1,0 +1,35 @@
+
+#shopping-cart-table .product-name, .cart-collaterals h2{font-size: 16px;margin-bottom: 0}
+#shopping-cart-table {border-spacing: 0;empty-cells: show;font-size: 100%;border-radius: 0; border-collapse: separate;
+}
+.cart-collaterals .product-name{font-size: 14px;}
+#shopping-cart-table, #shopping-cart-totals-table {width: 100%; }
+#shopping-cart-table tbody tr td{vertical-align: middle;}
+#shopping-cart-table thead tr th{padding: 8px 0; text-align: left;}
+#shopping-cart-table thead tr th.a-center{padding: 8px 0; text-align: center;}
+#shopping-cart-table tbody tr td.cart-image{width: 90px}
+#shopping-cart-table tbody tr td.cart-name{}
+#shopping-cart-table tbody tr td .product-image{display: block;float: left }
+#shopping-cart-table tbody tr td .product-name{display: block;float: left }
+.cart-table td {
+  padding: 10px;
+}
+#shopping-cart-table .item-options{
+  clear: both;
+}
+form fieldset {padding: 0;border: none;}
+
+
+.coupon.shipping h2 {font-size: 16px;}
+
+.checkout-types{
+  text-align: right;
+}
+
+.cart-collaterals{
+  border-top: 1px dashed #efefef;
+  padding-top: 12px;
+  margin-top: 8px;
+}
+.cart-collaterals h2{margin-bottom: 12px;
+}

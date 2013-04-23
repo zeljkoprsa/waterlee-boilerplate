@@ -10,3 +10,141 @@
     :::: Compare Products
 
 */
+
+.toolbar, .toolbar-bottom   	{clear:both;}
+.sorter												{padding-bottom: 6px;}
+.sorter form, .pager form{margin: 0}
+.page-title.category-title h1	{font-size: 1.8em;font-weight: 600;margin: 0;  }
+
+.price-box                  {}
+.price-box p                {margin-bottom: 2px}
+
+.minimal-price-link         {  background: #efefef; font-size: 11px; padding: 2px 4px; line-height: 14px }
+.col-main nine columns			{	width: 71.9%;}
+.add-to-links               {margin:12px 0;}
+.add-to-links li            {margin: 0 4px 0 0; float: left;}
+
+.ratings {font-size: 11px;line-height: 1.25;margin: 7px 0;}
+.rating-box {
+  width: 69px;
+  height: 13px;
+  font-size: 0;
+  line-height: 0;
+  background: url(../images/bkg_rating.gif) 0 0 repeat-x;
+  text-indent: -999em;
+  overflow: hidden;
+  float: left;
+  margin-right: 3px;
+  margin-top: 4px;
+}
+.rating-box .rating {
+  float: left;
+  height: 13px;
+  background: url(../images/bkg_rating.gif) 0 100% repeat-x;
+}
+
+/* Temporary */ form.custom div.custom.dropdown{display: inline-block;}
+/* Ze Blocks */
+#sidebar .block{}
+.block-title{margin: 0 0 6px 0 ;}
+
+.block-cart .block-subtitle{margin:12px 0 0 0 ;}
+#cart-sidebar.mini-products-list {}
+#cart-sidebar.mini-products-list .product-image{}
+#cart-sidebar.mini-products-list .product-details{}
+.block-subscribe label{display: none;}
+.block-content {margin-top: 6px;}
+.block-content li, .block-content li p{margin-bottom: 6px;}
+
+
+/* --- Grid View --- */
+.products-grid              {}
+.products-grid .item        {}
+.products-grid .item.last   {}
+.products-grid .item.first  {}
+.products-grid.first.odd    {}
+.products-grid.last.even    {}
+
+.products-grid  h2.product-name { font-size: 16px }
+.product-image > img {
+  background: none repeat scroll 0 0 #F0F0F0;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
+  -webkit-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
+  -moz-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
+  display: block;
+  padding: 6px;
+}
+.product-image > img:hover {
+  background: none repeat scroll 0 0 #27A2E1;
+  border: 1px solid #27A2E1;
+  box-shadow: 0 0 2px #00536D;
+  -webkit-box-shadow: 0 0 2px #00536D;
+  -moz-box-shadow: 0 0 2px #00536D;
+}
+.products-grid  .price-box, .products-grid  .actions{ width: 90%;clear: both; }
+.products-grid .add-to-links{}
+.products-grid .add-to-links li{float: left;margin: 0;font-size: 12px;padding-right: 5px; }
+.products-grid .add-to-links a {font-size: 11px;font-weight: 700}
+.products-grid .price-box, .products-grid .actions, .products-list .price-box{margin-bottom: 12px;}
+.products-grid .price-box .price, .products-list .price{font-weight: 500}
+
+/* --- List View --- */
+.category-products ol.products-list { list-style-type: none; padding: 0}
+.category-products ol.products-list .product-image{   }
+.category-products ol.products-list .product-shop{   }
+.category-products ol.products-list .product-shop h2{ font-size: 18px;font-weight: 500; margin-top: 0;  }
+.category-products ol.products-list .item{ margin-bottom: 22px; overflow: hidden;  }
+.category-products ol.products-list .item.last{ border-bottom: none; }
+
+
+/* --- Layer navigation --- */
+
+
+.block-layered-nav ol {
+  list-style-type: none;
+  margin-bottom: 4px;
+  margin-left: 0;
+  padding: 6px 12px;
+
+}
+.block-layered-nav .currently ol{
+  padding-left: 0;
+}
+#narrow-by-list li{
+  margin-bottom: 0px;
+}
+.block-layered-nav .block-subtitle{
+  margin-bottom: 9px;
+  font-weight: 200px;
+  font-size: 13px;
+}
+#narrow-by-list dt{
+  border-bottom: 1px solid #2BA6CB;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 12px 0 0;
+  padding-bottom: 12px;
+
+}
+.block-layered-nav .currently .label{
+  display: none;
+
+}
+.block-layered-nav .currently {
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+}
+.block-layered-nav .currently li{
+  margin-bottom: 6px;
+}
+.block-layered-nav .actions{
+
+}
+
+.round-inline, .round-box, .round-inline-bare{display: inline-block; padding: 1px 7px 3px; font-weight: 600; font-size: 13px; background: #eee; border: 1px solid rgba(0,0,0,0.1); margin-bottom: 12px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; text-shadow: 0 1px rgba(255,255,255,0.9); position: relative;}
+.round-box {display: box}
+.round-inline-bare{ background: none; border: 0 none; }
