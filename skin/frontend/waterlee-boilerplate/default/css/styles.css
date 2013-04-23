@@ -529,16 +529,16 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockqu
   direction: ltr;
 }
 
-p {
+p, .std {
   font-family: inherit;
   font-weight: normal;
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 17px;
 }
-p.lead {
+p.lead, .std.lead {
   font-size: 17.5px;
-  line-height: 1.6;
+  line-height: 1.4;
   margin-bottom: 17px;
 }
 
@@ -2678,7 +2678,7 @@ div.progress.round .meter {
 /* Wrapped around .top-bar to contain to grid width */
 .contain-to-grid {
   width: 100%;
-  background: #fafafa;
+  background: #f2f9fc;
 }
 
 /* Wrapped around .top-bar to make it fixed at the top */
@@ -2701,7 +2701,7 @@ div.progress.round .meter {
 
 /* <nav> */
 .top-bar {
-  background: #fafafa;
+  background: #f2f9fc;
   min-height: 37px;
   line-height: 37px;
   margin: 0 0 0 0;
@@ -2761,13 +2761,13 @@ div.progress.round .meter {
   padding: 0 12.33333px;
 }
 .top-bar ul > li:not(.name):hover, .top-bar ul > li:not(.name).active, .top-bar ul > li:not(.name):focus {
-  background: #d4d4d4;
+  background: #ddeff7;
 }
 .top-bar ul > li:not(.name):hover a, .top-bar ul > li:not(.name).active a, .top-bar ul > li:not(.name):focus a {
   color: #2c5d8d;
 }
 .top-bar ul > li.divider {
-  background: #d4d4d4;
+  background: #b4dcee;
   -webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
   -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
   box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
@@ -2779,7 +2779,7 @@ div.progress.round .meter {
   margin: 0 9.25px;
 }
 .top-bar ul > li.has-button:hover, .top-bar ul > li.has-button:focus {
-  background: #fafafa;
+  background: #f2f9fc;
 }
 .top-bar ul > li.has-button:hover a, .top-bar ul > li.has-button:focus a {
   color: #fff;
@@ -2825,7 +2825,7 @@ div.progress.round .meter {
   margin-bottom: 0;
 }
 .top-bar ul > li.search:hover, .top-bar ul > li.search:focus {
-  background: #fafafa;
+  background: #f2f9fc;
 }
 .top-bar ul > li.login {
   padding: 0 12.33333px;
@@ -2884,7 +2884,7 @@ div.progress.round .meter {
   width: 60px;
 }
 .top-bar ul > li.login:hover, .top-bar ul > li.login:focus {
-  background: #fafafa;
+  background: #f2f9fc;
 }
 .top-bar ul > li.toggle-topbar {
   display: none;
@@ -2906,7 +2906,7 @@ div.progress.round .meter {
   width: 0;
   height: 0;
   border: solid 5px;
-  border-color: #4183c4 transparent transparent transparent;
+  border-color: #f2f9fc transparent transparent transparent;
   margin-right: 12.33333px;
   margin-top: -2.5px;
   position: absolute;
@@ -2914,7 +2914,7 @@ div.progress.round .meter {
   top: 50%;
 }
 .top-bar ul > li.has-dropdown .dropdown {
-  background: #fafafa;
+  background: white;
   left: 0;
   margin: 0;
   padding: 7.4px 0 0 0;
@@ -2923,7 +2923,7 @@ div.progress.round .meter {
   z-index: 99;
 }
 .top-bar ul > li.has-dropdown .dropdown li {
-  background: #fafafa;
+  background: white;
   line-height: 1;
   min-width: 100%;
   padding-bottom: 5px;
@@ -2951,7 +2951,7 @@ div.progress.round .meter {
   text-transform: uppercase;
 }
 .top-bar ul > li.has-dropdown .dropdown li.divider {
-  border-top: solid 1px #c7c7c7;
+  border-top: solid 1px #acd9ec;
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -2963,7 +2963,7 @@ div.progress.round .meter {
   padding-bottom: 10px;
 }
 .top-bar ul > li.has-dropdown .dropdown li.active a {
-  background: #d4d4d4;
+  background: #b4dcee;
 }
 .top-bar ul > li.has-dropdown .dropdown li.has-dropdown > a {
   padding-right: 22.5px;
@@ -3043,13 +3043,13 @@ div.progress.round .meter {
   color: #265079;
 }
 .lt-ie9 .top-bar section > ul > li:hover, .lt-ie9 .top-bar section > ul > li:focus {
-  background: #d4d4d4;
+  background: #b4dcee;
 }
 .lt-ie9 .top-bar section > ul > li.search:hover, .lt-ie9 .top-bar section > ul > li.search:focus, .lt-ie9 .top-bar section > ul > li.has-button:hover, .lt-ie9 .top-bar section > ul > li.has-button:focus {
   background: none;
 }
 .lt-ie9 .top-bar section > ul > li.active {
-  background: #d4d4d4;
+  background: #b4dcee;
   color: #2c5d8d;
 }
 
@@ -5110,7 +5110,7 @@ table.hide-for-medium {
     margin-bottom: 0;
     overflow: hidden;
     height: 45px;
-    background: #fafafa;
+    background: white;
     /* Override contain to grid stuff for breakpoint */
     /* Setting up the sliding area */
     /* When the Small Nav is Showing */
@@ -5146,7 +5146,7 @@ table.hide-for-medium {
     /* Dropdown Level 2 */
   }
   .top-bar ul > li.active, .top-bar ul > li:hover {
-    background: #ededed;
+    background: #eaf5fa;
   }
   .top-bar ul > li.name {
     height: 45px;
@@ -5197,7 +5197,7 @@ table.hide-for-medium {
   }
   .top-bar ul > li.divider {
     border-bottom: solid 1px white;
-    border-top: solid 1px #d4d4d4;
+    border-top: solid 1px #c1e2f1;
     clear: both;
     height: 1px !important;
     margin: 8px 0 !important;
@@ -5225,7 +5225,7 @@ table.hide-for-medium {
     width: 0;
     height: 0;
     border: solid 5px;
-    border-color: transparent transparent transparent rgba(65, 131, 196, 0.5);
+    border-color: transparent transparent transparent rgba(242, 249, 252, 0.5);
     margin-right: 12.33333px;
     margin-top: -4.5px;
     position: absolute;
@@ -5285,7 +5285,7 @@ table.hide-for-medium {
     width: 0;
     height: 0;
     border: solid 5px;
-    border-color: transparent #4183c4 transparent transparent;
+    border-color: transparent #f2f9fc transparent transparent;
   }
   .top-bar ul > li.has-dropdown.moved .back.title h5 {
     margin: 0;
@@ -5318,7 +5318,7 @@ table.hide-for-medium {
     width: 0;
     height: 0;
     border: solid 5px;
-    border-color: transparent transparent transparent rgba(65, 131, 196, 0.5);
+    border-color: transparent transparent transparent rgba(242, 249, 252, 0.5);
     position: absolute;
     top: 50%;
     margin-top: -4.5px;
@@ -5429,6 +5429,10 @@ ul.messages .error-msg li {
   background-color: #c00000;
   color: #fff;
   text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+}
+
+.form-list, .add-to-links {
+  list-style-type: none;
 }
 
 /*  Font Awesome 3.0.2
@@ -6773,7 +6777,7 @@ ul.icons li [class*=" icon-"] {
 
 */
 body {
-  background: url("../images/subtle_dots.png") repeat scroll 0 0;
+  background: url("../images/project_papper.png") repeat scroll 0 0;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -6880,7 +6884,7 @@ body {
   max-width: 100%;
   min-width: 768px;
   margin: 0 auto;
-  background: #f0f0f0;
+  background: #fff;
 }
 @media only screen and (max-width: 767px) {
   .site-nav {
@@ -6956,7 +6960,7 @@ body {
   max-width: 100%;
   min-width: 768px;
   margin: 0 auto;
-  background: white;
+  padding: 1em 0;
 }
 @media only screen and (max-width: 767px) {
   .site-footer {
@@ -7038,18 +7042,6 @@ body {
 
 .product-shop .add-to-links {
   margin-top: 0px;
-}
-
-.product-shop .add-to-cart {
-  background: none repeat scroll 0 0 #F0F0F0;
-  border: 1px solid #DDDDDD;
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
-  -webkit-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
-  -moz-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
-  display: inline-block;
-  padding: 6px 12px 10px 12px;
-  width: inherit;
 }
 
 .product-shop .add-to-cart label, .product-shop .add-to-cart input#qty, .product-shop .add-to-cart button.button {

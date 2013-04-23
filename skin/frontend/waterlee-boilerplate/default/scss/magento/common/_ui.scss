@@ -9,3 +9,6 @@ ul.messages .success-msg li{ background-color: #7fae00; color: #fff; text-shadow
 ul.messages .notice-msg li{ background-color: #C76711; color: #fff; text-shadow: 0 -1px rgba(0,0,0,0.3); }
 ul.messages .error-msg li{ background-color: #c00000; color: #fff; text-shadow: 0 -1px rgba(0,0,0,0.3); }
 
+.form-list, .add-to-links{
+  list-style-type: none;
+}

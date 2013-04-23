@@ -104,7 +104,7 @@
 
 */
 
-body{ background: url("../images/subtle_dots.png") repeat scroll 0 0; font-family: 'Open Sans', sans-serif;}
+body{ background: url("../images/project_papper.png") repeat scroll 0 0; font-family: 'Open Sans', sans-serif;}
 
 
 /* -----------------------------------------
@@ -151,14 +151,12 @@ body{ background: url("../images/subtle_dots.png") repeat scroll 0 0; font-famil
   text-align: right;
 }
 
-
 /* Main nav  */
 
 .site-nav{
   @include outerRow();
-  background: lighten(#000, 94%);
+  background: #fff;
 }
-
 /* Site Search */
 
 .site-search{
@@ -184,7 +182,7 @@ body{ background: url("../images/subtle_dots.png") repeat scroll 0 0; font-famil
 }
 .site-footer{
   @include outerRow();
-  background: $siteBackground;
+  padding: 1em 0;
 }
 
 .site-footer footer{
@@ -229,18 +227,6 @@ body{ background: url("../images/subtle_dots.png") repeat scroll 0 0; font-famil
 .product-shop .availability span{font-weight: 300;}
 .product-shop .add-to-cart, .product-shop .add-to-links, .product-options-bottom .add-to-cart, .product-options-bottom .add-to-links{width: 100%; clear: both; margin-bottom: 12px; overflow: hidden;}
 .product-shop .add-to-links{margin-top: 0px;}
-.product-shop .add-to-cart{
-  background: none repeat scroll 0 0 #F0F0F0;
-  border: 1px solid #DDDDDD;
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
-  -webkit-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
-  -moz-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
-  display: inline-block;
-
-  padding: 6px 12px 10px 12px;
-  width: inherit;
-}
 .product-shop .add-to-cart label,.product-shop .add-to-cart input#qty, .product-shop .add-to-cart button.button {display: block;float: left}
 .product-shop .add-to-cart label, .product-options-bottom label {
   margin-top: 15px; margin-right: 4px;float: left;
