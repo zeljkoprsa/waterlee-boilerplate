@@ -1,0 +1,13 @@
+/* Page */
+.site-breadcrumbs{
+  @include outerRow();
+  background: $siteBackground;
+}
+.site-breadcrumbs .breadcrumbs{
+  @include column(12);
+}
+
+.main-container{
+  @include outerRow();
+  background: $siteBackground;
+}

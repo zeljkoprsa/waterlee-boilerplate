@@ -1,0 +1,8 @@
+.site-footer{
+  @include outerRow();
+  padding: 1em 0;
+}
+
+.site-footer footer{
+  @include column(12);
+}
