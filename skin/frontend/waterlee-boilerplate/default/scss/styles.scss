@@ -114,7 +114,6 @@ body{ background: url("../images/subtle_dots.png") repeat scroll 0 0; font-famil
 
 .super-header{
   @include outerRow();
-
 }
 .site-header {
   @include outerRow();
@@ -135,7 +134,6 @@ body{ background: url("../images/subtle_dots.png") repeat scroll 0 0; font-famil
   @include column(1,collapse);
   float: right;
 }
-
 
 .site-header .notice {
   position: absolute;
@@ -465,10 +463,6 @@ body{ background: url("../images/subtle_dots.png") repeat scroll 0 0; font-famil
 .sort-by label, .sort-by select{ display: inline-block; line-height: 22px; }
 .sort-by select{ width: 70%; }
 
-ul.breadcrumbs { margin-top: 12px;background: 0 none;border: 0;border-bottom: 1px solid #E9E9E9; }
-.breadcrumbs li{ margin-bottom: 0; font-size: 12px;color: #666; }
-.breadcrumbs strong{ font-weight: 700;}
-.breadcrumbs span{ padding-right: 0.5rem;}
 
 /* Footer */
 
