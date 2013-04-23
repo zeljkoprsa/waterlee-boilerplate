@@ -169,7 +169,7 @@
 
   /* Breadcrums ---------------------- */
 
-  ul.breadcrumbs { display: block; background: lighten($secondaryColor, 5%); padding: 6px 10px 7px; border: 1px solid $secondaryColor; @include border-radius(2px); overflow: hidden; margin-#{$defaultFloat}: 0;
+  ul.breadcrumbs { display: block; padding: 6px 10px 7px; overflow: hidden; margin-#{$defaultFloat}: 0; margin-top: 15px;
 
     li { margin: 0; padding: 0 12px 0 0; float: $defaultFloat; list-style: none;
 
@@ -179,14 +179,15 @@
 
     li:before { content: "/"; color: #aaa; }
     li:first-child:before { content: " "; }
-    li.current a { cursor: default; color: #333; }
+    li.current a { cursor: default; color: #333;}
     li:hover a, li a:focus { text-decoration: underline; }
     li.current:hover a, li.current a:focus { text-decoration: none; }
     li.unavailable {
       a { color: #999; }
       &:hover a, a:focus { text-decoration: none; color: #999; cursor: default; }
     }
-
+    li.home{margin-left: 15px;}
+    li > strong{font-weight: normal;}
   }
 
   /* Inline Link List */
