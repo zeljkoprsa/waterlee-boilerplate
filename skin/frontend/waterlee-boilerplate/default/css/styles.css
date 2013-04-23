@@ -11,14 +11,14 @@
   float: left;
 }
 
-.super-header, .site-header, .site-nav, .site-breadcrumbs, .main-container, .site-footer {
+.site-header, .super-header, .site-nav, .site-breadcrumbs, .main-container, .site-footer {
   *zoom: 1;
 }
-.super-header:before, .site-header:before, .site-nav:before, .site-breadcrumbs:before, .main-container:before, .site-footer:before, .super-header:after, .site-header:after, .site-nav:after, .site-breadcrumbs:after, .main-container:after, .site-footer:after {
+.site-header:before, .super-header:before, .site-nav:before, .site-breadcrumbs:before, .main-container:before, .site-footer:before, .site-header:after, .super-header:after, .site-nav:after, .site-breadcrumbs:after, .main-container:after, .site-footer:after {
   content: " ";
   display: table;
 }
-.super-header:after, .site-header:after, .site-nav:after, .site-breadcrumbs:after, .main-container:after, .site-footer:after {
+.site-header:after, .super-header:after, .site-nav:after, .site-breadcrumbs:after, .main-container:after, .site-footer:after {
   clear: both;
 }
 
@@ -968,6 +968,7 @@ fieldset legend {
 
 /* Custom Forms ---------------------- */
 form.custom {
+  margin-bottom: 0;
   /* Custom input, disabled */
 }
 form.custom span.custom {
@@ -1023,8 +1024,6 @@ form.custom div.custom.dropdown {
   position: relative;
   width: auto;
   height: 28px;
-  margin-bottom: 9px;
-  margin-top: 2px;
 }
 form.custom div.custom.dropdown ul {
   overflow-y: auto;
@@ -6745,27 +6744,13 @@ ul.icons li [class*=" icon-"] {
    Table of Contents
 -----------------------------------------------------
 :: Header
-
+:: Super Header
+:: Site Nav
+:: Page
 :: Footer
 
-:: Top Navigation
-
-:: Product Page
-:::: Simple Product
-:::: Simple Product with options
-:::: Configurable product
-:::: Grouped product
-:::: Downloadable product
-
 :: Catalog Page
-    :::: Grid View
-    :::: List View
-    :::::::: Toolbar | Pagination | Sort by
-    :::::::: Prices
-    :::::::: Layer Navigation
-    :::::::: Sidebar Blocks
-    :::: Compare Products
-:: Cart Page
+:: Product Page
 
 :: Checkout
 
@@ -6777,7 +6762,7 @@ ul.icons li [class*=" icon-"] {
 
 */
 body {
-  background: url("../images/project_papper.png") repeat scroll 0 0;
+  background: #dde9f4 url("../images/grid15.png") repeat fixed center 0;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -6785,21 +6770,6 @@ body {
    Header
 ----------------------------------------- */
 /* Header Elements*/
-.super-header {
-  width: 1000px;
-  max-width: 100%;
-  min-width: 768px;
-  margin: 0 auto;
-}
-@media only screen and (max-width: 767px) {
-  .super-header {
-    width: auto;
-    min-width: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
 .site-header {
   width: 1000px;
   max-width: 100%;
@@ -6823,7 +6793,7 @@ body {
 
 .site-language {
   padding: 0;
-  width: 8.33333%;
+  width: 16.66667%;
   padding: 1em 0;
   float: right;
 }
@@ -6836,6 +6806,10 @@ body {
 
 .site-language label {
   display: none;
+}
+
+.site-language .custom.dropdown, .site-language div.custom.dropdown.open ul {
+  width: 100% !important;
 }
 
 .site-account {
@@ -6878,23 +6852,6 @@ body {
   }
 }
 
-/* Main nav  */
-.site-nav {
-  width: 1000px;
-  max-width: 100%;
-  min-width: 768px;
-  margin: 0 auto;
-  background: #fff;
-}
-@media only screen and (max-width: 767px) {
-  .site-nav {
-    width: auto;
-    min-width: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
 /* Site Search */
 .site-search {
   padding: 0;
@@ -6910,6 +6867,38 @@ body {
 
 .site-search form {
   margin: 0.8em 0 0 0;
+}
+
+.super-header {
+  width: 1000px;
+  max-width: 100%;
+  min-width: 768px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 767px) {
+  .super-header {
+    width: auto;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Main nav  */
+.site-nav {
+  width: 1000px;
+  max-width: 100%;
+  min-width: 768px;
+  margin: 0 auto;
+  background: #fff;
+}
+@media only screen and (max-width: 767px) {
+  .site-nav {
+    width: auto;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /* Page */
@@ -6981,15 +6970,26 @@ body {
   }
 }
 
-/* -----------------------------------------
-   Footer
------------------------------------------ */
-/* -----------------------------------------
-   Home Page
------------------------------------------ */
-/* -----------------------------------------
-   Page
------------------------------------------ */
+/*
+
+:: Catalog Page
+    :::: Grid View
+    :::: List View
+    :::::::: Toolbar | Pagination | Sort by
+    :::::::: Prices
+    :::::::: Layer Navigation
+    :::::::: Sidebar Blocks
+    :::: Compare Products
+
+*/
+/*
+Product Page
+:::: Simple Product
+:::: Simple Product with options
+:::: Configurable product
+:::: Grouped product
+:::: Downloadable product
+*/
 /* -----------------------------------------
    Product Page
 ----------------------------------------- */
@@ -7068,11 +7068,6 @@ body {
   margin-left: 6px;
   padding: 8px 40px 8px;
   font-weight: 600;
-}
-
-.short-description {
-  font-size: 14px;
-  line-height: 1.4;
 }
 
 #product-options-wrapper {
