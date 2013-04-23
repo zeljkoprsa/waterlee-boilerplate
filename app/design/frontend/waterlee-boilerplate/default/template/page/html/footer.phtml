@@ -28,8 +28,12 @@
 <div class="site-footer">
     <?php echo $this->getChildHtml("mobile.menu.footer") ?>
     <footer>
+        <div class="row">
+            <div class="columns twelve">
         <?php echo $this->getChildHtml("footer.newsletter") ?>
         <hr />
         <address><?php echo $this->getCopyright() ?></address>
+            </div>
+        </div>
     </footer>
 </div>
