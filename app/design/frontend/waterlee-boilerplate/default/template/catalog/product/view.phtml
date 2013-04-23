@@ -49,13 +49,12 @@
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
-<div class="product-view columns twelve">
+<div class="product-view">
 
     <div class="product-essential row">
 
         <div class="product-img-box columns six">
             <?php echo $this->getChildHtml('media') ?>
-            <?php echo $this->getChildHtml('product_review') ?>
         </div>
 
         <div class="product-shop columns six">
@@ -119,6 +118,10 @@
 
         </div>
 
+        <div class="columns twelve">
+            <?php echo $this->getChildHtml('product_review') ?>
+        </div>
+
         <script type="text/javascript">
             //<![CDATA[
             var productAddToCartForm = new VarienForm('product_addtocart_form');
@@ -165,11 +168,11 @@
         </script>
 
     </div>
-
     <div class="row">
-
-        <?php echo $this->getChildHtml('product_additional_data') ?>
-        <?php echo $this->getChildHtml('upsell_products') ?>
-
+        <div class="columns twelve">
+            <?php echo $this->getChildHtml('product_additional_data') ?>
+            <?php echo $this->getChildHtml('upsell_products') ?>
+        </div>
     </div>
+
 </div>
