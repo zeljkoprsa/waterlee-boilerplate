@@ -7388,12 +7388,9 @@ Product Page
   width: 70%;
 }
 
+/* Universal blocks */
+/* Layered Navigation */
 /* Poll */
-#poll-answers input[type=radio] {
-  float: left;
-  margin-right: 6px;
-}
-
 #shopping-cart-table .product-name, .cart-collaterals h2 {
   font-size: 16px;
   margin-bottom: 0;
