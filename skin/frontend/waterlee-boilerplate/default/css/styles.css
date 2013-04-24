@@ -6888,6 +6888,19 @@ body {
   }
 }
 
+.nav-bar {
+  background: #3876b4;
+  margin: 0;
+}
+
+.nav-bar > li > a {
+  color: white;
+}
+
+.site-language {
+  padding: 0;
+}
+
 /* Main nav  */
 .site-nav {
   width: 1000px;

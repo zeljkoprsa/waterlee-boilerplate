@@ -1,3 +1,16 @@
 .super-header{
   @include outerRow();
 }
+
+.nav-bar{
+  background: darken($mainColor, 5%);
+  margin: 0;
+}
+
+.nav-bar > li > a {
+  color: $siteBackground;
+}
+
+.site-language{
+  padding: 0;
+}
