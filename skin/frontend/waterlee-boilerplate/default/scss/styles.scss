@@ -80,8 +80,12 @@
 :: Catalog Page
 :: Product Page
 
-:: Checkout
 
+:: Sidebar Blocks
+
+:: Checkout
+:: - Cart
+:: - Checkout
 
 :: Success Page
 :::: Print Receipt Page
@@ -104,7 +108,4 @@ body{ background: lighten($mainColor, 40%) url("../images/grid15.png") repeat fi
 @import "custom/crosssell";
 @import "custom/checkout";
 @import "custom/messages";
-
-
-
-
+@import "custom/buttons";

@@ -79,33 +79,3 @@ Product Page
 .site-breadcrumbs{}
 .breadcrumbs{}
 
-.pager, .sort-by {
-  font-size: 11px;
-  text-align: center;
-}
-
-
-.toolbar .pager {
-  padding-bottom: 6px;
-  border-bottom: 1px solid #EFEFEF;
-  margin-bottom: 6px;
-
-}
-.pager .amount {
-
-  margin: 0;
-}
-.pager .limiter {
-  float: right;
-}
-
-.pager .limiter select, .pager .limiter label {
-  display: inline-block;
-  vertical-align: middle;
-}
-.pager .limiter select{width: 60px;}
-.view-mode{float: left;margin-bottom:0;line-height: 34px}
-.view-mode label {display: inline-block;}
-.sort-by{float:right;}
-.sort-by label, .sort-by select{ display: inline-block; line-height: 22px; }
-.sort-by select{ width: 70%; }

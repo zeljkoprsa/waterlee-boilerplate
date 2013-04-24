@@ -45,16 +45,7 @@
 
 /* Temporary */ form.custom div.custom.dropdown{display: inline-block;}
 /* Ze Blocks */
-#sidebar .block{}
-.block-title{margin: 0 0 6px 0 ;}
 
-.block-cart .block-subtitle{margin:12px 0 0 0 ;}
-#cart-sidebar.mini-products-list {}
-#cart-sidebar.mini-products-list .product-image{}
-#cart-sidebar.mini-products-list .product-details{}
-.block-subscribe label{display: none;}
-.block-content {margin-top: 6px;}
-.block-content li, .block-content li p{margin-bottom: 6px;}
 
 
 /* --- Grid View --- */
@@ -102,49 +93,38 @@
 /* --- Layer navigation --- */
 
 
-.block-layered-nav ol {
-  list-style-type: none;
-  margin-bottom: 4px;
-  margin-left: 0;
-  padding: 6px 12px;
-
-}
-.block-layered-nav .currently ol{
-  padding-left: 0;
-}
-#narrow-by-list li{
-  margin-bottom: 0px;
-}
-.block-layered-nav .block-subtitle{
-  margin-bottom: 9px;
-  font-weight: 200px;
-  font-size: 13px;
-}
-#narrow-by-list dt{
-  border-bottom: 1px solid #2BA6CB;
-  color: #000000;
-  font-size: 13px;
-  font-weight: 700;
-  margin: 12px 0 0;
-  padding-bottom: 12px;
-
-}
-.block-layered-nav .currently .label{
-  display: none;
-
-}
-.block-layered-nav .currently {
-  border-bottom: 1px solid #efefef;
-  padding-bottom: 4px;
-  margin-bottom: 6px;
-}
-.block-layered-nav .currently li{
-  margin-bottom: 6px;
-}
-.block-layered-nav .actions{
-
-}
 
 .round-inline, .round-box, .round-inline-bare{display: inline-block; padding: 1px 7px 3px; font-weight: 600; font-size: 13px; background: #eee; border: 1px solid rgba(0,0,0,0.1); margin-bottom: 12px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; text-shadow: 0 1px rgba(255,255,255,0.9); position: relative;}
 .round-box {display: box}
 .round-inline-bare{ background: none; border: 0 none; }
+
+.pager, .sort-by {
+  font-size: 11px;
+  text-align: center;
+}
+
+
+.toolbar .pager {
+  padding-bottom: 6px;
+  border-bottom: 1px solid #EFEFEF;
+  margin-bottom: 6px;
+
+}
+.pager .amount {
+
+  margin: 0;
+}
+.pager .limiter {
+  float: right;
+}
+
+.pager .limiter select, .pager .limiter label {
+  display: inline-block;
+  vertical-align: middle;
+}
+.pager .limiter select{width: 60px;}
+.view-mode{float: left;margin-bottom:0;line-height: 34px}
+.view-mode label {display: inline-block;}
+.sort-by{float:right;}
+.sort-by label, .sort-by select{ display: inline-block; line-height: 22px; }
+.sort-by select{ width: 70%; }
