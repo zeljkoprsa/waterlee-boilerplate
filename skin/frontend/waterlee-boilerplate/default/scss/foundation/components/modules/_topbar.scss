@@ -50,7 +50,7 @@
       &>li { float: left;
         a:not(.button) { color: $topBarLinkColor; display: block; font-size: $topBarLinkSize; font-weight: $topBarLinkWeight; height: $topBarHeight; line-height: $topBarHeight; padding: 0 $topBarHeight / 3; }
         &:not(.name) {
-          &:hover, &.active, &:focus { background: darken($topBarBgColor, 15%);
+          &:hover, &.active, &:focus { background: darken($topBarBgColor, 5%);
             a { color: darken($topBarLinkColor, 15%); }
           }
         }

@@ -24,40 +24,16 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php
-/**
- * Language switcher template
- *
- * @see Mage_Page_Block_Switch
- */
-?>
-<<<<<<< HEAD
-
-<?php if(count($this->getStores())>1): ?>
-    <div class="form-language">
-        <form class="custom">
-        <label for="select-language"><?php echo $this->__('Your Language:') ?></label>
-    <select id="select-language" title="<?php echo $this->__('Your Language') ?>" onchange="window.location.href=this.value">
-    <?php foreach ($this->getStores() as $_lang): ?>
-        <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' selected="selected"' : '' ?>
-        <option value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->htmlEscape($_lang->getName()) ?></option>
-    <?php endforeach; ?>
-    </select>
-        </form>
-    </div>
-<?php endif; ?>
-=======
 <?php if(count($this->getStores())>1): ?>
     <div class="form-language">
         <form class="custom" action="#">
             <label for="select-language"><?php echo $this->__('Your Language:') ?></label>
-            <select id="select-language" title="<?php echo $this->__('Your Language') ?>" onchange="window.location.href=this.value">
+            <select id="select-language" title="<?php echo $this->__('Your Language') ?>" onchange="window.location.href=this.value" class="flags">
                 <?php foreach ($this->getStores() as $_lang): ?>
                     <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' selected="selected"' : '' ?>
-                    <option value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->htmlEscape($_lang->getName()) ?></option>
+                    <option value="<?php echo $_lang->getCurrentUrl() ?>" style="background-image:url('<?php echo $this->getSkinUrl('images/flags/flag_'.$_lang->getCode().'.gif') ?>');"<?php echo $_selected ?>><?php echo $this->htmlEscape($_lang->getName()) ?></option>
                 <?php endforeach; ?>
             </select>
         </form>
     </div>
 <?php endif; ?>
->>>>>>> 519e6eeff1ecdca424a80a29fc233ba0b0c05300
