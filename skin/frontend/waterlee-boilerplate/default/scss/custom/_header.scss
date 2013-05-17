@@ -5,37 +5,16 @@
 
 .site-header {
   @include outerRow();
-<<<<<<< HEAD
   padding: 0.5em 0;
   background: $siteBackground;
   @include box-shadow(0 -3px -2px rgba(0, 143, 255, 0.04));
-=======
-  padding: 1em 0 1em 0;
-  background: $siteBackground;
-  @include box-shadow(0 -3px -2px rgba(0, 143, 255, 0.04));
-  border-top: 1px solid #A9D9FF;
-}
-.site-language{
-  @include column(2,collapse);
-  padding: 1em 0;
-  float: right;
-}
-.site-language label{
-  display: none;
-}
-.site-language .custom.dropdown, .site-language div.custom.dropdown.open ul{
-  width: 100% !important;
->>>>>>> 519e6eeff1ecdca424a80a29fc233ba0b0c05300
 }
 
 .site-account{
   @include column(1,collapse);
   float: right;
-<<<<<<< HEAD
   padding: 0 15px;
   margin-top: 16px;
-=======
->>>>>>> 519e6eeff1ecdca424a80a29fc233ba0b0c05300
 }
 
 .site-header .notice {
@@ -46,42 +25,26 @@
 }
 
 .site-identity{
-<<<<<<< HEAD
   @include column(4);
-=======
-  @include column(3);
->>>>>>> 519e6eeff1ecdca424a80a29fc233ba0b0c05300
 }
 
 .site-cart{
   @include column(4);
   text-align: right;
-<<<<<<< HEAD
   margin-top: 8px;
-=======
->>>>>>> 519e6eeff1ecdca424a80a29fc233ba0b0c05300
 }
 
 /* Site Search */
 
 .site-search{
-<<<<<<< HEAD
   @include column(4);
-=======
-  @include column(5, collapse);
->>>>>>> 519e6eeff1ecdca424a80a29fc233ba0b0c05300
   font-size: ms(0);
 
 }
 .site-search form{
-<<<<<<< HEAD
   margin: 1.4em 0 0 0;
 }
 
 .site-logo{
   margin: 0;
 }
-=======
-  margin: 0.8em 0 0 0;
-}
->>>>>>> 519e6eeff1ecdca424a80a29fc233ba0b0c05300

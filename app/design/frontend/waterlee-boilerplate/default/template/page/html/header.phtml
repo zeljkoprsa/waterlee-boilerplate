@@ -13,24 +13,8 @@
             </ul>
         </div>
 
-<<<<<<< HEAD
         <div class="welcome-msg">
             <p>Default welcome msg! </p>
-=======
-            <?php if($count == 0):?>
-                <a class="label" href="<?php echo $this->getUrl('checkout/cart') ?>"> <?php echo $this->__('0 Items', $count) ?></a>
-            <?php endif; ?>
-            <?php if($count == 1):?>
-                <a class="label radius" href="<?php echo $this->getUrl('checkout/cart') ?>"> <?php echo $this->__('1 Item', $count) ?></a>
-            <?php endif; ?>
-            <?php if($count >= 2):?>
-                <a class="label radius" href="<?php echo $this->getUrl('checkout/cart') ?>"> <?php echo $this->__('%s Items', $count) ?></a>
-            <?php endif; ?>
-            <span class="price">
-                <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
-            </span>
-            <a class="small button radius" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
->>>>>>> 519e6eeff1ecdca424a80a29fc233ba0b0c05300
         </div>
         </div>
 
@@ -50,7 +34,6 @@
 
         </div>
     </div>
-<<<<<<< HEAD
     <header class="site-header">
         <div class="site-identity">
         <?php if ($this->getIsHomePage()):?>
@@ -84,22 +67,6 @@
 
                     </ul>
                 </li>
-
-</header>
-<div class="site-nav">
-    <div class="columns twelve">
-
-    <nav class="top-bar">
-        <ul>
-            <li class="name">
-            <!-- Empty with a reason: Needed for top-bar to work properly. -->
-            </li>
-            <li class="toggle-topbar"><a href="#"></a></li>
-        </ul>
-        <section>
-            <ul class="left">
-        <?php echo $this->getChildHtml('topMenu') ?>
-
             </ul>
         </div>
 

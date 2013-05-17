@@ -1,6 +1,5 @@
 .super-header{
   @include outerRow();
-<<<<<<< HEAD
   color: #333;
 }
 
@@ -42,28 +41,20 @@
 /* navcontainer END */
 
 
-=======
-}
-
->>>>>>> 519e6eeff1ecdca424a80a29fc233ba0b0c05300
 .nav-bar{
   background: darken($mainColor, 5%);
   margin: 0;
 }
 
-<<<<<<< HEAD
 .nav-bar > li:hover{
   background: #3269A0;
 }
 
-=======
->>>>>>> 519e6eeff1ecdca424a80a29fc233ba0b0c05300
 .nav-bar > li > a {
   color: $siteBackground;
 }
 
 .site-language{
-<<<<<<< HEAD
   /*@include column(2,collapse);*/
   padding: 0;
   float: right;
@@ -134,7 +125,3 @@ form.custom div.custom.dropdown ul{
   float: right;
   margin-left: 10px;
 }
-=======
-  padding: 0;
-}
->>>>>>> 519e6eeff1ecdca424a80a29fc233ba0b0c05300
