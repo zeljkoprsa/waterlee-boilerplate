@@ -25,11 +25,27 @@
  */
 ?>
 
-<div class="site-footer">
+<!--<div class="site-footer">
     <?php echo $this->getChildHtml("mobile.menu.footer") ?>
     <footer>
         <?php echo $this->getChildHtml("footer.newsletter") ?>
         <hr />
         <address><?php echo $this->getCopyright() ?></address>
+    </footer>
+</div>-->
+
+
+<div class="site-footer">
+    <?php echo $this->getChildHtml("mobile.menu.footer") ?>
+    <footer>
+        <div class="columns twelve">
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_demo_links')->toHtml(); ?>
+        </div>
+        <div class="columns twelve">
+            <div class="line-separator"></div>
+            <div class="newsletter columns six"><?php echo $this->getChildHtml("footer.newsletter") ?></div>
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('social_icons')->toHtml(); ?>
+        </div>
+        <address class="columns twelve"><?php echo $this->getCopyright() ?></address>
     </footer>
 </div>

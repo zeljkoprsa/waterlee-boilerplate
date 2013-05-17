@@ -1,0 +1,58 @@
+.site-footer{
+  @include outerRow();
+  padding-top: 10px;
+}
+
+.site-footer footer{
+  @include column(12);
+}
+
+footer{
+  background-color: #fff;
+}
+
+.line-separator{
+  height:1px;
+  background:#717171;
+  border-bottom:1px solid #e6e6e6;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.social-icon{
+  font-size: 2em;
+  line-height: 2em;
+  text-align: right;
+}
+
+.form-subscribe-header > label {
+  display: block;
+  padding: 6px;
+  position: absolute;
+  top: 17px;
+  z-index: 2;
+}
+
+.input-text.required-entry.validate-email{
+  width: 48%;
+  float: left;
+}
+
+.newsletter button{
+  padding: 8px 20px;
+  width: 20%;
+}
+
+#info{
+  list-style-type: none;
+}
+
+.column-title{
+  padding: 30px 0 20px 0;
+  font-weight: 900;
+}
+
+.columns.four > img{
+  float: left;
+  padding: 0 7px 7px 0;
+}

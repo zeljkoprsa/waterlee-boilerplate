@@ -1,80 +1,113 @@
-<div class="super-header">
-    <div class="site-account">
-        <ul class="nav-bar right">
-            <li class="has-flyout">
-                <a href="<?php echo $this->getUrl('customer/account') ?>"><i class="icon-user"></i></a>
-                <a href="#" class="flyout-toggle"><span> </span></a>
-                <ul class="flyout small right">
-                    <li>
-                        <?php if($this->helper('customer')->isLoggedIn()):   ?>
-                            <a href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
-                        <?php else: ?>
-                            <a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Log in') ?></a>
-                        <?php endif; ?>
-                    </li>
-
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <div class="site-language offset-by-seven">
-        <?php echo $this->getChildHtml('store_language') ?>
-    </div>
-
-</div>
-<header class="site-header">
-    <div class="site-identity">
-    <?php if ($this->getIsHomePage()):?>
-        <h1 class="site-logo">
-            <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="site-logo">
-                <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
-            </a>
-        </h1>
-    <?php else:?>
-        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
-            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
-    <?php endif?>
-    </div>
-    <div class="site-search">
-        <?php echo $this->getChildHtml('topSearch') ?>
-    </div>
-        <div class="site-cart">
-        <i class="icon-shopping-cart"></i>
-            <?php
-            $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
-            $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
-            ?>
-
-            <?php if($count == 0):?>
-                <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('0 Items', $count) ?></a>
-            <?php endif; ?>
-            <?php if($count == 1):?>
-                <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('1 Item', $count) ?></a>
-            <?php endif; ?>
-            <?php if($count >= 2):?>
-                <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('%s Items', $count) ?></a>
-            <?php endif; ?>
-            <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
-            <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
+    <div class="super-header">
+        <div class="columns seven">
+        <div class="block_header_top_help">
+            <i class="icon-phone-sign"></i><div>Call Us +001 555 777</div>
         </div>
 
-    </div>
-</header>
-<div class="site-nav">
-    <div class="columns twelve">
-    <nav class="top-bar">
-        <ul>
-            <li class="name">
 
-            </li>
-            <li class="toggle-topbar"><a href="#"></a></li>
-        </ul>
-        <section>
-            <ul class="left">
-        <?php echo $this->getChildHtml('topMenu') ?>
+        <div class="navcontainer">
+            <ul class="navlist">
+                <li id="active"><a href="#" id="current">Item one</a></li>
+                <li><a href="#">Item two</a></li>
+                <li><a href="#">Item three</a></li>
             </ul>
-        </section>
-    </nav>
+        </div>
+
+        <div class="welcome-msg">
+            <p>Default welcome msg! </p>
+        </div>
+        </div>
+
+        <div class="columns five">
+        <form class="currency custom">
+        <label for="customDropdown">Currency:</label>
+        <select style="display:none;" id="customDropdown">
+            <option SELECTED>USD</option>
+            <option>GBP</option>
+            <option>EUR</option>
+        </select>
+        </form>
+
+        <div class="site-language offset-by-seven">
+            <?php echo $this->getChildHtml('store_language') ?>
+        </div>
+
+        </div>
     </div>
+    <header class="site-header">
+        <div class="site-identity">
+        <?php if ($this->getIsHomePage()):?>
+            <h1 class="site-logo">
+                <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="site-logo">
+                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+                </a>
+            </h1>
+        <?php else:?>
+            <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+                <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+        <?php endif?>
+        </div>
+        <div class="site-search">
+            <?php echo $this->getChildHtml('topSearch') ?>
+        </div>
+
+        <div class="site-account">
+            <ul class="nav-bar right">
+                <li class="has-flyout">
+                    <a href="<?php echo $this->getUrl('customer/account') ?>"><i class="icon-user"></i></a>
+                    <a href="#" class="flyout-toggle"><span> </span></a>
+                    <ul class="flyout small right">
+                        <li>
+                            <?php if($this->helper('customer')->isLoggedIn()):   ?>
+                                <a href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
+                            <?php else: ?>
+                                <a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Log in') ?></a>
+                            <?php endif; ?>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="site-cart">
+            <i class="icon-shopping-cart"></i>
+                <?php
+                $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
+                $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
+                ?>
+
+                <?php if($count == 0):?>
+                    <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('0 Items', $count) ?></a>
+                <?php endif; ?>
+                <?php if($count == 1):?>
+                    <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('1 Item', $count) ?></a>
+                <?php endif; ?>
+                <?php if($count >= 2):?>
+                    <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('%s Items', $count) ?></a>
+                <?php endif; ?>
+                <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
+                <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
+        </div>
+    </div>
+    </header>
+    <div class="site-nav">
+        <div class="columns twelve">
+        <nav class="top-bar">
+            <ul>
+                <li class="name">
+
+                </li>
+                <li class="toggle-topbar"><a href="#"></a></li>
+            </ul>
+            <section>
+                <ul class="left">
+            <?php echo $this->getChildHtml('topMenu') ?>
+                </ul>
+            </section>
+        </nav>
+        </div>
 </div>
 

@@ -1,0 +1,50 @@
+/* -----------------------------------------
+   Header
+----------------------------------------- */
+/* Header Elements*/
+
+.site-header {
+  @include outerRow();
+  padding: 0.5em 0;
+  background: $siteBackground;
+  @include box-shadow(0 -3px -2px rgba(0, 143, 255, 0.04));
+}
+
+.site-account{
+  @include column(1,collapse);
+  float: right;
+  padding: 0 15px;
+  margin-top: 16px;
+}
+
+.site-header .notice {
+  position: absolute;
+  left: 300px;
+  top: 30px;
+  color: #666;
+}
+
+.site-identity{
+  @include column(4);
+}
+
+.site-cart{
+  @include column(4);
+  text-align: right;
+  margin-top: 8px;
+}
+
+/* Site Search */
+
+.site-search{
+  @include column(4);
+  font-size: ms(0);
+
+}
+.site-search form{
+  margin: 1.4em 0 0 0;
+}
+
+.site-logo{
+  margin: 0;
+}

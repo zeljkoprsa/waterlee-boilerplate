@@ -1,0 +1,54 @@
+/* Layered Navigation */
+.block-layered-nav{}
+.block-layered-nav ol {
+  list-style-type: none;
+  margin-bottom: 4px;
+  margin-left: 0;
+  padding: 6px 12px;
+
+}
+.block-layered-nav .currently ol{
+  padding-left: 0;
+}
+#narrow-by-list li{
+  margin-bottom: 0px;
+}
+.block-layered-nav .block-subtitle{
+  margin-bottom: 9px;
+  font-weight: 200px;
+  font-size: 13px;
+}
+#narrow-by-list dt{
+  border-bottom: 1px solid #2BA6CB;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 12px 0 0;
+  padding-bottom: 12px;
+
+}
+.block-layered-nav .currently .label{
+  display: none;
+
+}
+.block-layered-nav .currently {
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+}
+.block-layered-nav .currently li{
+  margin-bottom: 6px;
+}
+.block-layered-nav .actions{
+
+}
+
+
+/* Universal blocks */
+.block{}
+.block-title{}
+.block-content{}
+.block-subtitle{}
+#narrow-by-list{}
+
+/* Poll */

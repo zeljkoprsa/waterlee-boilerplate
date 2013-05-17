@@ -49,7 +49,6 @@
 
     <!-- Add js/css globally -->
     <reference name="head">
-        <action method="setTitle" translate="title"><title>Magento Admin</title></action>
         <action method="addItem"><type>skin_js</type><script>js/foundation/modernizr.foundation.js</script></action>
         <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.js</script></action>
         <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.topbar.js</script></action>
@@ -57,7 +56,33 @@
         <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.tooltips.js</script></action>
         <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.reveal.js</script></action>
         <action method="addItem"><type>skin_js</type><script>js/foundation/responsive-tables.js</script></action>
+    <!-- Afterwards Added -->
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.cookie.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.event.move.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.event.swipe</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.accordion.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.alerts.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.buttons.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.clearing.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.joyride.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.magellan.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.mediaQueryToggle.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.orbit.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.reveal.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.tabs.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.tooltips.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.topbar.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.utils.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.offcanvas.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.placeholder.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/foundation/modernizr.foundation.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/jquery.formalize.min.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/jquery.isotope.min.js</script></action>
+    <!-- Afterwards Added - END -->
+        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.forms.js</script></action>
         <action method="addItem"><type>skin_js</type><script>js/foundation/app.js</script></action>
+        <action method="addItem"><type>skin_js</type><script>js/app.js</script></action>
+
 
         <action method="addItem"><type>skin_css</type><name>css/normalize.css</name><params/></action>
         <action method="addItem"><type>skin_css</type><name>css/styles.css</name><params/></action>

@@ -1,0 +1,13 @@
+.cart form{
+  @include outerRow();
+}
+
+.cart-table{
+  width: 100%;
+}
+
+.cart fieldset{
+  margin:0;
+  padding: 0;
+  border: 0 none;
+}

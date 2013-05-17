@@ -3,7 +3,7 @@
 
 // Grid Settings
 
-$rowWidth: 1000px;
+$rowWidth: 1200px;
 //$columnGutter: 30px;
 //$totalColumns: 12;
 //$mobileTotalColumns: 4;
@@ -97,7 +97,8 @@ $fontSmoothing: antialiased;
 
 // Top Bar Settings
 
-$topBarBgColor: lighten(#000, 98%);
+$topBarBgColor: rgb(242, 249, 252);
+$topBarBorder: rgb(215, 242, 253);
 $topBarHeight: 37px;
 //$topBarHeightMobile: 37px;
 $topBarBtmMargin: 0;
@@ -106,10 +107,10 @@ $topBarBtmMargin: 0;
 $topBarLinkColor: $mainColor;
 //$topBarLinkWeight: 500;
 //$topBarLinkSize: 14px;
-$topBarDropBgColor: lighten(#000, 98%);
+$topBarDropBgColor: lighten($topBarBgColor, 98%);
    $topBarDropLinkColor: $mainColor;
 // $topBarDropToggleSize: 5px;
-   $topBarDropToggleColor: $mainColor;
+   $topBarDropToggleColor: $topBarBgColor;
    $topBarDropToggleAlpha: 0.5;
 // $topBarSearchWidth: 400px;
 // $topBarLoginWidth: 300px;
