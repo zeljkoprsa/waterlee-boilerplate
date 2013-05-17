@@ -2918,7 +2918,7 @@ div.progress.round .meter {
   top: 50%;
 }
 .top-bar ul > li.has-dropdown .dropdown {
-  background: white;
+  background: #f2f9fc;
   left: 0;
   margin: 0;
   padding: 7.4px 0 0 0;
@@ -2927,7 +2927,7 @@ div.progress.round .meter {
   z-index: 99;
 }
 .top-bar ul > li.has-dropdown .dropdown li {
-  background: white;
+  background: #f2f9fc;
   line-height: 1;
   min-width: 100%;
   padding-bottom: 5px;
@@ -2955,7 +2955,7 @@ div.progress.round .meter {
   text-transform: uppercase;
 }
 .top-bar ul > li.has-dropdown .dropdown li.divider {
-  border-top: solid 1px #acd9ec;
+  border-top: solid 1px #9fd3e9;
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -5114,7 +5114,7 @@ table.hide-for-medium {
     margin-bottom: 0;
     overflow: hidden;
     height: 45px;
-    background: white;
+    background: #f2f9fc;
     /* Override contain to grid stuff for breakpoint */
     /* Setting up the sliding area */
     /* When the Small Nav is Showing */
@@ -5150,7 +5150,7 @@ table.hide-for-medium {
     /* Dropdown Level 2 */
   }
   .top-bar ul > li.active, .top-bar ul > li:hover {
-    background: #eaf5fa;
+    background: #ddeff7;
   }
   .top-bar ul > li.name {
     height: 45px;
@@ -5201,7 +5201,7 @@ table.hide-for-medium {
   }
   .top-bar ul > li.divider {
     border-bottom: solid 1px white;
-    border-top: solid 1px #c1e2f1;
+    border-top: solid 1px #b4dcee;
     clear: both;
     height: 1px !important;
     margin: 8px 0 !important;
@@ -7144,14 +7144,6 @@ footer {
   font-size: 2em;
   line-height: 2em;
   text-align: right;
-}
-
-.form-subscribe-header > label {
-  display: block;
-  padding: 6px;
-  position: absolute;
-  top: 17px;
-  z-index: 2;
 }
 
 .input-text.required-entry.validate-email {
