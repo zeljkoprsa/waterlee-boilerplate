@@ -57,7 +57,7 @@
             <?php echo $this->getChildHtml('media') ?>
         </div>
 
-        <div class="product-shop columns six">
+        <div class="product-shop columns six" style="float: right">
             <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
                 <div class="no-display">
                     <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
@@ -118,7 +118,7 @@
 
         </div>
 
-        <div class="columns twelve">
+        <div class="columns six">
             <?php echo $this->getChildHtml('product_review') ?>
         </div>
 
