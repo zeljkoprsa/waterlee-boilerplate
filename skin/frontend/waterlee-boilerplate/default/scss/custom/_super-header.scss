@@ -82,7 +82,7 @@ form.custom div.custom.dropdown ul{
   box-shadow: 0 3px 5px #888;
 }
 
-.site-language label{
+.site-language label, .store-currency label{
   display: none;
 }
 
@@ -124,4 +124,9 @@ form.custom div.custom.dropdown ul{
 .currency.custom{
   float: right;
   margin-left: 10px;
+}
+.demo-notice{
+  background: lightgoldenrodyellow;
+  text-align: center;
+  padding: 0.3em 0;
 }

@@ -7,7 +7,6 @@
   @include outerRow();
   padding: 0.5em 0;
   background: $siteBackground;
-  @include box-shadow(0 -3px -2px rgba(0, 143, 255, 0.04));
 }
 
 .site-account{
