@@ -25,7 +25,10 @@
             <block type="core/template" name="inchoo_global_messages" template="core/inchoo_global_messages.phtml" before="-" />
         </reference>
     </reference>
-
+    <reference name="header">
+        <block type="directory/currency" name="store_currency_selector" template="currency/currency.phtml"/>
+    </reference>
+    <remove name="currency" />
     <!-- Remove callouts and rarely used stuff globally -->
 
     <remove name="right.poll"/>

@@ -1,34 +1,23 @@
-    <div class="super-header">
-        <div class="columns seven">
+    <div class="super-header ">
+        <div class="columns ten">
         <div class="block_header_top_help">
-            <i class="icon-phone-sign"></i><div>Call Us +001 555 777</div>
+            <i class="icon-phone-sign"></i><div>Call Us +385911512792</div>
         </div>
-
-
         <div class="navcontainer">
             <ul class="navlist">
-                <li id="active"><a href="#" id="current">Item one</a></li>
-                <li><a href="#">Item two</a></li>
-                <li><a href="#">Item three</a></li>
+                <li id="active"><a href="#" id="current"><a href="http://jakesharp.co">www.jakesharp.co</a></a></li>
             </ul>
         </div>
 
         <div class="welcome-msg">
-            <p>Default welcome msg! </p>
+            <p><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
         </div>
         </div>
 
-        <div class="columns five">
-        <form class="currency custom">
-        <label for="customDropdown">Currency:</label>
-        <select style="display:none;" id="customDropdown">
-            <option SELECTED>USD</option>
-            <option>GBP</option>
-            <option>EUR</option>
-        </select>
-        </form>
-
-        <div class="site-language offset-by-seven">
+        <div class="store-currency columns one">
+            <?php echo $this->getChildHtml('store_currency_selector') ?>
+        </div>
+        <div class="site-language columns one">
             <?php echo $this->getChildHtml('store_language') ?>
         </div>
 

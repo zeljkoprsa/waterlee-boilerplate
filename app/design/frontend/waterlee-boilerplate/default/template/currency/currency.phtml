@@ -1,0 +1,15 @@
+<?php if($this->getCurrencyCount() > 1): ?>
+        <form action="#" class="custom">
+        <label for="store-currency-selector"><?php echo $this->__('Your Currency:') ?></label>
+        <select onchange="window.location.href=this.value" name="store-currency-selector" id="store-currency-selector" class="expand">
+            <?php foreach ($this->getCurrencies() as $_code => $_name): ?>
+                <option value="<?php echo $this->getSwitchCurrencyUrl($_code)?>"
+                    <?php if($_code == $this->getCurrentCurrencyCode()): ?>
+                        selected="SELECTED"
+                    <?php endif; ?>>
+                    <?php echo $_code ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        </form>
+<?php endif; ?>
