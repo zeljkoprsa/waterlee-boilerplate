@@ -1,10 +1,15 @@
 .site-footer{
   @include outerRow();
-  padding-top: 10px;
+  margin-top: 2em;
 }
 
 .site-footer footer{
-  @include column(12);
+  @include outerRow();
+  background: #F2F9FC;
+  border: 1px solid #dde4e7;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 footer{
@@ -24,13 +29,6 @@ footer{
   line-height: 2em;
   text-align: right;
 }
-
-
-.newsletter button{
-  padding: 8px 20px;
-  width: 20%;
-}
-
 #info{
   list-style-type: none;
 }
@@ -38,9 +36,4 @@ footer{
 .column-title{
   padding: 30px 0 20px 0;
   font-weight: 900;
-}
-
-.columns.four > img{
-  float: left;
-  padding: 0 7px 7px 0;
 }
