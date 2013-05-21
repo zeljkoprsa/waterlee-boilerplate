@@ -67,34 +67,6 @@
 
 // Font Awesome
 @import "font-awesome";
-
-/* --------------------------------------------------
-   Table of Contents
------------------------------------------------------
-:: Header
-:: Super Header
-:: Site Nav
-:: Page
-:: Footer
-
-:: Catalog Page
-:: Product Page
-
-
-:: Sidebar Blocks
-
-:: Checkout
-:: - Cart
-:: - Checkout
-
-:: Success Page
-:::: Print Receipt Page
-
-:: My Account
-
-*/
-body{ background: #fff url("../images/grid15.png") repeat fixed center 0; font-family: 'Open Sans', sans-serif;}
-
 @import "custom/header";
 @import "custom/super-header";
 @import "custom/site-nav";
