@@ -9,16 +9,14 @@ $rowWidth: 1200px;
 //$mobileTotalColumns: 4;
 //$blockGridElements: 12; // Highest number of block grid elements, Maximum of 24 supported
 
-
 // Colors Settings
 
-$mainColor: #4183c4;
-//$mainColor: #004B7E;
-//$secondaryColor: #f4f4f4;
+$mainColor: #2486c6;
+$secondaryColor: #a4bac5;
 // $alertColor: #c60f13;
 // $successColor: #5da423;
-//$txtColor: #333;
-//$highlightColor: rgba(0, 170, 0, 0.37);
+  $txtColor: #444;
+   $highlightColor: rgba(0, 170, 0, 0.17);
 // $black: #000;
 // $white: #fff;
 // $shinyEdge: rgba(#fff, .5);
@@ -97,8 +95,8 @@ $fontSmoothing: antialiased;
 
 // Top Bar Settings
 
-$topBarBgColor: rgb(242, 249, 252);
-$topBarBorder: rgb(215, 242, 253);
+$topBarBgColor: #F2F9FC;
+$topBarBorder: #D7F2FD;
 $topBarHeight: 37px;
 //$topBarHeightMobile: 37px;
 $topBarBtmMargin: 0;
@@ -107,7 +105,7 @@ $topBarBtmMargin: 0;
 $topBarLinkColor: $mainColor;
 //$topBarLinkWeight: 500;
 //$topBarLinkSize: 14px;
-   $topBarDropBgColor: rgb(242, 249, 252);
+   $topBarDropBgColor: #F2F9FC;
    $topBarDropLinkColor: $mainColor;
 // $topBarDropToggleSize: 5px;
    $topBarDropToggleColor: $topBarBgColor;
@@ -128,7 +126,7 @@ $topBarLinkColor: $mainColor;
 // $progBarBorderSize: 1px;
 // $progBarPad: 2px;
 // $linkListBottomMargin: 17px -22px;
-//$tableBorderRadius: 0px;
+   $tableBorderRadius: 0px;
 // $alertBorderRadius: 3px;
 
 // Tooltip Settings
