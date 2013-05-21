@@ -1,6 +1,7 @@
 .super-header{
   @include outerRow();
   color: #333;
+  border-bottom: 1px solid $topBarBorder;
 }
 
 /*  navcontainer  */
@@ -42,7 +43,7 @@
 
 
 .nav-bar{
-  background: darken($mainColor, 5%);
+  border: 0 none;
   margin: 0;
 }
 
