@@ -109,3 +109,9 @@
 /app/etc/local.xml
 /waterlee-boilerplate_local.sql
 Gemfile.lock
+/skin/frontend/commercebug/
+/app/code/community/Mgt/*
+/app/etc/modules/Zeljkoprsa_Commercebug.xml
+/app/etc/modules/Mgt_Base.xml
+/app/etc/modules/Mgt_AmazingWysiwyg.xml
+/app/code/local/*
