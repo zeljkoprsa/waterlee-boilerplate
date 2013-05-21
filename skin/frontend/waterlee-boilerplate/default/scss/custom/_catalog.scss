@@ -58,21 +58,13 @@
 
 .products-grid  h2.product-name { font-size: 16px }
 .product-image > img {
-  background: none repeat scroll 0 0 #F0F0F0;
+
   border: 1px solid #DDDDDD;
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
-  -webkit-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
-  -moz-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset;
   display: block;
-  padding: 6px;
+
 }
 .product-image > img:hover {
-  background: none repeat scroll 0 0 #27A2E1;
-  border: 1px solid #27A2E1;
-  box-shadow: 0 0 2px #00536D;
-  -webkit-box-shadow: 0 0 2px #00536D;
-  -moz-box-shadow: 0 0 2px #00536D;
+  border-color:#27A2E1;
 }
 .products-grid  .price-box, .products-grid  .actions{ width: 90%;clear: both; }
 .products-grid .add-to-links{}
