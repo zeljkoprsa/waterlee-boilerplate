@@ -9,101 +9,231 @@
  */
 -->
 
-
-
-
-
 <layout>
-<!-- Global Operations -->
-<default>
-    <reference name="root">
-        <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+    <!-- Global Operations -->
+    <default>
         <reference name="root">
-            <remove name="global_messages" />
+            <action method="setTemplate">
+                <template>page/2columns-left.phtml</template>
+                <remove name="global_messages"/>
+            </action>
+            <reference name="after_body_start">
+                <block type="core/template" name="inchoo_global_messages" template="core/inchoo_global_messages.phtml"
+                       before="-"/>
+            </reference>
         </reference>
-        <reference name="after_body_start">
-            <block type="core/template" name="inchoo_global_messages" template="core/inchoo_global_messages.phtml" before="-" />
+        <reference name="header">
+            <block type="directory/currency" name="store_currency_selector" template="currency/currency.phtml"/>
         </reference>
-    </reference>
-    <reference name="header">
-        <block type="directory/currency" name="store_currency_selector" template="currency/currency.phtml"/>
-    </reference>
-    <remove name="currency" />
-    <!-- Remove callouts and rarely used stuff globally -->
-
-    <remove name="right.poll"/>
-    <remove name="right.permanent.callout"/>
-    <remove name="left.permanent.callout"/>
-    <remove name="paypal.partner.right.logo"/>
-    <remove name="tags_popular"/>
-    <remove name="product_tag_list" />
-
-    <remove name="catalog.compare.sidebar"/>
-    <remove name="checkout.cart.shipping" />
-    <remove name="left.newsletter"/>
-    <!--<remove name="catalog.leftnav"/>-->
-    <!--<remove name="catalogsearch.leftnav"/>-->
-    <remove name="right.reports.product.viewed"/>
-    <remove name="left.reports.product.viewed"/>
+        <remove name="currency"/>
+        <!-- Remove callouts and rarely used stuff globally -->
+        <remove name="right.poll"/>
+        <remove name="right.permanent.callout"/>
+        <remove name="left.permanent.callout"/>
+        <remove name="paypal.partner.right.logo"/>
+        <remove name="tags_popular"/>
+        <remove name="product_tag_list"/>
+        <remove name="catalog.compare.sidebar"/>
+        <remove name="checkout.cart.shipping"/>
+        <remove name="left.newsletter"/>
+        <!--<remove name="catalog.leftnav"/>-->
+        <!--<remove name="catalogsearch.leftnav"/>-->
+        <remove name="right.reports.product.viewed"/>
+        <remove name="left.reports.product.viewed"/>
 
 
-    <!-- //Remove callouts and rarely used stuff globally -->
+        <!-- //Remove callouts and rarely used stuff globally -->
 
 
-    <!-- Add js/css globally -->
-    <reference name="head">
-        <action method="addItem"><type>skin_js</type><script>js/foundation/modernizr.foundation.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.topbar.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.navigation.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.tooltips.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.reveal.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/responsive-tables.js</script></action>
-    <!-- Afterwards Added -->
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.cookie.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.event.move.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.event.swipe</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.accordion.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.alerts.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.buttons.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.clearing.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.joyride.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.magellan.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.mediaQueryToggle.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.orbit.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.reveal.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.tabs.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.tooltips.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.topbar.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.utils.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.offcanvas.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.placeholder.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/modernizr.foundation.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/jquery.formalize.min.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/jquery.isotope.min.js</script></action>
-    <!-- Afterwards Added - END -->
-        <action method="addItem"><type>skin_js</type><script>js/foundation/jquery.foundation.forms.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/foundation/app.js</script></action>
-        <action method="addItem"><type>skin_js</type><script>js/app.js</script></action>
+        <!-- Add js/css globally -->
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/modernizr.foundation.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.topbar.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.navigation.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.tooltips.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.reveal.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/responsive-tables.js</script>
+            </action>
+            <!-- Afterwards Added -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.cookie.js</script>
+            </action>
+            <!--<action method="addItem">-->
+            <!--<type>skin_js</type>-->
+            <!--<script>js/foundation/jquery.event.move.js</script>-->
+            <!--</action>-->
+            <!--<action method="addItem">-->
+            <!--<type>skin_js</type>-->
+            <!--<script>js/foundation/jquery.event.swipe</script>-->
+            <!--</action>-->
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.accordion.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.alerts.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.buttons.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.clearing.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.joyride.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.magellan.js</script>
+            </action>
+            <!--<action method="addItem">-->
+            <!--<type>skin_js</type>-->
+            <!--<script>js/foundation/jquery.foundation.mediaQueryToggle.js</script>-->
+            <!--</action>-->
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.orbit.js</script>
+            </action>
+            <!--<action method="addItem">-->
+            <!--<type>skin_js</type>-->
+            <!--<script>js/foundation/jquery.foundation.reveal.js</script>-->
+            <!--</action>-->
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.tabs.js</script>
+            </action>
+            <!--<action method="addItem">-->
+            <!--<type>skin_js</type>-->
+            <!--<script>js/foundation/jquery.foundation.tooltips.js</script>-->
+            <!--</action>-->
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.topbar.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.utils.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.offcanvas.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.placeholder.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/jquery.formalize.min.js</script>
+            </action>
+            <!--<action method="addItem">-->
+            <!--<type>skin_js</type>-->
+            <!--<script>js/jquery.isotope.min.js</script>-->
+            <!--</action>-->
+            <!-- Afterwards Added - END -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/jquery.foundation.forms.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/foundation/app.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/app.js</script>
+            </action>
 
 
-        <action method="addItem"><type>skin_css</type><name>css/normalize.css</name><params/></action>
-        <action method="addItem"><type>skin_css</type><name>css/styles.css</name><params/></action>
-        <action method="addItem"><type>skin_css</type><name>css/responsive-tables.css</name><params/></action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/normalize.css</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/styles.css</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/responsive-tables.css</name>
+                <params/>
+            </action>
 
 
-    </reference>
-    <!-- //Add js/css globally -->
+        </reference>
+        <!-- //Add js/css globally -->
 
 
+        <!-- Add/Remove Top Links -->
+        <reference name="root">
 
-    <!-- Add/Remove Top Links -->
-    <reference name="root">
+            <remove name="global_messages"/>
+            <!-- Remove Global Messages in favor of "inchoo_global_messages" -->
+            <reference name="top.links">
 
-        <remove name="global_messages" />    <!-- Remove Global Messages in favor of "inchoo_global_messages" -->
-        <reference name="top.links">
+                <!-- Add Top Links -->
+                <action method="addLink" translate="label title">
+                    <label>About Us</label>
+                    <url>about</url>
+                    <title>About Us</title>
+                    <prepare>true</prepare>
+                    <urlParams helper="core/url/getHomeUrl"/>
+                    <position>1</position>
+                    <liParams/>
+                    <aParams>class="top-link-about-us"</aParams>
+                    <beforeText></beforeText>
+                    <afterText></afterText>
+                </action>
+                <!-- ... -->
+                <!-- //Add Top Links -->
 
-            <!-- Add Top Links -->
+                <!-- Remove Top Links -->
+                <action method="removeLinkByUrl">
+                    <url helper="customer/getAccountUrl"/>
+                </action>
+                <remove name="checkout_cart_link"/>
+                <!-- ... -->
+                <!-- //Remove Top Links -->
+
+            </reference>
+
+        </reference>
+        <!-- //Add/Remove Top Links -->
+
+        <!-- Add/Remove Footer Links -->
+
+
+        <reference name="footer_links">
+
+            <!-- Add Footer Links -->
             <action method="addLink" translate="label title">
                 <label>About Us</label>
                 <url>about</url>
@@ -116,160 +246,148 @@
                 <beforeText></beforeText>
                 <afterText></afterText>
             </action>
-            <!-- ... -->
-            <!-- //Add Top Links -->
+            <!-- //Add Footer Links -->
 
-            <!-- Remove Top Links -->
-            <action method="removeLinkByUrl"><url helper="customer/getAccountUrl"/></action>
-            <remove name="checkout_cart_link"/>
-            <!-- ... -->
-            <!-- //Remove Top Links -->
+            <!-- Remove 'Site Map' Link -->
+            <!--<action method="removeLinkByUrl"><url helper="catalog/map/getCategoryUrl" /></action>-->
+            <!-- Remove 'Search Terms' Link -->
+            <!--<action method="removeLinkByUrl"><url helper="catalogsearch/getSearchTermUrl" /></action>-->
+            <!-- Remove 'Advanced Search' -->
+            <!--<action method="removeLinkByUrl"><url helper="catalogsearch/getAdvancedSearchUrl" /></action>-->
 
         </reference>
 
-    </reference>
-    <!-- //Add/Remove Top Links -->
-
-    <!-- Add/Remove Footer Links -->
-
-
-    <reference name="footer_links">
-
-        <!-- Add Footer Links -->
-        <action method="addLink" translate="label title">
-            <label>About Us</label>
-            <url>about</url>
-            <title>About Us</title>
-            <prepare>true</prepare>
-            <urlParams helper="core/url/getHomeUrl"/>
-            <position>1</position>
-            <liParams/>
-            <aParams>class="top-link-about-us"</aParams>
-            <beforeText></beforeText>
-            <afterText></afterText>
-        </action>
-        <!-- //Add Footer Links -->
-
-        <!-- Remove 'Site Map' Link -->
-        <!--<action method="removeLinkByUrl"><url helper="catalog/map/getCategoryUrl" /></action>-->
-        <!-- Remove 'Search Terms' Link -->
-        <!--<action method="removeLinkByUrl"><url helper="catalogsearch/getSearchTermUrl" /></action>-->
-        <!-- Remove 'Advanced Search' -->
-        <!--<action method="removeLinkByUrl"><url helper="catalogsearch/getAdvancedSearchUrl" /></action>-->
-
-    </reference>
-
-    <!-- By default, Magento sets a static footer block. Find it in the admin under
+        <!-- By default, Magento sets a static footer block. Find it in the admin under
  CMS > Static Blocks.-->
-    <reference name="footer">
-        <!-- Remove Magento's default static block and use the 'addLink' method above
+        <reference name="footer">
+            <!-- Remove Magento's default static block and use the 'addLink' method above
 to add your custom and inline links.  I use the 'unsetChild' method as often as
 possible as opposed using the more final <remove name="cms_footer_links"/>
 just in case I want to add the block somewhere else -->
 
-        <!--<action method="unsetChild"><name>cms_footer_links</name></action>-->
+            <!--<action method="unsetChild"><name>cms_footer_links</name></action>-->
 
-        <!-- Remove all the other Magento links - "Site Map, Search Terms, Advanced Search, and
+            <!-- Remove all the other Magento links - "Site Map, Search Terms, Advanced Search, and
       Contact Us" -->
-        <!--<action method="unsetChild"><name>footer_links</name></action> &lt;!&ndash; Magento 1.4.x &ndash;&gt;-->
-        <block type="newsletter/subscribe" after="-" name="footer.newsletter" template="newsletter/subscribe.phtml"/>
-        <block type="core/template" name="mobile.menu.footer" template="page/mobile-menu-footer.phtml"/>
-    </reference>
-    <!-- //Add/Remove Footer Links -->
+            <!--<action method="unsetChild"><name>footer_links</name></action> &lt;!&ndash; Magento 1.4.x &ndash;&gt;-->
+            <block type="newsletter/subscribe" after="-" name="footer.newsletter"
+                   template="newsletter/subscribe.phtml"/>
+            <block type="core/template" name="mobile.menu.footer" template="page/mobile-menu-footer.phtml"/>
+        </reference>
+        <!-- //Add/Remove Footer Links -->
 
-    <!-- Left Column Changes globally... -->
-    <reference name="left">
-        <!-- ... -->
-    </reference>
-    <!-- //Left Column Changes globally... -->
+        <!-- Left Column Changes globally... -->
+        <reference name="left">
+            <!-- ... -->
+        </reference>
+        <!-- //Left Column Changes globally... -->
 
-    <!-- Right Column Changes globally... -->
-    <reference name="right">
-        <!-- ... -->
-    </reference>
-    <!-- //Right Column Changes globally... -->
+        <!-- Right Column Changes globally... -->
+        <reference name="right">
+            <!-- ... -->
+        </reference>
+        <!-- //Right Column Changes globally... -->
 
-</default>
-<!-- //Global Operations -->
+    </default>
+    <!-- //Global Operations -->
 
-<!-- When Customer is Logged out -->
-<customer_logged_out>
-    <reference name="top.links">
-        <action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
-    </reference>
-</customer_logged_out>
-<!-- //When Customer is Logged out -->
+    <!-- When Customer is Logged out -->
+    <customer_logged_out>
+        <reference name="top.links">
+            <action method="removeLinkByUrl">
+                <url helper="customer/getLoginUrl"/>
+            </action>
+        </reference>
+    </customer_logged_out>
+    <!-- //When Customer is Logged out -->
 
-<!-- When Customer is Logged in -->
-<customer_logged_in>
-    <reference name="top.links">
-        <action method="removeLinkByUrl"><url helper="customer/getLogoutUrl"/></action>
-    </reference>
-</customer_logged_in>
-<!-- //When Customer is Logged in -->
+    <!-- When Customer is Logged in -->
+    <customer_logged_in>
+        <reference name="top.links">
+            <action method="removeLinkByUrl">
+                <url helper="customer/getLogoutUrl"/>
+            </action>
+        </reference>
+    </customer_logged_in>
+    <!-- //When Customer is Logged in -->
 
 
-<catalog_category_default translate="label">
-    <label>Catalog Category (Non-Anchor)</label>
-    <reference name="root">
-        <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
-    </reference>
-    <reference name="left">
-        <remove name="left.permanent.callout" />
-    </reference>
-    <reference name="right">
-        <remove name="right.permanent.callout" />
-    </reference>
-</catalog_category_default>
+    <catalog_category_default translate="label">
+        <label>Catalog Category (Non-Anchor)</label>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/2columns-left.phtml</template>
+            </action>
+        </reference>
+        <reference name="left">
+            <remove name="left.permanent.callout"/>
+        </reference>
+        <reference name="right">
+            <remove name="right.permanent.callout"/>
+        </reference>
+    </catalog_category_default>
 
 
 <!--
 Category layered navigation layout
 -->
 
-<catalog_category_layered translate="label">
-    <label>Catalog Category (Anchor)</label>
-    <reference name="root">
-    </reference>
-    <reference name="left">
-        <remove name="left.permanent.callout" />
-    </reference>
-    <reference name="right">
-        <remove name="right.permanent.callout" />
-    </reference>
-</catalog_category_layered>
-
+    <catalog_category_layered translate="label">
+        <label>Catalog Category (Anchor)</label>
+        <reference name="root">
+        </reference>
+        <reference name="left">
+            <remove name="left.permanent.callout"/>
+        </reference>
+        <reference name="right">
+            <remove name="right.permanent.callout"/>
+        </reference>
+    </catalog_category_layered>
 
 
     <!-- Module Specific Operations -->
-<catalog_product_view>
+    <catalog_product_view>
+        <!-- ... -->
+    </catalog_product_view>
     <!-- ... -->
-</catalog_product_view>
-<!-- ... -->
-<!-- //Module Specific Operations -->
-<catalog_product_view translate="label">
-    <label>Catalog Product View (Any)</label>
-    <!-- Mage_Catalog -->
-    <reference name="root">
-        <action method="setTemplate"><template>page/1column.phtml</template></action>
-        <remove name="wishlist" />
-    </reference>
-    <reference name="head">
-        <block type="catalog/product_view_description" name="facebook.og" as="facebook_og" template="catalog/product/view/fb-og.phtml" />
-    </reference>
-    <reference name="product.info">
-        <block type="review/product_view_list" name="product.info.product_additional_data" as="product_review"  template="review/product/view/list.phtml">
-            <block type="review/form" name="product.review.form"  as="review_form"/>
-        </block>
-    </reference>
+    <!-- //Module Specific Operations -->
+    <catalog_product_view translate="label">
+        <label>Catalog Product View (Any)</label>
+        <!-- Mage_Catalog -->
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+            <remove name="wishlist"/>
+        </reference>
+        <reference name="head">
+            <block type="catalog/product_view_description" name="facebook.og" as="facebook_og"
+                   template="catalog/product/view/fb-og.phtml"/>
+        </reference>
+        <reference name="product.info">
+            <block type="review/product_view_list" name="product.info.product_additional_data" as="product_review"
+                   template="review/product/view/list.phtml">
+                <block type="review/form" name="product.review.form" as="review_form"/>
+            </block>
+        </reference>
 
-</catalog_product_view>
-<customer_account>
-    <reference name="customer_account_navigation">
+    </catalog_product_view>
 
-    </reference>
-</customer_account>
+<!-- Catalog Search Result page -->
+    <catalogsearch_result_index>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/2columns-left.phtml</template>
+            </action>
+        </reference>
+    </catalogsearch_result_index>
+    <customer_account>
+        <reference name="customer_account_navigation">
 
+        </reference>
+    </customer_account>
+    <checkout_onepage_index>
 
+    </checkout_onepage_index>
 
 </layout>
