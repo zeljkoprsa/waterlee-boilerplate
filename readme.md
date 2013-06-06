@@ -6,7 +6,7 @@
 The theme itself is still rough around the edges but you now have 
 pretty much everything you need to start creating your own theme.
 
-Remeber thisis a boilerplate not a production ready theme ;)
+Remember this is a boilerplate not a production ready theme ;)
 
 You can see the demo at http://waterlee.jakesharp.co
 
@@ -24,9 +24,5 @@ What's inside:
 ##What's next:
 
 - Getting the theme ready for beta release
-- Recieving your feedback and participation to make this worthwile for everyone
-- Improving this readme with refferences and more info
-
-Currently, demo is unavailable but at this point it's not about the looks, 
-download it, test it and please do provide a constructive feedback.
-
+- Receiving your feedback and participation to make this worthwile for everyone
+- Improving this readme with references and more info
