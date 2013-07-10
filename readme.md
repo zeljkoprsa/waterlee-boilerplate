@@ -1,6 +1,14 @@
 #Magento HTML5 responsive boilerplate [![endorse](http://api.coderwall.com/zeljkoprsa/endorsecount.png)](http://coderwall.com/zeljkoprsa)
  - Built on latest Foundation 3 by ZURB.
 
+**Update**
+## Waterlee on Foundation 4.x is in the works
+
+Making the boilerplate from scratch using the latest foundation 4 and keeping our mind
+on the Foundation 5 release that's apparently being released in the near future.
+
+All of the changes will be documented on the wiki pages here on github.
+
 ##Public Beta
 
 The theme itself is still rough around the edges but you now have 
