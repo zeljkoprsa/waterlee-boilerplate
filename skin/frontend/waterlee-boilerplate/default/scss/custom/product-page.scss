@@ -1,6 +1,6 @@
 .product-shop .product-name{
   font-weight: 300;
-  margin-bottom: 0.1em;
+
 }
 
 .product-shop .email-friend, .product-shop .no-rating{
@@ -31,5 +31,5 @@
 .product-shop .std{
   /* @todo: Candidate for refactoring: global-css-rule; */
   line-height: $paragraph-line-height;
-
 }
+
