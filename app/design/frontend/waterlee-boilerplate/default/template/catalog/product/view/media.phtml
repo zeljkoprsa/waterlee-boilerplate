@@ -37,26 +37,26 @@ $_helper = $this->helper('catalog/output');
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
     <p class="product-image product-image-zoom">
         <?php
-        $_img = '<img id="image" src="'.$this->helper('catalog/image')->init($_product, 'image').'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+        $_img = '<img id="image" src="'.$this->helper('catalog/image')->init($_product, 'image').'" class="th" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
         echo $_helper->productAttribute($_product, $_img, 'image');
         ?>
     </p>
 <?php else: ?>
     <p class="product-image">
         <?php
-        $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(265).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+        $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(265).'" class="th" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
         echo $_helper->productAttribute($_product, $_img, 'image');
         ?>
     </p>
 <?php endif; ?>
 <?php if (count($this->getGalleryImages()) > 0): ?>
     <div class="more-views">
-        <h2><?php echo $this->__('More Views') ?></h2>
+        <h5><?php echo $this->__('More Views') ?></h5>
         <ul class="clearing-thumbs" data-clearing>
             <?php foreach ($this->getGalleryImages() as $_image): ?>
                 <li>
                     <a href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(600); ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>">
-                        <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(56); ?>" width="56" height="56" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+                        <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(56); ?>" class="th" width="56" height="56" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
                     </a>
                 </li>
             <?php endforeach; ?>
