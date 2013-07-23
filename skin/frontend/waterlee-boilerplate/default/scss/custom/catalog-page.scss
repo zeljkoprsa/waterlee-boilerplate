@@ -1,0 +1,16 @@
+.catalog-category-view .grid-mode .product-name{
+  font-size: $h5-font-size;
+}
+.catalog-category-view .grid-mode  .price-box{
+  margin-bottom: 1em;
+}
+.catalog-category-view .grid-mode .price-box .regular-price, .catalog-category-view .grid-mode .price-box .minimal-price-link{
+  @include grid-row(12);
+  font-size: $h4-font-size;
+}
+
+.catalog-category-view .grid-mode .price-box .minimal-price-link {
+  position: absolute;
+  top: -4px;
+  background: rgba(255, 255, 255, 0.77);
+}
