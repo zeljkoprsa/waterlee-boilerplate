@@ -47,6 +47,10 @@
             <div class="row product-media">
             <div class="product-img-box columns large-5 small-12">
                 <?php echo $this->getChildHtml('media') ?>
+                <hr />
+                <section class="related-products-wrapper">
+                    <?php echo $this->getChildHtml('catalog_products_related') ?>
+                </section>
             </div>
 
             <div class="product-shop columns large-7 small-12">
@@ -111,15 +115,15 @@
                         </section>
                     <?php endforeach;?>
                 </div>
-                    <?php echo $this->getChildHtml('catalog_products_related') ?>
-                    <?php echo $this->getChildHtml('product_additional_data') ?>
-
             </div>
-
             </div>
-
         </form>
-        <?php echo $this->getChildHtml('product_review') ?>
+        <section class="columns small-5 product-reviews">
+            <?php echo $this->getChildHtml('product_additional_data') ?>
+        </section>
+        <section class="columns small-7 additional-data">
+            <?php echo $this->getChildHtml('product_review') ?>
+        </section>
         <div class="columns large-12">
             <?php echo $this->getChildHtml('upsell_products') ?>
         </div>
