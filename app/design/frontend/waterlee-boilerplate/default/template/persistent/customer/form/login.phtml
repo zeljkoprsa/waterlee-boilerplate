@@ -32,14 +32,14 @@
  */
 /** @var $this Mage_Customer_Block_Form_Login */
 ?>
-<div class="account-login">
+<div class="account-login columns large-12">
     <div class="page-title">
         <h1><?php echo $this->__('Login or Create an Account') ?></h1>
     </div>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form">
         <div class="col2-set row">
-            <div class="col-1 new-users columns seven">
+            <div class="col-1 new-users columns large-7">
                 <div class="content">
                     <h2><?php echo $this->__('New Customers') ?></h2>
                     <p><?php echo $this->__('By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.') ?></p>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-2 registered-users columns five">
+            <div class="col-2 registered-users columns large-5">
                 <div class="content">
                     <h2><?php echo $this->__('Registered Customers') ?></h2>
                     <p><?php echo $this->__('If you have an account with us, please log in.') ?></p>
