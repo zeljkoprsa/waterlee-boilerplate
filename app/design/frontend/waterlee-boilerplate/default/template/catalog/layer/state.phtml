@@ -35,7 +35,7 @@
 <?php if(!empty($_filters)): ?>
 <div class="currently">
     <p class="block-subtitle"><?php echo $this->__('Currently Shopping by:') ?></p>
-    <ol>
+    <ul class="no-bullet">
     <?php foreach ($_filters as $_filter): ?>
         <li>
         	<div class="round-inline">
@@ -44,7 +44,7 @@
             </div>
         </li>
     <?php endforeach; ?>
-    </ol>
+    </ul>
     <div class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
 </div>
 <?php endif; ?>
