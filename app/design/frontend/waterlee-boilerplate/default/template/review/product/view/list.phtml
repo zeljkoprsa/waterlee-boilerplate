@@ -27,10 +27,10 @@
 
 <?php $_items = $this->getReviewsCollection()->getItems();?>
 <div class="box-collateral box-reviews" id="customer-reviews">
-    <div class="columns large-5">
+    <div class="columns small-12">
         <?php echo $this->getChildHtml('review_form') ?>
     </div>
-    <div class="columns large-7">
+    <div class="columns small-12">
         <?php if (count($_items)):?>
             <h2><?php echo $this->__('Customer Reviews') ?></h2>
             <?php echo $this->getChildHtml('toolbar') ?>
