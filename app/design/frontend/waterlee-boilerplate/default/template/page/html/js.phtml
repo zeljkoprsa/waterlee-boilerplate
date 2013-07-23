@@ -1,0 +1,29 @@
+<?php /* Initializes all functions appropriately when using all functions inside foundation.min.js */ ?>
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.js') ?>"></script>
+
+
+<?php /*
+  * If you know what you need exactly, load JS separately but:
+  * NOTE (1):Remember to unload "foundation.min.js" and "foundation.js" beforehand then initialize and pass parameters in your app.js file.
+  * NOTE (2): ! jquery.offcanvas.js needs to be loaded separately in any scenario since it's not packed inside foundation.min.js !
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.alerts.js') ?>"></script>
+
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.cookie.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.dropdown.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.forms.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.forms-new.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.interchange.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.joyride.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.magellan.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.orbit.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.placeholder.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.reveal.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.section.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.tooltips.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/foundation/foundation.topbar.js') ?>"></script>
+*/ ?>
+
+<script src="<?php echo $this->getSkinUrl('js/foundation.min.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/foundation/jquery.offcanvas.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/app.js') ?>"></script>
+
