@@ -1,20 +1,18 @@
 /*
-=require foundation/modernizr.foundation
-=require foundation/jquery.placeholder
-=require foundation/jquery.foundation.utils
-=require foundation/jquery.foundation.alerts
-=require foundation/jquery.foundation.accordion
-=require foundation/jquery.foundation.buttons
-=require foundation/jquery.foundation.tooltips
-=require foundation/jquery.foundation.forms
-=require foundation/jquery.foundation.tabs
-=require foundation/jquery.foundation.navigation
-=require foundation/jquery.foundation.topbar
-=require foundation/jquery.foundation.reveal
-=require foundation/jquery.foundation.orbit
-=require foundation/jquery.foundation.magellan
-=require foundation/jquery.foundation.joyride
-=require foundation/jquery.foundation.clearing
-=require foundation/jquery.foundation.mediaQueryToggle
-=require foundation/app
+=require foundation/foundation
+=require foundation/foundation.alerts
+=require foundation/foundation.clearing
+=require foundation/foundation.cookie
+=require foundation/foundation.dropdown
+=require foundation/foundation.forms
+=require foundation/foundation.joyride
+=require foundation/foundation.magellan
+=require foundation/foundation.orbit
+=require foundation/foundation.reveal
+=require foundation/foundation.section
+=require foundation/foundation.tooltips
+=require foundation/foundation.topbar
+=require foundation/foundation.interchange
+=require foundation/foundation.placeholder
+=require foundation/foundation.abide
 */
