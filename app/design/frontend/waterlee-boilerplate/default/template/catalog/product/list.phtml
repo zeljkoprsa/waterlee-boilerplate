@@ -48,9 +48,9 @@ $_helper = $this->helper('catalog/output');
     <?php // List mode ?>
     <?php if($this->getMode()!='grid'): ?>
     <?php $_iterator = 0; ?>
-    <ol class="products-list columns small-12" id="products-list">
+    <ul class="products-list columns small-12 no-bullet" id="products-list">
         <?php foreach ($_productCollection as $_product): ?>
-        <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
+        <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?> panel">
             <div class="row">
                 <?php // Product Image ?>
                 <div class="product-image columns large-4">
@@ -66,28 +66,31 @@ $_helper = $this->helper('catalog/output');
                         <?php endif; ?>
                         <?php echo $this->getPriceHtml($_product, true) ?>
                         <?php if($_product->isSaleable()): ?>
-                        <p><button type="button" title="<?php echo $this->__('Buy Now') ?>" class="button" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Buy Now') ?></span></span></button></p>
+                        <button type="button" title="<?php echo $this->__('Buy Now') ?>" class="small button" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><?php echo $this->__('Buy Now') ?></button>
                         <?php else: ?>
                         <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                         <?php endif; ?>
+                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
                         <div class="desc std">
                             <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
-                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
                         </div>
-                        <ul class="add-to-links">
+
+                        <div class="button-bar">
+                        <ul class="add-to-links button-group">
                             <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                            <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class=""><?php echo $this->__('Add to Wishlist') ?></a></li>
+                            <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="tiny button"><?php echo $this->__('Add to Wishlist') ?></a></li>
                             <?php endif; ?>
                             <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
-                            <li class="hide-on-phones"><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class=""><?php echo $this->__('Add to Compare') ?></a></li>
+                            <li> <a href="<?php echo $_compareUrl ?>" class="tiny button"><?php echo $this->__('Add to Compare') ?></a></li>
                             <?php endif; ?>
                         </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </li>
         <?php endforeach; ?>
-    </ol>
+    </ul>
     <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
 
     <?php else: ?>
@@ -98,7 +101,7 @@ $_helper = $this->helper('catalog/output');
     <?php $_collectionSize = $_productCollection->count() ?>
     <?php $_columnCount = $this->getColumnCount(); ?>
     <div class="columns large-12 grid-mode">
-    <ul class="small-block-grid-2 large-block-grid-4">
+    <ul class="small-block-grid-2 large-block-grid-4 no-bullet">
         <?php $i=0; foreach ($_productCollection as $_product): ?>
         <?php if ($i++%$_columnCount==0): ?>
 
