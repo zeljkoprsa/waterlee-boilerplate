@@ -27,10 +27,10 @@
 <form id="search_mini_form" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get">
 
 <div class="row collapse form-search">
-    <div class="four mobile-three columns">
+    <div class="columns large-10 ">
         <input id="search" type="text" name="<?php echo $this->helper('catalogsearch')->getQueryParamName() ?>" value="<?php echo $this->helper('catalogsearch')->getEscapedQueryText() ?>" class="input-text" />
     </div>
-    <div class="one mobile-one columns">
+    <div class="columns large-2 ">
         <button type="submit" title="<?php echo $this->__('Search') ?>" class="button expand postfix">
             <i class="icon-search"></i>
         </button>

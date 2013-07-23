@@ -44,13 +44,17 @@
 <?php echo $this->getChildHtml('after_body_start') ?>
     <?php echo $this->getChildHtml('global_notices') ?>
         <?php echo $this->getChildHtml('header') ?>
+        <?php echo $this->getChildHtml('breadcrumbs') ?>
         <div class="main-container col2-right-layout">
-                <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="col-main nine columns">
-                    <?php echo $this->getChildHtml('global_messages') ?>
-                    <?php echo $this->getChildHtml('content') ?>
+            <div class="row">
+                <div class="col-main columns large-9">
+                    <div class="row">
+                        <?php echo $this->getChildHtml('global_messages') ?>
+                        <?php echo $this->getChildHtml('content') ?>
+                    </div>
                 </div>
-                <div class="col-right sidebar three columns"><?php echo $this->getChildHtml('right') ?></div>
+                <div class="col-right sidebar columns large-3"><?php echo $this->getChildHtml('right') ?></div>
+            </div>
         </div>
         <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('before_body_end') ?>

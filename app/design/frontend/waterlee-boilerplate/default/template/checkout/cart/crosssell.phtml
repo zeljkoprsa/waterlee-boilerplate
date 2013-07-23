@@ -36,11 +36,11 @@
     <h2><?php echo $this->__('Based on your selection, you may be interested in the following items:') ?></h2>
     <div class="row">
     <?php foreach ($this->getItems() as $_item): ?>
-        <div class="item columns four mobile-four">
+        <div class="item columns large-4">
            <div class="product-details">
                <div class="row">
-                <a class="product-image columns four mobile-two" href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(120); ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
-                <div class="columns eight mobile-two">
+                <a class="product-image columns large-4 small-6" href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(120); ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
+                <div class="columns large-8 small-6">
                     <h4 class="product-name">
                         <a href="<?php echo $_item->getProductUrl() ?>">
                             <?php echo $this->htmlEscape($_item->getName()) ?></a>
@@ -51,22 +51,22 @@
                </div>
 
                <div class="row collapse">
-                   <div class="columns six mobile-two">
+                   <div class="columns large-6 small-6">
                        <?php echo $this->getPriceHtml($_item, true) ?>
                    </div>
-                    <div class="columns six mobile-two">
+                    <div class="columns large-6 small-6">
                         <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart small" onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                     </div>
                </div>
 
                 <div class="row collapse">
-                    <div class="columns twelve add-to-links">
+                    <div class="columns large-12 add-to-links">
 
                         <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                            <div class="columns six mobile-two"><a href="<?php echo $this->getAddToWishlistUrl($_item) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></div>
+                            <div class="columns large-6 small-6"><a href="<?php echo $this->getAddToWishlistUrl($_item) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></div>
                         <?php endif; ?>
                         <?php if($_compareUrl=$this->getAddToCompareUrl($_item)): ?>
-                            <div class="columns six mobile-two"><a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></div>
+                            <div class="columns large-6 small-6"><a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></div>
                         <?php endif; ?>
 
                     </div>

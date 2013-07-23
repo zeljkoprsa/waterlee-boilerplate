@@ -31,7 +31,7 @@
  * @see Mage_Checkout_Block_Cart
  */
 ?>
-<div class="cart">
+<div class="cart columns large-12">
     <div class="page-title title-buttons">
         <h1><?php echo $this->__('Shopping Cart') ?></h1>
         <?php if(!$this->hasError()): ?>
@@ -113,13 +113,13 @@
         </fieldset>
     </form>
     <div class="row">
-    <div class="coupon shipping columns seven">
-        <div class="row">
-        <div class="columns six"><?php echo $this->getChildHtml('coupon') ?></div>
-        <div class="columns six"><?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?></div>
+        <div class="coupon shipping columns large-7">
+            <div class="row">
+            <div class="columns large-6"><?php echo $this->getChildHtml('coupon') ?></div>
+            <div class="columns large-6"><?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?></div>
+            </div>
         </div>
-    </div>
-        <div class="totals columns five">
+        <div class="totals columns large-5">
             <?php echo $this->getChildHtml('totals'); ?>
             <?php if(!$this->hasError()): ?>
             <ul class="checkout-types">
@@ -131,9 +131,8 @@
             </ul>
             <?php endif; ?>
         </div>
-
     </div>
-    <div class="cart-collaterals row">
+    <div class="cart-collaterals ">
         <div class="col2-set">
             <div class="col-1">
                 <?php echo $this->getChildHtml('crosssell') ?>

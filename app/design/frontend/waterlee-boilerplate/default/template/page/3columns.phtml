@@ -44,16 +44,20 @@
 <?php echo $this->getChildHtml('after_body_start') ?>
     <?php echo $this->getChildHtml('global_notices') ?>
         <?php echo $this->getChildHtml('header') ?>
+        <?php echo $this->getChildHtml('breadcrumbs') ?>
         <div class="main-container col3-layout">
-            <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="nine columns">
-                    <div class="col-left sidebar three columns"><?php echo $this->getChildHtml('left') ?></div>
-                    <div class="col-main nine columns">
-                        <?php echo $this->getChildHtml('global_messages') ?>
-                        <?php echo $this->getChildHtml('content') ?>
+            <div class="row">
+                <div class="columns large-9">
+                    <div class="row">
+                        <div class="col-left sidebar columns large-3"><?php echo $this->getChildHtml('left') ?></div>
+                        <div class="col-main columns large-9">
+                            <?php echo $this->getChildHtml('global_messages') ?>
+                            <?php echo $this->getChildHtml('content') ?>
+                        </div>
                     </div>
                 </div>
-                <div class="sidebar three columns"><?php echo $this->getChildHtml('right') ?></div>
+                <div class="sidebar columns large-3"><?php echo $this->getChildHtml('right') ?></div>
+            </div>
         </div>
         <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('before_body_end') ?>

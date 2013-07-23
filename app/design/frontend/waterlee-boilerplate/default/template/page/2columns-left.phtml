@@ -45,12 +45,14 @@
     <?php echo $this->getChildHtml('global_notices') ?>
         <?php echo $this->getChildHtml('header') ?>
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="main-container col2-left-layout">
-                    <section role="main">
-                        <?php echo $this->getChildHtml('global_messages') ?>
-                        <?php echo $this->getChildHtml('content') ?>
-                    </section>
-                    <section id="sidebar" role="complementary"><?php echo $this->getChildHtml('left') ?></section>
+                <div class="main-container col2-left-layout row">
+                    <div class="columns small-12">
+                        <section role="main">
+                            <?php echo $this->getChildHtml('global_messages') ?>
+                            <?php echo $this->getChildHtml('content') ?>
+                        </section>
+                        <section id="sidebar" role="complementary"><?php echo $this->getChildHtml('left') ?></section>
+                    </div>
                 </div>
         <?php echo $this->getChildHtml('footer') ?>
     <?php echo $this->getChildHtml('before_body_end') ?>
