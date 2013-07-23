@@ -1,21 +1,22 @@
-    <div class="super-header ">
-        <div class="columns ten">
-        <div class="welcome-msg">
-            <p><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
+<div class="super-header">
+    <div class="super-header-content row">
+        <div class="columns large-10">
+            <div class="welcome-msg">
+                <p><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
+            </div>
         </div>
-        </div>
-
-        <div class="store-currency columns one">
+        <div class="store-currency columns large-1">
             <?php echo $this->getChildHtml('store_currency_selector') ?>
         </div>
-        <div class="site-language columns one">
+        <div class="site-language columns large-1">
             <?php echo $this->getChildHtml('store_language') ?>
         </div>
-
-        </div>
     </div>
-    <header class="site-header">
-        <div class="site-identity">
+</div>
+
+<header class="site-header">
+    <div class="site-header-content row">
+        <div class="site-identity columns large-4">
         <?php if ($this->getIsHomePage()):?>
             <h1 class="site-logo">
                 <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="site-logo">
@@ -27,32 +28,12 @@
                 <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
         <?php endif?>
         </div>
-        <div class="site-search">
+
+        <div class="site-search columns large-4">
             <?php echo $this->getChildHtml('topSearch') ?>
         </div>
 
-        <div class="site-account">
-            <ul class="nav-bar right">
-                <li class="has-flyout">
-                    <a href="<?php echo $this->getUrl('customer/account') ?>"><i class="icon-user"></i></a>
-                    <a href="#" class="flyout-toggle"><span> </span></a>
-                    <ul class="flyout small right">
-                        <li>
-                            <?php if($this->helper('customer')->isLoggedIn()):   ?>
-                                <a href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
-                            <?php else: ?>
-                                <a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Log in') ?></a>
-                            <?php endif; ?>
-                        </li>
-
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-
-
-        <div class="site-cart">
+        <div class="site-cart columns large-3">
             <i class="icon-shopping-cart"></i>
                 <?php
                 $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
@@ -71,23 +52,50 @@
                 <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
                 <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
         </div>
-    </div>
-    </header>
-    <div class="site-nav">
-        <div class="columns twelve">
-        <nav class="top-bar">
-            <ul>
-                <li class="name">
 
-                </li>
-                <li class="toggle-topbar"><a href="#"></a></li>
-            </ul>
-            <section>
-                <ul class="left">
-            <?php echo $this->getChildHtml('topMenu') ?>
+        <div class="site-account columns large-1">
+            <nav class="top-bar">
+                <ul class="title-area">
+                    <li class="name"></li>
+                    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
                 </ul>
-            </section>
-        </nav>
+                <section class="top-bar-section">
+                    <ul class="right">
+                        <li class="has-dropdown"><a href="#"><i class="icon-user"></i></a>
+                            <ul class="dropdown">
+                                <li class="">
+                                    <?php if($this->helper('customer')->isLoggedIn()): ?>
+                                        <a href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
+                                    <?php else: ?>
+                                        <a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Log in') ?></a>
+                                    <?php endif; ?>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+
         </div>
+
+    </div>
+</header>
+<div class="site-nav">
+    <div class="site-nav-content row">
+        <div class="columns large-12">
+            <nav class="top-bar">
+                <ul class="title-area">
+                    <li class="name"></li>
+                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                </ul>
+                <section class="top-bar-section">
+
+                    <ul class="left">
+                        <?php echo $this->getChildHtml('topMenu') ?>
+                    </ul>
+                </section>
+            </nav>
+        </div>
+    </div>
 </div>
 
