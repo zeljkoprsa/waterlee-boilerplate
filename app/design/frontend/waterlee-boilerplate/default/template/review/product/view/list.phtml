@@ -27,42 +27,48 @@
 
 <?php $_items = $this->getReviewsCollection()->getItems();?>
 <div class="box-collateral box-reviews" id="customer-reviews">
-    <?php if (count($_items)):?>
-        <h2><?php echo $this->__('Customer Reviews') ?></h2>
-        <?php echo $this->getChildHtml('toolbar') ?>
-        <dl>
-        <?php foreach ($_items as $_review):?>
-            <dt>
-                <h5><?php echo $this->htmlEscape($_review->getTitle()) ?></h5>
-                <span class="review-by"><?php echo $this->__('Review by <span>%s</span>', $this->htmlEscape($_review->getNickname())) ?></span>
-            </dt>
-            <dd>
-                <blockquote><?php echo nl2br($this->htmlEscape($_review->getDetail())) ?></blockquote>
-                <?php $_votes = $_review->getRatingVotes(); ?>
-                <?php if (count($_votes)): ?>
-                <table class="ratings-table">
-                    <col width="1" />
-                    <col />
-                    <tbody>
-                        <?php foreach ($_votes as $_vote): ?>
-                        <tr>
-                            <th><?php echo $this->escapeHtml($_vote->getRatingCode()) ?></th>
-                            <td>
-                                <div class="rating-box">
-                                    <div class="rating" style="width:<?php echo $_vote->getPercent() ?>%;"></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-                <?php endif; ?>
+    <div class="columns large-5">
+        <?php echo $this->getChildHtml('review_form') ?>
+    </div>
+    <div class="columns large-7">
+        <?php if (count($_items)):?>
+            <h2><?php echo $this->__('Customer Reviews') ?></h2>
+            <?php echo $this->getChildHtml('toolbar') ?>
+            <dl>
+                <?php foreach ($_items as $_review):?>
+                    <dt>
+                    <h5><?php echo $this->htmlEscape($_review->getTitle()) ?></h5>
+                    <span class="review-by"><?php echo $this->__('Review by <span>%s</span>', $this->htmlEscape($_review->getNickname())) ?></span>
+                    </dt>
+                    <dd>
+                        <p><?php echo nl2br($this->htmlEscape($_review->getDetail())) ?></p>
+                        <?php $_votes = $_review->getRatingVotes(); ?>
+                        <?php if (count($_votes)): ?>
+                            <table class="ratings-table">
+                                <col width="1" />
+                                <col />
+                                <tbody>
+                                <?php foreach ($_votes as $_vote): ?>
+                                    <tr>
+                                        <th><?php echo $this->escapeHtml($_vote->getRatingCode()) ?></th>
+                                        <td>
+                                            <div class="rating-box">
+                                                <div class="rating" style="width:<?php echo $_vote->getPercent() ?>%;"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        <?php endif; ?>
 
-                <small class="date"><?php echo $this->__('(Posted on %s)', $this->formatDate($_review->getCreatedAt()), 'long') ?></small>
-            </dd>
-        <?php endforeach; ?>
-        </dl>
-        <?php echo $this->getChildHtml('toolbar') ?>
-    <?php endif;?>
-    <?php echo $this->getChildHtml('review_form') ?>
+                        <small class="date"><?php echo $this->__('(Posted on %s)', $this->formatDate($_review->getCreatedAt()), 'long') ?></small>
+                    </dd>
+                <?php endforeach; ?>
+            </dl>
+            <?php echo $this->getChildHtml('toolbar') ?>
+        <?php endif;?>
+
+    </div>
+
 </div>
