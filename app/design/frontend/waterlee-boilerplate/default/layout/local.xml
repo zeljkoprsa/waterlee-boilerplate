@@ -56,8 +56,6 @@
 
             <action method="addItem"><type>skin_js</type><name>js/vendor/custom.modernizr.js</name><params/></action>
             <action method="addItem"><type>skin_js</type><name>js/vendor/jquery.js</name><params/></action>
-            <action method="addItem"><type>skin_js</type><name>js/foundation/jquery.offcanvas.js</name><params/></action>
-
             <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.alerts.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.clearing.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.cookie.js</name><params/></action>-->
