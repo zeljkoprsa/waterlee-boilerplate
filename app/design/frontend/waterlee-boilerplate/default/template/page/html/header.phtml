@@ -1,14 +1,13 @@
 <div class="super-header">
     <div class="super-header-content row">
-        <div class="columns large-10">
-            <div class="welcome-msg">
-                <p><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
-            </div>
+        <div class="welcome-msg columns large-6">
+            <p><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
+
         </div>
-        <div class="store-currency columns large-1">
+        <div class="store-currency columns large-2">
             <?php echo $this->getChildHtml('store_currency_selector') ?>
         </div>
-        <div class="site-language columns large-1">
+        <div class="site-language columns large-3">
             <?php echo $this->getChildHtml('store_language') ?>
         </div>
     </div>
@@ -51,6 +50,7 @@
                 <?php endif; ?>
                 <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
                 <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
+
         </div>
 
         <div class="site-account columns large-1">
@@ -80,8 +80,7 @@
 
     </div>
 </header>
-<div class="site-nav">
-    <div class="site-nav-content row">
+<div class="site-nav row">
         <div class="columns large-12">
             <nav class="top-bar">
                 <ul class="title-area">
@@ -96,6 +95,5 @@
                 </section>
             </nav>
         </div>
-    </div>
 </div>
 
