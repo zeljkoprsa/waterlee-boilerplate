@@ -29,7 +29,6 @@
  * Template for Mage_Page_Block_Html
  */
 ?>
-
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7 ]> <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie6"> <![endif]-->
@@ -47,6 +46,11 @@
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
                 <div class="main-container col2-left-layout row">
                     <div class="columns small-12">
+                        <p class="show-for-small">
+                            <a class='menu-button button tiny' href="#bottomNav">Menu</a>
+                            <a class='sidebar-button button tiny' id='sidebarButton' href="#sidebar">Extra</a>
+                        </p>
+
                         <section role="main">
                             <?php echo $this->getChildHtml('global_messages') ?>
                             <?php echo $this->getChildHtml('content') ?>
