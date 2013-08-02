@@ -29,7 +29,6 @@
  * Template for Mage_Page_Block_Html
  */
 ?>
-
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7 ]> <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie6"> <![endif]-->
@@ -45,14 +44,12 @@
     <?php echo $this->getChildHtml('global_notices') ?>
         <?php echo $this->getChildHtml('header') ?>
         <?php echo $this->getChildHtml('breadcrumbs') ?>
-        <div class="main-container col1-layout">
-            <div class="row">
-                <section role="main">
+        <div class="main-container col1-layout row">
+            <section class="columns large-12">
                 <?php echo $this->getChildHtml('global_messages') ?>
                 <?php echo $this->getChildHtml('content') ?>
             </section>
             </div>
-        </div>
         <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('before_body_end') ?>
 <?php echo $this->getAbsoluteFooter() ?>
