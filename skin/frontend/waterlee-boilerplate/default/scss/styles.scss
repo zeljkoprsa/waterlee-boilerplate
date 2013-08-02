@@ -60,6 +60,10 @@
 @import "font-awesome/font-awesome"; // Shamelessly borrowed 'cause they're such great fonts
 
 // Magento Specific component and Page view SCSS
+@import "custom/globals";
+@import "custom/global-messages";
+@import "custom/form-validation";
+@import "custom/super-header";
 @import "custom/toolbar";
 
 //Product Page
