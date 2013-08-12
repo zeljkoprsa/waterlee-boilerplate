@@ -53,6 +53,5 @@ What's inside:
 
 ##What's next:
 
-- Getting the theme ready for beta release
-- Receiving your feedback and participation to make this worthwile for everyone
-- Improving this readme with references and more info
+- Implementing "Interchange" for loading images based on media query [http://foundation.zurb.com/docs/components/interchange.html]
+
