@@ -1,18 +1,13 @@
 // Global Foundation Settings
 @import "settings";
-
 // Comment out this import if you don't want to use normalize
 @import "normalize";
-
 // Comment out this import if you are customizing you imports below
  @import "foundation";
-
 // Import specific parts of Foundation by commenting the import "foundation"
 // and uncommenting what you want below. You must uncomment the following if customizing
-
  //@import "foundation/components/global"; // *always required
  //@import "foundation/components/grid";
-
 //
 // Use this grid if you want to start using the new Foundation 5 grid early.
 // It will change breakpoints to min-width: 640px and 1024px.
@@ -52,25 +47,18 @@
 //@import "foundation/components/thumbs";
 //@import "foundation/components/tooltips";
 //@import "foundation/components/dropdown";
-
 // Custom SCSS from now on + Offcanvas
-
 @import "custom/offcanvas";
-
 @import "font-awesome/font-awesome"; // Shamelessly borrowed 'cause they're such great fonts
-
 // Magento Specific component and Page view SCSS
 @import "custom/globals";
 @import "custom/global-messages";
 @import "custom/form-validation";
 @import "custom/super-header";
 @import "custom/toolbar";
-
 //Product Page
 @import "custom/product-page";
-
 // Catalog Page
 @import "custom/catalog-page";
-
 // Reviews
 @import "custom/reviews";
