@@ -4,7 +4,7 @@
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
-$base-font-size: 100% !default;
+$base-font-size: 100%;
 
 // $base-line-height is 24px while $base-font-size is 16px
 // $base-line-height: 150%;
@@ -14,7 +14,7 @@ $base-font-size: 100% !default;
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 // If you want your base font-size to be a different size and not have it effect grid size too,
 // set the value of $em-base to $base-font-size ($em-base: $base-font-size;)
-$em-base: 16px !default;
+$em-base: 16px;
 
 // Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px)
 @function emCalc($pxWidth) {
@@ -526,7 +526,7 @@ $h5-font-size: emCalc(14px);
 // Slash between breadcrumbs
 
 // $crumb-slash-color: #aaa;
-// $crumb-slash: "/";
+ $crumb-slash: ">";
 
 //
 // Clearing Variables
@@ -1213,7 +1213,7 @@ $h5-font-size: emCalc(14px);
 
 // Background color for the top bar
 
-// $topbar-bg: #111 !default;
+ $topbar-bg: #ddd;
 
 // Height and margin
 
@@ -1231,8 +1231,8 @@ $h5-font-size: emCalc(14px);
 
 // Style the top bar dropdown elements
 
-// $topbar-dropdown-bg: #222;
-// $topbar-dropdown-link-color: #fff;
+   $topbar-dropdown-bg: #ddd;
+   $topbar-dropdown-link-color: #333;
 // $topbar-dropdown-link-bg: lighten($topbar-bg, 5%);
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
@@ -1240,9 +1240,9 @@ $h5-font-size: emCalc(14px);
 
 // Set the link colors and styles for top-level nav
 
-// $topbar-link-color: #fff;
-// $topbar-link-color-hover: #fff;
-// $topbar-link-color-active: #fff;
+  $topbar-link-color: #333;
+  $topbar-link-color-hover: darken(#333,5%);
+  $topbar-link-color-active: darken(#333,15%);
 // $topbar-link-weight: bold;
 // $topbar-link-font-size: emCalc(13px);
 // $topbar-link-hover-lightness: -30%; // Darken by 30%
