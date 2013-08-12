@@ -41,7 +41,7 @@ The "custom" folder is already configured following the OOCSS principles of sepa
 It's refreshing to have the that final SCSS organized by maintaining focus using separate .scss files where you can easily find redundant code. If you get lost you can always find that HTML class using the find function in your IDE.
 
 What's inside:
-
+- **NEW** All of the Foundation Javascript is now placed in the footer for faster loading.
 - **NEW** Theme top menu extension. Find it under "JAKE SHARP WATERLEE" system settings after installation (Remember, you'll need to install the extension separately.)
 - **NEW**: Off Canvas menu (http://www.zurb.com/playground/off-canvas-layouts)
 - **NEW**: Current SubCategory menu for mobile view
