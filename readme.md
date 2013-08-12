@@ -1,19 +1,8 @@
 #Magento HTML5 responsive boilerplate [![endorse](http://api.coderwall.com/zeljkoprsa/endorsecount.png)](http://coderwall.com/zeljkoprsa)
  - Built on latest Foundation 4 by ZURB.
 
-
-#WATERLEE on Foundation 4 is here.
-
 **Update**
-## Waterlee on Foundation 4.x is in the works
-
-Making the boilerplate from scratch using the latest foundation 4 and keeping our mind
-on the Foundation 5 release that's apparently being released in the near future.
-
-All of the changes will be documented on the wiki pages here on github.
-
-##Public Beta
-
+#WATERLEE on Foundation 4 is here.
 
 ## Create responsive Magento themes.
 #### Built on ZURB Foundation framework, waterlee has everything you need from the start.
@@ -52,7 +41,7 @@ The "custom" folder is already configured following the OOCSS principles of sepa
 It's refreshing to have the that final SCSS organized by maintaining focus using separate .scss files where you can easily find redundant code. If you get lost you can always find that HTML class using the find function in your IDE.
 
 What's inside:
-
+- **NEW** All of the Foundation Javascript is now placed in the footer for faster loading.
 - **NEW** Theme top menu extension. Find it under "JAKE SHARP WATERLEE" system settings after installation (Remember, you'll need to install the extension separately.)
 - **NEW**: Off Canvas menu (http://www.zurb.com/playground/off-canvas-layouts)
 - **NEW**: Current SubCategory menu for mobile view
@@ -64,6 +53,5 @@ What's inside:
 
 ##What's next:
 
-- Getting the theme ready for beta release
-- Receiving your feedback and participation to make this worthwile for everyone
-- Improving this readme with references and more info
+- Implementing "Interchange" for loading images based on media query [http://foundation.zurb.com/docs/components/interchange.html]
+- Implementing "Abide" for form validation [http://foundation.zurb.com/docs/components/abide.html] 
