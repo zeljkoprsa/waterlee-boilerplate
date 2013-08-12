@@ -54,4 +54,4 @@ What's inside:
 ##What's next:
 
 - Implementing "Interchange" for loading images based on media query [http://foundation.zurb.com/docs/components/interchange.html]
-
+- Implementing "Abide" for form validation [http://foundation.zurb.com/docs/components/abide.html] 
