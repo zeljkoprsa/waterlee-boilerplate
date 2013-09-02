@@ -6,6 +6,8 @@
 
 ## Create responsive Magento themes.
 #### Built on ZURB Foundation framework, waterlee has everything you need from the start.
+If you're only starting with Waterlee check out the "Getting started" article here:
+http://jakesharp.uservoice.com/knowledgebase/articles/245052-intro-to-waterlee
 
 
 ## Here’s the things you’ll love.
