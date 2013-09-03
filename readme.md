@@ -34,6 +34,7 @@ It's pretty ugly but you know better than to expect a boilerplate to be good loo
 
 ##Installation
 Once you install the Waterlee package and assuming you already installed the "Jake Sharp" extension used for the main category menu which is packed within the theme package., go to your Magento administration backend and look for "Jake Sharp" theme settings under "System -> Configuration | Configuration -> JAKESHARP WATERLEE -> Theme Settings -> Enable" to enable the theme's menu.
+For detailed instructions check knowledge base @ http://jakesharp.uservoice.com/ 
 
 ##SCSS Organization
 For starters, Waterlee is based on ZURB Foundation framework 4.0 which relies on mobile first approach. This means that all of the HTML classes for layout at your disposal are mobile-first so keep that in mind while developing. There is a folder named "custom" under the "/skin/frontend/waterlee-boilerplate/default/SCSS/".
