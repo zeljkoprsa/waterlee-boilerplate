@@ -25,6 +25,7 @@
         </reference>
         <reference name="header">
             <block type="directory/currency" name="store_currency_selector" template="currency/currency.phtml"/>
+            <block type="page/switch" name="store_switcher" as="store_switcher" template="page/switch/stores.phtml"/>
         </reference>
         <remove name="currency"/>
         <!-- Remove callouts and rarely used stuff globally -->

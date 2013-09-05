@@ -1,8 +1,11 @@
 <div class="super-header">
     <div class="super-header-content row">
-        <div class="welcome-msg columns large-6">
+        <div class="welcome-msg columns large-5">
             <p><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
 
+        </div>
+        <div class="store-switcher columns large-2">
+            <?php echo $this->getChildHtml('store_switcher') ?>
         </div>
         <div class="store-currency columns large-2">
             <?php echo $this->getChildHtml('store_currency_selector') ?>
