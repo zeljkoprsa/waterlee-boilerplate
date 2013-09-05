@@ -4,7 +4,7 @@ class JakeSharp_Waterlee_Block_Topmenu extends Mage_Page_Block_Html_Topmenu {
     protected function _getHtml(Varien_Data_Tree_Node $menuTree, $childrenWrapClass)
     {
 
-        if (!Mage::helper('waterleehelper')->getIsActive()){
+        if (!Mage::helper('waterlee')->getIsActive()){
             return parent::_getHtml($menuTree,$childrenWrapClass);
         }
 
@@ -66,7 +66,7 @@ class JakeSharp_Waterlee_Block_Topmenu extends Mage_Page_Block_Html_Topmenu {
 
     protected function _getMenuItemClasses(Varien_Data_Tree_Node $item)
     {
-        if (!Mage::helper('waterleehelper')->getIsActive()){
+        if (!Mage::helper('waterlee')->getIsActive()){
             return parent::_getMenuItemClasses($item);
         }
 

@@ -20,9 +20,9 @@
         </blocks>
 
         <helpers>
-            <waterleehelper>
+            <waterlee>
                 <class>JakeSharp_Waterlee_Helper</class>
-            </waterleehelper>
+            </waterlee>
         </helpers>
 
     </global>
