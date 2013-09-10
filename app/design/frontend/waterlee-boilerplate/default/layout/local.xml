@@ -37,7 +37,8 @@
         <!--<remove name="product_tag_list"/>-->
         <remove name="catalog.compare.sidebar"/>
         <!--<remove name="checkout.cart.shipping"/>-->
-	<!--<remove name="cart_sidebar"/>-->
+	    <!--<remove name="cart_sidebar"/>-->
+        <!--<remove name="breadcrumbs"/>-->
         <remove name="left.newsletter"/>
         <!--<remove name="catalog.leftnav"/>-->
         <!--<remove name="catalogsearch.leftnav"/>-->
