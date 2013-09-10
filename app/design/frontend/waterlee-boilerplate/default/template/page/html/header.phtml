@@ -1,6 +1,6 @@
 <div class="super-header">
     <div class="super-header-content row">
-        <div class="welcome-msg columns large-5">
+        <div class="welcome-msg columns large-6">
             <p><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
 
         </div>
@@ -10,9 +10,10 @@
         <div class="store-currency columns large-2">
             <?php echo $this->getChildHtml('store_currency_selector') ?>
         </div>
-        <div class="site-language columns large-3">
+        <div class="site-language columns large-2">
             <?php echo $this->getChildHtml('store_language') ?>
         </div>
+
     </div>
 </div>
 
@@ -57,28 +58,7 @@
         </div>
 
         <div class="site-account columns large-1">
-            <nav class="top-bar">
-                <ul class="title-area">
-                    <li class="name"></li>
-                    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-                </ul>
-                <section class="top-bar-section">
-                    <ul class="right">
-                        <li class="has-dropdown"><a href="#"><i class="icon-user"></i></a>
-                            <ul class="dropdown">
-                                <li class="">
-                                    <?php if($this->helper('customer')->isLoggedIn()): ?>
-                                        <a href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
-                                    <?php else: ?>
-                                        <a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Log in') ?></a>
-                                    <?php endif; ?>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </section>
-            </nav>
-
+            <?php echo $this->getChildHtml('mini_account') ?>
         </div>
 
     </div>
