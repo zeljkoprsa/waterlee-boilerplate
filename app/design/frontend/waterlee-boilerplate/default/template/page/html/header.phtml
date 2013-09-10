@@ -1,25 +1,48 @@
 <div class="super-header">
     <div class="super-header-content row">
-        <div class="welcome-msg columns large-6">
+        <div class="welcome-msg columns large-2">
             <p><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
+        </div>
+        <div class="columns large-10 site-utilities">
+        <div class="row">
+            <div class="switchers columns large-7 small-12">
+                <div class="row">
+                <?php echo $this->getChildHtml('store_switcher') ?>
+                <?php echo $this->getChildHtml('store_currency_selector') ?>
+                <?php echo $this->getChildHtml('store_language') ?>
+                </div>
+            </div>
+        <div class="site-cart columns large-3 small-8">
+            <i class="icon-shopping-cart"></i>
+            <?php
+            $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
+            $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
+            ?>
+
+            <?php if($count == 0):?>
+                <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('0 Items', $count) ?></a>
+            <?php endif; ?>
+            <?php if($count == 1):?>
+                <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('1 Item', $count) ?></a>
+            <?php endif; ?>
+            <?php if($count >= 2):?>
+                <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('%s Items', $count) ?></a>
+            <?php endif; ?>
+            <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
+            <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
 
         </div>
-        <div class="store-switcher columns large-2">
-            <?php echo $this->getChildHtml('store_switcher') ?>
+        <div class="site-account columns large-2 small-4">
+            <?php echo $this->getChildHtml('mini_account') ?>
         </div>
-        <div class="store-currency columns large-2">
-            <?php echo $this->getChildHtml('store_currency_selector') ?>
         </div>
-        <div class="site-language columns large-2">
-            <?php echo $this->getChildHtml('store_language') ?>
         </div>
-
-    </div>
+  </div>
 </div>
 
 <header class="site-header">
     <div class="site-header-content row">
-        <div class="site-identity columns large-4">
+        <div class="site-identity columns large-2 small-12">
         <?php if ($this->getIsHomePage()):?>
             <h1 class="site-logo">
                 <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="site-logo">
@@ -32,34 +55,11 @@
         <?php endif?>
         </div>
 
-        <div class="site-search columns large-4">
+        <div class="site-search columns large-10 small-12">
             <?php echo $this->getChildHtml('topSearch') ?>
         </div>
 
-        <div class="site-cart columns large-3">
-            <i class="icon-shopping-cart"></i>
-                <?php
-                $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
-                $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
-                ?>
 
-                <?php if($count == 0):?>
-                    <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('0 Items', $count) ?></a>
-                <?php endif; ?>
-                <?php if($count == 1):?>
-                    <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('1 Item', $count) ?></a>
-                <?php endif; ?>
-                <?php if($count >= 2):?>
-                    <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('%s Items', $count) ?></a>
-                <?php endif; ?>
-                <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
-                <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
-
-        </div>
-
-        <div class="site-account columns large-1">
-            <?php echo $this->getChildHtml('mini_account') ?>
-        </div>
 
     </div>
 </header>

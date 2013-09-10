@@ -1,21 +1,7 @@
-<nav class="top-bar">
-    <ul class="title-area">
-        <li class="name"></li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-    </ul>
-    <section class="top-bar-section">
-        <ul class="right">
-            <li class="has-dropdown"><a href="#"><i class="icon-user"></i></a>
-                <ul class="dropdown">
-                    <li class="">
-                        <?php if($this->helper('customer')->isLoggedIn()): ?>
-                            <a href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
-                        <?php else: ?>
-                            <a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Log in') ?></a>
-                        <?php endif; ?>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </section>
+<nav class="mini-account right">
+    <?php if($this->helper('customer')->isLoggedIn()): ?>
+        <a class="button tiny" href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
+    <?php else: ?>
+        <a class="button tiny" href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Log in') ?></a>
+    <?php endif; ?>
 </nav>

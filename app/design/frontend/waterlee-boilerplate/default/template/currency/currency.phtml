@@ -1,4 +1,5 @@
 <?php if($this->getCurrencyCount() > 1): ?>
+    <div class="store-currency columns large-2 small-3">
         <form action="#" class="custom">
         <label for="store-currency-selector"><?php echo $this->__('Your Currency:') ?></label>
         <select onchange="window.location.href=this.value" name="store-currency-selector" id="store-currency-selector" class="expand">
@@ -12,4 +13,5 @@
             <?php endforeach; ?>
         </select>
         </form>
+    </div>
 <?php endif; ?>
