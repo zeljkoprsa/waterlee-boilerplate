@@ -1,0 +1,24 @@
+<div class="columns large-2 small-8 right">
+<a href="#" data-dropdown="site-mini-cart" class="site-mini-cart">Dropdown</a>
+<div id="site-mini-cart" class="f-dropdown" data-dropdown-content>
+    <div class="site-cart">
+        <!--<i class="icon-shopping-cart"></i>-->
+        <?php
+        $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
+        $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
+        ?>
+
+        <?php if($count == 0):?>
+            <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('0 Items', $count) ?></a>
+        <?php endif; ?>
+        <?php if($count == 1):?>
+            <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('1 Item', $count) ?></a>
+        <?php endif; ?>
+        <?php if($count >= 2):?>
+            <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('%s Items', $count) ?></a>
+        <?php endif; ?>
+        <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
+        <a class="cartgo button tiny" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
+     </div>
+</div>
+</div>

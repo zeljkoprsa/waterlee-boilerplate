@@ -32,8 +32,8 @@
  */
 ?>
 <?php if(count($this->getGroups())>1): ?>
-<div class="store-switcher columns large-3 small-3">
-    <div class="store-switcher">
+<div class="store-switcher switchers columns large-3 small-12">
+    <div class="store-switcher form-language">
         <label for="select-store"><?php echo $this->__('Select Store:') ?></label>
         <select id="select-store" title="<?php echo $this->__('Select Store') ?>" onchange="location.href=this.value">
             <?php /*foreach ($this->getStores() as $_store): ?>
