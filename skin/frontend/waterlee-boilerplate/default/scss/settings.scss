@@ -149,8 +149,8 @@ $primary-color: #2493db;
 
 // Heading font sizes
 
-$h1-font-size: emCalc(40px);
-$h2-font-size: emCalc(33px);
+$h1-font-size: emCalc(28px);
+$h2-font-size: emCalc(24px);
 $h3-font-size: emCalc(23px);
 $h4-font-size: emCalc(19px);
 $h5-font-size: emCalc(14px);
@@ -647,9 +647,9 @@ $h5-font-size: emCalc(14px);
 // $f-dropdown-list-style: none;
 // $f-dropdown-font-color: #555;
 // $f-dropdown-font-size: emCalc(14px);
-// $f-dropdown-list-padding: emCalc(5px) emCalc(10px);
-// $f-dropdown-line-height: emCalc(18px);
-// $f-dropdown-list-hover-bg: #eeeeee;
+   $f-dropdown-list-padding: emCalc(0px) emCalc(0px);
+   $f-dropdown-line-height: emCalc(22px);
+   $f-dropdown-list-hover-bg: none;
 // $dropdown-mobile-left: 0;
 
 // When the dropdown has custom content.
@@ -1213,7 +1213,7 @@ $h5-font-size: emCalc(14px);
 
 // Background color for the top bar
 
- $topbar-bg: #F7F7F7;
+ $topbar-bg: $primary-color;
 
 // Height and margin
 
@@ -1231,19 +1231,19 @@ $h5-font-size: emCalc(14px);
 
 // Style the top bar dropdown elements
 
-   $topbar-dropdown-bg: #F7F7F7;
-   $topbar-dropdown-link-color: #333;
+   $topbar-dropdown-bg: $primary-color;
+   $topbar-dropdown-link-color: #fff;
 // $topbar-dropdown-link-bg: lighten($topbar-bg, 5%);
 // $topbar-dropdown-toggle-size: 5px;
-// $topbar-dropdown-toggle-color: #fff;
+   $topbar-dropdown-toggle-color: #fff;
 // $topbar-dropdown-toggle-alpha: 0.5;
 
 // Set the link colors and styles for top-level nav
 
-  $topbar-link-color: #333;
-  $topbar-link-color-hover: darken(#333,5%);
-  $topbar-link-color-active: darken(#333,15%);
-// $topbar-link-weight: bold;
+  $topbar-link-color: #fff;
+  $topbar-link-color-hover: lighten($primary-color,5%);
+  $topbar-link-color-active: #fff;
+  $topbar-link-weight: 500;
 // $topbar-link-font-size: emCalc(13px);
 // $topbar-link-hover-lightness: -30%; // Darken by 30%
 // $topbar-link-bg-hover: darken($topbar-bg, 3%);

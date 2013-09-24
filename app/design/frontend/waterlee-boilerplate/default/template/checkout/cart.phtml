@@ -31,11 +31,11 @@
  * @see Mage_Checkout_Block_Cart
  */
 ?>
-<div class="cart columns large-12">
-    <div class="page-title title-buttons">
-        <h1><?php echo $this->__('Shopping Cart') ?></h1>
+<div class="cart">
+    <div class="page-title title-buttons row collapse">
+        <h1 class="left"><?php echo $this->__('Shopping Cart') ?></h1>
         <?php if(!$this->hasError()): ?>
-        <ul class="checkout-types">
+        <ul class="checkout-types right">
         <?php foreach ($this->getMethods('top_methods') as $method): ?>
             <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
             <li><?php echo $methodHtml; ?></li>
