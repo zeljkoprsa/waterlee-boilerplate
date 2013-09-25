@@ -59,9 +59,9 @@
 
                     <ul class="email-review_summary inline-list">
                     <?php if ($this->canEmailToFriend()): ?>
-                    <li><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"> <i class="icon-envelope-alt"></i> <?php echo $this->__('Email to a Friend') ?></a></li>
+                    <p class="mailto-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"> <i class="icon-envelope-alt"></i> <?php echo $this->__('Email to a Friend') ?></a></p>
                     <?php endif; ?>
-                    <li><?php echo $this->getReviewsSummaryHtml($_product, false, true)?></li>
+                    <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
                     </ul>
 
                     <?php echo $this->getChildHtml('product_type_data') ?>
