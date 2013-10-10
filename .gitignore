@@ -1,3 +1,4 @@
+/app/code/community/Cm/
 /app/code/community/Find/
 /app/code/community/Phoenix/
 /app/code/core/
@@ -9,6 +10,7 @@
 /app/design/frontend/default/iphone/
 /app/design/frontend/default/modern/
 /app/design/install/
+/app/etc/modules/Cm_RedisSession.xml
 /app/etc/modules/Find_Feed.xml
 /app/etc/modules/Mage_All.xml
 /app/etc/modules/Mage_Api.xml
@@ -55,11 +57,14 @@
 /js/tiny_mce/
 /js/varien/
 /lib/3Dsecure/
+/lib/Cm/
+/lib/Credis/
 /lib/flex/
 /lib/googlecheckout/
 /lib/.htaccess
 /lib/LinLibertineFont/
 /lib/Mage/
+/lib/Magento/
 /lib/PEAR/
 /lib/phpseclib/
 /lib/Varien/
