@@ -1,0 +1,5 @@
+#JakeSharp_Waterlee
+app/code/community/JakeSharp/*			app/code/community/JakeSharp/
+app/design/frontend/*					app/design/frontend/waterlee-boilerplate
+app/etc/modules/*.xml					app/etc/modules/
+skin/frontend/waterlee-boilerplate		skin/frontend/waterlee-boilerplate
