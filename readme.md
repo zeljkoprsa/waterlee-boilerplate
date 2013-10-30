@@ -1,5 +1,5 @@
 #Magento HTML5 responsive boilerplate [![endorse](http://api.coderwall.com/zeljkoprsa/endorsecount.png)](http://coderwall.com/zeljkoprsa)
- - Built on latest Foundation 4 by ZURB.
+ - Built on Foundation 4.3.1. by ZURB.
 
 **Update**
 #WATERLEE on Foundation 4 is here.
