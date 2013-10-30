@@ -58,3 +58,9 @@ What's inside:
 
 - Implementing "Interchange" for loading images based on media query [http://foundation.zurb.com/docs/components/interchange.html]
 - Implementing "Abide" for form validation [http://foundation.zurb.com/docs/components/abide.html] 
+
+##Licence
+GPLv2 (or later) - http://www.gnu.org/licenses/gpl-2.0.html
+Foundation by ZURB is MIT - http://opensource.org/licenses/MIT
+
+Means Waterlee is free to use and a link back is always welcome.
