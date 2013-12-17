@@ -64,3 +64,5 @@ GPLv2 (or later) - http://www.gnu.org/licenses/gpl-2.0.html
 Foundation by ZURB is MIT - http://opensource.org/licenses/MIT
 
 Means Waterlee is free to use and a link back is always welcome.
+
+Easter egg: Waterlee 2.0 is under development.
