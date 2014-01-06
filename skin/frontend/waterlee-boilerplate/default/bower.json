@@ -1,0 +1,6 @@
+{
+  "name": "PROJECT_NAME",
+  "dependencies": {
+    "foundation": "~5.0.2"
+  }
+}
