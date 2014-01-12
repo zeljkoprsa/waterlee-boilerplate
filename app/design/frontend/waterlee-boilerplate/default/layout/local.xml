@@ -59,8 +59,8 @@
             <!--<action method="addItem"><type>skin_js</type><name>js/jquery.stellar.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>js/jquery-ui-1.9.2.custom.js</name><params/></action>-->
 
-            <action method="addItem"><type>skin_js</type><name>js/vendor/custom.modernizr.js</name><params/></action>
-            <action method="addItem"><type>skin_js</type><name>js/vendor/jquery.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>bower_components/modernizr/modernizr.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>bower_components/jquery/jquery.min.js</name><params/></action>
             <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.alerts.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.clearing.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.cookie.js</name><params/></action>-->
