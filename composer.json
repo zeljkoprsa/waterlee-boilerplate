@@ -1,0 +1,23 @@
+{
+    "name": "zeljkoprsa/waterlee-boilerplate",
+    "type": "magento-module",
+    "license":"GPL v2.0",
+    "description":"Magento HTML5 Responsive Theme Boilerplate",
+    "authors":[
+        {
+            "name":"Željko Prša",
+            "email":"info@jakesharp.co"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "extra": {
+        "map": [
+            ["app/code/community/JakeSharp/Waterlee", "app/code/community/JakeSharp/Waterlee"],
+            ["app/design/frontend/waterlee-boilerplate", "app/design/frontend/waterlee-boilerplate"],
+            ["app/etc/modules/JakeSharp_Waterlee.xml", "app/etc/modules/JakeSharp_Waterlee.xml"],
+            ["skin/frontend/waterlee-boilerplate", "skin/frontend/waterlee-boilerplate"]
+        ]
+    }
+}
