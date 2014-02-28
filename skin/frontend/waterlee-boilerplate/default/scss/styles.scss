@@ -39,7 +39,7 @@
 @import "foundation/components/visibility";
 
 // Custom SCSS from now on + Offcanvas
-//@import "custom/offcanvas";
+@import "custom/offcanvas";
 @import "font-awesome/font-awesome"; // Shamelessly borrowed 'cause they're such great fonts
 // Magento Specific component and Page view SCSS
 @import "custom/globals";
