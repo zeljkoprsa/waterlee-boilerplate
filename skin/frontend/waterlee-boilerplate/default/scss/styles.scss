@@ -1,14 +1,14 @@
 @import "settings";
 @import "foundation";
+
 // Custom SCSS from now on + Offcanvas
-@import "custom/offcanvas";
+//@import "custom/offcanvas";
 @import "font-awesome/font-awesome"; // Shamelessly borrowed 'cause they're such great fonts
 // Magento Specific component and Page view SCSS
 @import "custom/globals";
 @import "custom/global-messages";
 @import "custom/form-validation";
 @import "custom/super-header";
-@import "custom/header";
 @import "custom/toolbar";
 //Product Page
 @import "custom/product-page";
@@ -16,35 +16,5 @@
 @import "custom/catalog-page";
 // Reviews
 @import "custom/reviews";
-
-header {
-  @include grid-row;
-  
-  .logo  { @include grid-column($columns:3, $center:true); }
-  padding-bottom: em-calc(10px);
-
-}
-
-
-.main-content {
-  @include grid-row;
-  
-  aside  {
-    @include grid-column($columns:6);
-    // @media #{$medium-up} {
-    //   @include grid-column($columns:3);
-    // }
-  }
-  
-  article  {
-    @include grid-column($columns:6);
-    // @media #{$medium-up} {
-    //   @include grid-column($columns:8, $offset: 1);
-    // }
-  }
-
-}
-.red {
-color: #ff0000;
-}
+// Ratings
 

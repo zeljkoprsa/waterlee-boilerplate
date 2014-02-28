@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 # Replace 4.x.x with the version of Foundation you want to use
-gem "zurb-foundation", "4.3.1"
+gem "foundation", "5.0.2"
 gem "compass"

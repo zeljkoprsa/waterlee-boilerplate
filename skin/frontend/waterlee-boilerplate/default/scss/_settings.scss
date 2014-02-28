@@ -1,5 +1,6 @@
+// 
 // FOUNDATION SETTINGS
-// Documentation can be found at: http://foundation.zurb.com/docs 
+//
 
 // Uncomment to use rem-calc() in your settings
 // @import "foundation/functions";
@@ -12,13 +13,13 @@
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 // If you want your base font-size to be different and not have it affect the grid breakpoints,
 // set $rem-base to $base-font-size and make sure $base-font-size is a px value.
-$base-font-size: 100%;
+// $base-font-size: 100%;
 
 // The $base-line-height is 100% while $base-font-size is 150%
 // $base-line-height: 150%;
 
 // This is the default html and body font-size for the base rem value.
-$rem-base: 16px;
+// $rem-base: 16px;
 
 // We use this to control whether or not CSS classes come through in the gem files.
 // $include-html-classes: true;
@@ -29,7 +30,7 @@ $rem-base: 16px;
 
 // $include-html-grid-classes: $include-html-classes;
 
-$row-width: rem-calc(1200);
+// $row-width: rem-calc(1000);
 // $column-gutter: rem-calc(30);
 // $total-columns: 12;
 
@@ -46,10 +47,10 @@ $row-width: rem-calc(1200);
 // We use these to control text direction settings
 // $text-direction: ltr;
 // $opposite-direction: right;
-$default-float: left;
+// $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #2493db;
+// $primary-color: #008CBA;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -195,48 +196,7 @@ $primary-color: #2493db;
 
 // We use these to control the slash between breadcrumbs
 // $crumb-slash-color: #aaa;
-$crumb-slash: ">";
-
-//
-// BUTTONS
-//
-
-// $include-html-button-classes: $include-html-classes;
-
-// We use these to build padding for buttons.
-// $button-tny: rem-calc(10);
-// $button-sml: rem-calc(14);
-// $button-med: rem-calc(16);
-// $button-lrg: rem-calc(18);
-
-// We use this to control the display property.
-// $button-display: inline-block;
-// $button-margin-bottom: rem-calc(20);
-
-// We use these to control button text styles.
-// $button-font-family: $body-font-family;
-// $button-font-color: #fff;
-// $button-font-color-alt: #333;
-// $button-font-tny: rem-calc(11);
-// $button-font-sml: rem-calc(13);
-// $button-font-med: rem-calc(16);
-// $button-font-lrg: rem-calc(20);
-// $button-font-weight: normal;
-// $button-font-align: center;
-
-// We use these to control various hover effects.
-// $button-function-factor: 5%;
-
-// We use these to control button border styles.
-// $button-border-width: 1px;
-// $button-border-style: solid;
-
-// We use this to set the default radius used throughout the core.
-// $button-radius: $global-radius;
-// $button-round: $global-rounded;
-
-// We use this to set default opacity for disabled buttons.
-// $button-disabled-opacity: 0.7;
+// $crumb-slash: "/";
 
 // Button Groups
 
@@ -302,9 +262,9 @@ $crumb-slash: ">";
 // $f-dropdown-list-style: none;
 // $f-dropdown-font-color: #555;
 // $f-dropdown-font-size: rem-calc(14);
-$f-dropdown-list-padding: rem-calc(0) rem-calc(0);
-$f-dropdown-line-height: rem-calc(22);
-$f-dropdown-list-hover-bg: none;
+// $f-dropdown-list-padding: rem-calc(5, 10);
+// $f-dropdown-line-height: rem-calc(18);
+// $f-dropdown-list-hover-bg: #eeeeee  ;
 // $dropdown-mobile-default-float: 0;
 
 // We use this to control the styles for when the dropdown has custom content.
@@ -506,7 +466,7 @@ $f-dropdown-list-hover-bg: none;
 // $label-radius: $global-radius;
 
 // We use these to style the label text
-$label-font-sizing: rem-calc(12);
+// $label-font-sizing: rem-calc(11);
 // $label-font-weight: normal;
 // $label-font-color: #333;
 // $label-font-color-alt: #fff;
@@ -575,7 +535,7 @@ $label-font-sizing: rem-calc(12);
 // $off-canvas-overlay-background: rgba(#FFF, 0.2);
 // $off-canvas-overlay-background-hover: rgba(#FFF, 0.05);
 
-// Transition Variables
+// Transition Variabls
 // $menu-slide: "transform 500ms ease";
 
 // Orbit
@@ -872,46 +832,6 @@ $label-font-sizing: rem-calc(12);
 // $sub-nav-item-divider: "";
 // $sub-nav-item-divider-margin: rem-calc(12);
 
-//
-// SWITCH
-//
-
-// $include-html-form-classes: $include-html-classes;
-
-// Controlling border styles and background colors for the switch container
-// $switch-border-color: darken(#fff, 20%);
-// $switch-border-style: solid;
-// $switch-border-width: 1px;
-// $switch-bg: #fff;
-
-// We use these to control the switch heights for our default classes
-// $switch-height-tny: 22px;
-// $switch-height-sml: 28px;
-// $switch-height-med: 36px;
-// $switch-height-lrg: 44px;
-// $switch-bottom-margin: rem-calc(20);
-
-// We use these to control default font sizes for our classes.
-// $switch-font-size-tny: 11px;
-// $switch-font-size-sml: 12px;
-// $switch-font-size-med: 14px;
-// $switch-font-size-lrg: 17px;
-// $switch-label-side-padding: 6px;
-
-// We use these to style the switch-paddle
-// $switch-paddle-bg: #fff;
-// $switch-paddle-fade-to-color: darken($switch-paddle-bg, 10%);
-// $switch-paddle-border-color: darken($switch-paddle-bg, 35%);
-// $switch-paddle-border-width: 1px;
-// $switch-paddle-border-style: solid;
-// $switch-paddle-transition-speed: .1s;
-// $switch-paddle-transition-ease: ease-out;
-// $switch-positive-color: lighten($success-color, 50%);
-// $switch-negative-color: #f5f5f5;
-
-// Outline Style for tabbing through switches
-// $switch-label-outline: 1px dotted #888;
-
 // Tables
 
 // $include-html-table-classes: $include-html-classes;
@@ -1010,8 +930,8 @@ $label-font-sizing: rem-calc(12);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #2493db;
-$topbar-bg: $topbar-bg-color;
+// $topbar-bg-color: #333;
+// $topbar-bg: $topbar-bg-color;
 
 // Height and margin
 // $topbar-height: 45px;
@@ -1024,21 +944,21 @@ $topbar-bg: $topbar-bg-color;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: $topbar-bg-color;
-$topbar-dropdown-link-color: #fff;
-$topbar-dropdown-link-bg: lighten($topbar-bg-color, 5%);
+// $topbar-dropdown-bg: #333;
+// $topbar-dropdown-link-color: #fff;
+// $topbar-dropdown-link-bg: #333;
 // $topbar-dropdown-toggle-size: 5px;
-$topbar-dropdown-toggle-color: #fff;
+// $topbar-dropdown-toggle-color: #fff;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: #fff;
-$topbar-link-color-hover: lighten($topbar-bg-color,30%);
-$topbar-link-color-active: #fff;
-$topbar-link-weight: 500;
+// $topbar-link-color: #fff;
+// $topbar-link-color-hover: #fff;
+// $topbar-link-color-active: #fff;
+// $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-$topbar-link-bg-hover: #2493db;
+// $topbar-link-bg-hover: #272727  ;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: darken($primary-color, 5%);
 // $topbar-link-font-family: $body-font-family;
@@ -1073,117 +993,3 @@ $topbar-link-bg-hover: #2493db;
 // Sticky Class
 // $topbar-sticky-class: ".sticky";
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
-
-//
-// TYPOGRAPHY
-//
-
-// $include-html-type-classes: $include-html-classes;
-
-// We use these to control header font styles
-// $header-font-family: join("Open Sans", $body-font-family);
-// $header-font-weight: 300;
-// $header-font-style: normal;
-// $header-font-color: #222;
-// $header-line-height: 1.4;
-// $header-top-margin: .2rem;
-// $header-bottom-margin: .5rem;
-// $header-text-rendering: optimizeLegibility;
-
-// We use these to control header font sizes
-$h1-font-size: rem-calc(28);
-$h2-font-size: rem-calc(24);
-$h3-font-size: rem-calc(23);
-$h4-font-size: rem-calc(19);
-$h5-font-size: rem-calc(14);
-// $h6-font-size: 1rem;
-
-// These control how subheaders are styled.
-// $subheader-line-height: 1.4;
-// $subheader-font-color: lighten($header-font-color, 30%);
-// $subheader-font-weight: 300;
-// $subheader-top-margin: .2rem;
-// $subheader-bottom-margin: .5rem;
-
-// A general <small> styling
-// $small-font-size: 60%;
-// $small-font-color: lighten($header-font-color, 30%);
-
-// We use these to style paragraphs
-// $paragraph-font-family: inherit;
-// $paragraph-font-weight: normal;
-// $paragraph-font-size: 1rem;
-$paragraph-line-height: 1.6;
-// $paragraph-margin-bottom: rem-calc(20);
-// $paragraph-aside-font-size: rem-calc(14);
-// $paragraph-aside-line-height: 1.35;
-// $paragraph-aside-font-style: italic;
-// $paragraph-text-rendering: optimizeLegibility;
-
-// We use these to style <code> tags
-// $code-color: darken($alert-color, 15%);
-// $code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
-// $code-font-weight: bold;
-
-// We use these to style anchors
-// $anchor-text-decoration: none;
-// $anchor-font-color: $primary-color;
-// $anchor-font-color-hover: darken($primary-color, 5%);
-
-// We use these to style the <hr> element
-// $hr-border-width: 1px;
-// $hr-border-style: solid;
-// $hr-border-color: #ddd;
-// $hr-margin: rem-calc(20);
-
-// We use these to style lists
-// $list-style-position: outside;
-// $list-side-margin: 1.1rem;
-// $list-ordered-side-margin: 1.4rem;
-// $list-side-margin-no-bullet: 0;
-// $list-nested-margin: rem-calc(20);
-// $definition-list-header-weight: bold;
-// $definition-list-header-margin-bottom: .3rem;
-// $definition-list-margin-bottom: rem-calc(12);
-
-// We use these to style blockquotes
-// $blockquote-font-color: lighten($header-font-color, 30%);
-// $blockquote-padding: rem-calc(9 20 0 19);
-// $blockquote-border: 1px solid #ddd;
-// $blockquote-cite-font-size: rem-calc(13);
-// $blockquote-cite-font-color: lighten($header-font-color, 20%);
-// $blockquote-cite-link-color: $blockquote-cite-font-color;
-
-// Acronym styles
-// $acronym-underline: 1px dotted #ddd;
-
-// We use these to control padding and margin
-// $microformat-padding: rem-calc(10 12);
-// $microformat-margin: rem-calc(0 0 20 0);
-
-// We use these to control the border styles
-// $microformat-border-width: 1px;
-// $microformat-border-style: solid;
-// $microformat-border-color: #ddd;
-
-// We use these to control full name font styles
-// $microformat-fullname-font-weight: bold;
-// $microformat-fullname-font-size: rem-calc(15);
-
-// We use this to control the summary font styles
-// $microformat-summary-font-weight: bold;
-
-// We use this to control abbr padding
-// $microformat-abbr-padding: rem-calc(0 1);
-
-// We use this to control abbr font styles
-// $microformat-abbr-font-weight: bold;
-// $microformat-abbr-font-decoration: none;
-
-//
-// VISIBILITY CLASSES
-//
-
-// $include-html-visibility-classes: $include-html-classes;
-$mainWidth: 80%;
-$complementaryWidth: 20%;
