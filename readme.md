@@ -1,5 +1,6 @@
 #Magento HTML5 responsive boilerplate [![endorse](http://api.coderwall.com/zeljkoprsa/endorsecount.png)](http://coderwall.com/zeljkoprsa)
  - Built on Foundation 5.1.1 by ZURB.
+ - Works with Magento 1.8.1
 
 **Update**
 #WATERLEE on Foundation 5.1.1 is here.
@@ -20,7 +21,8 @@ Remember this is a boilerplate not a production ready theme ;)
 Whether you have the design ready or design directly in the browser, best if combined, you're saving time and effort using style patterns for layout and components already built in.
 
 ##Get everyone on board
-When we all speak the same lingo it's easier to communicate inside the design/development process to achieve the best result, hence the ZURB Foundation 4 Documentation.
+When we all speak the same lingo it's easier to communicate inside the design/development process to achieve the best result, hence the ZURB Foundation 5 Documentation.
+http://foundation.zurb.com/docs/
 
 ##Benefit from OOCSS
 CSS is notorious for being easily turned into pile of unreadable code. Cut that at the roots with organizing your SCSS files separately related to the component, template or page view.
@@ -37,7 +39,7 @@ Once you install the Waterlee package and assuming you already installed the "Ja
 For detailed instructions check knowledge base @ http://jakesharp.uservoice.com/ 
 
 ##SCSS Organization
-For starters, Waterlee is based on ZURB Foundation framework 4.0 which relies on mobile first approach. This means that all of the HTML classes for layout at your disposal are mobile-first so keep that in mind while developing. There is a folder named "custom" under the "/skin/frontend/waterlee-boilerplate/default/SCSS/".
+For starters, Waterlee is based on ZURB Foundation framework 5 which relies on mobile first approach. This means that all of the HTML classes for layout at your disposal are mobile-first so keep that in mind while developing. There is a folder named "custom" under the "/skin/frontend/waterlee-boilerplate/default/SCSS/".
 
 The "custom" folder is already configured following the OOCSS principles of separating as many styling areas such as: page views, global components etc. All of the files are then imported into one main style.scss. Feel free to adapt it to your needs or not use it at all. Our recommendation is that you build upon it, suggest improvements for organization or just first take it for a spin to see the benefits.
 
@@ -48,7 +50,7 @@ What's inside:
 - **NEW** Theme top menu extension. Find it under "JAKE SHARP WATERLEE" system settings after installation (Remember, you'll need to install the extension separately.)
 - **NEW**: Off Canvas menu (http://www.zurb.com/playground/off-canvas-layouts)
 - **NEW**: Current SubCategory menu for mobile view
-- Foundation 4 by ZURB built in (http://foundation.zurb.com/)
+- Foundation 5 by ZURB built in (http://foundation.zurb.com/)
 - OOCSS SASS implemented (http://compass-style.org/)
 - Local XML for layout overrides
 - Implemented classes that adhere to foundation docs
