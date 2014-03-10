@@ -1,7 +1,15 @@
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_thumbs.scss
+=======
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_thumbs.scss
 @import "global";
 
 
 
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_thumbs.scss
 //
 // @name _thumbs.scss
 // @dependencies _globals.scss
@@ -11,6 +19,17 @@
 // @variables
 //
 
+=======
+//
+// @name _thumbs.scss
+// @dependencies _globals.scss
+//
+
+//
+// @variables
+//
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_thumbs.scss
 $include-html-media-classes: $include-html-classes !default;
 
 // We use these to control border styles
@@ -40,6 +59,7 @@ $thumb-transition-speed: 200ms !default;
   line-height: 0;
   display: inline-block;
   border: $thumb-border-style $border-width $thumb-border-color;
+  max-width: 100%;
   @if $experimental {
     -webkit-box-shadow: $box-shadow;
   }
@@ -57,6 +77,7 @@ $thumb-transition-speed: 200ms !default;
 
 @include exports("thumb") {
   @if $include-html-media-classes {
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_thumbs.scss
 
     /* Image Thumbnails */
     .th {
@@ -67,5 +88,15 @@ $thumb-transition-speed: 200ms !default;
     }
     a.th { display: inline-block; max-width:100%; }
 
+=======
+
+    /* Image Thumbnails */
+    .th {
+      @include thumb;
+      @include single-transition(all,$thumb-transition-speed,ease-out);
+
+      &.radius { @include radius($thumb-radius); }
+    }
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_thumbs.scss
   }
 }

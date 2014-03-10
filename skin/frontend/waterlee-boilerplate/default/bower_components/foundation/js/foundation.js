@@ -1,7 +1,11 @@
 /*
  * Foundation Responsive Library
  * http://foundation.zurb.com
+<<<<<<< HEAD
  * Copyright 2013, ZURB
+=======
+ * Copyright 2014, ZURB
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
  * Free to use under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
 */
@@ -9,6 +13,7 @@
 (function ($, window, document, undefined) {
   'use strict';
 
+<<<<<<< HEAD
   // Used to retrieve Foundation media queries from CSS.
   if($('head').has('.foundation-mq-small').length === 0) {
     $('head').append('<meta class="foundation-mq-small">');
@@ -38,6 +43,37 @@
   if(typeof FastClick !== 'undefined') {
     FastClick.attach(document.body);
   }
+=======
+  var header_helpers = function (class_array) {
+    var i = class_array.length;
+    var head = $('head');
+
+    while (i--) {
+      if($('head').has('.' + class_array[i]).length === 0) {
+        $('head').append('<meta class="' + class_array[i] + '" />');
+      }
+    }
+  };
+
+  header_helpers([
+    'foundation-mq-small',
+    'foundation-mq-medium',
+    'foundation-mq-large',
+    'foundation-mq-xlarge',
+    'foundation-mq-xxlarge',
+    'foundation-data-attribute-namespace']);
+
+  // Enable FastClick if present
+
+  $(function() {
+    if (typeof FastClick !== 'undefined') {
+      // Don't attach to body if undefined
+      if (typeof document.body !== 'undefined') {
+        FastClick.attach(document.body);
+      }
+    }
+  });
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
   // private Fast Selector wrapper,
   // returns jQuery object. Only use where
@@ -45,7 +81,18 @@
   var S = function (selector, context) {
     if (typeof selector === 'string') {
       if (context) {
+<<<<<<< HEAD
         return $(context.querySelectorAll(selector));
+=======
+        var cont;
+        if (context.jquery) {
+          cont = context[0];
+          if (!cont) return context;
+        } else {
+          cont = context;
+        }
+        return $(cont.querySelectorAll(selector));
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
 
       return $(document.querySelectorAll(selector));
@@ -54,6 +101,98 @@
     return $(selector, context);
   };
 
+<<<<<<< HEAD
+=======
+  // Namespace functions.
+
+  var attr_name = function (init) {
+    var arr = [];
+    if (!init) arr.push('data');
+    if (this.namespace.length > 0) arr.push(this.namespace);
+    arr.push(this.name);
+
+    return arr.join('-');
+  };
+
+  var add_namespace = function (str) {
+    var parts = str.split('-'),
+        i = parts.length,
+        arr = [];
+
+    while (i--) {
+      if (i !== 0) {
+        arr.push(parts[i]);
+      } else {
+        if (this.namespace.length > 0) {
+          arr.push(this.namespace, parts[i]);
+        } else {
+          arr.push(parts[i]);
+        }
+      }
+    }
+
+    return arr.reverse().join('-');
+  };
+
+  // Event binding and data-options updating.
+
+  var bindings = function (method, options) {
+    var self = this,
+        should_bind_events = !S(this).data(this.attr_name(true));
+
+    if (typeof method === 'string') {
+      return this[method].call(this, options);
+    }
+
+    if (S(this.scope).is('[' + this.attr_name() +']')) {
+      S(this.scope).data(this.attr_name(true) + '-init', $.extend({}, this.settings, (options || method), this.data_options(S(this.scope))));
+
+      if (should_bind_events) {
+        this.events(this.scope);
+      }
+
+    } else {
+      S('[' + this.attr_name() +']', this.scope).each(function () {
+        var should_bind_events = !S(this).data(self.attr_name(true) + '-init');
+        S(this).data(self.attr_name(true) + '-init', $.extend({}, self.settings, (options || method), self.data_options(S(this))));
+
+        if (should_bind_events) {
+          self.events(this);
+        }
+      });
+    }
+  };
+
+  var single_image_loaded = function (image, callback) {
+    function loaded () {
+      callback(image[0]);
+    }
+
+    function bindLoad () {
+      this.one('load', loaded);
+
+      if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) {
+        var src = this.attr( 'src' ),
+            param = src.match( /\?/ ) ? '&' : '?';
+
+        param += 'random=' + (new Date()).getTime();
+        this.attr('src', src + param);
+      }
+    }
+
+    if (!image.attr('src')) {
+      loaded();
+      return;
+    }
+
+    if (image[0].complete || image[0].readyState === 4) {
+      loaded();
+    } else {
+      bindLoad.call(image);
+    }
+  };
+  
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
   /*
     https://github.com/paulirish/matchMedia.js
   */
@@ -74,7 +213,11 @@
     fakeBody.style.background = "none";
     fakeBody.appendChild(div);
 
+<<<<<<< HEAD
     return function(q){
+=======
+    return function (q) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       div.innerHTML = "&shy;<style media=\"" + q + "\"> #mq-test-1 { width: 42px; }</style>";
 
@@ -100,13 +243,18 @@
    * Licensed under the MIT license.
    */
 
+<<<<<<< HEAD
   (function( $ ) {
+=======
+  (function($) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
   // requestAnimationFrame polyfill adapted from Erik Möller
   // fixes from Paul Irish and Tino Zijdel
   // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
   // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
 
+<<<<<<< HEAD
 
   var animating,
     lastTime = 0,
@@ -115,6 +263,16 @@
     cancelAnimationFrame = window.cancelAnimationFrame;
 
   for(; lastTime < vendors.length && !requestAnimationFrame; lastTime++) {
+=======
+  var animating,
+      lastTime = 0,
+      vendors = ['webkit', 'moz'],
+      requestAnimationFrame = window.requestAnimationFrame,
+      cancelAnimationFrame = window.cancelAnimationFrame,
+      jqueryFxAvailable = 'undefined' !== typeof jQuery.fx;
+
+  for (; lastTime < vendors.length && !requestAnimationFrame; lastTime++) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     requestAnimationFrame = window[ vendors[lastTime] + "RequestAnimationFrame" ];
     cancelAnimationFrame = cancelAnimationFrame ||
       window[ vendors[lastTime] + "CancelAnimationFrame" ] || 
@@ -122,6 +280,7 @@
   }
 
   function raf() {
+<<<<<<< HEAD
     if ( animating ) {
       requestAnimationFrame( raf );
       jQuery.fx.tick();
@@ -150,14 +309,57 @@
         id = window.setTimeout( function() {
           callback( currTime + timeToCall );
         }, timeToCall );
+=======
+    if (animating) {
+      requestAnimationFrame(raf);
+      
+      if (jqueryFxAvailable) {
+        jQuery.fx.tick();
+      }
+    }
+  }
+
+  if (requestAnimationFrame) {
+    // use rAF
+    window.requestAnimationFrame = requestAnimationFrame;
+    window.cancelAnimationFrame = cancelAnimationFrame;
+    
+    if (jqueryFxAvailable) {
+      jQuery.fx.timer = function (timer) {
+        if (timer() && jQuery.timers.push(timer) && !animating) {
+          animating = true;
+          raf();
+        }
+      };
+
+      jQuery.fx.stop = function () {
+        animating = false;
+      };
+    }
+  } else {
+    // polyfill
+    window.requestAnimationFrame = function (callback, element) {
+      var currTime = new Date().getTime(),
+        timeToCall = Math.max(0, 16 - (currTime - lastTime)),
+        id = window.setTimeout(function () {
+          callback(currTime + timeToCall);
+        }, timeToCall);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       lastTime = currTime + timeToCall;
       return id;
     };
 
+<<<<<<< HEAD
     window.cancelAnimationFrame = function(id) {
       clearTimeout(id);
     };
       
+=======
+    window.cancelAnimationFrame = function (id) {
+      clearTimeout(id);
+    };
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
   }
 
   }( jQuery ));
@@ -165,7 +367,11 @@
 
   function removeQuotes (string) {
     if (typeof string === 'string' || string instanceof String) {
+<<<<<<< HEAD
       string = string.replace(/^[\\/'"]+|(;\s?})+|[\\/'"]+$/g, '');
+=======
+      string = string.replace(/^['\\/"]+|(;\s?})+|['\\/"]+$/g, '');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     }
 
     return string;
@@ -174,7 +380,11 @@
   window.Foundation = {
     name : 'Foundation',
 
+<<<<<<< HEAD
     version : '5.0.0',
+=======
+    version : '5.2.0',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
     media_queries : {
       small : S('.foundation-mq-small').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
@@ -186,6 +396,13 @@
 
     stylesheet : $('<style></style>').appendTo('head')[0].sheet,
 
+<<<<<<< HEAD
+=======
+    global: {
+      namespace: ''
+    },
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     init : function (scope, libraries, method, options, response) {
       var library_arr,
           args = [scope, method, options, response],
@@ -197,6 +414,11 @@
       // set foundation global scope
       this.scope = scope || this.scope;
 
+<<<<<<< HEAD
+=======
+      this.set_namespace();
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       if (libraries && typeof libraries === 'string' && !/reflow/i.test(libraries)) {
         if (this.libs.hasOwnProperty(libraries)) {
           responses.push(this.init_lib(libraries, args));
@@ -215,9 +437,22 @@
         this.patch(this.libs[lib]);
 
         if (args && args.hasOwnProperty(lib)) {
+<<<<<<< HEAD
           return this.libs[lib].init.apply(this.libs[lib], [this.scope, args[lib]]);
         }
 
+=======
+            if (typeof this.libs[lib].settings !== 'undefined') {
+                $.extend(true, this.libs[lib].settings, args[lib]);
+            }
+            else if (typeof this.libs[lib].defaults !== 'undefined') {
+                $.extend(true, this.libs[lib].defaults, args[lib]);
+            }
+          return this.libs[lib].init.apply(this.libs[lib], [this.scope, args[lib]]);
+        }
+
+        args = args instanceof Array ? args : Array(args);    // PATCH: added this line
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         return this.libs[lib].init.apply(this.libs[lib], args);
       }
 
@@ -226,6 +461,7 @@
 
     patch : function (lib) {
       lib.scope = this.scope;
+<<<<<<< HEAD
       lib['data_options'] = this.lib_methods.data_options;
       lib['bindings'] = this.lib_methods.bindings;
       lib['S'] = S;
@@ -238,10 +474,29 @@
       for (var i = methods_arr.length - 1; i >= 0; i--) {
         if (this.lib_methods.hasOwnProperty(methods_arr[i])) {
           this.libs[scope.name][methods_arr[i]] = this.lib_methods[methods_arr[i]];
+=======
+      lib.namespace = this.global.namespace;
+      lib.rtl = this.rtl;
+      lib['data_options'] = this.utils.data_options;
+      lib['attr_name'] = attr_name;
+      lib['add_namespace'] = add_namespace;
+      lib['bindings'] = bindings;
+      lib['S'] = this.utils.S;
+    },
+
+    inherit : function (scope, methods) {
+      var methods_arr = methods.split(' '),
+          i = methods_arr.length;
+
+      while (i--) {
+        if (this.utils.hasOwnProperty(methods_arr[i])) {
+          scope[methods_arr[i]] = this.utils[methods_arr[i]];
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         }
       }
     },
 
+<<<<<<< HEAD
     random_str : function (length) {
       var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
 
@@ -254,13 +509,62 @@
         str += chars[Math.floor(Math.random() * chars.length)];
       }
       return str;
+=======
+    set_namespace: function () {
+
+      // Don't bother reading the namespace out of the meta tag
+      // if the namespace has been set globally in javascript
+      //
+      // Example: something like Foundation.global.namespace = 'my-namespace';
+      //
+      // Otherwise, if the namespace hasn't been set globally,
+      // read it out of the meta tag
+      //
+      var namespace = this.global.namespace || $('.foundation-data-attribute-namespace').css('font-family');
+
+      if (/false/i.test(namespace)) return;
+      
+      this.global.namespace = namespace;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     },
 
     libs : {},
 
     // methods that can be inherited in libraries
+<<<<<<< HEAD
     lib_methods : {
       throttle : function(fun, delay) {
+=======
+    utils : {
+
+      // Description:
+      //    Fast Selector wrapper returns jQuery object. Only use where getElementById 
+      //    is not available.
+      //
+      // Arguments:
+      //    Selector (String): CSS selector describing the element(s) to be 
+      //    returned as a jQuery object.
+      //
+      //    Scope (String): CSS selector describing the area to be searched. Default 
+      //    is document.
+      //
+      // Returns:
+      //    Element (jQuery Object): jQuery object containing elements matching the 
+      //    selector within the scope.
+      S : S,
+
+      // Description:
+      //    Executes a function a max of once every n milliseconds 
+      //
+      // Arguments:
+      //    Func (Function): Function to be throttled.
+      //
+      //    Delay (Integer): Function execution threshold in milliseconds.
+      //
+      // Returns:
+      //    Lazy_function (Function): Function with throttling applied.
+      throttle : function (func, delay) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         var timer = null;
 
         return function () {
@@ -268,11 +572,16 @@
 
           clearTimeout(timer);
           timer = setTimeout(function () {
+<<<<<<< HEAD
             fun.apply(context, args);
+=======
+            func.apply(context, args);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           }, delay);
         };
       },
 
+<<<<<<< HEAD
       // parses data-options attribute
       data_options : function (el) {
         var opts = {}, ii, p, opts_arr, opts_len,
@@ -284,23 +593,102 @@
 
         opts_arr = (data_options || ':').split(';'),
         opts_len = opts_arr.length;
+=======
+      // Description:
+      //    Executes a function when it stops being invoked for n seconds
+      //    Modified version of _.debounce() http://underscorejs.org
+      //
+      // Arguments:
+      //    Func (Function): Function to be debounced.
+      //
+      //    Delay (Integer): Function execution threshold in milliseconds.
+      // 
+      //    Immediate (Bool): Whether the function should be called at the beginning 
+      //    of the delay instead of the end. Default is false.
+      //
+      // Returns:
+      //    Lazy_function (Function): Function with debouncing applied.
+      debounce : function (func, delay, immediate) {
+        var timeout, result;
+        return function () {
+          var context = this, args = arguments;
+          var later = function () {
+            timeout = null;
+            if (!immediate) result = func.apply(context, args);
+          };
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, delay);
+          if (callNow) result = func.apply(context, args);
+          return result;
+        };
+      },
+
+      // Description:
+      //    Parses data-options attribute
+      //
+      // Arguments:
+      //    El (jQuery Object): Element to be parsed.
+      //
+      // Returns:
+      //    Options (Javascript Object): Contents of the element's data-options 
+      //    attribute.
+      data_options : function (el) {
+        var opts = {}, ii, p, opts_arr,
+            data_options = function (el) {
+              var namespace = Foundation.global.namespace;
+
+              if (namespace.length > 0) {
+                return el.data(namespace + '-options');
+              }
+
+              return el.data('options');
+            };
+
+        var cached_options = data_options(el);
+
+        if (typeof cached_options === 'object') {
+          return cached_options;
+        }
+
+        opts_arr = (cached_options || ':').split(';'),
+        ii = opts_arr.length;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
         function isNumber (o) {
           return ! isNaN (o-0) && o !== null && o !== "" && o !== false && o !== true;
         }
 
+<<<<<<< HEAD
         function trim(str) {
+=======
+        function trim (str) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           if (typeof str === 'string') return $.trim(str);
           return str;
         }
 
+<<<<<<< HEAD
         // parse options
         for (ii = opts_len - 1; ii >= 0; ii--) {
+=======
+        while (ii--) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           p = opts_arr[ii].split(':');
 
           if (/true/i.test(p[1])) p[1] = true;
           if (/false/i.test(p[1])) p[1] = false;
+<<<<<<< HEAD
           if (isNumber(p[1])) p[1] = parseInt(p[1], 10);
+=======
+          if (isNumber(p[1])) {
+            if (p[1].indexOf('.') === -1) {
+              p[1] = parseInt(p[1], 10);
+            } else {
+              p[1] = parseFloat(p[1], 10);
+            }
+          }
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
           if (p.length === 2 && p[0].length > 0) {
             opts[trim(p[0])] = trim(p[1]);
@@ -310,6 +698,7 @@
         return opts;
       },
 
+<<<<<<< HEAD
       delay : function (fun, delay) {
         return setTimeout(fun, delay);
       },
@@ -327,24 +716,54 @@
       },
 
       register_media : function(media, media_class) {
+=======
+      // Description:
+      //    Adds JS-recognizable media queries
+      //
+      // Arguments:
+      //    Media (String): Key string for the media query to be stored as in 
+      //    Foundation.media_queries
+      //
+      //    Class (String): Class name for the generated <meta> tag
+      register_media : function (media, media_class) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         if(Foundation.media_queries[media] === undefined) {
           $('head').append('<meta class="' + media_class + '">');
           Foundation.media_queries[media] = removeQuotes($('.' + media_class).css('font-family'));
         }
       },
 
+<<<<<<< HEAD
       addCustomRule : function(rule, media) {
         if(media === undefined) {
           Foundation.stylesheet.insertRule(rule, Foundation.stylesheet.cssRules.length);
         } else {
           var query = Foundation.media_queries[media];
           if(query !== undefined) {
+=======
+      // Description:
+      //    Add custom CSS within a JS-defined media query
+      //
+      // Arguments:
+      //    Rule (String): CSS rule to be appended to the document.
+      //
+      //    Media (String): Optional media query string for the CSS rule to be 
+      //    nested under.
+      add_custom_rule : function (rule, media) {
+        if (media === undefined) {
+          Foundation.stylesheet.insertRule(rule, Foundation.stylesheet.cssRules.length);
+        } else {
+          var query = Foundation.media_queries[media];
+
+          if (query !== undefined) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
             Foundation.stylesheet.insertRule('@media ' + 
               Foundation.media_queries[media] + '{ ' + rule + ' }');
           }
         }
       },
 
+<<<<<<< HEAD
       loaded : function (image, callback) {
         function loaded () {
           callback(image[0]);
@@ -400,6 +819,47 @@
             }
           });
         }
+=======
+      // Description:
+      //    Performs a callback function when an image is fully loaded
+      //
+      // Arguments:
+      //    Image (jQuery Object): Image(s) to check if loaded.
+      //
+      //    Callback (Function): Fundation to execute when image is fully loaded.
+      image_loaded : function (images, callback) {
+        var self = this,
+            unloaded = images.length;
+
+        if (unloaded === 0) {
+          callback(images);
+        }
+
+        images.each(function () {
+          single_image_loaded(self.S(this), function () {
+            unloaded -= 1;
+            if (unloaded === 0) {
+              callback(images);
+            }
+          });
+        });
+      },
+
+      // Description:
+      //    Returns a random, alphanumeric string
+      //
+      // Arguments:
+      //    Length (Integer): Length of string to be generated. Defaults to random 
+      //    integer.
+      //
+      // Returns:
+      //    Rand (String): Pseudo-random, alphanumeric string.
+      random_str : function () {
+        if (!this.fidx) this.fidx = 0;
+        this.prefix = this.prefix || [(this.name || 'F'), (+new Date).toString(36)].join('-');
+
+        return this.prefix + (this.fidx++).toString(36);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
     }
   };
@@ -421,6 +881,7 @@
   Foundation.libs.abide = {
     name : 'abide',
 
+<<<<<<< HEAD
     version : '5.0.0',
 
     settings : {
@@ -435,6 +896,21 @@
         // generic password: upper-case, lower-case, number/special character, and min 8 characters
         password : /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
 
+=======
+    version : '5.2.0',
+
+    settings : {
+      live_validate : true,
+      focus_on_invalid : true,
+      error_labels: true, // labels with a for="inputId" will recieve an `error` class
+      timeout : 1000,
+      patterns : {
+        alpha: /^[a-zA-Z]+$/,
+        alpha_numeric : /^[a-zA-Z0-9]+$/,
+        integer: /^\d+$/,
+        number: /-?(?:\d+|\d{1,3}(?:,\d{3})+)?(?:\.\d+)?/,
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         // amex, visa, diners
         card : /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/,
         cvv : /^([0-9]){3,4}$/,
@@ -468,14 +944,29 @@
 
     events : function (scope) {
       var self = this,
+<<<<<<< HEAD
           form = $(scope).attr('novalidate', 'novalidate'),
           settings = form.data('abide-init');
+=======
+          form = self.S(scope).attr('novalidate', 'novalidate'),
+          settings = form.data(this.attr_name(true) + '-init');
+
+      this.invalid_attr = this.add_namespace('data-invalid');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       form
         .off('.abide')
         .on('submit.fndtn.abide validate.fndtn.abide', function (e) {
+<<<<<<< HEAD
           var is_ajax = /ajax/i.test($(this).attr('data-abide'));
           return self.validate($(this).find('input, textarea, select').get(), e, is_ajax);
+=======
+          var is_ajax = /ajax/i.test(self.S(this).attr(self.attr_name()));
+          return self.validate(self.S(this).find('input, textarea, select').get(), e, is_ajax);
+        })
+        .on('reset', function() {
+          return self.reset($(this));
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         })
         .find('input, textarea, select')
           .off('.abide')
@@ -483,6 +974,7 @@
             self.validate([this], e);
           })
           .on('keydown.fndtn.abide', function (e) {
+<<<<<<< HEAD
             var settings = $(this).closest('form').data('abide-init');
             clearTimeout(self.timer);
             self.timer = setTimeout(function () {
@@ -497,11 +989,40 @@
           form = $(els[0]).closest('form'),
           submit_event = /submit/.test(e.type);
 
+=======
+            var settings = $(this).closest('form').data(self.attr_name(true) + '-init');
+            if (settings.live_validate === true) {
+              clearTimeout(self.timer);
+              self.timer = setTimeout(function () {
+                self.validate([this], e);
+              }.bind(this), settings.timeout);
+            }
+          });
+    },
+
+    reset : function (form) {
+      form.removeAttr(this.invalid_attr);
+      $(this.invalid_attr, form).removeAttr(this.invalid_attr);
+      $('.error', form).not('small').removeClass('error');
+    },
+
+    validate : function (els, e, is_ajax) {
+      var validations = this.parse_patterns(els),
+          validation_count = validations.length,
+          form = this.S(els[0]).closest('form'),
+          submit_event = /submit/.test(e.type);
+
+      // Has to count up to make sure the focus gets applied to the top error
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       for (var i=0; i < validation_count; i++) {
         if (!validations[i] && (submit_event || is_ajax)) {
           if (this.settings.focus_on_invalid) els[i].focus();
           form.trigger('invalid');
+<<<<<<< HEAD
           $(els[i]).closest('form').attr('data-invalid', '');
+=======
+          this.S(els[i]).closest('form').attr(this.invalid_attr, '');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           return false;
         }
       }
@@ -510,7 +1031,11 @@
         form.trigger('valid');
       }
 
+<<<<<<< HEAD
       form.removeAttr('data-invalid');
+=======
+      form.removeAttr(this.invalid_attr);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       if (is_ajax) return false;
 
@@ -518,10 +1043,17 @@
     },
 
     parse_patterns : function (els) {
+<<<<<<< HEAD
       var count = els.length,
           el_patterns = [];
 
       for (var i = count - 1; i >= 0; i--) {
+=======
+      var i = els.length,
+          el_patterns = [];
+
+      while (i--) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         el_patterns.push(this.pattern(els[i]));
       }
 
@@ -532,10 +1064,13 @@
       var type = el.getAttribute('type'),
           required = typeof el.getAttribute('required') === 'string';
 
+<<<<<<< HEAD
       if (this.settings.patterns.hasOwnProperty(type)) {
         return [el, this.settings.patterns[type], required];
       }
 
+=======
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       var pattern = el.getAttribute('pattern') || '';
 
       if (this.settings.patterns.hasOwnProperty(pattern) && pattern.length > 0) {
@@ -543,6 +1078,13 @@
       } else if (pattern.length > 0) {
         return [el, new RegExp(pattern), required];
       }
+<<<<<<< HEAD
+=======
+      
+      if (this.settings.patterns.hasOwnProperty(type)) {
+        return [el, this.settings.patterns[type], required];
+      }
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       pattern = /.*/;
 
@@ -550,6 +1092,7 @@
     },
 
     check_validation_and_apply_styles : function (el_patterns) {
+<<<<<<< HEAD
       var count = el_patterns.length,
           validations = [];
 
@@ -573,6 +1116,53 @@
           } else {
             $(el).attr('data-invalid', '').parent().addClass('error');
             validations.push(false);
+=======
+      var i = el_patterns.length,
+          validations = [];
+
+      while (i--) {
+        var el = el_patterns[i][0],
+            required = el_patterns[i][2],
+            value = el.value,
+            direct_parent = this.S(el).parent(),
+            is_equal = el.getAttribute(this.add_namespace('data-equalto')),
+            is_radio = el.type === "radio",
+            is_checkbox = el.type === "checkbox",
+            label = this.S('label[for="' + el.getAttribute('id') + '"]'),
+            valid_length = (required) ? (el.value.length > 0) : true;
+
+        var parent;
+
+        if (!direct_parent.is('label')) {
+          parent = direct_parent;
+        } else {
+          parent = direct_parent.parent();
+        }
+
+        if (is_radio && required) {
+          validations.push(this.valid_radio(el, required));
+        } else if (is_checkbox && required) {
+          validations.push(this.valid_checkbox(el, required));
+        } else if (is_equal && required) {
+          validations.push(this.valid_equal(el, required, parent));
+        } else {
+
+          if (el_patterns[i][1].test(value) && valid_length ||
+            !required && el.value.length < 1 || $(el).attr('disabled')) {
+            this.S(el).removeAttr(this.invalid_attr);
+            parent.removeClass('error');
+            if (label.length > 0 && this.settings.error_labels) label.removeClass('error');
+
+            validations.push(true);
+            $(el).triggerHandler('valid');
+          } else {
+            this.S(el).attr(this.invalid_attr, '');
+            parent.addClass('error');
+            if (label.length > 0 && this.settings.error_labels) label.addClass('error');
+
+            validations.push(false);
+            $(el).triggerHandler('invalid');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           }
         }
       }
@@ -580,49 +1170,99 @@
       return validations;
     },
 
+<<<<<<< HEAD
+=======
+    valid_checkbox : function(el, required) {
+      var el = this.S(el),
+          valid = (el.is(':checked') || !required);
+
+      if (valid) {
+        el.removeAttr(this.invalid_attr).parent().removeClass('error');
+      } else {
+        el.attr(this.invalid_attr, '').parent().addClass('error');
+      }
+
+      return valid;
+    },
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     valid_radio : function (el, required) {
       var name = el.getAttribute('name'),
           group = document.getElementsByName(name),
           count = group.length,
           valid = false;
 
+<<<<<<< HEAD
+=======
+      // Has to count up to make sure the focus gets applied to the top error
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       for (var i=0; i < count; i++) {
         if (group[i].checked) valid = true;
       }
 
+<<<<<<< HEAD
       for (var i=0; i < count; i++) {
         if (valid) {
           $(group[i]).removeAttr('data-invalid').parent().removeClass('error');
         } else {
           $(group[i]).attr('data-invalid', '').parent().addClass('error');
+=======
+      // Has to count up to make sure the focus gets applied to the top error
+      for (var i=0; i < count; i++) {
+        if (valid) {
+          this.S(group[i]).removeAttr(this.invalid_attr).parent().removeClass('error');
+        } else {
+          this.S(group[i]).attr(this.invalid_attr, '').parent().addClass('error');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         }
       }
 
       return valid;
     },
 
+<<<<<<< HEAD
     valid_equal: function(el, required) {
       var from  = document.getElementById(el.getAttribute('data-equalto')).value,
+=======
+    valid_equal: function(el, required, parent) {
+      var from  = document.getElementById(el.getAttribute(this.add_namespace('data-equalto'))).value,
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           to    = el.value,
           valid = (from === to);
 
       if (valid) {
+<<<<<<< HEAD
         $(el).removeAttr('data-invalid').parent().removeClass('error');
       } else {
         $(el).attr('data-invalid', '').parent().addClass('error');
+=======
+        this.S(el).removeAttr(this.invalid_attr);
+        parent.removeClass('error');
+      } else {
+        this.S(el).attr(this.invalid_attr, '');
+        parent.addClass('error');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
 
       return valid;
     }
   };
 }(jQuery, this, this.document));
+<<<<<<< HEAD
+=======
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 ;(function ($, window, document, undefined) {
   'use strict';
 
   Foundation.libs.accordion = {
     name : 'accordion',
 
+<<<<<<< HEAD
     version : '5.0.1',
+=======
+    version : '5.2.0',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
     settings : {
       active_class: 'active',
@@ -634,6 +1274,7 @@
     },
 
     events : function () {
+<<<<<<< HEAD
       $(this.scope).off('.accordion').on('click.fndtn.accordion', '[data-accordion] > dd > a', function (e) {
         var accordion = $(this).parent(),
             target = $('#' + this.href.split('#')[1]),
@@ -649,6 +1290,32 @@
 
         siblings.removeClass(settings.active_class);
         target.addClass(settings.active_class);
+=======
+      var self = this;
+      var S = this.S;
+      S(this.scope)
+      .off('.fndtn.accordion')
+      .on('click.fndtn.accordion', '[' + this.attr_name() + '] dd > a', function (e) {
+        var accordion = S(this).closest('[' + self.attr_name() + ']'),
+            target = S('#' + this.href.split('#')[1]),
+            siblings = S('dd > .content', accordion),
+            aunts = $('> dd', accordion),
+            settings = accordion.data(self.attr_name(true) + '-init'),
+            active_content = S('dd > .content.' + settings.active_class, accordion),
+            active_parent = S('dd.' + settings.active_class, accordion);
+        e.preventDefault();
+
+        if (! S(this).closest('dl').is(accordion)) { return; }
+
+        if (active_content[0] == target[0] && settings.toggleable) {
+          active_parent.toggleClass(settings.active_class, false);
+          return target.toggleClass(settings.active_class, false);
+        }
+
+        siblings.removeClass(settings.active_class);
+        aunts.removeClass(settings.active_class);
+        target.addClass(settings.active_class).parent().addClass(settings.active_class);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       });
     },
 
@@ -664,7 +1331,11 @@
   Foundation.libs.alert = {
     name : 'alert',
 
+<<<<<<< HEAD
     version : '5.0.0',
+=======
+    version : '5.2.0',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
     settings : {
       animation: 'fadeOut',
@@ -677,6 +1348,7 @@
     },
 
     events : function () {
+<<<<<<< HEAD
       $(this.scope).off('.alert').on('click.fndtn.alert', '[data-alert] a.close', function (e) {
           var alertBox = $(this).closest("[data-alert]"),
               settings = alertBox.data('alert-init');
@@ -684,6 +1356,18 @@
         e.preventDefault();
         alertBox[settings.animation](settings.speed, function () {
           $(this).trigger('closed').remove();
+=======
+      var self = this,
+          S = this.S;
+
+      $(this.scope).off('.alert').on('click.fndtn.alert', '[' + this.attr_name() + '] a.close', function (e) {
+          var alertBox = S(this).closest('[' + self.attr_name() + ']'),
+              settings = alertBox.data(self.attr_name(true) + '-init') || self.settings;
+
+        e.preventDefault();
+        alertBox[settings.animation](settings.speed, function () {
+          S(this).trigger('closed').remove();
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           settings.callback();
         });
       });
@@ -692,18 +1376,30 @@
     reflow : function () {}
   };
 }(jQuery, this, this.document));
+<<<<<<< HEAD
+=======
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 ;(function ($, window, document, undefined) {
   'use strict';
 
   Foundation.libs.clearing = {
     name : 'clearing',
 
+<<<<<<< HEAD
     version: '5.0.0',
+=======
+    version: '5.2.0',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
     settings : {
       templates : {
         viewing : '<a href="#" class="clearing-close">&times;</a>' +
+<<<<<<< HEAD
           '<div class="visible-img" style="display: none"><img src="//:0">' +
+=======
+          '<div class="visible-img" style="display: none"><div class="clearing-touch-label"></div><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="" />' +
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           '<p class="clearing-caption"></p><a href="#" class="clearing-main-prev"><span></span></a>' +
           '<a href="#" class="clearing-main-next"><span></span></a></div>'
       },
@@ -712,6 +1408,11 @@
       // add 'div.clearing-blackout, div.visible-img' to close on background click
       close_selectors : '.clearing-close',
 
+<<<<<<< HEAD
+=======
+      touch_label : '&larr;&nbsp;Swipe to Advance&nbsp;&rarr;',
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       // event initializers and locks
       init : false,
       locked : false
@@ -719,6 +1420,7 @@
 
     init : function (scope, method, options) {
       var self = this;
+<<<<<<< HEAD
       Foundation.inherit(this, 'throttle loaded');
 
       this.bindings(method, options);
@@ -728,11 +1430,23 @@
       } else {
         $('[data-clearing]', this.scope).each(function () {
           self.assemble($('li', this));
+=======
+      Foundation.inherit(this, 'throttle image_loaded');
+
+      this.bindings(method, options);
+
+      if (self.S(this.scope).is('[' + this.attr_name() + ']')) {
+        this.assemble(self.S('li', this.scope));
+      } else {
+        self.S('[' + this.attr_name() + ']', this.scope).each(function () {
+          self.assemble(self.S('li', this));
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         });
       }
     },
 
     events : function (scope) {
+<<<<<<< HEAD
       var self = this;
 
       $(this.scope)
@@ -744,12 +1458,34 @@
                 next = current.next('li'),
                 settings = current.closest('[data-clearing]').data('clearing-init'),
                 image = $(e.target);
+=======
+      var self = this,
+      S = self.S;
+
+      if ($('.scroll-container').length > 0) {
+        this.scope = $('.scroll-container');
+      }
+
+      S(this.scope)
+        .off('.clearing')
+        .on('click.fndtn.clearing', 'ul[' + this.attr_name() + '] li',
+          function (e, current, target) {
+            var current = current || S(this),
+                target = target || current,
+                next = current.next('li'),
+                settings = current.closest('[' + self.attr_name() + ']').data(self.attr_name(true) + '-init'),
+                image = S(e.target);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
             e.preventDefault();
 
             if (!settings) {
               self.init();
+<<<<<<< HEAD
               settings = current.closest('[data-clearing]').data('clearing-init');
+=======
+              settings = current.closest('[' + self.attr_name() + ']').data(self.attr_name(true) + '-init');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
             }
 
             // if clearing is open and the current image is
@@ -758,7 +1494,11 @@
               current[0] === target[0] && 
               next.length > 0 && self.is_open(current)) {
               target = next;
+<<<<<<< HEAD
               image = $('img', target);
+=======
+              image = S('img', target);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
             }
 
             // set current and target to the clicked li if not otherwise defined.
@@ -771,20 +1511,36 @@
         .on('click.fndtn.clearing', '.clearing-main-prev',
           function (e) { self.nav(e, 'prev') })
         .on('click.fndtn.clearing', this.settings.close_selectors,
+<<<<<<< HEAD
           function (e) { Foundation.libs.clearing.close(e, this) })
         .on('keydown.fndtn.clearing',
           function (e) { self.keydown(e) });
 
       $(window).off('.clearing').on('resize.fndtn.clearing',
+=======
+          function (e) { Foundation.libs.clearing.close(e, this) });
+
+      $(document).on('keydown.fndtn.clearing',
+          function (e) { self.keydown(e) });
+
+      S(window).off('.clearing').on('resize.fndtn.clearing',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         function () { self.resize() });
 
       this.swipe_events(scope);
     },
 
     swipe_events : function (scope) {
+<<<<<<< HEAD
       var self = this;
 
       $(this.scope)
+=======
+      var self = this,
+      S = self.S;
+
+      S(this.scope)
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         .on('touchstart.fndtn.clearing', '.visible-img', function(e) {
           if (!e.touches) { e = e.originalEvent; }
           var data = {
@@ -795,7 +1551,11 @@
                 is_scrolling: undefined
               };
 
+<<<<<<< HEAD
           $(this).data('swipe-transition', data);
+=======
+          S(this).data('swipe-transition', data);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           e.stopPropagation();
         })
         .on('touchmove.fndtn.clearing', '.visible-img', function(e) {
@@ -803,7 +1563,11 @@
           // Ignore pinch/zoom events
           if(e.touches.length > 1 || e.scale && e.scale !== 1) return;
 
+<<<<<<< HEAD
           var data = $(this).data('swipe-transition');
+=======
+          var data = S(this).data('swipe-transition');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
           if (typeof data === 'undefined') {
             data = {};
@@ -823,7 +1587,11 @@
           }
         })
         .on('touchend.fndtn.clearing', '.visible-img', function(e) {
+<<<<<<< HEAD
           $(this).data('swipe-transition', {});
+=======
+          S(this).data('swipe-transition', {});
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           e.stopPropagation();
         });
     },
@@ -834,14 +1602,20 @@
       if ($el.parent().hasClass('carousel')) return;
       $el.after('<div id="foundationClearingHolder"></div>');
 
+<<<<<<< HEAD
       var holder = $('#foundationClearingHolder'),
           settings = $el.data('clearing-init'),
+=======
+      var holder = this.S('#foundationClearingHolder'),
+          settings = $el.data(this.attr_name(true) + '-init'),
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           grid = $el.detach(),
           data = {
             grid: '<div class="carousel">' + grid[0].outerHTML + '</div>',
             viewing: settings.templates.viewing
           },
           wrapper = '<div class="clearing-assembled"><div>' + data.viewing +
+<<<<<<< HEAD
             data.grid + '</div></div>';
 
       return holder.after(wrapper).remove();
@@ -852,6 +1626,60 @@
           container = $('div', root).first(),
           visible_image = $('.visible-img', container),
           image = $('img', visible_image).not($image);
+=======
+            data.grid + '</div></div>',
+          touch_label = this.settings.touch_label;
+
+      if (Modernizr.touch) {
+        wrapper = $(wrapper).find('.clearing-touch-label').html(touch_label).end();
+      }
+
+      holder.after(wrapper).remove();
+    },
+
+    open : function ($image, current, target) {
+      var self = this,
+          body = $(document.body),
+          root = target.closest('.clearing-assembled'),
+          container = $('div', root).first(),
+          visible_image = $('.visible-img', container),
+          image = $('img', visible_image).not($image),
+          label = $('.clearing-touch-label', '.clearing-blackout'),
+          error = false;
+
+      image.error(function () {
+        error = true;
+      });
+
+      function startLoad() {
+        setTimeout(function () {
+          this.image_loaded(image, function () {
+            if (image.outerWidth() === 1 && !error) {
+              startLoad.call(this);
+            } else {
+              cb.call(this, image);
+            }
+          }.bind(this));
+        }.bind(this), 50);
+      }
+
+      function cb (image) {
+        var $image = $(image);
+        image.css('visibility', 'visible');
+        // toggle the gallery
+        body.css('overflow', 'hidden');
+        root.addClass('clearing-blackout');
+        container.addClass('clearing-container');
+        visible_image.show();
+        this.fix_height(target)
+          .caption(self.S('.clearing-caption', visible_image), $image)
+          .center_and_label(image, label)
+          .shift(current, target, function () {
+            target.siblings().removeClass('visible');
+            target.addClass('visible');
+          });
+      }
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       if (!this.locked()) {
         // set the image to the selected thumbnail
@@ -859,6 +1687,7 @@
           .attr('src', this.load($image))
           .css('visibility', 'hidden');
 
+<<<<<<< HEAD
         this.loaded(image, function () {
           image.css('visibility', 'visible');
           // toggle the gallery
@@ -873,6 +1702,10 @@
               target.addClass('visible');
             });
         }.bind(this));
+=======
+        startLoad.call(this);
+        
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
     },
 
@@ -885,6 +1718,7 @@
             } else {
               return target.closest('.clearing-blackout');
             }
+<<<<<<< HEAD
           }($(el))), container, visible_image;
 
       if (el === e.target && root) {
@@ -892,6 +1726,17 @@
         visible_image = $('.visible-img', container);
         this.settings.prev_index = 0;
         $('ul[data-clearing]', root)
+=======
+          }($(el))),
+          body = $(document.body), container, visible_image;
+
+      if (el === e.target && root) {
+        body.css('overflow', '');
+        container = $('div', root).first();
+        visible_image = $('.visible-img', container);
+        this.settings.prev_index = 0;
+        $('ul[' + this.attr_name() + ']', root)
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           .attr('style', '').closest('.clearing-blackout')
           .removeClass('clearing-blackout');
         container.removeClass('clearing-container');
@@ -906,6 +1751,7 @@
     },
 
     keydown : function (e) {
+<<<<<<< HEAD
       var clearing = $('ul[data-clearing]', '.clearing-blackout');
 
       if (e.which === 39) this.go(clearing, 'next');
@@ -915,16 +1761,38 @@
 
     nav : function (e, direction) {
       var clearing = $('ul[data-clearing]', '.clearing-blackout');
+=======
+      var clearing = $('.clearing-blackout ul[' + this.attr_name() + ']'),
+          NEXT_KEY = this.rtl ? 37 : 39,
+          PREV_KEY = this.rtl ? 39 : 37,
+          ESC_KEY = 27;
+
+      if (e.which === NEXT_KEY) this.go(clearing, 'next');
+      if (e.which === PREV_KEY) this.go(clearing, 'prev');
+      if (e.which === ESC_KEY) this.S('a.clearing-close').trigger('click');
+    },
+
+    nav : function (e, direction) {
+      var clearing = $('ul[' + this.attr_name() + ']', '.clearing-blackout');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       e.preventDefault();
       this.go(clearing, direction);
     },
 
     resize : function () {
+<<<<<<< HEAD
       var image = $('img', '.clearing-blackout .visible-img');
 
       if (image.length) {
         this.center(image);
+=======
+      var image = $('img', '.clearing-blackout .visible-img'),
+          label = $('.clearing-touch-label', '.clearing-blackout');
+
+      if (image.length) {
+        this.center_and_label(image, label);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
     },
 
@@ -934,7 +1802,11 @@
           self = this;
 
       lis.each(function () {
+<<<<<<< HEAD
           var li = $(this),
+=======
+          var li = self.S(this),
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
               image = li.find('img');
 
           if (li.height() > image.outerHeight()) {
@@ -953,33 +1825,77 @@
         .siblings('.visible-img');
 
       if (target.next().length > 0) {
+<<<<<<< HEAD
         $('.clearing-main-next', visible_image)
           .removeClass('disabled');
       } else {
         $('.clearing-main-next', visible_image)
+=======
+        this.S('.clearing-main-next', visible_image)
+          .removeClass('disabled');
+      } else {
+        this.S('.clearing-main-next', visible_image)
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           .addClass('disabled');
       }
 
       if (target.prev().length > 0) {
+<<<<<<< HEAD
         $('.clearing-main-prev', visible_image)
           .removeClass('disabled');
       } else {
         $('.clearing-main-prev', visible_image)
+=======
+        this.S('.clearing-main-prev', visible_image)
+          .removeClass('disabled');
+      } else {
+        this.S('.clearing-main-prev', visible_image)
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           .addClass('disabled');
       }
     },
 
+<<<<<<< HEAD
     center : function (target) {
+=======
+    center_and_label : function (target, label) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       if (!this.rtl) {
         target.css({
           marginLeft : -(target.outerWidth() / 2),
           marginTop : -(target.outerHeight() / 2)
         });
+<<<<<<< HEAD
       } else {
         target.css({
           marginRight : -(target.outerWidth() / 2),
           marginTop : -(target.outerHeight() / 2)
         });
+=======
+
+        if (label.length > 0) {
+          label.css({
+            marginLeft : -(label.outerWidth() / 2),
+            marginTop : -(target.outerHeight() / 2)-label.outerHeight()-10
+          });
+        }
+      } else {
+        target.css({
+          marginRight : -(target.outerWidth() / 2),
+          marginTop : -(target.outerHeight() / 2),
+          left: 'auto',
+          right: '50%'
+        });
+
+        if (label.length > 0) {
+          label.css({
+            marginRight : -(label.outerWidth() / 2),
+            marginTop : -(target.outerHeight() / 2)-label.outerHeight()-10,
+            left: 'auto',
+            right: '50%'
+          });
+        }
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
       return this;
     },
@@ -1008,12 +1924,20 @@
     img : function (img) {
       if (img.length) {
         var new_img = new Image(),
+<<<<<<< HEAD
             new_a = $('a', img);
+=======
+            new_a = this.S('a', img);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
         if (new_a.length) {
           new_img.src = new_a.attr('href');
         } else {
+<<<<<<< HEAD
           new_img.src = $('img', img).attr('src');
+=======
+          new_img.src = this.S('img', img).attr('src');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         }
       }
       return this;
@@ -1039,11 +1963,19 @@
     // directional methods
 
     go : function ($ul, direction) {
+<<<<<<< HEAD
       var current = $('.visible', $ul),
           target = current[direction]();
 
       if (target.length) {
         $('img', target)
+=======
+      var current = this.S('.visible', $ul),
+          target = current[direction]();
+
+      if (target.length) {
+        this.S('img', target)
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           .trigger('click', [current, target]);
       }
     },
@@ -1052,10 +1984,15 @@
       var clearing = target.parent(),
           old_index = this.settings.prev_index || target.index(),
           direction = this.direction(clearing, current, target),
+<<<<<<< HEAD
+=======
+          dir = this.rtl ? 'right' : 'left',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           left = parseInt(clearing.css('left'), 10),
           width = target.outerWidth(),
           skip_shift;
 
+<<<<<<< HEAD
       // we use jQuery animate instead of CSS transitions because we
       // need a callback to unlock the next animation
       if (target.index() !== old_index && !/skip/.test(direction)){
@@ -1065,6 +2002,22 @@
         } else if (/right/.test(direction)) {
           this.lock();
           clearing.animate({left : left - width}, 300, this.unlock());
+=======
+      var dir_obj = {};
+
+      // we use jQuery animate instead of CSS transitions because we
+      // need a callback to unlock the next animation
+      // needs support for RTL **
+      if (target.index() !== old_index && !/skip/.test(direction)){
+        if (/left/.test(direction)) {
+          this.lock();
+          dir_obj[dir] = left + width;
+          clearing.animate(dir_obj, 300, this.unlock());
+        } else if (/right/.test(direction)) {
+          this.lock();
+          dir_obj[dir] = left - width;
+          clearing.animate(dir_obj, 300, this.unlock());
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         }
       } else if (/skip/.test(direction)) {
         // the target image is not adjacent to the current image, so
@@ -1073,9 +2026,17 @@
         this.lock();
 
         if (skip_shift > 0) {
+<<<<<<< HEAD
           clearing.animate({left : -(skip_shift * width)}, 300, this.unlock());
         } else {
           clearing.animate({left : 0}, 300, this.unlock());
+=======
+          dir_obj[dir] = -(skip_shift * width);
+          clearing.animate(dir_obj, 300, this.unlock());
+        } else {
+          dir_obj[dir] = 0;
+          clearing.animate(dir_obj, 300, this.unlock());
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         }
       }
 
@@ -1083,9 +2044,15 @@
     },
 
     direction : function ($el, current, target) {
+<<<<<<< HEAD
       var lis = $('li', $el),
           li_width = lis.outerWidth() + (lis.outerWidth() / 4),
           up_count = Math.floor($('.clearing-container').outerWidth() / li_width) - 1,
+=======
+      var lis = this.S('li', $el),
+          li_width = lis.outerWidth() + (lis.outerWidth() / 4),
+          up_count = Math.floor(this.S('.clearing-container').outerWidth() / li_width) - 1,
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           target_index = lis.index(target),
           response;
 
@@ -1132,8 +2099,13 @@
     },
 
     off : function () {
+<<<<<<< HEAD
       $(this.scope).off('.fndtn.clearing');
       $(window).off('.fndtn.clearing');
+=======
+      this.S(this.scope).off('.fndtn.clearing');
+      this.S(window).off('.fndtn.clearing');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     },
 
     reflow : function () {
@@ -1149,10 +2121,18 @@
   Foundation.libs.dropdown = {
     name : 'dropdown',
 
+<<<<<<< HEAD
     version : '5.0.0',
 
     settings : {
       active_class: 'open',
+=======
+    version : '5.2.0',
+
+    settings : {
+      active_class: 'open',
+      align: 'bottom',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       is_hover: false,
       opened: function(){},
       closed: function(){}
@@ -1165,6 +2145,7 @@
     },
 
     events : function (scope) {
+<<<<<<< HEAD
       var self = this;
 
       $(this.scope)
@@ -1199,11 +2180,53 @@
             } else {
               var target = $('[data-dropdown="' + $(this).attr('id') + '"]'),
                   settings = target.data('dropdown-init');
+=======
+      var self = this,
+          S = self.S;
+
+      S(this.scope)
+        .off('.dropdown')
+        .on('click.fndtn.dropdown', '[' + this.attr_name() + ']', function (e) {
+          var settings = S(this).data(self.attr_name(true) + '-init') || self.settings;
+          e.preventDefault();
+          if (!settings.is_hover || Modernizr.touch) self.toggle(S(this));
+        })
+        .on('mouseenter.fndtn.dropdown', '[' + this.attr_name() + '], [' + this.attr_name() + '-content]', function (e) {
+          var $this = S(this);
+          clearTimeout(self.timeout);
+
+          if ($this.data(self.data_attr())) {
+            var dropdown = S('#' + $this.data(self.data_attr())),
+                target = $this;
+          } else {
+            var dropdown = $this;
+                target = S("[" + self.attr_name() + "='" + dropdown.attr('id') + "']");
+          }
+
+          var settings = target.data(self.attr_name(true) + '-init') || self.settings;
+          
+          if(S(e.target).data(self.data_attr()) && settings.is_hover) {
+            self.closeall.call(self);
+          }
+          
+          if (settings.is_hover) self.open.apply(self, [dropdown, target]);
+        })
+        .on('mouseleave.fndtn.dropdown', '[' + this.attr_name() + '], [' + this.attr_name() + '-content]', function (e) {
+          var $this = S(this);
+          self.timeout = setTimeout(function () {
+            if ($this.data(self.data_attr())) {
+              var settings = $this.data(self.data_attr(true) + '-init') || self.settings;
+              if (settings.is_hover) self.close.call(self, S('#' + $this.data(self.data_attr())));
+            } else {
+              var target = S('[' + self.attr_name() + '="' + S(this).attr('id') + '"]'),
+                  settings = target.data(self.attr_name(true) + '-init') || self.settings;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
               if (settings.is_hover) self.close.call(self, $this);
             }
           }.bind(this), 150);
         })
         .on('click.fndtn.dropdown', function (e) {
+<<<<<<< HEAD
           var parent = $(e.target).closest('[data-dropdown-content]');
 
           if ($(e.target).data('dropdown') || $(e.target).parent().data('dropdown')) {
@@ -1211,11 +2234,21 @@
           }
           if (!($(e.target).data('revealId')) && 
             (parent.length > 0 && ($(e.target).is('[data-dropdown-content]') || 
+=======
+          var parent = S(e.target).closest('[' + self.attr_name() + '-content]');
+
+          if (S(e.target).data(self.data_attr()) || S(e.target).parent().data(self.data_attr())) {
+            return;
+          }
+          if (!(S(e.target).data('revealId')) && 
+            (parent.length > 0 && (S(e.target).is('[' + self.attr_name() + '-content]') || 
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
               $.contains(parent.first()[0], e.target)))) {
             e.stopPropagation();
             return;
           }
 
+<<<<<<< HEAD
           self.close.call(self, $('[data-dropdown-content]'));
         })
         .on('opened.fndtn.dropdown', '[data-dropdown-content]', this.settings.opened)
@@ -1226,47 +2259,113 @@
         .on('resize.fndtn.dropdown', self.throttle(function () {
           self.resize.call(self);
         }, 50)).trigger('resize');
+=======
+          self.close.call(self, S('[' + self.attr_name() + '-content]'));
+        })
+        .on('opened.fndtn.dropdown', '[' + self.attr_name() + '-content]', function () {
+            self.settings.opened.call(this);
+        })
+        .on('closed.fndtn.dropdown', '[' + self.attr_name() + '-content]', function () {
+            self.settings.closed.call(this);
+        });
+
+      S(window)
+        .off('.dropdown')
+        .on('resize.fndtn.dropdown', self.throttle(function () {
+          self.resize.call(self);
+        }, 50));
+
+      this.resize();
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     },
 
     close: function (dropdown) {
       var self = this;
       dropdown.each(function () {
+<<<<<<< HEAD
         if ($(this).hasClass(self.settings.active_class)) {
           $(this)
             .css(Foundation.rtl ? 'right':'left', '-99999px')
             .removeClass(self.settings.active_class);
           $(this).trigger('closed');
+=======
+        if (self.S(this).hasClass(self.settings.active_class)) {
+          self.S(this)
+            .css(Foundation.rtl ? 'right':'left', '-99999px')
+            .removeClass(self.settings.active_class);
+
+          self.S(this).trigger('closed', [dropdown]);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         }
       });
     },
 
+<<<<<<< HEAD
+=======
+    closeall: function() {
+      var self = this;
+      $.each(self.S('[' + this.attr_name() + '-content]'), function() {
+        self.close.call(self, self.S(this))
+      });
+    },
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     open: function (dropdown, target) {
         this
           .css(dropdown
             .addClass(this.settings.active_class), target);
+<<<<<<< HEAD
         dropdown.trigger('opened');
     },
 
     toggle : function (target) {
       var dropdown = $('#' + target.data('dropdown'));
+=======
+        dropdown.trigger('opened', [dropdown, target]);
+    },
+
+    data_attr: function () {
+      if (this.namespace.length > 0) {
+        return this.namespace + '-' + this.name;
+      }
+
+      return this.name;
+    },
+
+    toggle : function (target) {
+      var dropdown = this.S('#' + target.data(this.data_attr()));
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       if (dropdown.length === 0) {
         // No dropdown found, not continuing
         return;
       }
 
+<<<<<<< HEAD
       this.close.call(this, $('[data-dropdown-content]').not(dropdown));
+=======
+      this.close.call(this, this.S('[' + this.attr_name() + '-content]').not(dropdown));
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       if (dropdown.hasClass(this.settings.active_class)) {
         this.close.call(this, dropdown);
       } else {
+<<<<<<< HEAD
         this.close.call(this, $('[data-dropdown-content]'))
+=======
+        this.close.call(this, this.S('[' + this.attr_name() + '-content]'))
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         this.open.call(this, dropdown, target);
       }
     },
 
     resize : function () {
+<<<<<<< HEAD
       var dropdown = $('[data-dropdown-content].open'),
           target = $("[data-dropdown='" + dropdown.attr('id') + "']");
+=======
+      var dropdown = this.S('[' + this.attr_name() + '-content].open'),
+          target = this.S("[" + this.attr_name() + "='" + dropdown.attr('id') + "']");
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       if (dropdown.length && target.length) {
         this.css(dropdown, target);
@@ -1274,6 +2373,7 @@
     },
 
     css : function (dropdown, target) {
+<<<<<<< HEAD
       var offset_parent = dropdown.offsetParent(),
           position = target.offset();
 
@@ -1306,11 +2406,31 @@
           top: position.top + target.outerHeight(),
           left: left
         });
+=======
+      this.clear_idx();
+
+      if (this.small()) {
+        var p = this.dirs.bottom.call(dropdown, target);
+
+        dropdown.attr('style', '').removeClass('drop-left drop-right drop-top').css({
+          position : 'absolute',
+          width: '95%',
+          'max-width': 'none',
+          top: p.top
+        });
+
+        dropdown.css(Foundation.rtl ? 'right':'left', '2.5%');
+      } else {
+        var settings = target.data(this.attr_name(true) + '-init') || this.settings;
+
+        this.style(dropdown, target, settings);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
 
       return dropdown;
     },
 
+<<<<<<< HEAD
     small : function () {
       return matchMedia(Foundation.media_queries.small).matches &&
         !matchMedia(Foundation.media_queries.medium).matches;
@@ -1359,6 +2479,224 @@
           'only screen and (min-device-pixel-ratio: 2),' + 
           'only screen and (min-resolution: 192dpi),' + 
           'only screen and (min-resolution: 2dppx)'
+=======
+    style : function (dropdown, target, settings) {
+      var css = $.extend({position: 'absolute'}, 
+        this.dirs[settings.align].call(dropdown, target, settings));
+
+      dropdown.attr('style', '').css(css);
+    },
+
+    // return CSS property object
+    // `this` is the dropdown
+    dirs : {
+      // Calculate target offset
+      _base : function (t) {
+        var o_p = this.offsetParent(),
+            o = o_p.offset(),
+            p = t.offset();
+
+        p.top -= o.top;
+        p.left -= o.left;
+
+        return p;
+      },
+      top: function (t, s) {
+        var self = Foundation.libs.dropdown,
+            p = self.dirs._base.call(this, t),
+            pip_offset_base = (t.outerWidth() / 2) - 8;
+
+        this.addClass('drop-top');
+
+        if (t.outerWidth() < this.outerWidth() || self.small()) {
+          self.adjust_pip(pip_offset_base, p);
+        }
+
+        if (Foundation.rtl) {
+          return {left: p.left - this.outerWidth() + t.outerWidth(), 
+            top: p.top - this.outerHeight()};
+        }
+
+        return {left: p.left, top: p.top - this.outerHeight()};
+      },
+      bottom: function (t, s) {
+        var self = Foundation.libs.dropdown,
+            p = self.dirs._base.call(this, t),
+            pip_offset_base = (t.outerWidth() / 2) - 8;
+
+        if (t.outerWidth() < this.outerWidth() || self.small()) {
+          self.adjust_pip(pip_offset_base, p);
+        }
+
+        if (self.rtl) {
+          return {left: p.left - this.outerWidth() + t.outerWidth(), top: p.top + t.outerHeight()};
+        }
+
+        return {left: p.left, top: p.top + t.outerHeight()};
+      },
+      left: function (t, s) {
+        var p = Foundation.libs.dropdown.dirs._base.call(this, t);
+
+        this.addClass('drop-left');
+
+        return {left: p.left - this.outerWidth(), top: p.top};
+      },
+      right: function (t, s) {
+        var p = Foundation.libs.dropdown.dirs._base.call(this, t);
+
+        this.addClass('drop-right');
+
+        return {left: p.left + t.outerWidth(), top: p.top};
+      }
+    },
+
+    // Insert rule to style psuedo elements
+    adjust_pip : function (pip_offset_base, p) {
+      var sheet = Foundation.stylesheet;
+
+      if (this.small()) {
+        pip_offset_base += p.left - 8;
+      }
+
+      this.rule_idx = sheet.cssRules.length;
+
+      var sel_before = '.f-dropdown.open:before',
+          sel_after  = '.f-dropdown.open:after',
+          css_before = 'left: ' + pip_offset_base + 'px;',
+          css_after  = 'left: ' + (pip_offset_base - 1) + 'px;';
+
+      if (sheet.insertRule) {
+        sheet.insertRule([sel_before, '{', css_before, '}'].join(' '), this.rule_idx);
+        sheet.insertRule([sel_after, '{', css_after, '}'].join(' '), this.rule_idx + 1);
+      } else {
+        sheet.addRule(sel_before, css_before, this.rule_idx);
+        sheet.addRule(sel_after, css_after, this.rule_idx + 1);
+      }
+    },
+
+    // Remove old dropdown rule index
+    clear_idx : function () {
+      var sheet = Foundation.stylesheet;
+
+      if (this.rule_idx) {
+        sheet.deleteRule(this.rule_idx);
+        sheet.deleteRule(this.rule_idx);
+        delete this.rule_idx;
+      }
+    },
+
+    small : function () {
+      return matchMedia(Foundation.media_queries.small).matches &&
+        !matchMedia(Foundation.media_queries.medium).matches;
+    },
+
+    off: function () {
+      this.S(this.scope).off('.fndtn.dropdown');
+      this.S('html, body').off('.fndtn.dropdown');
+      this.S(window).off('.fndtn.dropdown');
+      this.S('[data-dropdown-content]').off('.fndtn.dropdown');
+    },
+
+    reflow : function () {}
+  };
+}(jQuery, this, this.document));
+
+;(function ($, window, document, undefined) {
+  'use strict';
+
+  Foundation.libs.equalizer = {
+    name : 'equalizer',
+
+    version : '5.2.0',
+
+    settings : {
+      use_tallest: true,
+      before_height_change: $.noop,
+      after_height_change: $.noop
+    },
+
+    init : function (scope, method, options) {
+      this.bindings(method, options);
+      this.reflow();
+    },
+
+    events : function () {
+      this.S(window).off('.equalizer').on('resize.fndtn.equalizer', function(e){
+        this.reflow();
+      }.bind(this));
+    },
+
+    equalize: function(equalizer) {
+      var isStacked = false,
+          vals = equalizer.find('[' + this.attr_name() + '-watch]'),
+          firstTopOffset = vals.first().offset().top,
+          settings = equalizer.data(this.attr_name(true)+'-init');
+
+      if (vals.length === 0) return;
+      settings.before_height_change();
+      equalizer.trigger('before-height-change');
+      vals.height('inherit');
+      vals.each(function(){
+        var el = $(this);
+        if (el.offset().top !== firstTopOffset) {
+          isStacked = true;
+        }
+      });
+      if (isStacked) return;
+
+      var heights = vals.map(function(){ return $(this).outerHeight() }).get();
+      if (settings.use_tallest) {
+        var max = Math.max.apply(null, heights);
+        vals.css('height', max);
+      } else {
+        var min = Math.min.apply(null, heights);
+        vals.css('height', min);
+      }
+      settings.after_height_change();
+      equalizer.trigger('after-height-change');
+    },
+
+    reflow : function () {
+      var self = this;
+
+      this.S('[' + this.attr_name() + ']', this.scope).each(function(){
+        self.equalize($(this));
+      });
+    }
+  };
+}(jQuery, this, this.document));
+;(function ($, window, document, undefined) {
+  'use strict';
+
+  Foundation.libs.interchange = {
+    name : 'interchange',
+
+    version : '5.2.0',
+
+    cache : {},
+
+    images_loaded : false,
+    nodes_loaded : false,
+
+    settings : {
+      load_attr : 'interchange',
+
+      named_queries : {
+        'default' : Foundation.media_queries.small,
+        small : Foundation.media_queries.small,
+        medium : Foundation.media_queries.medium,
+        large : Foundation.media_queries.large,
+        xlarge : Foundation.media_queries.xlarge,
+        xxlarge: Foundation.media_queries.xxlarge,
+        landscape : 'only screen and (orientation: landscape)',
+        portrait : 'only screen and (orientation: portrait)',
+        retina : 'only screen and (-webkit-min-device-pixel-ratio: 2),' +
+          'only screen and (min--moz-device-pixel-ratio: 2),' +
+          'only screen and (-o-min-device-pixel-ratio: 2/1),' +
+          'only screen and (min-device-pixel-ratio: 2),' +
+          'only screen and (min-resolution: 192dpi),' +
+          'only screen and (min-resolution: 2dppx)'
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       },
 
       directives : {
@@ -1383,6 +2721,7 @@
 
             return trigger(el[0].src);
           }
+<<<<<<< HEAD
           var last_path = el.data('interchange-last-path');
 
           if (last_path == path) return;
@@ -1390,6 +2729,25 @@
           return $.get(path, function (response) {
             el.html(response);
             el.data('interchange-last-path', path);
+=======
+          var last_path = el.data(this.data_attr + '-last-path');
+
+          if (last_path == path) return;
+
+
+          var regex = "/^.(\.jpg|\.jpeg|\.png|\.gif|\.tiff|\.bmp)\??|#?./";
+
+          if (new RegExp(regex,'i').test(path)){
+
+              $(el).css('background-image', 'url('+path+')');
+              el.data('interchange-last-path', path);
+              return trigger(path);
+          }
+
+          return $.get(path, function (response) {
+            el.html(response);
+            el.data(this.data_attr + '-last-path', path);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
             trigger();
           });
 
@@ -1398,22 +2756,50 @@
     },
 
     init : function (scope, method, options) {
+<<<<<<< HEAD
       Foundation.inherit(this, 'throttle');
 
       this.data_attr = 'data-' + this.settings.load_attr;
 
+=======
+      Foundation.inherit(this, 'throttle random_str');
+
+      this.data_attr = this.set_data_attr();
+      $.extend(true, this.settings, method, options);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       this.bindings(method, options);
       this.load('images');
       this.load('nodes');
     },
 
+<<<<<<< HEAD
     events : function () {
       var self = this;
+=======
+    get_media_hash : function() {
+        var mediaHash='';
+        for (var queryName in this.settings.named_queries ) {
+            mediaHash += matchMedia(this.settings.named_queries[queryName]).matches.toString();
+        }
+        return mediaHash;
+    },
+
+    events : function () {
+      var self = this, prevMediaHash;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       $(window)
         .off('.interchange')
         .on('resize.fndtn.interchange', self.throttle(function () {
+<<<<<<< HEAD
           self.resize.call(self);
+=======
+            var currMediaHash = self.get_media_hash();
+            if (currMediaHash !== prevMediaHash) {
+                self.resize();
+            }
+            prevMediaHash = currMediaHash;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         }, 50));
 
       return this;
@@ -1433,7 +2819,11 @@
 
           if (passed) {
             this.settings.directives[passed
+<<<<<<< HEAD
               .scenario[1]](passed.el, passed.scenario[0], function () {
+=======
+              .scenario[1]].call(this, passed.el, passed.scenario[0], function () {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
                 if (arguments[0] instanceof Array) { 
                   var args = arguments[0];
                 } else { 
@@ -1452,17 +2842,28 @@
       var count = scenarios.length;
 
       if (count > 0) {
+<<<<<<< HEAD
         var el = this.S('[data-uuid="' + uuid + '"]');
 
         for (var i = count - 1; i >= 0; i--) {
           var mq, rule = scenarios[i][2];
+=======
+        var el = this.S('[' + this.add_namespace('data-uuid') + '="' + uuid + '"]');
+
+        while (count--) {
+          var mq, rule = scenarios[count][2];
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           if (this.settings.named_queries.hasOwnProperty(rule)) {
             mq = matchMedia(this.settings.named_queries[rule]);
           } else {
             mq = matchMedia(rule);
           }
           if (mq.matches) {
+<<<<<<< HEAD
             return {el: el, scenario: scenarios[i]};
+=======
+            return {el: el, scenario: scenarios[count]};
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           }
         }
       }
@@ -1481,6 +2882,10 @@
     update_images : function () {
       var images = this.S('img[' + this.data_attr + ']'),
           count = images.length,
+<<<<<<< HEAD
+=======
+          i = count,
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           loaded_count = 0,
           data_attr = this.data_attr;
 
@@ -1488,7 +2893,11 @@
       this.cached_images = [];
       this.images_loaded = (count === 0);
 
+<<<<<<< HEAD
       for (var i = count - 1; i >= 0; i--) {
+=======
+      while (i--) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         loaded_count++;
         if (images[i]) {
           var str = images[i].getAttribute(data_attr) || '';
@@ -1498,7 +2907,11 @@
           }
         }
 
+<<<<<<< HEAD
         if(loaded_count === count) {
+=======
+        if (loaded_count === count) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           this.images_loaded = true;
           this.enhance('images');
         }
@@ -1508,18 +2921,31 @@
     },
 
     update_nodes : function () {
+<<<<<<< HEAD
       var nodes = this.S('[' + this.data_attr + ']:not(img)'),
           count = nodes.length,
+=======
+      var nodes = this.S('[' + this.data_attr + ']').not('img'),
+          count = nodes.length,
+          i = count,
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           loaded_count = 0,
           data_attr = this.data_attr;
 
       this.cached_nodes = [];
+<<<<<<< HEAD
       // Set nodes_loaded to true if there are no nodes
       // this.nodes_loaded = false;
       this.nodes_loaded = (count === 0);
 
 
       for (var i = count - 1; i >= 0; i--) {
+=======
+      this.nodes_loaded = (count === 0);
+
+
+      while (i--) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         loaded_count++;
         var str = nodes[i].getAttribute(data_attr) || '';
 
@@ -1537,9 +2963,15 @@
     },
 
     enhance : function (type) {
+<<<<<<< HEAD
       var count = this['cached_' + type].length;
 
       for (var i = count - 1; i >= 0; i--) {
+=======
+      var i = this['cached_' + type].length;
+
+      while (i--) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         this.object($(this['cached_' + type][i]));
       }
 
@@ -1551,6 +2983,10 @@
     },
 
     convert_directive : function (directive) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       var trimmed = this.trim(directive);
 
       if (trimmed.length > 0) {
@@ -1562,10 +2998,18 @@
 
     object : function(el) {
       var raw_arr = this.parse_data_attr(el),
+<<<<<<< HEAD
           scenarios = [], count = raw_arr.length;
 
       if (count > 0) {
         for (var i = count - 1; i >= 0; i--) {
+=======
+          scenarios = [], 
+          i = raw_arr.length;
+
+      if (i > 0) {
+        while (i--) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           var split = raw_arr[i].split(/\((.*?)(\))$/);
 
           if (split.length > 1) {
@@ -1581,6 +3025,7 @@
       return this.store(el, scenarios);
     },
 
+<<<<<<< HEAD
     uuid : function (separator) {
       var delim = separator || "-";
 
@@ -1599,11 +3044,24 @@
       if (current_uuid) return this.cache[current_uuid];
 
       el.attr('data-uuid', uuid);
+=======
+    store : function (el, scenarios) {
+      var uuid = this.random_str(),
+          current_uuid = el.data(this.add_namespace('uuid', true));
+
+      if (this.cache[current_uuid]) return this.cache[current_uuid];
+
+      el.attr(this.add_namespace('data-uuid'), uuid);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       return this.cache[uuid] = scenarios;
     },
 
     trim : function(str) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       if (typeof str === 'string') {
         return $.trim(str);
       }
@@ -1611,11 +3069,36 @@
       return str;
     },
 
+<<<<<<< HEAD
     parse_data_attr : function (el) {
       var raw = el.data(this.settings.load_attr).split(/\[(.*?)\]/),
           count = raw.length, output = [];
 
       for (var i = count - 1; i >= 0; i--) {
+=======
+    set_data_attr: function (init) {
+      if (init) {
+        if (this.namespace.length > 0) {
+          return this.namespace + '-' + this.settings.load_attr;
+        }
+
+        return this.settings.load_attr;
+      }
+
+      if (this.namespace.length > 0) {
+        return 'data-' + this.namespace + '-' + this.settings.load_attr;
+      }
+
+      return 'data-' + this.settings.load_attr;
+    },
+
+    parse_data_attr : function (el) {
+      var raw = el.attr(this.attr_name()).split(/\[(.*?)\]/),
+          i = raw.length, 
+          output = [];
+
+      while (i--) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         if (raw[i].replace(/[\W\d]+/, '').length > 4) {
           output.push(raw[i]);
         }
@@ -1632,6 +3115,10 @@
   };
 
 }(jQuery, this, this.document));
+<<<<<<< HEAD
+=======
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 ;(function ($, window, document, undefined) {
   'use strict';
 
@@ -1640,6 +3127,7 @@
   Foundation.libs.joyride = {
     name : 'joyride',
 
+<<<<<<< HEAD
     version : '5.0.0',
 
     defaults : {
@@ -1663,6 +3151,31 @@
       cookie_expires        : 365,       // set when you would like the cookie to expire.
       tip_container         : 'body',    // Where will the tip be attached
       tip_location_patterns : {
+=======
+    version : '5.2.0',
+
+    defaults : {
+      expose                   : false,     // turn on or off the expose feature
+      modal                    : true,      // Whether to cover page with modal during the tour
+      tip_location             : 'bottom',  // 'top' or 'bottom' in relation to parent
+      nub_position             : 'auto',    // override on a per tooltip bases
+      scroll_speed             : 1500,      // Page scrolling speed in milliseconds, 0 = no scroll animation
+      scroll_animation         : 'linear',  // supports 'swing' and 'linear', extend with jQuery UI.
+      timer                    : 0,         // 0 = no timer , all other numbers = timer in milliseconds
+      start_timer_on_click     : true,      // true or false - true requires clicking the first button start the timer
+      start_offset             : 0,         // the index of the tooltip you want to start on (index of the li)
+      next_button              : true,      // true or false to control whether a next button is used
+      tip_animation            : 'fade',    // 'pop' or 'fade' in each tip
+      pause_after              : [],        // array of indexes where to pause the tour after
+      exposed                  : [],        // array of expose elements
+      tip_animation_fade_speed : 300,       // when tipAnimation = 'fade' this is speed in milliseconds for the transition
+      cookie_monster           : false,     // true or false to control whether cookies are used
+      cookie_name              : 'joyride', // Name the cookie you'll use
+      cookie_domain            : false,     // Will this cookie be attached to a domain, ie. '.notableapp.com'
+      cookie_expires           : 365,       // set when you would like the cookie to expire.
+      tip_container            : 'body',    // Where will the tip be attached
+      tip_location_patterns    : {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         top: ['bottom'],
         bottom: [], // bottom should not need to be repositioned
         left: ['right', 'top', 'bottom'],
@@ -1687,9 +3200,15 @@
     },
 
     init : function (scope, method, options) {
+<<<<<<< HEAD
       Foundation.inherit(this, 'throttle delay');
 
       this.settings = this.defaults;
+=======
+      Foundation.inherit(this, 'throttle random_str');
+
+      this.settings = this.settings || $.extend({}, this.defaults, (options || method));
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       this.bindings(method, options)
     },
@@ -1724,7 +3243,11 @@
       $(window)
         .off('.joyride')
         .on('resize.fndtn.joyride', self.throttle(function () {
+<<<<<<< HEAD
           if ($('[data-joyride]').length > 0 && self.settings.$next_tip) {
+=======
+          if ($('[' + self.attr_name() + ']').length > 0 && self.settings.$next_tip) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
             if (self.settings.exposed.length > 0) {
               var $els = $(self.settings.exposed);
 
@@ -1746,7 +3269,11 @@
 
     start : function () {
       var self = this,
+<<<<<<< HEAD
           $this = $('[data-joyride]', this.scope),
+=======
+          $this = $('[' + this.attr_name() + ']', this.scope),
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           integer_settings = ['timer', 'scrollSpeed', 'startOffset', 'tipAnimationFadeSpeed', 'cookieExpires'],
           int_settings_count = integer_settings.length;
 
@@ -1754,7 +3281,11 @@
 
       if (!this.settings.init) this.events();
 
+<<<<<<< HEAD
       this.settings = $this.data('joyride-init');
+=======
+      this.settings = $this.data(this.attr_name(true) + '-init');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       // non configureable settings
       this.settings.$content_el = $this;
@@ -1770,13 +3301,22 @@
       }
 
       // generate the tips and insert into dom.
+<<<<<<< HEAD
       if (!this.settings.cookie_monster || this.settings.cookie_monster && $.cookie(this.settings.cookie_name) === null) {
+=======
+      if (!this.settings.cookie_monster || this.settings.cookie_monster && !$.cookie(this.settings.cookie_name)) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         this.settings.$tip_content.each(function (index) {
           var $this = $(this);
           this.settings = $.extend({}, self.defaults, self.data_options($this))
 
           // Make sure that settings parsed from data_options are integers where necessary
+<<<<<<< HEAD
           for (var i = int_settings_count - 1; i >= 0; i--) {
+=======
+          var i = int_settings_count;
+          while (i--) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
             self.settings[integer_settings[i]] = parseInt(self.settings[integer_settings[i]], 10);
           }
           self.create({$li : $this, index : index});
@@ -1810,7 +3350,11 @@
         this.timer_instance(opts.index);
 
       $blank.append($(this.settings.template.wrapper));
+<<<<<<< HEAD
       $blank.first().attr('data-index', opts.index);
+=======
+      $blank.first().attr(this.add_namespace('data-index'), opts.index);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       $('.joyride-content-wrapper', $blank).append(content);
 
       return $blank[0];
@@ -1838,7 +3382,12 @@
     },
 
     create : function (opts) {
+<<<<<<< HEAD
       var buttonText = opts.$li.attr('data-button') || opts.$li.attr('data-text'),
+=======
+      var buttonText = opts.$li.attr(this.add_namespace('data-button')) 
+        || opts.$li.attr(this.add_namespace('data-text')),
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         tipClass = opts.$li.attr('class'),
         $tip_content = $(this.tip_template({
           tip_class : tipClass,
@@ -1907,7 +3456,11 @@
 
               this.settings.$next_tip.show();
 
+<<<<<<< HEAD
               this.delay(function () {
+=======
+              setTimeout(function () {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
                 $timer.animate({
                   width: $timer.parent().width()
                 }, this.settings.timer, 'linear');
@@ -1929,7 +3482,11 @@
                 .fadeIn(this.settings.tip_animation_fade_speed)
                 .show();
 
+<<<<<<< HEAD
               this.delay(function () {
+=======
+              setTimeout(function () {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
                 $timer.animate({
                   width: $timer.parent().width()
                 }, this.settings.timer, 'linear');
@@ -2003,8 +3560,13 @@
     },
 
     set_target : function () {
+<<<<<<< HEAD
       var cl = this.settings.$li.attr('data-class'),
           id = this.settings.$li.attr('data-id'),
+=======
+      var cl = this.settings.$li.attr(this.add_namespace('data-class')),
+          id = this.settings.$li.attr(this.add_namespace('data-id')),
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           $sel = function () {
             if (id) {
               return $(document.getElementById(id));
@@ -2024,7 +3586,11 @@
       window_half = $(window).height() / 2;
       tipOffset = Math.ceil(this.settings.$target.offset().top - window_half + this.settings.$next_tip.outerHeight());
 
+<<<<<<< HEAD
       if (tipOffset > 0) {
+=======
+      if (tipOffset != 0) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         $('html, body').animate({
           scrollTop: tipOffset
         }, this.settings.scroll_speed, 'swing');
@@ -2060,6 +3626,7 @@
       }
 
       if (!/body/i.test(this.settings.$target.selector)) {
+<<<<<<< HEAD
 
           if (this.bottom()) {
             var leftOffset = this.settings.$target.offset().left;
@@ -2069,10 +3636,23 @@
             this.settings.$next_tip.css({
               top: (this.settings.$target.offset().top + nub_height + this.settings.$target.outerHeight()),
               left: leftOffset});
+=======
+          if (this.bottom()) {
+            if (this.rtl) {
+              this.settings.$next_tip.css({
+                top: (this.settings.$target.offset().top + nub_height + this.settings.$target.outerHeight()),
+                left: this.settings.$target.offset().left + this.settings.$target.outerWidth() - this.settings.$next_tip.outerWidth()});
+            } else {
+              this.settings.$next_tip.css({
+                top: (this.settings.$target.offset().top + nub_height + this.settings.$target.outerHeight()),
+                left: this.settings.$target.offset().left});
+            }
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
             this.nub_position($nub, this.settings.tip_settings.nub_position, 'top');
 
           } else if (this.top()) {
+<<<<<<< HEAD
             var leftOffset = this.settings.$target.offset().left;
             if (Foundation.rtl) {
               leftOffset = this.settings.$target.offset().width - this.settings.$next_tip.width() + leftOffset;
@@ -2080,6 +3660,17 @@
             this.settings.$next_tip.css({
               top: (this.settings.$target.offset().top - this.settings.$next_tip.outerHeight() - nub_height),
               left: leftOffset});
+=======
+            if (this.rtl) {
+              this.settings.$next_tip.css({
+                top: (this.settings.$target.offset().top - this.settings.$next_tip.outerHeight() - nub_height),
+                left: this.settings.$target.offset().left + this.settings.$target.outerWidth() - this.settings.$next_tip.outerWidth()});
+            } else {
+              this.settings.$next_tip.css({
+                top: (this.settings.$target.offset().top - this.settings.$next_tip.outerHeight() - nub_height),
+                left: this.settings.$target.offset().left});
+            }
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
             this.nub_position($nub, this.settings.tip_settings.nub_position, 'bottom');
 
@@ -2087,7 +3678,11 @@
 
             this.settings.$next_tip.css({
               top: this.settings.$target.offset().top,
+<<<<<<< HEAD
               left: (this.outerWidth(this.settings.$target) + this.settings.$target.offset().left + nub_width)});
+=======
+              left: (this.settings.$target.outerWidth() + this.settings.$target.offset().left + nub_width)});
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
             this.nub_position($nub, this.settings.tip_settings.nub_position, 'left');
 
@@ -2095,7 +3690,11 @@
 
             this.settings.$next_tip.css({
               top: this.settings.$target.offset().top,
+<<<<<<< HEAD
               left: (this.settings.$target.offset().left - this.outerWidth(this.settings.$next_tip) - nub_width)});
+=======
+              left: (this.settings.$target.offset().left - this.settings.$next_tip.outerWidth() - nub_width)});
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
             this.nub_position($nub, this.settings.tip_settings.nub_position, 'right');
 
@@ -2199,7 +3798,11 @@
           el,
           origCSS,
           origClasses,
+<<<<<<< HEAD
           randId = 'expose-'+Math.floor(Math.random()*10000);
+=======
+          randId = 'expose-' + this.random_str(6);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       if (arguments.length > 0 && arguments[0] instanceof $) {
         el = arguments[0];
@@ -2332,7 +3935,11 @@
     },
 
     remove_exposed: function(el){
+<<<<<<< HEAD
       var search, count;
+=======
+      var search, i;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       if (el instanceof $) {
         search = el[0]
       } else if (typeof el == 'string'){
@@ -2340,9 +3947,15 @@
       }
 
       this.settings.exposed = this.settings.exposed || [];
+<<<<<<< HEAD
       count = this.settings.exposed.length;
 
       for (var i=0; i < count; i++) {
+=======
+      i = this.settings.exposed.length;
+
+      while (i--) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         if (this.settings.exposed[i] == search) {
           this.settings.exposed.splice(i, 1);
           return;
@@ -2475,6 +4088,7 @@
 ;(function ($, window, document, undefined) {
   'use strict';
 
+<<<<<<< HEAD
   Foundation.libs.magellan = {
     name : 'magellan',
 
@@ -2591,13 +4205,186 @@
   };
 }(jQuery, this, this.document));
 
+=======
+  Foundation.libs['magellan-expedition'] = {
+    name : 'magellan-expedition',
+
+    version : '5.2.0',
+
+    settings : {
+      active_class: 'active',
+      threshold: 0, // pixels from the top of the expedition for it to become fixes
+      destination_threshold: 20, // pixels from the top of destination for it to be considered active
+      throttle_delay: 30 // calculation throttling to increase framerate
+    }, 
+
+    init : function (scope, method, options) {
+      Foundation.inherit(this, 'throttle');
+      this.bindings(method, options);
+    },
+
+    events : function () {
+      var self = this,
+          S = self.S,
+          settings = self.settings;
+      
+      // initialize expedition offset
+      self.set_expedition_position();
+      
+      S(self.scope)
+        .off('.magellan')
+        .on('click.fndtn.magellan', '[' + self.add_namespace('data-magellan-arrival') + '] a[href^="#"]', function (e) {
+            e.preventDefault();
+            var expedition = $(this).closest('[' + self.attr_name() + ']'),
+                settings = expedition.data('magellan-expedition-init');
+
+            var hash = this.hash.split('#').join(''),
+                target = $('a[name='+hash+']');
+            if (target.length === 0) target = $('#'+hash);
+
+            // Account for expedition height if fixed position
+            var scroll_top = target.offset().top;
+            if (expedition.css('position') === 'fixed') {
+              scroll_top = scroll_top - expedition.outerHeight();
+            }
+
+            $('html, body').stop().animate({
+                'scrollTop': scroll_top
+            }, 700, 'swing', function () {
+                window.location.hash = '#'+hash;
+            });
+        })
+        .on('scroll.fndtn.magellan', self.throttle(this.check_for_arrivals.bind(this), settings.throttle_delay))
+        $(window).on('resize.fndtn.magellan', self.throttle(this.set_expedition_position.bind(this), settings.throttle_delay));
+    },
+
+    check_for_arrivals : function() {
+      var self = this;
+      self.update_arrivals();
+      self.update_expedition_positions();
+    },
+
+    set_expedition_position : function() {
+      var self = this;
+      $('[' + this.attr_name() + '=fixed]', self.scope).each(function(idx, el) {
+        var expedition = $(this),
+            styles = expedition.attr('styles'), // save styles
+            top_offset;
+
+        expedition.attr('style', '');
+        top_offset = expedition.offset().top;
+
+        expedition.data(self.data_attr('magellan-top-offset'), top_offset);
+        expedition.attr('style', styles);
+      });
+    },
+
+    update_expedition_positions : function() {
+      var self = this,
+          window_top_offset = $(window).scrollTop();
+
+      $('[' + this.attr_name() + '=fixed]', self.scope).each(function() {
+        var expedition = $(this),
+            top_offset = expedition.data('magellan-top-offset');
+        
+        if (window_top_offset >= top_offset) {
+          // Placeholder allows height calculations to be consistent even when
+          // appearing to switch between fixed/non-fixed placement
+          var placeholder = expedition.prev('[' + self.add_namespace('data-magellan-expedition-clone') + ']');
+          if (placeholder.length === 0) {
+            placeholder = expedition.clone();
+            placeholder.removeAttr(self.attr_name());
+            placeholder.attr(self.add_namespace('data-magellan-expedition-clone'),'');
+            expedition.before(placeholder);
+          }
+          expedition.css({position:'fixed', top: 0});
+        } else {
+          expedition.prev('[' + self.add_namespace('data-magellan-expedition-clone') + ']').remove();
+          expedition.attr('style','');
+        }
+      });
+    },
+
+    update_arrivals : function() {
+      var self = this,
+          window_top_offset = $(window).scrollTop();
+
+      $('[' + this.attr_name() + ']', self.scope).each(function() {
+        var expedition = $(this),
+            settings = settings = expedition.data(self.attr_name(true) + '-init'),
+            offsets = self.offsets(expedition, window_top_offset),
+            arrivals = expedition.find('[' + self.add_namespace('data-magellan-arrival') + ']'),
+            active_item = false;
+        offsets.each(function(idx, item) {
+          if (item.viewport_offset >= item.top_offset) {
+            var arrivals = expedition.find('[' + self.add_namespace('data-magellan-arrival') + ']');
+            arrivals.not(item.arrival).removeClass(settings.active_class);
+            item.arrival.addClass(settings.active_class);
+            active_item = true;
+            return true;
+          }
+        });
+
+        if (!active_item) arrivals.removeClass(settings.active_class);
+      });
+    },
+
+    offsets : function(expedition, window_offset) {
+      var self = this,
+          settings = expedition.data(self.attr_name(true) + '-init'),
+          viewport_offset = (window_offset + settings.destination_threshold);
+
+      return expedition.find('[' + self.add_namespace('data-magellan-arrival') + ']').map(function(idx, el) {
+        var name = $(this).data(self.data_attr('magellan-arrival')),
+            dest = $('[' + self.add_namespace('data-magellan-destination') + '=' + name + ']');
+        if (dest.length > 0) {
+          var top_offset = dest.offset().top;
+          return {
+            destination : dest,
+            arrival : $(this),
+            top_offset : top_offset,
+            viewport_offset : viewport_offset
+          }
+        }
+      }).sort(function(a, b) {
+        if (a.top_offset < b.top_offset) return -1;
+        if (a.top_offset > b.top_offset) return 1;
+        return 0;
+      });
+    },
+
+    data_attr: function (str) {
+      if (this.namespace.length > 0) {
+        return this.namespace + '-' + str;
+      }
+
+      return str;
+    },
+
+    off : function () {
+      this.S(this.scope).off('.magellan');
+      this.S(window).off('.magellan');
+    },
+
+    reflow : function () {
+      var self = this;
+      // remove placeholder expeditions used for height calculation purposes
+      $('[' + self.add_namespace('data-magellan-expedition-clone') + ']', self.scope).remove();
+    }
+  };
+}(jQuery, this, this.document));
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 ;(function ($, window, document, undefined) {
   'use strict';
 
   Foundation.libs.offcanvas = {
     name : 'offcanvas',
 
+<<<<<<< HEAD
     version : '5.0.0',
+=======
+    version : '5.2.0',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
     settings : {},
 
@@ -2606,6 +4393,7 @@
     },
 
     events : function () {
+<<<<<<< HEAD
       $(this.scope).off('.offcanvas')
         .on('click.fndtn.offcanvas', '.left-off-canvas-toggle', function (e) {
           e.preventDefault();
@@ -2622,12 +4410,54 @@
         .on('click.fndtn.offcanvas', '.exit-off-canvas', function (e) {
           e.preventDefault();
           $(".off-canvas-wrap").removeClass("move-left");
+=======
+      var S = this.S;
+
+      S(this.scope).off('.offcanvas')
+        .on('click.fndtn.offcanvas', '.left-off-canvas-toggle', function (e) {
+          e.preventDefault();
+          S(this).closest('.off-canvas-wrap').toggleClass('move-right');
+        })
+        .on('click.fndtn.offcanvas', '.exit-off-canvas', function (e) {
+          e.preventDefault();
+          S(".off-canvas-wrap").removeClass("move-right");
+        })
+        .on('click.fndtn.offcanvas', '.left-off-canvas-menu a', function (e) {
+          e.preventDefault();
+          var href = $(this).attr('href');
+          S('.off-canvas-wrap').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
+              window.location = href
+              S('.off-canvas-wrap').off('transitionend webkitTransitionEnd oTransitionEnd');
+          });
+          S(".off-canvas-wrap").removeClass("move-right");
+        })
+        .on('click.fndtn.offcanvas', '.right-off-canvas-toggle', function (e) {
+          e.preventDefault();
+          S(this).closest(".off-canvas-wrap").toggleClass("move-left");
+        })
+        .on('click.fndtn.offcanvas', '.exit-off-canvas', function (e) {
+          e.preventDefault();
+          S(".off-canvas-wrap").removeClass("move-left");
+        })
+        .on('click.fndtn.offcanvas', '.right-off-canvas-menu a', function (e) {
+          e.preventDefault();
+          var href = $(this).attr('href');
+          S('.off-canvas-wrap').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
+              window.location = href
+              S('.off-canvas-wrap').off('transitionend webkitTransitionEnd oTransitionEnd');
+          });
+          S(".off-canvas-wrap").removeClass("move-left");
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         });
     },
 
     reflow : function () {}
   };
 }(jQuery, this, this.document));
+<<<<<<< HEAD
+=======
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 ;(function ($, window, document, undefined) {
   'use strict';
 
@@ -2647,16 +4477,32 @@
         timer_container,
         idx = 0,
         animate,
+<<<<<<< HEAD
         timer,
         locked = false,
         adjust_height_after = false;
 
     slides_container.children().first().addClass(settings.active_slide_class);
+=======
+        adjust_height_after = false;
+
+    self.cache = {};
+
+    self.slides = function() {
+      return slides_container.children(settings.slide_selector);
+    };
+
+    self.slides().first().addClass(settings.active_slide_class);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
     self.update_slide_number = function(index) {
       if (settings.slide_number) {
         number_container.find('span:first').text(parseInt(index)+1);
+<<<<<<< HEAD
         number_container.find('span:last').text(slides_container.children().length);
+=======
+        number_container.find('span:last').text(self.slides().length);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
       if (settings.bullets) {
         bullets_container.children().removeClass(settings.bullets_active_class);
@@ -2665,8 +4511,13 @@
     };
 
     self.update_active_link = function(index) {
+<<<<<<< HEAD
       var link = $('a[data-orbit-link="'+slides_container.children().eq(index).attr('data-orbit-slide')+'"]');
       link.parents('ul').find('[data-orbit-link]').removeClass(settings.bullets_active_class);
+=======
+      var link = $('a[data-orbit-link="'+self.slides().eq(index).attr('data-orbit-slide')+'"]');
+      link.siblings().removeClass(settings.bullets_active_class);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       link.addClass(settings.bullets_active_class);
     };
 
@@ -2698,7 +4549,11 @@
         bullets_container = $('<ol>').addClass(settings.bullets_container_class);
         container.append(bullets_container);
         bullets_container.wrap('<div class="orbit-bullets-container"></div>');
+<<<<<<< HEAD
         slides_container.children().each(function(idx, el) {
+=======
+        self.slides().each(function(idx, el) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           var bullet = $('<li>').attr('data-orbit-slide', idx);
           bullets_container.append(bullet);
         });
@@ -2707,6 +4562,7 @@
       if (settings.stack_on_small) {
         container.addClass(settings.stack_on_small_class);
       }
+<<<<<<< HEAD
 
       self.update_slide_number(0);
       self.update_active_link(0);
@@ -2743,6 +4599,70 @@
           self.update_slide_number(idx);
           slides_container.trigger('after-slide-change.fndtn.orbit',[{slide_number: idx, total_slides: slides.length}]);
           settings.after_slide_change(idx, slides.length);
+=======
+    };
+
+    self._prepare_direction = function(next_idx, current_direction) {
+      var dir = 'next';
+      if (next_idx <= idx) { dir = 'prev'; }
+      
+      if (settings.animation === 'slide') {    
+        setTimeout(function(){
+          slides_container.removeClass("swipe-prev swipe-next");
+          if (dir === 'next') {slides_container.addClass("swipe-next");}
+          else if (dir === 'prev') {slides_container.addClass("swipe-prev");}
+        },0);
+      }
+      
+      var slides = self.slides();
+      if (next_idx >= slides.length) {
+        if (!settings.circular) return false;
+        next_idx = 0;
+      } else if (next_idx < 0) {
+        if (!settings.circular) return false;
+        next_idx = slides.length - 1;
+      }
+      var current = $(slides.get(idx))
+        , next = $(slides.get(next_idx));
+      
+
+      return [dir, current, next, next_idx];
+    };
+
+    self._goto = function(next_idx, start_timer) {
+      if (next_idx === null) {return false;}
+      if (self.cache.animating) {return false;}
+      if (next_idx === idx) {return false;}
+      if (typeof self.cache.timer === 'object') {self.cache.timer.restart();}
+      
+      var slides = self.slides();
+      self.cache.animating = true;
+      var res = self._prepare_direction(next_idx)
+        , dir = res[0]
+        , current = res[1]
+        , next = res[2]
+        , next_idx = res[3];
+
+      slides_container.trigger('before-slide-change.fndtn.orbit');
+      settings.before_slide_change();
+      idx = next_idx;
+
+      current.css("transitionDuration", settings.animation_speed+"ms");
+      next.css("transitionDuration", settings.animation_speed+"ms");
+      
+      var callback = function() {
+        var unlock = function() {
+          if (start_timer === true) {self.cache.timer.restart();}
+          self.update_slide_number(idx);
+          next.addClass(settings.active_slide_class);
+          self.update_active_link(next_idx);
+          slides_container.trigger('after-slide-change.fndtn.orbit',[{slide_number: idx, total_slides: slides.length}]);
+          settings.after_slide_change(idx, slides.length);
+          setTimeout(function(){
+            self.cache.animating = false;
+          }, 100);
+          
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         };
         if (slides_container.height() != next.height() && settings.variable_height) {
           slides_container.animate({'height': next.height()}, 250, 'linear', unlock);
@@ -2768,13 +4688,27 @@
     self.next = function(e) {
       e.stopImmediatePropagation();
       e.preventDefault();
+<<<<<<< HEAD
       self._goto(idx + 1);
+=======
+      self._prepare_direction(idx + 1);
+      setTimeout(function(){
+        self._goto(idx + 1);
+    }, 100);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     };
     
     self.prev = function(e) {
       e.stopImmediatePropagation();
       e.preventDefault();
+<<<<<<< HEAD
       self._goto(idx - 1);
+=======
+      self._prepare_direction(idx - 1);
+      setTimeout(function(){
+        self._goto(idx - 1)
+      }, 100);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     };
 
     self.link_custom = function(e) {
@@ -2782,6 +4716,7 @@
       var link = $(this).attr('data-orbit-link');
       if ((typeof link === 'string') && (link = $.trim(link)) != "") {
         var slide = container.find('[data-orbit-slide='+link+']');
+<<<<<<< HEAD
         if (slide.index() != -1) {self._goto(slide.index());}
       }
     };
@@ -2791,6 +4726,36 @@
       if ((typeof index === 'string') && (index = $.trim(index)) != "") {
         self._goto(parseInt(index));
       }
+=======
+        if (slide.index() != -1) {
+          setTimeout(function(){
+            self._goto(slide.index());
+          },100);
+        }
+      }
+    };
+
+    self.link_bullet = function(e) {    
+      var index = $(this).attr('data-orbit-slide');
+      if ((typeof index === 'string') && (index = $.trim(index)) != "") {
+        if(isNaN(parseInt(index)))
+        {
+          var slide = container.find('[data-orbit-slide='+index+']');
+          if (slide.index() != -1) {
+            setTimeout(function(){
+              self._goto(slide.index() + 1);
+            },100);
+          }
+        }
+        else
+        {
+          setTimeout(function(){
+            self._goto(parseInt(index));
+          },100);
+        }
+      }
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     }
 
     self.timer_callback = function() {
@@ -2798,10 +4763,17 @@
     }
     
     self.compute_dimensions = function() {
+<<<<<<< HEAD
       var current = $(slides_container.children().get(idx));
       var h = current.height();
       if (!settings.variable_height) {
         slides_container.children().each(function(){
+=======
+      var current = $(self.slides().get(idx));
+      var h = current.height();
+      if (!settings.variable_height) {
+        self.slides().each(function(){
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           if ($(this).height() > h) { h = $(this).height(); }
         });
       }
@@ -2818,22 +4790,35 @@
     };
 
     self.stop_timer = function() {
+<<<<<<< HEAD
       if (typeof timer === 'object') timer.stop();
+=======
+      if (typeof self.cache.timer === 'object') self.cache.timer.stop();
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     };
 
     self.toggle_timer = function() {
       var t = container.find('.'+settings.timer_container_class);
       if (t.hasClass(settings.timer_paused_class)) {
+<<<<<<< HEAD
         if (typeof timer === 'undefined') {timer = self.create_timer();}
         timer.start();     
       }
       else {
         if (typeof timer === 'object') {timer.stop();}
+=======
+        if (typeof self.cache.timer === 'undefined') {self.cache.timer = self.create_timer();}
+        self.cache.timer.start();     
+      }
+      else {
+        if (typeof self.cache.timer === 'object') {self.cache.timer.stop();}
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
     };
 
     self.init = function() {
       self.build_markup();
+<<<<<<< HEAD
       if (settings.timer) {timer = self.create_timer(); timer.start();}
       animate = new FadeAnimation(settings, slides_container);
       if (settings.animation === 'slide') 
@@ -2880,6 +4865,84 @@
           container.data('swipe-transition', {});
           e.stopPropagation();
         })
+=======
+      if (settings.timer) {
+        self.cache.timer = self.create_timer(); 
+        Foundation.utils.image_loaded(this.slides().children('img'), self.cache.timer.start);
+      }
+      // animate = new FadeAnimation(settings, slides_container);
+      // if (settings.animation === 'slide') 
+      //   animate = new SlideAnimation(settings, slides_container);
+      if(settings.animation === 'fade') {slides_container.addClass('fade');}
+      animate = new CSSAnimation(settings, slides_container);
+      container.on('click', '.'+settings.next_class, self.next);
+      container.on('click', '.'+settings.prev_class, self.prev);
+
+      container.on('click', '[data-orbit-slide]', self.link_bullet);
+      container.on('click', self.toggle_timer);
+      if (settings.swipe) {
+        slides_container.on('touchstart.fndtn.orbit',function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (self.cache.animating) {return;}
+          if (!e.touches) {e = e.originalEvent;}
+
+          self.cache.start_page_x = e.touches[0].pageX;
+          self.cache.start_page_y = e.touches[0].pageY;
+          self.cache.start_time = (new Date()).getTime();
+          self.cache.delta_x = 0;
+          self.cache.is_scrolling = null;
+          self.cache.direction = null;
+          
+          self.stop_timer(); // does not appear to prevent callback from occurring          
+        })
+        .on('touchmove.fndtn.orbit',function(e) {
+          if (self.cache.animating) {return;}
+          e.preventDefault();
+          e.stopPropagation();
+          requestAnimationFrame(function(){
+            if (!e.touches) { e = e.originalEvent; }
+            // Ignore pinch/zoom events
+            if(e.touches.length > 1 || e.scale && e.scale !== 1) return;
+
+            self.cache.delta_x = e.touches[0].pageX - self.cache.start_page_x;
+
+            if (self.cache.is_scrolling === null) {
+              self.cache.is_scrolling = !!( self.cache.is_scrolling || Math.abs(self.cache.delta_x) < Math.abs(e.touches[0].pageY - self.cache.start_page_y) );
+            }
+
+            if (self.cache.is_scrolling) {return;}
+            
+            var direction = (self.cache.delta_x < 0) ? (idx+1) : (idx-1);
+            if (self.cache.direction !== direction) {
+              var res = self._prepare_direction(direction);
+              self.cache.direction = direction;
+              self.cache.dir = res[0];
+              self.cache.current = res[1];
+              self.cache.next = res[2];
+            }
+
+            if (settings.animation === 'slide') {
+              var offset, next_offset;
+              
+              offset = (self.cache.delta_x / container.width()) * 100;
+              if (offset >= 0) {next_offset = -(100 - offset);}
+              else {next_offset = 100 + offset;}
+
+              self.cache.current.css("transform","translate3d("+offset+"%,0,0)");
+              self.cache.next.css("transform","translate3d("+next_offset+"%,0,0)");
+            }
+          });
+        })
+        .on('touchend.fndtn.orbit', function(e) {
+          if (self.cache.animating) {return;}
+          e.preventDefault();
+          e.stopPropagation();
+          setTimeout(function(){
+            self._goto(self.cache.direction);
+          }, 50);
+        });
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
       container.on('mouseenter.fndtn.orbit', function(e) {
         if (settings.timer && settings.pause_on_hover) {
@@ -2888,17 +4951,31 @@
       })
       .on('mouseleave.fndtn.orbit', function(e) {
         if (settings.timer && settings.resume_on_mouseout) {
+<<<<<<< HEAD
           timer.start();
+=======
+          self.cache.timer.start();
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         }
       });
       
       $(document).on('click', '[data-orbit-link]', self.link_custom);
       $(window).on('resize', self.compute_dimensions);
+<<<<<<< HEAD
       $(window).on('load', self.compute_dimensions);
       $(window).on('load', function(){
         container.prev('.preloader').css('display', 'none');
       });
       slides_container.trigger('ready.fndtn.orbit');
+=======
+      Foundation.utils.image_loaded(this.slides().children('img'), self.compute_dimensions);
+      Foundation.utils.image_loaded(this.slides().children('img'), function() {
+        container.prev('.preloader').css('display', 'none');
+        self.update_slide_number(0);
+        self.update_active_link(0);
+        slides_container.trigger('ready.fndtn.orbit');
+      });
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     };
 
     self.init();
@@ -2951,6 +5028,7 @@
       el.trigger('timer-stopped.fndtn.orbit');
     };
   };
+<<<<<<< HEAD
   
   var SlideAnimation = function(settings, container) {
     var duration = settings.animation_speed;
@@ -2996,6 +5074,36 @@
         current.css('margin', '100%');
         callback();
       });
+=======
+
+  var CSSAnimation = function(settings, container) {
+    var animation_end = "webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend";
+
+    this.next = function(current, next, callback) {
+      next.on(animation_end, function(e){
+        next.unbind(animation_end);
+        current.removeClass("active animate-out");
+        next.removeClass("animate-in");
+        callback();
+      });
+      container.children().css({
+        "transform":"", 
+        "transitionDuration":""
+      });
+      current.addClass("animate-out");
+      next.addClass("animate-in");
+    };
+
+    this.prev = function(current, prev, callback) {
+      prev.on(animation_end, function(e){
+        prev.unbind(animation_end);
+        current.removeClass("active animate-out");
+        prev.removeClass("animate-in");
+        callback();
+      });
+      current.css({"transform":"", "transitionDuration":""}).addClass("animate-out");
+      prev.css({"transform":"", "transitionDuration":""}).addClass("animate-in");
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     };
   };
 
@@ -3005,7 +5113,11 @@
   Foundation.libs.orbit = {
     name: 'orbit',
 
+<<<<<<< HEAD
     version: '5.0.0',
+=======
+    version: '5.2.0',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
     settings: {
       animation: 'slide',
@@ -3025,6 +5137,10 @@
       timer_paused_class: 'paused',
       timer_progress_class: 'orbit-progress',
       slides_container_class: 'orbit-slides-container',
+<<<<<<< HEAD
+=======
+      slide_selector: '*',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       bullets_container_class: 'orbit-bullets',
       bullets_active_class: 'active',
       slide_number_class: 'orbit-slide-number',
@@ -3032,6 +5148,10 @@
       active_slide_class: 'active',
       orbit_transition_class: 'orbit-transitioning',
       bullets: true,
+<<<<<<< HEAD
+=======
+      circular: true,
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       timer: true,
       variable_height: false,
       swipe: true,
@@ -3039,6 +5159,7 @@
       after_slide_change: noop
     },
 
+<<<<<<< HEAD
     init: function (scope, method, options) {
       var self = this;
 
@@ -3057,6 +5178,33 @@
         var opts = self.data_options($el);
         new Orbit($el, $.extend({},self.settings, opts));
       });
+=======
+    init : function (scope, method, options) {
+      var self = this;
+      this.bindings(method, options);
+    },
+
+    events : function (instance) {
+      var orbit_instance = new Orbit(this.S(instance), this.S(instance).data('orbit-init'));
+      this.S(instance).data(self.name + '-instance', orbit_instance);
+    },
+
+    reflow : function () {
+      var self = this;
+
+      if (self.S(self.scope).is('[data-orbit]')) {
+        var $el = self.S(self.scope);
+        var instance = $el.data(self.name + '-instance');
+        instance.compute_dimensions();
+      } else {
+        self.S('[data-orbit]', self.scope).each(function(idx, el) {
+          var $el = self.S(el);
+          var opts = self.data_options($el);
+          var instance = $el.data(self.name + '-instance');
+          instance.compute_dimensions();
+        });
+      }
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     }
   };
 
@@ -3069,7 +5217,11 @@
   Foundation.libs.reveal = {
     name : 'reveal',
 
+<<<<<<< HEAD
     version : '5.0.0',
+=======
+    version : '5.2.0',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
     locked : false,
 
@@ -3100,12 +5252,17 @@
     },
 
     init : function (scope, method, options) {
+<<<<<<< HEAD
       Foundation.inherit(this, 'delay');
 
+=======
+      $.extend(true, this.settings, method, options);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       this.bindings(method, options);
     },
 
     events : function (scope) {
+<<<<<<< HEAD
       var self = this;
 
       $('[data-reveal-id]', this.scope)
@@ -3116,6 +5273,19 @@
           if (!self.locked) {
             var element = $(this),
                 ajax = element.data('reveal-ajax');
+=======
+      var self = this,
+          S = self.S;
+
+      S(this.scope)
+        .off('.reveal')
+        .on('click.fndtn.reveal', '[' + this.add_namespace('data-reveal-id') + ']', function (e) {
+          e.preventDefault();
+
+          if (!self.locked) {
+            var element = S(this),
+                ajax = element.data(self.data_attr('reveal-ajax'));
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
             self.locked = true;
 
@@ -3129,13 +5299,19 @@
           }
         });
 
+<<<<<<< HEAD
       $(this.scope)
         .off('.reveal')
         .on('click.fndtn.reveal', this.close_targets(), function (e) {
+=======
+      S(document)
+        .on('touchend.fndtn.reveal click.fndtn.reveal', this.close_targets(), function (e) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
           e.preventDefault();
 
           if (!self.locked) {
+<<<<<<< HEAD
             var settings = $('[data-reveal].open').data('reveal-init'),
                 bg_clicked = $(e.target)[0] === $('.' + settings.bg_class)[0];
 
@@ -3150,6 +5326,26 @@
 
       if($('[data-reveal]', this.scope).length > 0) {
         $(this.scope)
+=======
+            var settings = S('[' + self.attr_name() + '].open').data(self.attr_name(true) + '-init'),
+                bg_clicked = S(e.target)[0] === S('.' + settings.bg_class)[0];
+
+            if (bg_clicked) {
+              if (settings.close_on_background_click) {
+                e.stopPropagation();
+              } else {
+                return;
+              }
+            }
+
+            self.locked = true;
+            self.close.call(self, bg_clicked ? S('[' + self.attr_name() + '].open') : S(this).closest('[' + self.attr_name() + ']'));
+          }
+        });
+
+      if(S('[' + self.attr_name() + ']', this.scope).length > 0) {
+        S(this.scope)
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           // .off('.reveal')
           .on('open.fndtn.reveal', this.settings.open)
           .on('opened.fndtn.reveal', this.settings.opened)
@@ -3158,6 +5354,7 @@
           .on('closed.fndtn.reveal', this.settings.closed)
           .on('closed.fndtn.reveal', this.close_video);
       } else {
+<<<<<<< HEAD
         $(this.scope)
           // .off('.reveal')
           .on('open.fndtn.reveal', '[data-reveal]', this.settings.open)
@@ -3173,33 +5370,87 @@
             settings = open_modal.data('reveal-init');
         if ( event.which === 27  && settings.close_on_esc) { // 27 is the keycode for the Escape key
           open_modal.foundation('reveal', 'close');
+=======
+        S(this.scope)
+          // .off('.reveal')
+          .on('open.fndtn.reveal', '[' + self.attr_name() + ']', this.settings.open)
+          .on('opened.fndtn.reveal', '[' + self.attr_name() + ']', this.settings.opened)
+          .on('opened.fndtn.reveal', '[' + self.attr_name() + ']', this.open_video)
+          .on('close.fndtn.reveal', '[' + self.attr_name() + ']', this.settings.close)
+          .on('closed.fndtn.reveal', '[' + self.attr_name() + ']', this.settings.closed)
+          .on('closed.fndtn.reveal', '[' + self.attr_name() + ']', this.close_video);
+      }
+
+      return true;
+    },
+
+    // PATCH #3: turning on key up capture only when a reveal window is open
+    key_up_on : function (scope) {
+      var self = this;
+
+      // PATCH #1: fixing multiple keyup event trigger from single key press
+      self.S('body').off('keyup.fndtn.reveal').on('keyup.fndtn.reveal', function ( event ) {
+        var open_modal = self.S('[' + self.attr_name() + '].open'),
+            settings = open_modal.data(self.attr_name(true) + '-init');
+        // PATCH #2: making sure that the close event can be called only while unlocked,
+        //           so that multiple keyup.fndtn.reveal events don't prevent clean closing of the reveal window.
+        if ( settings && event.which === 27  && settings.close_on_esc && !self.locked) { // 27 is the keycode for the Escape key
+          self.close.call(self, open_modal);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         }
       });
 
       return true;
     },
 
+<<<<<<< HEAD
     open : function (target, ajax_settings) {
       if (target) {
         if (typeof target.selector !== 'undefined') {
           var modal = $('#' + target.data('reveal-id'));
         } else {
           var modal = $(this.scope);
+=======
+    // PATCH #3: turning on key up capture only when a reveal window is open
+    key_up_off : function (scope) {
+      this.S('body').off('keyup.fndtn.reveal');
+      return true;
+    },
+
+    open : function (target, ajax_settings) {
+      var self = this;
+      if (target) {
+        if (typeof target.selector !== 'undefined') {
+          var modal = self.S('#' + target.data(self.data_attr('reveal-id')));
+        } else {
+          var modal = self.S(this.scope);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
           ajax_settings = target;
         }
       } else {
+<<<<<<< HEAD
         var modal = $(this.scope);
       }
 
       if (!modal.hasClass('open')) {
         var open_modal = $('[data-reveal].open');
+=======
+        var modal = self.S(this.scope);
+      }
+
+      var settings = modal.data(self.attr_name(true) + '-init');
+
+      if (!modal.hasClass('open')) {
+        var open_modal = self.S('[' + self.attr_name() + '].open');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
         if (typeof modal.data('css-top') === 'undefined') {
           modal.data('css-top', parseInt(modal.css('top'), 10))
             .data('offset', this.cache_offset(modal));
         }
 
+<<<<<<< HEAD
         modal.trigger('open');
 
         if (open_modal.length < 1) {
@@ -3212,6 +5463,29 @@
         } else {
           var self = this,
               old_success = typeof ajax_settings.success !== 'undefined' ? ajax_settings.success : null;
+=======
+        this.key_up_on(modal);    // PATCH #3: turning on key up capture only when a reveal window is open
+        modal.trigger('open');
+
+        if (open_modal.length < 1) {
+          this.toggle_bg(modal);
+        }
+
+        if (typeof ajax_settings === 'string') {
+          ajax_settings = {
+            url: ajax_settings
+          };
+        }
+
+        if (typeof ajax_settings === 'undefined' || !ajax_settings.url) {
+          if (open_modal.length > 0) {
+            this.hide(open_modal, settings.css.close);
+          }
+
+          this.show(modal, settings.css.open);
+        } else {
+          var old_success = typeof ajax_settings.success !== 'undefined' ? ajax_settings.success : null;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
           $.extend(ajax_settings, {
             success: function (data, textStatus, jqXHR) {
@@ -3220,10 +5494,19 @@
               }
 
               modal.html(data);
+<<<<<<< HEAD
               $(modal).foundation('section', 'reflow');
 
               self.hide(open_modal, self.settings.css.close);
               self.show(modal, self.settings.css.open);
+=======
+              self.S(modal).foundation('section', 'reflow');
+
+              if (open_modal.length > 0) {
+                self.hide(open_modal, settings.css.close);
+              }
+              self.show(modal, settings.css.open);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
             }
           });
 
@@ -3233,6 +5516,7 @@
     },
 
     close : function (modal) {
+<<<<<<< HEAD
 
       var modal = modal && modal.length ? modal : $(this.scope),
           open_modals = $('[data-reveal].open');
@@ -3242,6 +5526,18 @@
         modal.trigger('close');
         this.toggle_bg();
         this.hide(open_modals, this.settings.css.close);
+=======
+      var modal = modal && modal.length ? modal : this.S(this.scope),
+          open_modals = this.S('[' + this.attr_name() + '].open'),
+          settings = modal.data(this.attr_name(true) + '-init');
+
+      if (open_modals.length > 0) {
+        this.locked = true;
+        this.key_up_off(modal);   // PATCH #3: turning on key up capture only when a reveal window is open
+        modal.trigger('close');
+        this.toggle_bg(modal);
+        this.hide(open_modals, settings.css.close, settings);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
     },
 
@@ -3255,10 +5551,19 @@
       return base;
     },
 
+<<<<<<< HEAD
     toggle_bg : function () {
       if ($('.' + this.settings.bg_class).length === 0) {
         this.settings.bg = $('<div />', {'class': this.settings.bg_class})
           .appendTo('body');
+=======
+    toggle_bg : function (modal) {
+      var settings = modal.data(this.attr_name(true));
+
+      if (this.S('.' + this.settings.bg_class).length === 0) {
+        this.settings.bg = $('<div />', {'class': this.settings.bg_class})
+          .appendTo('body').hide();
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
 
       if (this.settings.bg.filter(':visible').length > 0) {
@@ -3271,31 +5576,58 @@
     show : function (el, css) {
       // is modal
       if (css) {
+<<<<<<< HEAD
         if (el.parent('body').length === 0) {
           var placeholder = el.wrap('<div style="display: none;" />').parent();
+=======
+        var settings = el.data(this.attr_name(true) + '-init');
+        if (el.parent('body').length === 0) {
+          var placeholder = el.wrap('<div style="display: none;" />').parent(),
+              rootElement = this.settings.rootElement || 'body';
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           el.on('closed.fndtn.reveal.wrapped', function() {
             el.detach().appendTo(placeholder);
             el.unwrap().unbind('closed.fndtn.reveal.wrapped');
           });
 
+<<<<<<< HEAD
           el.detach().appendTo('body');
         }
 
         if (/pop/i.test(this.settings.animation)) {
+=======
+          el.detach().appendTo(rootElement);
+        }
+
+        var animData = getAnimationData(settings.animation);
+        if (!animData.animate) {
+          this.locked = false;
+        }
+        if (animData.pop) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           css.top = $(window).scrollTop() - el.data('offset') + 'px';
           var end_css = {
             top: $(window).scrollTop() + el.data('css-top') + 'px',
             opacity: 1
           };
 
+<<<<<<< HEAD
           return this.delay(function () {
             return el
               .css(css)
               .animate(end_css, this.settings.animation_speed, 'linear', function () {
+=======
+          return setTimeout(function () {
+            return el
+              .css(css)
+              .animate(end_css, settings.animation_speed, 'linear', function () {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
                 this.locked = false;
                 el.trigger('opened');
               }.bind(this))
               .addClass('open');
+<<<<<<< HEAD
           }.bind(this), this.settings.animation_speed / 2);
         }
 
@@ -3306,40 +5638,85 @@
             return el
               .css(css)
               .animate(end_css, this.settings.animation_speed, 'linear', function () {
+=======
+          }.bind(this), settings.animation_speed / 2);
+        }
+
+        if (animData.fade) {
+          css.top = $(window).scrollTop() + el.data('css-top') + 'px';
+          var end_css = {opacity: 1};
+
+          return setTimeout(function () {
+            return el
+              .css(css)
+              .animate(end_css, settings.animation_speed, 'linear', function () {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
                 this.locked = false;
                 el.trigger('opened');
               }.bind(this))
               .addClass('open');
+<<<<<<< HEAD
           }.bind(this), this.settings.animation_speed / 2);
+=======
+          }.bind(this), settings.animation_speed / 2);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         }
 
         return el.css(css).show().css({opacity: 1}).addClass('open').trigger('opened');
       }
 
+<<<<<<< HEAD
       // should we animate the background?
       if (/fade/i.test(this.settings.animation)) {
         return el.fadeIn(this.settings.animation_speed / 2);
       }
 
+=======
+      var settings = this.settings;
+
+      // should we animate the background?
+      if (getAnimationData(settings.animation).fade) {
+        return el.fadeIn(settings.animation_speed / 2);
+      }
+
+      this.locked = false;
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       return el.show();
     },
 
     hide : function (el, css) {
       // is modal
       if (css) {
+<<<<<<< HEAD
         if (/pop/i.test(this.settings.animation)) {
+=======
+        var settings = el.data(this.attr_name(true) + '-init');
+        var animData = getAnimationData(settings.animation);
+        if (!animData.animate) {
+          this.locked = false;
+        }
+        if (animData.pop) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           var end_css = {
             top: - $(window).scrollTop() - el.data('offset') + 'px',
             opacity: 0
           };
 
+<<<<<<< HEAD
           return this.delay(function () {
             return el
               .animate(end_css, this.settings.animation_speed, 'linear', function () {
+=======
+          return setTimeout(function () {
+            return el
+              .animate(end_css, settings.animation_speed, 'linear', function () {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
                 this.locked = false;
                 el.css(css).trigger('closed');
               }.bind(this))
               .removeClass('open');
+<<<<<<< HEAD
           }.bind(this), this.settings.animation_speed / 2);
         }
 
@@ -3349,27 +5726,55 @@
           return this.delay(function () {
             return el
               .animate(end_css, this.settings.animation_speed, 'linear', function () {
+=======
+          }.bind(this), settings.animation_speed / 2);
+        }
+
+        if (animData.fade) {
+          var end_css = {opacity: 0};
+
+          return setTimeout(function () {
+            return el
+              .animate(end_css, settings.animation_speed, 'linear', function () {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
                 this.locked = false;
                 el.css(css).trigger('closed');
               }.bind(this))
               .removeClass('open');
+<<<<<<< HEAD
           }.bind(this), this.settings.animation_speed / 2);
+=======
+          }.bind(this), settings.animation_speed / 2);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         }
 
         return el.hide().css(css).removeClass('open').trigger('closed');
       }
 
+<<<<<<< HEAD
       // should we animate the background?
       if (/fade/i.test(this.settings.animation)) {
         return el.fadeOut(this.settings.animation_speed / 2);
+=======
+      var settings = this.settings;
+
+      // should we animate the background?
+      if (getAnimationData(settings.animation).fade) {
+        return el.fadeOut(settings.animation_speed / 2);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
 
       return el.hide();
     },
 
     close_video : function (e) {
+<<<<<<< HEAD
       var video = $(this).find('.flex-video'),
           iframe = video.find('iframe');
+=======
+      var video = $('.flex-video', e.target),
+          iframe = $('iframe', video);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       if (iframe.length > 0) {
         iframe.attr('data-src', iframe[0].src);
@@ -3379,7 +5784,11 @@
     },
 
     open_video : function (e) {
+<<<<<<< HEAD
       var video = $(this).find('.flex-video'),
+=======
+      var video = $('.flex-video', e.target),
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           iframe = video.find('iframe');
 
       if (iframe.length > 0) {
@@ -3395,6 +5804,17 @@
       }
     },
 
+<<<<<<< HEAD
+=======
+    data_attr: function (str) {
+      if (this.namespace.length > 0) {
+        return this.namespace + '-' + str;
+      }
+
+      return str;
+    },
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     cache_offset : function (modal) {
       var offset = modal.show().height() + parseInt(modal.css('top'), 10);
 
@@ -3409,6 +5829,214 @@
 
     reflow : function () {}
   };
+<<<<<<< HEAD
+=======
+
+  /*
+   * getAnimationData('popAndFade') // {animate: true,  pop: true,  fade: true}
+   * getAnimationData('fade')       // {animate: true,  pop: false, fade: true}
+   * getAnimationData('pop')        // {animate: true,  pop: true,  fade: false}
+   * getAnimationData('foo')        // {animate: false, pop: false, fade: false}
+   * getAnimationData(null)         // {animate: false, pop: false, fade: false}
+   */
+  function getAnimationData(str) {
+    var fade = /fade/i.test(str);
+    var pop = /pop/i.test(str);
+    return {
+      animate: fade || pop,
+      pop: pop,
+      fade: fade
+    };
+  }
+}(jQuery, this, this.document));
+
+;(function ($, window, document, undefined) {
+  'use strict';
+
+  Foundation.libs.slider = {
+    name : 'slider',
+
+    version : '5.2.0',
+
+    settings: {
+      start: 0,
+      end: 100,
+      step: 1,
+      initial: null,
+      display_selector: '',
+      on_change: function(){}
+    },
+
+    cache : {},
+
+    init : function (scope, method, options) {
+      Foundation.inherit(this,'throttle');
+      this.bindings(method, options);
+      this.reflow();
+    },
+
+    events : function() {
+      var self = this;
+
+      $(this.scope)
+        .off('.slider')
+        .on('mousedown.fndtn.slider touchstart.fndtn.slider pointerdown.fndtn.slider', '[' + self.attr_name() + '] .range-slider-handle', function(e) {
+          if (!self.cache.active) {
+            self.set_active_slider($(e.target));
+          }
+        })
+        .on('mousemove.fndtn.slider touchmove.fndtn.slider pointermove.fndtn.slider', function(e) {
+          if (!!self.cache.active) {
+            e.preventDefault(); 
+            self.calculate_position(self.cache.active, e.pageX || e.originalEvent.touches[0].clientX || e.currentPoint.x);
+          }
+        })
+        .on('mouseup.fndtn.slider touchend.fndtn.slider pointerup.fndtn.slider', function(e) {
+          self.remove_active_slider();
+        })
+        .on('change.fndtn.slider', function(e) {
+          self.settings.on_change;
+        });
+
+      self.S(window)
+        .on('resize.fndtn.slider', self.throttle(function(e) {
+          self.reflow();
+        }, 300));
+    },
+
+    set_active_slider : function($handle) {
+      this.cache.active = $handle;
+    },
+
+    remove_active_slider : function() {
+      this.cache.active = null;
+    },
+
+    calculate_position : function($handle, cursor_x) {
+      var self = this,
+          settings = $.extend({}, self.settings, self.data_options($handle.parent())),
+          handle_w = $.data($handle[0], 'handle_w'),
+          handle_o = $.data($handle[0], 'handle_o'),
+          bar_w = $.data($handle[0], 'bar_w'),
+          bar_o = $.data($handle[0], 'bar_o');
+
+      requestAnimationFrame(function(){
+        var pct = self.limit_to((((cursor_x)-bar_o)/bar_w),0,1),
+            norm = self.normalized_value(pct, settings.start, settings.end, settings.step);
+
+        self.set_ui($handle, norm);
+      }); 
+    },
+
+    set_ui : function($handle, value) {
+      var settings = $.extend({}, this.settings, this.data_options($handle.parent())),
+          handle_w = $.data($handle[0], 'handle_w'),
+          bar_w = $.data($handle[0], 'bar_w'),
+          norm_pct = this.normalized_percentage(value, settings.start, settings.end),
+          handle_offset = norm_pct*(bar_w-handle_w)-1,
+          progress_bar_width = norm_pct*100;
+
+      this.set_translate($handle, handle_offset);
+      $handle.siblings('.range-slider-active-segment').css('width', progress_bar_width+'%');
+      
+      $handle.parent().attr(this.attr_name(), value);
+      $handle.parent().trigger('change');
+
+      $handle.parent().children('input[type=hidden]').val(value);
+
+      if (settings.input_id != '') {
+        $(settings.display_selector).each(function(){
+          if (this.hasOwnProperty('value')) {
+            $(this).val(value);
+          } else {
+            $(this).text(value);
+          }
+        });
+      }
+
+    },
+
+    normalized_percentage : function(val, start, end) {
+      return val/(end - start);
+    },
+
+    normalized_value : function(val, start, end, step) {
+      var range = end - start,
+          step = step,
+          point = val*range,
+          mod = (point-(point%step)) / step,
+          rem = point % step,
+          round = ( rem >= step*0.5 ? step : 0);
+      return (mod*step + round);
+    },
+
+    set_translate : function(ele, offset, vertical) {
+      if (vertical) {
+        $(ele)
+          .css('-webkit-transform', 'translateY('+offset+'px)')
+          .css('-moz-transform', 'translateY('+offset+'px)')
+          .css('-ms-transform', 'translateY('+offset+'px)')
+          .css('-o-transform', 'translateY('+offset+'px)')
+          .css('transform', 'translateY('+offset+'px)');
+      } else {
+        $(ele)
+          .css('-webkit-transform', 'translateX('+offset+'px)')
+          .css('-moz-transform', 'translateX('+offset+'px)')
+          .css('-ms-transform', 'translateX('+offset+'px)')
+          .css('-o-transform', 'translateX('+offset+'px)')
+          .css('transform', 'translateX('+offset+'px)');
+      }
+    },
+
+    limit_to : function(val, min, max) {
+      return Math.min(Math.max(val, min), max);
+    },
+
+    initialize_settings : function(handle) {
+      $.data(handle, 'bar', $(handle).parent());
+      $.data(handle, 'bar_o', $(handle).parent().offset().left);
+      $.data(handle, 'bar_w', $(handle).parent().outerWidth());
+      $.data(handle, 'handle_o', $(handle).offset().left);
+      $.data(handle, 'handle_w', $(handle).outerWidth());
+      $.data(handle, 'settings', $.extend({}, this.settings, this.data_options($(handle).parent())));
+    },
+
+    set_initial_position : function($ele) {
+      var settings = $.data($ele.children('.range-slider-handle')[0], 'settings'),
+          initial = (!!settings.initial ? settings.initial : Math.floor((settings.end-settings.start)*0.5/settings.step)*settings.step),
+          $handle = $ele.children('.range-slider-handle');
+      this.set_ui($handle, initial);
+    },
+
+    set_value : function(value) {
+      var self = this;
+      $('[' + self.attr_name() + ']', this.scope).each(function(){
+        $(this).attr(self.attr_name(), value);
+      });
+      if (!!$(this.scope).attr(self.attr_name())) {
+        $(this.scope).attr(self.attr_name(), value);
+      }
+      self.reflow();
+    },
+
+    reflow : function() {
+      var self = this;
+      self.S('[' + this.attr_name() + ']').each(function() {
+        var handle = $(this).children('.range-slider-handle')[0],
+            val = $(this).attr(self.attr_name());
+        self.initialize_settings(handle);
+        
+        if (val) {
+          self.set_ui($(handle), parseInt(val));
+        } else {
+          self.set_initial_position($(this));
+        }
+      });
+    }
+
+  };
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 }(jQuery, this, this.document));
 
 /*jslint unparam: true, browser: true, indent: 2 */
@@ -3418,6 +6046,7 @@
   Foundation.libs.tab = {
     name : 'tab',
 
+<<<<<<< HEAD
     version : '5.0.1',
 
     settings : {
@@ -3443,6 +6072,152 @@
       });
     },
 
+=======
+    version : '5.2.0',
+
+    settings : {
+      active_class: 'active',
+      callback : function () {},
+      deep_linking: false,
+      scroll_to_content: true
+    },
+
+    default_tab_hashes: [],
+
+    init : function (scope, method, options) {
+      var self = this,
+          S = this.S;
+
+      this.bindings(method, options);
+      this.handle_location_hash_change();
+
+      // Store the default active tabs which will be referenced when the
+      // location hash is absent, as in the case of navigating the tabs and
+      // returning to the first viewing via the browser Back button.
+      S('[' + this.attr_name() + '] > dd.active > a', this.scope).each(function () {
+        self.default_tab_hashes.push(this.hash);
+      });
+    },
+
+    events : function () {
+      var self = this,
+          S = this.S;
+
+      // Click event: tab title
+      S(this.scope).off('.tab').on('click.fndtn.tab', '[' + this.attr_name() + '] > dd > a', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        self.toggle_active_tab(S(this).parent());
+      });
+
+      // Location hash change event
+      S(window).on('hashchange.fndtn.tab', function (e) {
+        e.preventDefault();
+        self.handle_location_hash_change();
+      });
+    },
+
+    handle_location_hash_change : function () {
+      var self = this,
+          S = this.S;
+
+      S('[' + this.attr_name() + ']', this.scope).each(function () {
+        var settings = S(this).data(self.attr_name(true) + '-init');
+        if (settings.deep_linking) {
+          // Match the location hash to a label
+          var hash = self.scope.location.hash;
+          if (hash != '') {
+            // Check whether the location hash references a tab content div or
+            // another element on the page (inside or outside the tab content div)
+            var hash_element = S(hash);
+            if (hash_element.hasClass('content') && hash_element.parent().hasClass('tab-content')) {
+              // Tab content div
+              self.toggle_active_tab($('[' + self.attr_name() + '] > dd > a[href=' + hash + ']').parent());
+            } else {
+              // Not the tab content div. If inside the tab content, find the
+              // containing tab and toggle it as active.
+              var hash_tab_container_id = hash_element.closest('.content').attr('id');
+              if (hash_tab_container_id != undefined) {
+                self.toggle_active_tab($('[' + self.attr_name() + '] > dd > a[href=#' + hash_tab_container_id + ']').parent(), hash);
+              }
+            }
+          } else {
+            // Reference the default tab hashes which were initialized in the init function
+            for (var ind in self.default_tab_hashes) {
+              self.toggle_active_tab($('[' + self.attr_name() + '] > dd > a[href=' + self.default_tab_hashes[ind] + ']').parent());
+            }
+          }
+        }
+       });
+     },
+
+    toggle_active_tab: function (tab, location_hash) {
+      var S = this.S,
+          tabs = tab.closest('[' + this.attr_name() + ']'),
+          anchor = tab.children('a').first(),
+          target_hash = '#' + anchor.attr('href').split('#')[1],
+          target = S(target_hash),
+          siblings = tab.siblings(),
+          settings = tabs.data(this.attr_name(true) + '-init');
+
+      // allow usage of data-tab-content attribute instead of href
+      if (S(this).data(this.data_attr('tab-content'))) {
+        target_hash = '#' + S(this).data(this.data_attr('tab-content')).split('#')[1];
+        target = S(target_hash);
+      }
+
+      if (settings.deep_linking) {
+        // Get the scroll Y position prior to moving to the hash ID
+        var cur_ypos = $('body,html').scrollTop();
+
+        // Update the location hash to preserve browser history
+        // Note that the hash does not need to correspond to the
+        // tab content ID anchor; it can be an ID inside or outside of the tab
+        // content div.
+        if (location_hash != undefined) {
+          window.location.hash = location_hash;
+        } else {
+          window.location.hash = target_hash;
+        }
+
+        if (settings.scroll_to_content) {
+          // If the user is requesting the content of a tab, then scroll to the
+          // top of the title area; otherwise, scroll to the element within
+          // the content area as defined by the hash value.
+          if (location_hash == undefined || location_hash == target_hash) {
+            tab.parent()[0].scrollIntoView();
+          } else {
+            S(target_hash)[0].scrollIntoView();
+          }
+        } else {
+          // Adjust the scrollbar to the Y position prior to setting the hash
+          // Only do this for the tab content anchor, otherwise there will be
+          // conflicts with in-tab anchor links nested in the tab-content div
+          if (location_hash == undefined || location_hash == target_hash) {
+            $('body,html').scrollTop(cur_ypos);
+          }
+        }
+      }
+
+      // WARNING: The activation and deactivation of the tab content must
+      // occur after the deep linking in order to properly refresh the browser
+      // window (notably in Chrome).
+      tab.addClass(settings.active_class).triggerHandler('opened');
+      siblings.removeClass(settings.active_class);
+      target.siblings().removeClass(settings.active_class).end().addClass(settings.active_class);
+      settings.callback(tab);
+      tabs.triggerHandler('toggled', [tab]);
+    },
+
+    data_attr: function (str) {
+      if (this.namespace.length > 0) {
+        return this.namespace + '-' + str;
+      }
+
+      return str;
+    },
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     off : function () {},
 
     reflow : function () {}
@@ -3455,7 +6230,11 @@
   Foundation.libs.tooltip = {
     name : 'tooltip',
 
+<<<<<<< HEAD
     version : '5.0.0',
+=======
+    version : '5.2.0',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
     settings : {
       additional_inheritable_classes : [],
@@ -3463,9 +6242,16 @@
       append_to: 'body',
       touch_close_text: 'Tap To Close',
       disable_for_touch: false,
+<<<<<<< HEAD
       tip_template : function (selector, content) {
         return '<span data-selector="' + selector + '" class="' 
           + Foundation.libs.tooltip.settings.tooltip_class.substring(1) 
+=======
+      hover_delay: 200,
+      tip_template : function (selector, content) {
+        return '<span data-selector="' + selector + '" class="'
+          + Foundation.libs.tooltip.settings.tooltip_class.substring(1)
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           + '">' + content + '<span class="nub"></span></span>';
       }
     },
@@ -3473,6 +6259,7 @@
     cache : {},
 
     init : function (scope, method, options) {
+<<<<<<< HEAD
       this.bindings(method, options);
     },
 
@@ -3520,14 +6307,94 @@
       }
 
       return this.create($target);
+=======
+      Foundation.inherit(this, 'random_str');
+      this.bindings(method, options);
+    },
+
+    events : function (instance) {
+      var self = this,
+          S = self.S;
+
+      self.create(this.S(instance));
+
+      $(this.scope)
+        .off('.tooltip')
+        .on('mouseenter.fndtn.tooltip mouseleave.fndtn.tooltip touchstart.fndtn.tooltip MSPointerDown.fndtn.tooltip',
+          '[' + this.attr_name() + ']:not(a)', function (e) {
+          var $this = S(this),
+              settings = $.extend({}, self.settings, self.data_options($this)),
+              is_touch = false;
+
+          if (/mouse/i.test(e.type) && self.ie_touch(e)) return false;
+
+          if ($this.hasClass('open')) {
+            if (Modernizr.touch && /touchstart|MSPointerDown/i.test(e.type)) e.preventDefault();
+            self.hide($this);
+          } else {
+            if (settings.disable_for_touch && Modernizr.touch && /touchstart|MSPointerDown/i.test(e.type)) {
+              return;
+            } else if(!settings.disable_for_touch && Modernizr.touch && /touchstart|MSPointerDown/i.test(e.type)) {
+              e.preventDefault();
+              S(settings.tooltip_class + '.open').hide();
+              is_touch = true;
+            }
+
+            if (/enter|over/i.test(e.type)) {
+              this.timer = setTimeout(function () {
+                var tip = self.showTip($this);
+              }.bind(this), self.settings.hover_delay);
+            } else if (e.type === 'mouseout' || e.type === 'mouseleave') {
+              clearTimeout(this.timer);
+              self.hide($this);
+            } else {
+              self.showTip($this);
+            }
+          }
+        })
+        .on('mouseleave.fndtn.tooltip touchstart.fndtn.tooltip MSPointerDown.fndtn.tooltip', '[' + this.attr_name() + '].open', function (e) {
+          if (/mouse/i.test(e.type) && self.ie_touch(e)) return false;
+
+          if($(this).data('tooltip-open-event-type') == 'touch' && e.type == 'mouseleave') {
+            return;
+          }
+          else if($(this).data('tooltip-open-event-type') == 'mouse' && /MSPointerDown|touchstart/i.test(e.type)) {
+            self.convert_to_touch($(this));
+          } else {
+            self.hide($(this));
+          }
+        })
+        .on('DOMNodeRemoved DOMAttrModified', '[' + this.attr_name() + ']:not(a)', function (e) {
+          self.hide(S(this));
+        });
+    },
+
+    ie_touch : function (e) {
+      // How do I distinguish between IE11 and Windows Phone 8?????
+      return false;
+    },
+
+    showTip : function ($target) {
+      var $tip = this.getTip($target);
+
+        return this.show($target);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     },
 
     getTip : function ($target) {
       var selector = this.selector($target),
+<<<<<<< HEAD
           tip = null;
 
       if (selector) {
         tip = $('span[data-selector="' + selector + '"]' + this.settings.tooltip_class);
+=======
+          settings = $.extend({}, this.settings, this.data_options($target)),
+          tip = null;
+
+      if (selector) {
+        tip = this.S('span[data-selector="' + selector + '"]' + settings.tooltip_class);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
 
       return (typeof tip === 'object') ? tip : false;
@@ -3535,10 +6402,17 @@
 
     selector : function ($target) {
       var id = $target.attr('id'),
+<<<<<<< HEAD
           dataSelector = $target.attr('data-tooltip') || $target.attr('data-selector');
 
       if ((id && id.length < 1 || !id) && typeof dataSelector != 'string') {
         dataSelector = 'tooltip' + Math.random().toString(36).substring(7);
+=======
+          dataSelector = $target.attr(this.attr_name()) || $target.attr('data-selector');
+
+      if ((id && id.length < 1 || !id) && typeof dataSelector != 'string') {
+        dataSelector = this.random_str(6);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         $target.attr('data-selector', dataSelector);
       }
 
@@ -3546,6 +6420,7 @@
     },
 
     create : function ($target) {
+<<<<<<< HEAD
       var $tip = $(this.settings.tip_template(this.selector($target), $('<div></div>').html($target.attr('title')).html())),
           classes = this.inheritable_classes($target);
 
@@ -3555,6 +6430,29 @@
       }
       $target.removeAttr('title').attr('title','');
       this.show($target);
+=======
+      var self = this,
+          settings = $.extend({}, this.settings, this.data_options($target)),
+          tip_template = this.settings.tip_template;
+
+      if (typeof settings.tip_template === 'string' && window.hasOwnProperty(settings.tip_template)) {
+        tip_template = window[settings.tip_template];
+      }
+
+      var $tip = $(tip_template(this.selector($target), $('<div></div>').html($target.attr('title')).html())),
+          classes = this.inheritable_classes($target);
+
+      $tip.addClass(classes).appendTo(settings.append_to);
+
+      if (Modernizr.touch) {
+        $tip.append('<span class="tap-to-close">'+settings.touch_close_text+'</span>');
+        $tip.on('touchstart.fndtn.tooltip MSPointerDown.fndtn.tooltip', function(e) {
+          self.hide($target);
+        });
+      }
+
+      $target.removeAttr('title').attr('title','');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     },
 
     reposition : function (target, tip, classes) {
@@ -3567,17 +6465,33 @@
       nubHeight = nub.outerHeight();
       nubWidth = nub.outerHeight();
 
+<<<<<<< HEAD
+=======
+      if (this.small()) {
+        tip.css({'width' : '100%' });
+      } else {
+        tip.css({'width' : (width) ? width : 'auto'});
+      }
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       objPos = function (obj, top, right, bottom, left, width) {
         return obj.css({
           'top' : (top) ? top : 'auto',
           'bottom' : (bottom) ? bottom : 'auto',
           'left' : (left) ? left : 'auto',
           'right' : (right) ? right : 'auto',
+<<<<<<< HEAD
           'width' : (width) ? width : 'auto'
         }).end();
       };
 
       objPos(tip, (target.offset().top + target.outerHeight() + 10), 'auto', 'auto', target.offset().left, width);
+=======
+        }).end();
+      };
+
+      objPos(tip, (target.offset().top + target.outerHeight() + 10), 'auto', 'auto', target.offset().left);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       if (this.small()) {
         objPos(tip, (target.offset().top + target.outerHeight() + 10), 'auto', 'auto', 12.5, $(this.scope).width());
@@ -3586,6 +6500,7 @@
       } else {
         var left = target.offset().left;
         if (Foundation.rtl) {
+<<<<<<< HEAD
           left = target.offset().left + target.offset().width - tip.outerWidth();
         }
         objPos(tip, (target.offset().top + target.outerHeight() + 10), 'auto', 'auto', left, width);
@@ -3599,6 +6514,25 @@
         } else if (classes && classes.indexOf('tip-right') > -1) {
           objPos(tip, (target.offset().top + (target.outerHeight() / 2) - nubHeight*2.5), 'auto', 'auto', (target.offset().left + target.outerWidth() + nubHeight), width)
             .removeClass('tip-override');
+=======
+          nub.addClass('rtl');
+          left = target.offset().left + target.outerWidth() - tip.outerWidth();
+        }
+        objPos(tip, (target.offset().top + target.outerHeight() + 10), 'auto', 'auto', left);
+        tip.removeClass('tip-override');
+        if (classes && classes.indexOf('tip-top') > -1) {
+          if (Foundation.rtl) nub.addClass('rtl');
+          objPos(tip, (target.offset().top - tip.outerHeight()), 'auto', 'auto', left)
+            .removeClass('tip-override');
+        } else if (classes && classes.indexOf('tip-left') > -1) {
+          objPos(tip, (target.offset().top + (target.outerHeight() / 2) - (tip.outerHeight() / 2)), 'auto', 'auto', (target.offset().left - tip.outerWidth() - nubHeight))
+            .removeClass('tip-override');
+          nub.removeClass('rtl');
+        } else if (classes && classes.indexOf('tip-right') > -1) {
+          objPos(tip, (target.offset().top + (target.outerHeight() / 2) - (tip.outerHeight() / 2)), 'auto', 'auto', (target.offset().left + target.outerWidth() + nubHeight))
+            .removeClass('tip-override');
+          nub.removeClass('rtl');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         }
       }
 
@@ -3609,9 +6543,16 @@
       return matchMedia(Foundation.media_queries.small).matches;
     },
 
+<<<<<<< HEAD
     inheritable_classes : function (target) {
       var inheritables = ['tip-top', 'tip-left', 'tip-bottom', 'tip-right', 'noradius'].concat(this.settings.additional_inheritable_classes),
           classes = target.attr('class'),
+=======
+    inheritable_classes : function ($target) {
+      var settings = $.extend({}, this.settings, this.data_options($target)),
+          inheritables = ['tip-top', 'tip-left', 'tip-bottom', 'tip-right', 'radius', 'round'].concat(settings.additional_inheritable_classes),
+          classes = $target.attr('class'),
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           filtered = classes ? $.map(classes.split(' '), function (el, i) {
             if ($.inArray(el, inheritables) !== -1) {
               return el;
@@ -3621,16 +6562,44 @@
       return $.trim(filtered);
     },
 
+<<<<<<< HEAD
     show : function ($target) {
       var $tip = this.getTip($target);
 
       this.reposition($target, $tip, $target.attr('class'));
+=======
+    convert_to_touch : function($target) {
+      var self = this,
+          $tip = self.getTip($target),
+          settings = $.extend({}, self.settings, self.data_options($target));
+
+      if ($tip.find('.tap-to-close').length === 0) {
+        $tip.append('<span class="tap-to-close">'+settings.touch_close_text+'</span>');
+        $tip.on('click.fndtn.tooltip.tapclose touchstart.fndtn.tooltip.tapclose MSPointerDown.fndtn.tooltip.tapclose', function(e) {
+          self.hide($target);
+        });
+      }
+
+      $target.data('tooltip-open-event-type', 'touch');
+    },
+
+    show : function ($target) {
+      var $tip = this.getTip($target);
+
+      if ($target.data('tooltip-open-event-type') == 'touch') {
+        this.convert_to_touch($target);
+      }
+
+      this.reposition($target, $tip, $target.attr('class'));
+      $target.addClass('open');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       $tip.fadeIn(150);
     },
 
     hide : function ($target) {
       var $tip = this.getTip($target);
 
+<<<<<<< HEAD
       $tip.fadeOut(150);
     },
 
@@ -3645,6 +6614,20 @@
       $(this.scope).off('.fndtn.tooltip');
       $(this.settings.tooltip_class).each(function (i) {
         $('[data-tooltip]').get(i).attr('title', $(this).text());
+=======
+      $tip.fadeOut(150, function() {
+        $tip.find('.tap-to-close').remove();
+        $tip.off('click.fndtn.tooltip.tapclose touchstart.fndtn.tooltip.tapclose MSPointerDown.fndtn.tapclose');
+        $target.removeClass('open');
+      });
+    },
+
+    off : function () {
+      var self = this;
+      this.S(this.scope).off('.fndtn.tooltip');
+      this.S(this.settings.tooltip_class).each(function (i) {
+        $('[' + self.attr_name() + ']').get(i).attr('title', $(this).text());
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }).remove();
     },
 
@@ -3658,7 +6641,11 @@
   Foundation.libs.topbar = {
     name : 'topbar',
 
+<<<<<<< HEAD
     version: '5.0.1',
+=======
+    version: '5.2.0',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
     settings : {
       index : 0,
@@ -3667,17 +6654,27 @@
       back_text: 'Back',
       is_hover: true,
       mobile_show_parent_link: false,
+<<<<<<< HEAD
       scrolltop : true // jump to top when sticky nav menu toggle is clicked
     },
 
     init : function (section, method, options) {
       Foundation.inherit(this, 'addCustomRule register_media throttle');
+=======
+      scrolltop : true, // jump to top when sticky nav menu toggle is clicked
+      sticky_on : 'all'
+    },
+
+    init : function (section, method, options) {
+      Foundation.inherit(this, 'add_custom_rule register_media throttle');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       var self = this;
 
       self.register_media('topbar', 'foundation-mq-topbar');
 
       this.bindings(method, options);
 
+<<<<<<< HEAD
       $('[data-topbar]', this.scope).each(function () {
         var topbar = $(this),
             settings = topbar.data('topbar-init'),
@@ -3690,6 +6687,18 @@
         if(topbarContainer.hasClass('fixed') || topbarContainer.hasClass(settings.sticky_class)) {
           self.settings.sticky_class = settings.sticky_class;
           self.settings.stick_topbar = topbar;
+=======
+      self.S('[' + this.attr_name() + ']', this.scope).each(function () {
+        var topbar = $(this),
+            settings = topbar.data(self.attr_name(true) + '-init'),
+            section = self.S('section', this),
+            titlebar = topbar.children().filter('ul').first();
+        topbar.data('index', 0);
+        var topbarContainer = topbar.parent();
+        if(topbarContainer.hasClass('fixed') || self.is_sticky(topbar, topbarContainer, settings) ) {
+          self.settings.sticky_class = settings.sticky_class;
+          self.settings.sticky_topbar = topbar;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           topbar.data('height', topbarContainer.outerHeight());
           topbar.data('stickyoffset', topbarContainer.offset().top);
         } else {
@@ -3699,6 +6708,7 @@
         if (!settings.assembled) self.assemble(topbar);
 
         if (settings.is_hover) {
+<<<<<<< HEAD
           $('.has-dropdown', topbar).addClass('not-click');
         } else {
           $('.has-dropdown', topbar).removeClass('not-click');
@@ -3709,15 +6719,47 @@
 
         if (topbarContainer.hasClass('fixed')) {
           $('body').addClass('f-topbar-fixed');
+=======
+          self.S('.has-dropdown', topbar).addClass('not-click');
+        } else {
+          self.S('.has-dropdown', topbar).removeClass('not-click');
+        }
+
+        // Pad body when sticky (scrolled) or fixed.
+        self.add_custom_rule('.f-topbar-fixed { padding-top: ' + topbar.data('height') + 'px }');
+
+        if (topbarContainer.hasClass('fixed')) {
+          self.S('body').addClass('f-topbar-fixed');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         }
       });
 
     },
 
+<<<<<<< HEAD
+=======
+    is_sticky: function (topbar, topbarContainer, settings) {
+      var sticky = topbarContainer.hasClass(settings.sticky_class);
+
+      if (sticky && settings.sticky_on === 'all') {
+        return true;
+      } else if (sticky && this.small() && settings.sticky_on === 'small') {
+        return true;
+      } else if (sticky && this.medium() && settings.sticky_on === 'medium') {
+        return true;
+      } else if (sticky && this.large() && settings.sticky_on === 'large') {
+        return true;
+      }
+
+      return false;
+    },
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     toggle: function (toggleEl) {
       var self = this;
 
       if (toggleEl) {
+<<<<<<< HEAD
         var topbar = $(toggleEl).closest('[data-topbar]');
       } else {
         var topbar = $('[data-topbar]');
@@ -3726,6 +6768,16 @@
       var settings = topbar.data('topbar-init');
 
       var section = $('section, .section', topbar);
+=======
+        var topbar = self.S(toggleEl).closest('[' + this.attr_name() + ']');
+      } else {
+        var topbar = self.S('[' + this.attr_name() + ']');
+      }
+
+      var settings = topbar.data(this.attr_name(true) + '-init');
+
+      var section = self.S('section, .section', topbar);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       if (self.breakpoint()) {
         if (!self.rtl) {
@@ -3736,7 +6788,11 @@
           $('>.name', section).css({right: '100%'});
         }
 
+<<<<<<< HEAD
         $('li.moved', section).removeClass('moved');
+=======
+        self.S('li.moved', section).removeClass('moved');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         topbar.data('index', 0);
 
         topbar
@@ -3749,13 +6805,21 @@
           if (topbar.hasClass('fixed')) {
             topbar.parent().addClass('fixed');
             topbar.removeClass('fixed');
+<<<<<<< HEAD
             $('body').addClass('f-topbar-fixed');
+=======
+            self.S('body').addClass('f-topbar-fixed');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           }
         } else if (topbar.parent().hasClass('fixed')) {
           if (settings.scrolltop) {
             topbar.parent().removeClass('fixed');
             topbar.addClass('fixed');
+<<<<<<< HEAD
             $('body').removeClass('f-topbar-fixed');
+=======
+            self.S('body').removeClass('f-topbar-fixed');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
             window.scrollTo(0,0);
           } else {
@@ -3763,7 +6827,11 @@
           }
         }
       } else {
+<<<<<<< HEAD
         if(topbar.parent().hasClass(self.settings.sticky_class)) {
+=======
+        if(self.is_sticky(topbar, topbar.parent(), settings)) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           topbar.parent().addClass('fixed');
         }
 
@@ -3775,6 +6843,10 @@
           } else {
             topbar.addClass('fixed');
             topbar.parent().addClass('expanded');
+<<<<<<< HEAD
+=======
+            self.S('body').addClass('f-topbar-fixed');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           }
         }
       }
@@ -3783,6 +6855,7 @@
     timer : null,
 
     events : function (bar) {
+<<<<<<< HEAD
       var self = this;
       $(this.scope)
         .off('.topbar')
@@ -3795,6 +6868,29 @@
               target = $(e.target),
               topbar = li.closest('[data-topbar]'),
               settings = topbar.data('topbar-init');
+=======
+      var self = this,
+          S = this.S;
+
+      S(this.scope)
+        .off('.topbar')
+        .on('click.fndtn.topbar', '[' + this.attr_name() + '] .toggle-topbar', function (e) {
+          e.preventDefault();
+          self.toggle(this);
+        })
+        .on('click.fndtn.topbar','.top-bar .top-bar-section li a[href^="#"],[' + this.attr_name() + '] .top-bar-section li a[href^="#"]',function (e) {
+            var li = $(this).closest('li');
+            if(self.breakpoint() && !li.hasClass('back') && !li.hasClass('has-dropdown'))
+            {
+            self.toggle();
+            }
+        })
+        .on('click.fndtn.topbar', '[' + this.attr_name() + '] li.has-dropdown', function (e) {
+          var li = S(this),
+              target = S(e.target),
+              topbar = li.closest('[' + self.attr_name() + ']'),
+              settings = topbar.data(self.attr_name(true) + '-init');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
           if(target.data('revealId')) {
             self.toggle();
@@ -3822,13 +6918,22 @@
             }
           }
         })
+<<<<<<< HEAD
         .on('click.fndtn.topbar', '[data-topbar] .has-dropdown>a', function (e) {
+=======
+        .on('click.fndtn.topbar', '[' + this.attr_name() + '] .has-dropdown>a', function (e) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           if (self.breakpoint()) {
 
             e.preventDefault();
 
+<<<<<<< HEAD
             var $this = $(this),
                 topbar = $this.closest('[data-topbar]'),
+=======
+            var $this = S(this),
+                topbar = $this.closest('[' + self.attr_name() + ']'),
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
                 section = topbar.find('section, .section'),
                 dropdownHeight = $this.next('.dropdown').outerHeight(),
                 $selectedLi = $this.closest('li');
@@ -3848,17 +6953,27 @@
           }
         });
       
+<<<<<<< HEAD
       $(window).off('.topbar').on('resize.fndtn.topbar', self.throttle(function () {
         self.resize.call(self);
       }, 50)).trigger('resize');
 
       $('body').off('.topbar').on('click.fndtn.topbar touchstart.fndtn.topbar', function (e) {
         var parent = $(e.target).closest('li').closest('li.hover');
+=======
+      S(window).off('.topbar').on('resize.fndtn.topbar', self.throttle(function () {
+        self.resize.call(self);
+      }, 50)).trigger('resize');
+
+      S('body').off('.topbar').on('click.fndtn.topbar touchstart.fndtn.topbar', function (e) {
+        var parent = S(e.target).closest('li').closest('li.hover');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
         if (parent.length > 0) {
           return;
         }
 
+<<<<<<< HEAD
         $('[data-topbar] li').removeClass('hover');
       });
 
@@ -3870,6 +6985,19 @@
             topbar = $this.closest('[data-topbar]'),
             section = topbar.find('section, .section'),
             settings = topbar.data('topbar-init'),
+=======
+        S('[' + self.attr_name() + '] li').removeClass('hover');
+      });
+
+      // Go up a level on Click
+      S(this.scope).on('click.fndtn.topbar', '[' + this.attr_name() + '] .has-dropdown .back', function (e) {
+        e.preventDefault();
+
+        var $this = S(this),
+            topbar = $this.closest('[' + self.attr_name() + ']'),
+            section = topbar.find('section, .section'),
+            settings = topbar.data(self.attr_name(true) + '-init'),
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
             $movedLi = $this.closest('li.moved'),
             $previousLevelUl = $movedLi.parent();
 
@@ -3897,9 +7025,15 @@
 
     resize : function () {
       var self = this;
+<<<<<<< HEAD
       $('[data-topbar]').each(function () {
         var topbar = $(this),
             settings = topbar.data('topbar-init');
+=======
+      self.S('[' + this.attr_name() + ']').each(function () {
+        var topbar = self.S(this),
+            settings = topbar.data(self.attr_name(true) + '-init');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
         var stickyContainer = topbar.parent('.' + self.settings.sticky_class);
         var stickyOffset;
@@ -3917,13 +7051,21 @@
             }
         }
 
+<<<<<<< HEAD
         if(stickyContainer.length > 0) {
+=======
+        if(self.is_sticky(topbar, stickyContainer, settings)) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           if(stickyContainer.hasClass('fixed')) {
             // Remove the fixed to allow for correct calculation of the offset.
             stickyContainer.removeClass('fixed');
 
             stickyOffset = stickyContainer.offset().top;
+<<<<<<< HEAD
             if($(document.body).hasClass('f-topbar-fixed')) {
+=======
+            if(self.S(document.body).hasClass('f-topbar-fixed')) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
               stickyOffset -= topbar.data('height');
             }
 
@@ -3942,15 +7084,36 @@
       return !matchMedia(Foundation.media_queries['topbar']).matches;
     },
 
+<<<<<<< HEAD
     assemble : function (topbar) {
       var self = this,
           settings = topbar.data('topbar-init'),
           section = $('section', topbar),
           titlebar = $('> ul', topbar).first();
+=======
+    small : function () {
+      return matchMedia(Foundation.media_queries['small']).matches;
+    },
+
+    medium : function () {
+      return matchMedia(Foundation.media_queries['medium']).matches;
+    },
+
+    large : function () {
+      return matchMedia(Foundation.media_queries['large']).matches;
+    },
+
+    assemble : function (topbar) {
+      var self = this,
+          settings = topbar.data(this.attr_name(true) + '-init'),
+          section = self.S('section', topbar),
+          titlebar = $(this).children().filter('ul').first();
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       // Pull element out of the DOM for manipulation
       section.detach();
 
+<<<<<<< HEAD
       $('.has-dropdown>a', section).each(function () {
         var $link = $(this),
             $dropdown = $link.siblings('.dropdown'),
@@ -3969,6 +7132,28 @@
           $('h5>a', $titleLi).html('&laquo; ' + $link.html());
         }
         $dropdown.prepend($titleLi);
+=======
+      self.S('.has-dropdown>a', section).each(function () {
+        var $link = self.S(this),
+            $dropdown = $link.siblings('.dropdown'),
+            url = $link.attr('href');
+
+        if (!$dropdown.find('.title.back').length) {
+          if (settings.mobile_show_parent_link && url && url.length > 1) {
+            var $titleLi = $('<li class="title back js-generated"><h5><a href="javascript:void(0)"></a></h5></li><li><a class="parent-link js-generated" href="' + url + '">' + $link.text() +'</a></li>');
+          } else {
+            var $titleLi = $('<li class="title back js-generated"><h5><a href="javascript:void(0)"></a></h5></li>');
+          }
+  
+          // Copy link to subnav
+          if (settings.custom_back_text == true) {
+            $('h5>a', $titleLi).html(settings.back_text);
+          } else {
+            $('h5>a', $titleLi).html('&laquo; ' + $link.html());
+          }
+          $dropdown.prepend($titleLi);
+        }
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       });
 
       // Put element back in the DOM
@@ -3981,28 +7166,44 @@
     },
 
     assembled : function (topbar) {
+<<<<<<< HEAD
       topbar.data('topbar-init', $.extend({}, topbar.data('topbar-init'), {assembled: true}));
+=======
+      topbar.data(this.attr_name(true), $.extend({}, topbar.data(this.attr_name(true)), {assembled: true}));
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     },
 
     height : function (ul) {
       var total = 0,
           self = this;
 
+<<<<<<< HEAD
       $('> li', ul).each(function () { total += $(this).outerHeight(true); });
+=======
+      $('> li', ul).each(function () { total += self.S(this).outerHeight(true); });
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       return total;
     },
 
     sticky : function () {
+<<<<<<< HEAD
       var $window = $(window),
           self = this;
 
       $(window).on('scroll', function() {
+=======
+      var $window = this.S(window),
+          self = this;
+
+      this.S(window).on('scroll', function() {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         self.update_sticky_positioning();
       });
     },
 
     update_sticky_positioning: function() {
+<<<<<<< HEAD
       var klass = '.' + this.settings.sticky_class;
       var $window = $(window);
 
@@ -4018,6 +7219,24 @@
             if ($(klass).hasClass('fixed')) {
               $(klass).removeClass('fixed');
               $('body').removeClass('f-topbar-fixed');
+=======
+      var klass = '.' + this.settings.sticky_class,
+          $window = this.S(window), 
+          self = this;
+
+      if (self.settings.sticky_topbar && self.is_sticky(this.settings.sticky_topbar,this.settings.sticky_topbar.parent(), this.settings)) {
+        var distance = this.settings.sticky_topbar.data('stickyoffset');
+        if (!self.S(klass).hasClass('expanded')) {
+          if ($window.scrollTop() > (distance)) {
+            if (!self.S(klass).hasClass('fixed')) {
+              self.S(klass).addClass('fixed');
+              self.S('body').addClass('f-topbar-fixed');
+            }
+          } else if ($window.scrollTop() <= distance) {
+            if (self.S(klass).hasClass('fixed')) {
+              self.S(klass).removeClass('fixed');
+              self.S('body').removeClass('f-topbar-fixed');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
             }
           }
         }
@@ -4025,10 +7244,19 @@
     },
 
     off : function () {
+<<<<<<< HEAD
       $(this.scope).off('.fndtn.topbar');
       $(window).off('.fndtn.topbar');
+=======
+      this.S(this.scope).off('.fndtn.topbar');
+      this.S(window).off('.fndtn.topbar');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     },
 
     reflow : function () {}
   };
+<<<<<<< HEAD
 }(jQuery, this, this.document));
+=======
+}(jQuery, this, this.document));
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb

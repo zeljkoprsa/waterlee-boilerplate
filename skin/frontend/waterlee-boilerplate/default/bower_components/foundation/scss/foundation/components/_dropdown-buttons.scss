@@ -1,3 +1,10 @@
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_dropdown-buttons.scss
+=======
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_dropdown-buttons.scss
 @import "global";
 
 //
@@ -115,7 +122,11 @@ $dropdown-button-pip-top-lrg: -$button-pip-lrg / 2 + rem-calc(3) !default;
 
 @include exports("dropdown-button") {
   @if $include-html-button-classes {
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_dropdown-buttons.scss
     .dropdown.button { @include dropdown-button;
+=======
+    .dropdown.button, button.dropdown { @include dropdown-button;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_dropdown-buttons.scss
       &.tiny { @include dropdown-button(tiny,$base-style:false); }
       &.small { @include dropdown-button(small,$base-style:false); }
       &.large { @include dropdown-button(large,$base-style:false); }

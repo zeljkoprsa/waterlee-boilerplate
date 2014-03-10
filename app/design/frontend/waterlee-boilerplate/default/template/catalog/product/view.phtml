@@ -100,19 +100,23 @@
                     <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
                 <?php endif;?>
 
-                <div class="section-container auto product-collateral" data-section>
+                <dl class="tabs product-collateral" data-tab>
                     <?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
-                        <section>
-                            <p class="title" data-section-title>
-                                <a href="#<?php echo "{$alias}"?>"><?php echo "{$alias}"?></a>
-                            </p>
-                            <div class="box-collateral content <?php echo "box-{$alias}"?>" data-section-content>
-                                <?php if ($title = $this->getChildData($alias, 'title')):?>
-                                    <h2 class="panel-title"><?php echo $this->escapeHtml($title); ?></h2>
-                                <?php endif;?>
-                                <?php echo $html; ?>
-                            </div>
-                        </section>
+                            <dd class="title"><a href="#<?php echo "{$alias}"?>"><?php echo "{$alias}"?></a></dd>
+
+
+                    <?php endforeach;?>
+                </dl>
+                <div class="tabs-content <?php echo "box-{$alias}"?>">
+                    <?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
+                    <div class="content" id="<?php echo "{$alias}"?>">
+                        <p>
+                        <?php if ($title = $this->getChildData($alias, 'title')):?>
+                        <h2 class="panel-title"><?php echo $this->escapeHtml($title); ?></h2>
+                        <?php endif;?>
+                        <?php echo $html; ?>
+                        </p>
+                    </div>
                     <?php endforeach;?>
                 </div>
             </div>

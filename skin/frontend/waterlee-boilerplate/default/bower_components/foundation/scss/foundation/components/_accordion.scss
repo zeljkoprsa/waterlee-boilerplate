@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 @import "global";
 @import "grid";
 
@@ -9,8 +16,13 @@ $include-html-accordion-classes: $include-html-classes !default;
 
 $accordion-navigation-padding: rem-calc(16) !default;
 $accordion-navigation-bg-color: #efefef !default;
+<<<<<<< HEAD
 $accordion-navigation-hover-bg-color: darken($accordion-navigation-bg-color, 5%) !default;
 $accordion-navigation-active-bg-color: darken($accordion-navigation-bg-color, 3%) !default;
+=======
+$accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%) !default;
+$accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -3%) !default;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 $accordion-navigation-font-color: #222 !default;
 $accordion-navigation-font-size: rem-calc(16) !default;
 $accordion-navigation-font-family: $body-font-family !default;
@@ -20,6 +32,7 @@ $accordion-content-active-bg-color: #fff !default;
 
 @include exports("accordion") {
   @if $include-html-accordion-classes {
+<<<<<<< HEAD
     .accordion { 
       @include clearfix; margin-bottom: 0;
       dd { 
@@ -32,12 +45,31 @@ $accordion-content-active-bg-color: #fff !default;
           padding: $accordion-navigation-padding; 
           display: block; 
           font-family: $body-font-family; 
+=======
+    .accordion {
+      @include clearfix; margin-bottom: 0;
+      dd {
+        display: block;
+        margin-bottom: 0 !important;
+        &.active > a { background: $accordion-navigation-active-bg-color; }
+        > a {
+          background: $accordion-navigation-bg-color;
+          color: $accordion-navigation-font-color;
+          padding: $accordion-navigation-padding;
+          display: block;
+          font-family: $accordion-navigation-font-family;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
           font-size: $accordion-navigation-font-size;
           &:hover { background: $accordion-navigation-hover-bg-color; }
         }
       }
+<<<<<<< HEAD
       .content { 
         display: none; 
+=======
+      .content {
+        display: none;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
         padding: $accordion-content-padding;
         &.active {
           display: block;
@@ -46,4 +78,8 @@ $accordion-content-active-bg-color: #fff !default;
       }
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb

@@ -4,12 +4,16 @@
   Foundation.libs.clearing = {
     name : 'clearing',
 
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
     version: '5.0.0',
+=======
+    version: '5.2.0',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
 
     settings : {
       templates : {
         viewing : '<a href="#" class="clearing-close">&times;</a>' +
-          '<div class="visible-img" style="display: none"><img src="//:0">' +
+          '<div class="visible-img" style="display: none"><div class="clearing-touch-label"></div><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="" />' +
           '<p class="clearing-caption"></p><a href="#" class="clearing-main-prev"><span></span></a>' +
           '<a href="#" class="clearing-main-next"><span></span></a></div>'
       },
@@ -18,6 +22,8 @@
       // add 'div.clearing-blackout, div.visible-img' to close on background click
       close_selectors : '.clearing-close',
 
+      touch_label : '&larr;&nbsp;Swipe to Advance&nbsp;&rarr;',
+
       // event initializers and locks
       init : false,
       locked : false
@@ -25,6 +31,7 @@
 
     init : function (scope, method, options) {
       var self = this;
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
       Foundation.inherit(this, 'throttle loaded');
 
       this.bindings(method, options);
@@ -34,28 +41,61 @@
       } else {
         $('[data-clearing]', this.scope).each(function () {
           self.assemble($('li', this));
+=======
+      Foundation.inherit(this, 'throttle image_loaded');
+
+      this.bindings(method, options);
+
+      if (self.S(this.scope).is('[' + this.attr_name() + ']')) {
+        this.assemble(self.S('li', this.scope));
+      } else {
+        self.S('[' + this.attr_name() + ']', this.scope).each(function () {
+          self.assemble(self.S('li', this));
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
         });
       }
     },
 
     events : function (scope) {
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
       var self = this;
 
       $(this.scope)
         .off('.clearing')
         .on('click.fndtn.clearing', 'ul[data-clearing] li',
+=======
+      var self = this,
+      S = self.S;
+
+      if ($('.scroll-container').length > 0) {
+        this.scope = $('.scroll-container');
+      }
+
+      S(this.scope)
+        .off('.clearing')
+        .on('click.fndtn.clearing', 'ul[' + this.attr_name() + '] li',
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
           function (e, current, target) {
-            var current = current || $(this),
+            var current = current || S(this),
                 target = target || current,
                 next = current.next('li'),
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
                 settings = current.closest('[data-clearing]').data('clearing-init'),
                 image = $(e.target);
+=======
+                settings = current.closest('[' + self.attr_name() + ']').data(self.attr_name(true) + '-init'),
+                image = S(e.target);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
 
             e.preventDefault();
 
             if (!settings) {
               self.init();
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
               settings = current.closest('[data-clearing]').data('clearing-init');
+=======
+              settings = current.closest('[' + self.attr_name() + ']').data(self.attr_name(true) + '-init');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
             }
 
             // if clearing is open and the current image is
@@ -64,7 +104,11 @@
               current[0] === target[0] && 
               next.length > 0 && self.is_open(current)) {
               target = next;
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
               image = $('img', target);
+=======
+              image = S('img', target);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
             }
 
             // set current and target to the clicked li if not otherwise defined.
@@ -77,6 +121,7 @@
         .on('click.fndtn.clearing', '.clearing-main-prev',
           function (e) { self.nav(e, 'prev') })
         .on('click.fndtn.clearing', this.settings.close_selectors,
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
           function (e) { Foundation.libs.clearing.close(e, this) })
         .on('keydown.fndtn.clearing',
           function (e) { self.keydown(e) });
@@ -84,13 +129,28 @@
       $(window).off('.clearing').on('resize.fndtn.clearing',
         function () { self.resize() });
 
+=======
+          function (e) { Foundation.libs.clearing.close(e, this) });
+
+      $(document).on('keydown.fndtn.clearing',
+          function (e) { self.keydown(e) });
+
+      S(window).off('.clearing').on('resize.fndtn.clearing',
+        function () { self.resize() });
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
       this.swipe_events(scope);
     },
 
     swipe_events : function (scope) {
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
       var self = this;
+=======
+      var self = this,
+      S = self.S;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
 
-      $(this.scope)
+      S(this.scope)
         .on('touchstart.fndtn.clearing', '.visible-img', function(e) {
           if (!e.touches) { e = e.originalEvent; }
           var data = {
@@ -101,7 +161,7 @@
                 is_scrolling: undefined
               };
 
-          $(this).data('swipe-transition', data);
+          S(this).data('swipe-transition', data);
           e.stopPropagation();
         })
         .on('touchmove.fndtn.clearing', '.visible-img', function(e) {
@@ -109,7 +169,7 @@
           // Ignore pinch/zoom events
           if(e.touches.length > 1 || e.scale && e.scale !== 1) return;
 
-          var data = $(this).data('swipe-transition');
+          var data = S(this).data('swipe-transition');
 
           if (typeof data === 'undefined') {
             data = {};
@@ -129,7 +189,7 @@
           }
         })
         .on('touchend.fndtn.clearing', '.visible-img', function(e) {
-          $(this).data('swipe-transition', {});
+          S(this).data('swipe-transition', {});
           e.stopPropagation();
         });
     },
@@ -140,24 +200,79 @@
       if ($el.parent().hasClass('carousel')) return;
       $el.after('<div id="foundationClearingHolder"></div>');
 
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
       var holder = $('#foundationClearingHolder'),
           settings = $el.data('clearing-init'),
+=======
+      var holder = this.S('#foundationClearingHolder'),
+          settings = $el.data(this.attr_name(true) + '-init'),
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
           grid = $el.detach(),
           data = {
             grid: '<div class="carousel">' + grid[0].outerHTML + '</div>',
             viewing: settings.templates.viewing
           },
           wrapper = '<div class="clearing-assembled"><div>' + data.viewing +
-            data.grid + '</div></div>';
+            data.grid + '</div></div>',
+          touch_label = this.settings.touch_label;
 
-      return holder.after(wrapper).remove();
-    },
+      if (Modernizr.touch) {
+        wrapper = $(wrapper).find('.clearing-touch-label').html(touch_label).end();
+      }
 
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
     open : function ($image, current, target) {
       var root = target.closest('.clearing-assembled'),
           container = $('div', root).first(),
           visible_image = $('.visible-img', container),
           image = $('img', visible_image).not($image);
+=======
+      holder.after(wrapper).remove();
+    },
+
+    open : function ($image, current, target) {
+      var self = this,
+          body = $(document.body),
+          root = target.closest('.clearing-assembled'),
+          container = $('div', root).first(),
+          visible_image = $('.visible-img', container),
+          image = $('img', visible_image).not($image),
+          label = $('.clearing-touch-label', '.clearing-blackout'),
+          error = false;
+
+      image.error(function () {
+        error = true;
+      });
+
+      function startLoad() {
+        setTimeout(function () {
+          this.image_loaded(image, function () {
+            if (image.outerWidth() === 1 && !error) {
+              startLoad.call(this);
+            } else {
+              cb.call(this, image);
+            }
+          }.bind(this));
+        }.bind(this), 50);
+      }
+
+      function cb (image) {
+        var $image = $(image);
+        image.css('visibility', 'visible');
+        // toggle the gallery
+        body.css('overflow', 'hidden');
+        root.addClass('clearing-blackout');
+        container.addClass('clearing-container');
+        visible_image.show();
+        this.fix_height(target)
+          .caption(self.S('.clearing-caption', visible_image), $image)
+          .center_and_label(image, label)
+          .shift(current, target, function () {
+            target.siblings().removeClass('visible');
+            target.addClass('visible');
+          });
+      }
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
 
       if (!this.locked()) {
         // set the image to the selected thumbnail
@@ -165,6 +280,7 @@
           .attr('src', this.load($image))
           .css('visibility', 'hidden');
 
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
         this.loaded(image, function () {
           image.css('visibility', 'visible');
           // toggle the gallery
@@ -179,6 +295,10 @@
               target.addClass('visible');
             });
         }.bind(this));
+=======
+        startLoad.call(this);
+        
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
       }
     },
 
@@ -191,13 +311,22 @@
             } else {
               return target.closest('.clearing-blackout');
             }
-          }($(el))), container, visible_image;
+          }($(el))),
+          body = $(document.body), container, visible_image;
 
       if (el === e.target && root) {
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
         container = $('div', root).first();
         visible_image = $('.visible-img', container);
         this.settings.prev_index = 0;
         $('ul[data-clearing]', root)
+=======
+        body.css('overflow', '');
+        container = $('div', root).first();
+        visible_image = $('.visible-img', container);
+        this.settings.prev_index = 0;
+        $('ul[' + this.attr_name() + ']', root)
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
           .attr('style', '').closest('.clearing-blackout')
           .removeClass('clearing-blackout');
         container.removeClass('clearing-container');
@@ -212,6 +341,7 @@
     },
 
     keydown : function (e) {
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
       var clearing = $('ul[data-clearing]', '.clearing-blackout');
 
       if (e.which === 39) this.go(clearing, 'next');
@@ -221,16 +351,35 @@
 
     nav : function (e, direction) {
       var clearing = $('ul[data-clearing]', '.clearing-blackout');
+=======
+      var clearing = $('.clearing-blackout ul[' + this.attr_name() + ']'),
+          NEXT_KEY = this.rtl ? 37 : 39,
+          PREV_KEY = this.rtl ? 39 : 37,
+          ESC_KEY = 27;
+
+      if (e.which === NEXT_KEY) this.go(clearing, 'next');
+      if (e.which === PREV_KEY) this.go(clearing, 'prev');
+      if (e.which === ESC_KEY) this.S('a.clearing-close').trigger('click');
+    },
+
+    nav : function (e, direction) {
+      var clearing = $('ul[' + this.attr_name() + ']', '.clearing-blackout');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
 
       e.preventDefault();
       this.go(clearing, direction);
     },
 
     resize : function () {
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
       var image = $('img', '.clearing-blackout .visible-img');
+=======
+      var image = $('img', '.clearing-blackout .visible-img'),
+          label = $('.clearing-touch-label', '.clearing-blackout');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
 
       if (image.length) {
-        this.center(image);
+        this.center_and_label(image, label);
       }
     },
 
@@ -240,7 +389,7 @@
           self = this;
 
       lis.each(function () {
-          var li = $(this),
+          var li = self.S(this),
               image = li.find('img');
 
           if (li.height() > image.outerHeight()) {
@@ -259,33 +408,69 @@
         .siblings('.visible-img');
 
       if (target.next().length > 0) {
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
         $('.clearing-main-next', visible_image)
           .removeClass('disabled');
       } else {
         $('.clearing-main-next', visible_image)
+=======
+        this.S('.clearing-main-next', visible_image)
+          .removeClass('disabled');
+      } else {
+        this.S('.clearing-main-next', visible_image)
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
           .addClass('disabled');
       }
 
       if (target.prev().length > 0) {
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
         $('.clearing-main-prev', visible_image)
           .removeClass('disabled');
       } else {
         $('.clearing-main-prev', visible_image)
+=======
+        this.S('.clearing-main-prev', visible_image)
+          .removeClass('disabled');
+      } else {
+        this.S('.clearing-main-prev', visible_image)
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
           .addClass('disabled');
       }
     },
 
-    center : function (target) {
+    center_and_label : function (target, label) {
       if (!this.rtl) {
         target.css({
           marginLeft : -(target.outerWidth() / 2),
           marginTop : -(target.outerHeight() / 2)
         });
+
+        if (label.length > 0) {
+          label.css({
+            marginLeft : -(label.outerWidth() / 2),
+            marginTop : -(target.outerHeight() / 2)-label.outerHeight()-10
+          });
+        }
       } else {
         target.css({
           marginRight : -(target.outerWidth() / 2),
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
           marginTop : -(target.outerHeight() / 2)
+=======
+          marginTop : -(target.outerHeight() / 2),
+          left: 'auto',
+          right: '50%'
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
         });
+
+        if (label.length > 0) {
+          label.css({
+            marginRight : -(label.outerWidth() / 2),
+            marginTop : -(target.outerHeight() / 2)-label.outerHeight()-10,
+            left: 'auto',
+            right: '50%'
+          });
+        }
       }
       return this;
     },
@@ -314,12 +499,20 @@
     img : function (img) {
       if (img.length) {
         var new_img = new Image(),
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
             new_a = $('a', img);
+=======
+            new_a = this.S('a', img);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
 
         if (new_a.length) {
           new_img.src = new_a.attr('href');
         } else {
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
           new_img.src = $('img', img).attr('src');
+=======
+          new_img.src = this.S('img', img).attr('src');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
         }
       }
       return this;
@@ -345,11 +538,19 @@
     // directional methods
 
     go : function ($ul, direction) {
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
       var current = $('.visible', $ul),
           target = current[direction]();
 
       if (target.length) {
         $('img', target)
+=======
+      var current = this.S('.visible', $ul),
+          target = current[direction]();
+
+      if (target.length) {
+        this.S('img', target)
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
           .trigger('click', [current, target]);
       }
     },
@@ -358,19 +559,25 @@
       var clearing = target.parent(),
           old_index = this.settings.prev_index || target.index(),
           direction = this.direction(clearing, current, target),
+          dir = this.rtl ? 'right' : 'left',
           left = parseInt(clearing.css('left'), 10),
           width = target.outerWidth(),
           skip_shift;
 
+      var dir_obj = {};
+
       // we use jQuery animate instead of CSS transitions because we
       // need a callback to unlock the next animation
+      // needs support for RTL **
       if (target.index() !== old_index && !/skip/.test(direction)){
         if (/left/.test(direction)) {
           this.lock();
-          clearing.animate({left : left + width}, 300, this.unlock());
+          dir_obj[dir] = left + width;
+          clearing.animate(dir_obj, 300, this.unlock());
         } else if (/right/.test(direction)) {
           this.lock();
-          clearing.animate({left : left - width}, 300, this.unlock());
+          dir_obj[dir] = left - width;
+          clearing.animate(dir_obj, 300, this.unlock());
         }
       } else if (/skip/.test(direction)) {
         // the target image is not adjacent to the current image, so
@@ -379,9 +586,11 @@
         this.lock();
 
         if (skip_shift > 0) {
-          clearing.animate({left : -(skip_shift * width)}, 300, this.unlock());
+          dir_obj[dir] = -(skip_shift * width);
+          clearing.animate(dir_obj, 300, this.unlock());
         } else {
-          clearing.animate({left : 0}, 300, this.unlock());
+          dir_obj[dir] = 0;
+          clearing.animate(dir_obj, 300, this.unlock());
         }
       }
 
@@ -389,9 +598,15 @@
     },
 
     direction : function ($el, current, target) {
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
       var lis = $('li', $el),
           li_width = lis.outerWidth() + (lis.outerWidth() / 4),
           up_count = Math.floor($('.clearing-container').outerWidth() / li_width) - 1,
+=======
+      var lis = this.S('li', $el),
+          li_width = lis.outerWidth() + (lis.outerWidth() / 4),
+          up_count = Math.floor(this.S('.clearing-container').outerWidth() / li_width) - 1,
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
           target_index = lis.index(target),
           response;
 
@@ -438,8 +653,13 @@
     },
 
     off : function () {
+<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
       $(this.scope).off('.fndtn.clearing');
       $(window).off('.fndtn.clearing');
+=======
+      this.S(this.scope).off('.fndtn.clearing');
+      this.S(window).off('.fndtn.clearing');
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.clearing.js
     },
 
     reflow : function () {

@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 @import "global";
 @import "buttons";
 
@@ -13,17 +20,32 @@ $form-spacing: rem-calc(16) !default;
 $form-label-pointer: pointer !default;
 $form-label-font-size: rem-calc(14) !default;
 $form-label-font-weight: normal !default;
+<<<<<<< HEAD
 $form-label-font-color: lighten(#000, 30%) !default;
 $form-label-bottom-margin: rem-calc(8) !default;
+=======
+$form-label-line-height: 1.5 !default;
+$form-label-font-color: scale-color(#000, $lightness: 30%) !default;
+$form-label-bottom-margin: 0 !default;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 $input-font-family: inherit !default;
 $input-font-color: rgba(0,0,0,0.75) !default;
 $input-font-size: rem-calc(14) !default;
 $input-bg-color: #fff !default;
+<<<<<<< HEAD
 $input-focus-bg-color: darken(#fff, 2%) !default;
 $input-border-color: darken(#fff, 20%) !default;
 $input-focus-border-color: darken(#fff, 40%) !default;
 $input-border-style: solid !default;
 $input-border-width: 1px !default;
+=======
+$input-focus-bg-color: scale-color(#fff, $lightness: -2%) !default;
+$input-border-color: scale-color(#fff, $lightness: -20%) !default;
+$input-focus-border-color: scale-color(#fff, $lightness: -40%) !default;
+$input-border-style: solid !default;
+$input-border-width: 1px !default;
+$input-border-radius: $global-radius !default;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 $input-disabled-bg: #ddd !default;
 $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1) !default;
 $input-include-glowing-effect: true !default;
@@ -41,8 +63,13 @@ $legend-font-weight: bold !default;
 $legend-padding: rem-calc(0 3) !default;
 
 // We use these to style the prefix and postfix input elements
+<<<<<<< HEAD
 $input-prefix-bg: darken(#fff, 5%) !default;
 $input-prefix-border-color: darken(#fff, 20%) !default;
+=======
+$input-prefix-bg: scale-color(#fff, $lightness: -5%) !default;
+$input-prefix-border-color: scale-color(#fff, $lightness: -20%) !default;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 $input-prefix-border-size: 1px !default;
 $input-prefix-border-type: solid !default;
 $input-prefix-overflow: hidden !default;
@@ -51,7 +78,11 @@ $input-prefix-font-color-alt: #fff !default;
 
 // We use these to style the error states for inputs and labels
 $input-error-message-padding: rem-calc(6 9 9) !default;
+<<<<<<< HEAD
 $input-error-message-top: -1px;
+=======
+$input-error-message-top: -1px !default;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 $input-error-message-font-size: rem-calc(12) !default;
 $input-error-message-font-weight: normal !default;
 $input-error-message-font-style: italic !default;
@@ -63,8 +94,13 @@ $glowing-effect-fade-time: 0.45s !default;
 $glowing-effect-color: $input-focus-border-color !default;
 
 // Select variables
+<<<<<<< HEAD
 $select-bg-color: #fafafa;
 
+=======
+$select-bg-color: #fafafa !default;
+$select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%) !default;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 //
 // @MIXINS
@@ -127,7 +163,11 @@ $select-bg-color: #fafafa;
   }
 
   // Disabled background input background color
+<<<<<<< HEAD
   &[disabled] { background-color: $input-disabled-bg; }
+=======
+  &[disabled], fieldset[disabled] & { background-color: $input-disabled-bg; }
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 }
 
 // @MIXIN
@@ -145,6 +185,10 @@ $select-bg-color: #fafafa;
     cursor: $form-label-pointer;
     display: block;
     font-weight: $form-label-font-weight;
+<<<<<<< HEAD
+=======
+    line-height: $form-label-line-height;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     margin-bottom: $form-label-bottom-margin;
   }
 
@@ -179,15 +223,25 @@ $select-bg-color: #fafafa;
 // @MIXIN
 //
 // We use this mixin to create prefix label styles
+<<<<<<< HEAD
 // $bg - Default:$input-prefix-bg || darken(#fff, 5%) !default;
 // $is-button - Toggle position settings if prefix is a button. Default:false
 //
 @mixin prefix($bg:$input-prefix-bg,$is-button:false) {
+=======
+// $bg - Default:$input-prefix-bg || scale-color(#fff, $lightness: -5%) !default;
+// $is-button - Toggle position settings if prefix is a button. Default:false
+//
+@mixin prefix($bg:$input-prefix-bg, $border:$input-prefix-border-color, $is-button:false) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
   @if $bg {
     $bg-lightness: lightness($bg);
     background: $bg;
+<<<<<<< HEAD
     border-color: darken($bg, 10%);
+=======
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     border-#{$opposite-direction}: none;
 
     // Control the font color based on background brightness
@@ -195,6 +249,13 @@ $select-bg-color: #fafafa;
     @else { color: $input-prefix-font-color-alt; }
   }
 
+<<<<<<< HEAD
+=======
+  @if $border {
+    border-color: $border;
+  }
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
   @if $is-button {
     padding-#{$default-float}: 0;
     padding-#{$opposite-direction}: 0;
@@ -210,14 +271,23 @@ $select-bg-color: #fafafa;
 // @MIXIN
 //
 // We use this mixin to create postfix label styles
+<<<<<<< HEAD
 // $bg - Default:$input-prefix-bg || darken(#fff, 5%) !default;
 // $is-button - Toggle position settings if prefix is a button. Default: false
 @mixin postfix($bg:$input-prefix-bg, $is-button:false) {
+=======
+// $bg - Default:$input-prefix-bg || scale-color(#fff, $lightness: -5%) !default;
+// $is-button - Toggle position settings if prefix is a button. Default: false
+@mixin postfix($bg:$input-prefix-bg, $border:$input-prefix-border-color, $is-button:false) {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
   @if $bg {
     $bg-lightness: lightness($bg);
     background: $bg;
+<<<<<<< HEAD
     border-color: darken($bg, 15%);
+=======
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     border-#{$default-float}: none;
 
     // Control the font color based on background brightness
@@ -225,6 +295,13 @@ $select-bg-color: #fafafa;
     @else { color: $input-prefix-font-color-alt; }
   }
 
+<<<<<<< HEAD
+=======
+  @if $border {
+    border-color: $border;
+  }
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
   @if $is-button {
     padding-#{$default-float}: 0;
     padding-#{$opposite-direction}: 0;
@@ -239,7 +316,11 @@ $select-bg-color: #fafafa;
 
 // We use this mixin to style fieldsets
 @mixin fieldset {
+<<<<<<< HEAD
   border: $fieldset-border-style $fieldset-border-width $fieldset-border-color;
+=======
+  border: $fieldset-border-width $fieldset-border-style $fieldset-border-color;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
   padding: $fieldset-padding;
   margin: $fieldset-margin;
 
@@ -309,23 +390,35 @@ $select-bg-color: #fafafa;
       /* Styles for required inputs */
       small {
         text-transform: capitalize;
+<<<<<<< HEAD
         color: lighten($form-label-font-color, 10%);
+=======
+        color: scale-color($form-label-font-color, $lightness: 15%);
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
     }
 
     select {
       -webkit-appearance: none !important;
+<<<<<<< HEAD
       background: 
         $select-bg-color 
         url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==') no-repeat;
       background-position-x: 97%;
       background-position-y: center;
+=======
+      background-color: $select-bg-color;
+      background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
+      background-repeat: no-repeat;
+      background-position: center $opposite-direction 3%;
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       border: $input-border-width $input-border-style $input-border-color;
       padding: $form-spacing / 2;
       font-size: $input-font-size;
       @include radius(0);
       &.radius { @include radius($global-radius); }
       &:hover {
+<<<<<<< HEAD
         background: 
           darken($select-bg-color, 3%) 
           url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==') no-repeat;
@@ -337,12 +430,27 @@ $select-bg-color: #fafafa;
     @-moz-document url-prefix() {
       select { background: $select-bg-color; }
       select:hover { background: darken($select-bg-color, 3%); }
+=======
+        background-color: $select-hover-bg-color;
+        border-color: $input-focus-border-color;
+      }
+    }
+
+    select::-ms-expand {
+      display:none;
+    }
+
+    @-moz-document url-prefix() {
+      select { background: $select-bg-color; }
+      select:hover { background: $select-hover-bg-color }
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     }
     /* Attach elements to the beginning or end of an input */
     .prefix,
     .postfix { @include prefix-postfix-base; }
 
     /* Adjust padding, alignment and radius if pre/post element is a button */
+<<<<<<< HEAD
     .postfix.button { @include button-size(false,false,false); @include postfix(false,true); }
     .prefix.button { @include button-size(false,false,false); @include prefix(false,true); }
 
@@ -377,6 +485,22 @@ $select-bg-color: #fafafa;
           @include side-radius($opposite-direction, $button-round);
         }
       }
+=======
+    .postfix.button { @include button-size(false,false,false); @include postfix(false, false, true); }
+    .prefix.button { @include button-size(false,false,false); @include prefix(false, false, true); }
+
+    .prefix.button.radius { @include radius(0); @include side-radius($default-float, $button-radius); }
+    .postfix.button.radius { @include radius(0); @include side-radius($opposite-direction, $button-radius); }
+    .prefix.button.round { @include radius(0); @include side-radius($default-float, $button-round); }
+    .postfix.button.round { @include radius(0); @include side-radius($opposite-direction, $button-round); }
+
+    /* Separate prefix and postfix styles when on span or label so buttons keep their own */
+    span.prefix,label.prefix { @include prefix();
+      &.radius { @include radius(0); @include side-radius($default-float, $global-radius); }
+    }
+    span.postfix,label.postfix { @include postfix();
+      &.radius { @include radius(0); @include side-radius($opposite-direction, $global-radius); }
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     }
 
     /* We use this to get basic styling on all basic form elements */
@@ -395,12 +519,31 @@ $select-bg-color: #fafafa;
     input[type="url"],
     textarea {
       -webkit-appearance: none;
+<<<<<<< HEAD
       -webkit-border-radius: 0;
       border-radius: 0;
+=======
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       @include form-element;
       @if not $input-include-glowing-effect {
           @include single-transition(all, 0.15s, linear);
       }
+<<<<<<< HEAD
+=======
+      &.radius {
+        @include radius($input-border-radius);
+      }
+    }
+    
+    /* Respect enforced amount of rows for textarea */
+    textarea[rows] {
+      height: auto;
+    }
+
+    /* Add height value for select elements to match text input height */
+    select {
+      height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1));
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     }
 
     /* Adjust margin for form elements below */
@@ -432,15 +575,27 @@ $select-bg-color: #fafafa;
 
     /* Error Handling */
 
+<<<<<<< HEAD
     [data-abide] {
+=======
+    #{data('abide')} {
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       .error small.error, span.error, small.error {
         @include form-error-message;
       }
       span.error, small.error { display: none; }
     }
+<<<<<<< HEAD
     span.error, small.error {
       @include form-error-message;
     }
+=======
+
+    span.error, small.error {
+      @include form-error-message;
+    }
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     .error {
       input,
       textarea,
@@ -448,16 +603,43 @@ $select-bg-color: #fafafa;
         margin-bottom: 0;
       }
 
+<<<<<<< HEAD
+=======
+      input[type="checkbox"],
+      input[type="radio"] {
+        margin-bottom: $form-spacing
+      }
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       label,
       label.error {
         @include form-label-error-color;
       }
 
+<<<<<<< HEAD
       > small,
+=======
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       small.error {
         @include form-error-message;
       }
 
+<<<<<<< HEAD
+=======
+      > label {
+        > small {
+          color: scale-color($form-label-font-color, $lightness: 15%);
+          background: transparent;
+          padding: 0;
+          text-transform: capitalize;
+          font-style: normal;
+          font-size: 60%;
+          margin: 0;
+          display: inline;
+        }
+      }
+
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       span.error-message {
         display: block;
       }

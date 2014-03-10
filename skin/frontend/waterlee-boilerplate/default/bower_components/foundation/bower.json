@@ -1,5 +1,6 @@
 {
   "name": "foundation",
+<<<<<<< HEAD
   "version": "5.0.2",
   "main": ["css/foundation.css", "js/foundation.js"],
   "dependencies": {
@@ -8,3 +9,23 @@
   },
   "private": true
 }
+=======
+  "version": "5.2.0",
+  "main": [
+    "css/foundation.css",
+    "js/foundation.js"
+  ],
+  "dependencies": {
+    "jquery": ">= 2.1.0",
+    "modernizr": ">= 2.6.2",
+    "fastclick": "~0.6.11",
+    "jquery.cookie": "~1.4.0",
+    "jquery-placeholder": "~2.0.7"
+  },
+  "devDependencies": {
+    "jquery.autocomplete": "devbridge/jQuery-Autocomplete#1.2.7",
+    "lodash": "~2.4.1"
+  },
+  "private": true
+}
+>>>>>>> f21deea668bf64db73b5475062723accee28dfbb
