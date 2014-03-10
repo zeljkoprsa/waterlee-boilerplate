@@ -55,30 +55,32 @@
             <action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
             <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>
 
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/jquery-1.8.1.min.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/jquery.stellar.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/jquery-ui-1.9.2.custom.js</name><params/></action>-->
+            <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/vendor/modernizr.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/vendor/jquery.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.js</name><params/></action> 
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/vendor/fastclick.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/vendor/jquery.cookie.js</name><params/></action>-->            
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/vendor/placeholder.js</name><params/></action>-->
 
-            <action method="addItem"><type>skin_js</type><name>bower_components/modernizr/modernizr.js</name><params/></action>
-            <action method="addItem"><type>skin_js</type><name>bower_components/jquery/dist/jquery.min.js</name><params/></action>
-            <action method="addItem"><type>skin_js</type><name>bower_components/fastclick/lib/fastclick.js</name><params/></action>
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.alerts.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.clearing.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.cookie.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.dropdown.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.forms.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.joyride.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.magellan.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.orbit.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.placeholder.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.reveal.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.section.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.tooltips.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/foundation.topbar.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.abide.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.accordion.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.alert.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.clearing.js</name><params/></action>-->            
+            <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.dropdown.js</name><params/></action>
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.equalizer.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.interchange.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.joyride.js</name><params/></action>-->                       
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.magellan.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.offcanvas.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.orbit.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.reveal.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.slider.js</name><params/></action>-->
+            <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.tab.js</name><params/></action>
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.tooltip.js</name><params/></action>-->
+            <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.topbar.js</name><params/></action>
 
-            <!--<action method="addItem"><type>skin_js</type><name>js/responsiveslides.min.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/foundation/app.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>js/jquery.hoverIntent.minified.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>js/app.js</name><params/></action>-->
+           
 
 
         </reference>
