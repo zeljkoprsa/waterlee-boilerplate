@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "PROJECT_NAME",
-  "dependencies": {
-    "foundation": "~5.0.2"
-  }
-}
-=======
   "name": "foundation-compass-app",
   "version": "0.0.1",
   "private": "true",
@@ -13,4 +6,3 @@
     "foundation": "zurb/bower-foundation"
   }
 }
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
