@@ -1,0 +1,22 @@
+.site-language ul,
+.site-language li,
+.site-language p{
+  margin-bottom: 0;padding-bottom: 0;
+}
+.super-header form, .super-header .top-bar{
+  margin: 0;
+}
+.super-header select{
+  margin-bottom: 0;
+}
+.switchers{
+  padding-bottom: 0.5em;
+}
+.site-mini-cart {
+  background: url("../images/cart.png") no-repeat scroll 0 0;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  text-indent: -9999px;
+  float: left;
+}

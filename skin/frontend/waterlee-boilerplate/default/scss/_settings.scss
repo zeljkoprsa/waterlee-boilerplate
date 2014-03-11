@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-// 
-// FOUNDATION SETTINGS
-//
-
-// Uncomment to use rem-calc() in your settings
-// @import "foundation/functions";
-
-// $experimental: true;
-
-// The default font-size is set to 100% of the browser style sheet (usually 16px)
-// for compatibility with brower-based text zoom or user-set defaults.
-=======
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
@@ -29,7 +16,6 @@
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 // If you want your base font-size to be different and not have it affect the grid breakpoints,
@@ -39,19 +25,6 @@
 // The $base-line-height is 100% while $base-font-size is 150%
 // $base-line-height: 150%;
 
-<<<<<<< HEAD
-// This is the default html and body font-size for the base rem value.
-// $rem-base: 16px;
-
-// We use this to control whether or not CSS classes come through in the gem files.
-// $include-html-classes: true;
-// $include-print-styles: true;
-// $include-html-global-classes: $include-html-classes;
-
-// Grid
-
-// $include-html-grid-classes: $include-html-classes;
-=======
 // We use this to control whether or not CSS classes come through in the gem files.
 // $include-html-classes: true;
 // $include-print-styles: true;
@@ -61,7 +34,6 @@
 
 // $include-html-grid-classes: $include-html-classes;
 // $include-xl-html-grid-classes: false;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // $row-width: rem-calc(1000);
 // $column-gutter: rem-calc(30);
@@ -138,8 +110,6 @@
 // $cursor-help-value: help;
 // $cursor-text-value: text;
 
-<<<<<<< HEAD
-=======
 //
 // TYPOGRAPHY
 //
@@ -246,20 +216,14 @@
 // $microformat-abbr-font-weight: bold;
 // $microformat-abbr-font-decoration: none;
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // Accordion
 
 // $include-html-accordion-classes: $include-html-classes;
 
 // $accordion-navigation-padding: rem-calc(16);
 // $accordion-navigation-bg-color: #efefef  ;
-<<<<<<< HEAD
-// $accordion-navigation-hover-bg-color: darken($accordion-navigation-bg-color, 5%);
-// $accordion-navigation-active-bg-color: darken($accordion-navigation-bg-color, 3%);
-=======
 // $accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
 // $accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -3%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $accordion-navigation-font-color: #222;
 // $accordion-navigation-font-size: rem-calc(16);
 // $accordion-navigation-font-family: $body-font-family;
@@ -284,20 +248,12 @@
 // $alert-font-color-alt: scale-color($secondary-color, $lightness: -66%);
 
 // We use this for close hover effect.
-<<<<<<< HEAD
-// $alert-function-factor: 5%;
-=======
 // $alert-function-factor: -14%;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // We use these to control border styles.
 // $alert-border-style: solid;
 // $alert-border-width: 1px;
-<<<<<<< HEAD
-// $alert-border-color: darken($primary-color, $alert-function-factor);
-=======
 // $alert-border-color: scale-color($primary-color, $lightness: $alert-function-factor);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $alert-bottom-margin: rem-calc(20);
 
 // We use these to style the close buttons
@@ -319,19 +275,6 @@
 // We use this to control the maximum number of block grid elements per row
 // $block-grid-elements: 12;
 // $block-grid-default-spacing: rem-calc(20);
-<<<<<<< HEAD
-
-// Enables media queries for block-grid classes. Set to false if writing semantic HTML.
-// $block-grid-media-queries: true;
-
-// Breadcrumbs
-
-// $include-html-nav-classes: $include-html-classes;
-
-// We use this to set the background color for the breadcrumb container.
-// $crumb-bg: lighten($secondary-color, 5%);
-
-=======
 $column-gutter: rem-calc(30);
 // Enables media queries for block-grid classes. Set to false if writing semantic HTML.
 // $block-grid-media-queries: true;
@@ -343,17 +286,12 @@ $column-gutter: rem-calc(30);
 // We use this to set the background color for the breadcrumb container.
 // $crumb-bg: scale-color($secondary-color, $lightness: 55%);
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // We use these to set the padding around the breadcrumbs.
 // $crumb-padding: rem-calc(9 14 9);
 // $crumb-side-padding: rem-calc(12);
 
 // We use these to control border styles.
-<<<<<<< HEAD
-// $crumb-function-factor: 10%;
-=======
 // $crumb-function-factor: -10%;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $crumb-border-size: 1px;
 // $crumb-border-style: solid;
 // $crumb-border-color: scale-color($crumb-bg, $lightness: $crumb-function-factor);
@@ -370,49 +308,6 @@ $column-gutter: rem-calc(30);
 // We use these to control the slash between breadcrumbs
 // $crumb-slash-color: #aaa;
 // $crumb-slash: "/";
-<<<<<<< HEAD
-
-// Button Groups
-
-// $include-html-button-classes: $include-html-classes;
-
-// Sets the margin for the right side by default, and the left margin if right-to-left direction is used
-// $button-bar-margin-opposite: rem-calc(10);
-// $button-group-border-width: 1px;
-
-// Clearing
-
-// $include-html-clearing-classes: $include-html-classes;
-
-// We use these to set the background colors for parts of Clearing.
-// $clearing-bg: #333;
-// $clearing-caption-bg: $clearing-bg;
-// $clearing-carousel-bg: rgba (51,51,51,0.8);
-// $clearing-img-bg: $clearing-bg;
-
-// We use these to style the close button
-// $clearing-close-color: #ccc;
-// $clearing-close-size: 30px;
-
-// We use these to style the arrows
-// $clearing-arrow-size: 12px;
-// $clearing-arrow-color: $clearing-close-color;
-
-// We use these to style captions
-// $clearing-caption-font-color: #ccc;
-// $clearing-caption-font-size: 0.875em;
-// $clearing-caption-padding: 10px 30px 20px;
-
-// We use these to make the image and carousel height and style
-// $clearing-active-img-height: 85%;
-// $clearing-carousel-height: 120px;
-// $clearing-carousel-thumb-width: 120px;
-// $clearing-carousel-thumb-active-border: 1px solid rgb(255,255,255);
-
-// Dropdown
-
-// $include-html-button-classes: $include-html-classes;
-=======
 
 //
 // BUTTONS
@@ -495,7 +390,6 @@ $column-gutter: rem-calc(30);
 // Dropdown
 
 // $include-html-dropdown-classes: $include-html-classes;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // We use these to controls height and width styles.
 // $f-dropdown-max-width: 200px;
@@ -509,11 +403,7 @@ $column-gutter: rem-calc(30);
 // We use this to set the border styles for dropdowns.
 // $f-dropdown-border-style: solid;
 // $f-dropdown-border-width: 1px;
-<<<<<<< HEAD
-// $f-dropdown-border-color: darken(#fff, 20%);
-=======
 // $f-dropdown-border-color: scale-color(#fff, $lightness: -20%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // We use these to style the triangle pip.
 // $f-dropdown-triangle-size: 6px;
@@ -535,7 +425,6 @@ $column-gutter: rem-calc(30);
 // Dropdown Buttons
 
 // $include-html-button-classes: $include-html-classes;
-<<<<<<< HEAD
 
 // We use these to set the color of the pip in dropdown buttons
 // $dropdown-button-pip-color: #fff;
@@ -574,46 +463,6 @@ $column-gutter: rem-calc(30);
 
 // $include-html-media-classes: $include-html-classes;
 
-=======
-
-// We use these to set the color of the pip in dropdown buttons
-// $dropdown-button-pip-color: #fff;
-// $dropdown-button-pip-color-alt: #333;
-
-// $button-pip-tny: rem-calc(6);
-// $button-pip-sml: rem-calc(7);
-// $button-pip-med: rem-calc(9);
-// $button-pip-lrg: rem-calc(11);
-
-// We use these to style tiny dropdown buttons
-// $dropdown-button-padding-tny: $button-pip-tny * 7;
-// $dropdown-button-pip-size-tny: $button-pip-tny;
-// $dropdown-button-pip-opposite-tny: $button-pip-tny * 3;
-// $dropdown-button-pip-top-tny: -$button-pip-tny / 2 + rem-calc(1);
-
-// We use these to style small dropdown buttons
-// $dropdown-button-padding-sml: $button-pip-sml * 7;
-// $dropdown-button-pip-size-sml: $button-pip-sml;
-// $dropdown-button-pip-opposite-sml: $button-pip-sml * 3;
-// $dropdown-button-pip-top-sml: -$button-pip-sml / 2 + rem-calc(1);
-
-// We use these to style medium dropdown buttons
-// $dropdown-button-padding-med: $button-pip-med * 6 + rem-calc(3);
-// $dropdown-button-pip-size-med: $button-pip-med - rem-calc(3);
-// $dropdown-button-pip-opposite-med: $button-pip-med * 2.5;
-// $dropdown-button-pip-top-med: -$button-pip-med / 2 + rem-calc(2);
-
-// We use these to style large dropdown buttons
-// $dropdown-button-padding-lrg: $button-pip-lrg * 5 + rem-calc(3);
-// $dropdown-button-pip-size-lrg: $button-pip-lrg - rem-calc(6);
-// $dropdown-button-pip-opposite-lrg: $button-pip-lrg * 2.5;
-// $dropdown-button-pip-top-lrg: -$button-pip-lrg / 2 + rem-calc(3);
-
-// Flex Video
-
-// $include-html-media-classes: $include-html-classes;
-
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // We use these to control video container padding and margins
 // $flex-video-padding-top: rem-calc(25);
 // $flex-video-padding-bottom: 67.5%;
@@ -633,32 +482,19 @@ $column-gutter: rem-calc(30);
 // $form-label-pointer: pointer;
 // $form-label-font-size: rem-calc(14);
 // $form-label-font-weight: normal;
-<<<<<<< HEAD
-// $form-label-font-color: lighten(#000, 30%);
-// $form-label-bottom-margin: rem-calc(8);
-=======
 // $form-label-line-height: 1.5;
 // $form-label-font-color: scale-color(#000, $lightness: 30%);
 // $form-label-bottom-margin: 0;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: rem-calc(14);
 // $input-bg-color: #fff;
-<<<<<<< HEAD
-// $input-focus-bg-color: darken(#fff, 2%);
-// $input-border-color: darken(#fff, 20%);
-// $input-focus-border-color: darken(#fff, 40%);
-// $input-border-style: solid;
-// $input-border-width: 1px;
-=======
 // $input-focus-bg-color: scale-color(#fff, $lightness: -2%);
 // $input-border-color: scale-color(#fff, $lightness: -20%);
 // $input-focus-border-color: scale-color(#fff, $lightness: -40%);
 // $input-border-style: solid;
 // $input-border-width: 1px;
 // $input-border-radius: $global-radius;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $input-disabled-bg: #ddd;
 // $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 // $input-include-glowing-effect: true;
@@ -676,36 +512,13 @@ $column-gutter: rem-calc(30);
 // $legend-padding: rem-calc(0 3);
 
 // We use these to style the prefix and postfix input elements
-<<<<<<< HEAD
-// $input-prefix-bg: darken(#fff, 5%);
-// $input-prefix-border-color: darken(#fff, 20%);
-=======
 // $input-prefix-bg: scale-color(#fff, $lightness: -5%);
 // $input-prefix-border-color: scale-color(#fff, $lightness: -20%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $input-prefix-border-size: 1px;
 // $input-prefix-border-type: solid;
 // $input-prefix-overflow: hidden;
 // $input-prefix-font-color: #333;
 // $input-prefix-font-color-alt: #fff;
-<<<<<<< HEAD
-
-// We use these to style the error states for inputs and labels
-// $input-error-message-padding: rem-calc(6 9 9);
-// $input-error-message-top: -1px;
-// $input-error-message-font-size: rem-calc(12);
-// $input-error-message-font-weight: normal;
-// $input-error-message-font-style: italic;
-// $input-error-message-font-color: #fff;
-// $input-error-message-font-color-alt: #333;
-
-// We use this to style the glowing effect of inputs when focused
-// $glowing-effect-fade-time: 0.45s;
-// $glowing-effect-color: $input-focus-border-color;
-
-// Select variables
-// $select-bg-color: #fafafa  ;
-=======
 
 // We use these to style the error states for inputs and labels
 // $input-error-message-padding: rem-calc(6 9 9);
@@ -722,12 +535,10 @@ $column-gutter: rem-calc(30);
 
 // Select variables
 // $select-bg-color: #fafafa;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // Inline Lists
 
 // $include-html-inline-list-classes: $include-html-classes;
-<<<<<<< HEAD
 
 // We use this to control the margins and padding of the inline list.
 // $inline-list-top-margin: 0;
@@ -740,20 +551,6 @@ $column-gutter: rem-calc(30);
 // We use this to control the overflow of the inline list.
 // $inline-list-overflow: hidden;
 
-=======
-
-// We use this to control the margins and padding of the inline list.
-// $inline-list-top-margin: 0;
-// $inline-list-opposite-margin: 0;
-// $inline-list-bottom-margin: rem-calc(17);
-// $inline-list-default-float-margin: rem-calc(-22);
-
-// $inline-list-padding: 0;
-
-// We use this to control the overflow of the inline list.
-// $inline-list-overflow: hidden;
-
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // We use this to control the list items
 // $inline-list-display: block;
 
@@ -808,11 +605,7 @@ $column-gutter: rem-calc(30);
 // $keystroke-padding: rem-calc(2 4 0);
 
 // We use these to control background and border styles.
-<<<<<<< HEAD
-// $keystroke-bg: darken(#fff, $keystroke-function-factor);
-=======
 // $keystroke-bg: scale-color(#fff, $lightness: $keystroke-function-factor);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $keystroke-border-style: solid;
 // $keystroke-border-width: 1px;
 // $keystroke-border-color: scale-color($keystroke-bg, $lightness: $keystroke-function-factor);
@@ -849,13 +642,8 @@ $column-gutter: rem-calc(30);
 // $tabbar-middle-padding: 0 rem-calc(10);
 
 // Off Canvas Divider Styles
-<<<<<<< HEAD
-// $tabbar-right-section-border: solid 1px lighten($tabbar-bg, 10%);
-// $tabbar-left-section-border: solid 1px darken($tabbar-bg, 10%);
-=======
 // $tabbar-right-section-border: solid 1px scale-color($tabbar-bg, $lightness: 13%);
 // $tabbar-left-section-border: solid 1px scale-color($tabbar-bg, $lightness: -50%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // Off Canvas Tab Bar Headers
 // $tabbar-header-color: #FFF;
@@ -873,28 +661,16 @@ $column-gutter: rem-calc(30);
 // $off-canvas-label-text-transform: uppercase;
 // $off-canvas-label-font-weight: bold;
 // $off-canvas-label-bg: #444;
-<<<<<<< HEAD
-// $off-canvas-label-border-top: 1px solid lighten(#444, 10%);
-=======
 // $off-canvas-label-border-top: 1px solid scale-color(#444, $lightness: 14%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $off-canvas-label-border-bottom: none;
 // $off-canvas-label-margin:0;
 // $off-canvas-link-padding: rem-calc(10, 15);
 // $off-canvas-link-color: rgba(#FFF, 0.7);
-<<<<<<< HEAD
-// $off-canvas-link-border-bottom: 1px solid darken($off-canvas-bg, 5%);
-
-// Off Canvas Menu Icon Variables
-// $tabbar-menu-icon-color: #FFF;
-// $tabbar-menu-icon-hover: darken($tabbar-menu-icon-color, 30%);
-=======
 // $off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
 
 // Off Canvas Menu Icon Variables
 // $tabbar-menu-icon-color: #FFF;
 // $tabbar-menu-icon-hover: scale-color($tabbar-menu-icon-color, $lightness: -30%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // $tabbar-menu-icon-text-indent: rem-calc(35);
 // $tabbar-menu-icon-width: $tabbar-height;
@@ -913,11 +689,7 @@ $column-gutter: rem-calc(30);
 // $off-canvas-overlay-background: rgba(#FFF, 0.2);
 // $off-canvas-overlay-background-hover: rgba(#FFF, 0.05);
 
-<<<<<<< HEAD
-// Transition Variabls
-=======
 // Transition Variables
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $menu-slide: "transform 500ms ease";
 
 // Orbit
@@ -930,11 +702,7 @@ $column-gutter: rem-calc(30);
 // $orbit-caption-font-color: #fff;
 // $orbit-caption-font-size: rem-calc(14);
 // $orbit-caption-position: "bottom"; // Supported values: "bottom", "under"
-<<<<<<< HEAD
-// $orbit-caption-padding: rem-calc(10,14);
-=======
 // $orbit-caption-padding: rem-calc(10 14);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $orbit-caption-height: auto;
 
 // We use these to control the left/right nav styles
@@ -960,15 +728,9 @@ $column-gutter: rem-calc(30);
 // Graceful Loading Wrapper and preloader
 // $wrapper-class: "slideshow-wrapper";
 // $preloader-class: "preloader";
-<<<<<<< HEAD
 
 // Pagination
 
-=======
-
-// Pagination
-
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $include-html-nav-classes: $include-html-classes;
 
 // We use these to control the pagination container
@@ -1004,22 +766,13 @@ $column-gutter: rem-calc(30);
 // $include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-<<<<<<< HEAD
-// $panel-bg: darken(#fff, 5%);
-=======
 // $panel-bg: scale-color(#fff, $lightness: -5%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 
 // We use this % to control how much we darken things on hover
-<<<<<<< HEAD
-// $panel-function-factor: 10%;
-// $panel-border-color: darken($panel-bg, $panel-function-factor);
-=======
 // $panel-function-factor: -11%;
 // $panel-border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // We use these to set default inner padding and bottom margin
 // $panel-margin-bottom: rem-calc(20);
@@ -1093,11 +846,7 @@ $column-gutter: rem-calc(30);
 // $progress-bar-color: #f6f6f6  ;
 
 // We use these to control the border styles
-<<<<<<< HEAD
-// $progress-bar-border-color: darken(#fff, 20%);
-=======
 // $progress-bar-border-color: scale-color(#fff, $lightness: -20%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $progress-bar-border-size: 1px;
 // $progress-bar-border-style: solid;
 // $progress-bar-border-radius: $global-radius;
@@ -1156,32 +905,21 @@ $column-gutter: rem-calc(30);
 
 // We use these to control link styles.
 // $side-nav-link-color: $primary-color;
-<<<<<<< HEAD
-// $side-nav-link-color-active: lighten(#000, 30%);
-=======
 // $side-nav-link-color-active: scale-color($side-nav-link-color, $lightness: 30%);
 // $side-nav-link-color-hover: scale-color($side-nav-link-color, $lightness: 30%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $side-nav-font-size: rem-calc(14);
 // $side-nav-font-weight: normal;
 // $side-nav-font-family: $body-font-family;
 // $side-nav-active-font-family: $side-nav-font-family;
-<<<<<<< HEAD
 
 
 
-=======
-
-
-
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // We use these to control border styles
 // $side-nav-divider-size: 1px;
 // $side-nav-divider-style: solid;
 // $side-nav-divider-color: scale-color(#fff, $lightness: -10%);
 
 // Split Buttons
-<<<<<<< HEAD
 
 // $include-html-button-classes: $include-html-classes;
 
@@ -1227,53 +965,6 @@ $column-gutter: rem-calc(30);
 // $sub-nav-list-margin: rem-calc(-4 0 18);
 // $sub-nav-list-padding-top: rem-calc(4);
 
-=======
-
-// $include-html-button-classes: $include-html-classes;
-
-// We use these to control different shared styles for Split Buttons
-// $split-button-function-factor: 10%;
-// $split-button-pip-color: #fff;
-// $split-button-pip-color-alt: #333;
-// $split-button-active-bg-tint: rgba(0,0,0,0.1);
-
-// We use these to control tiny split buttons
-// $split-button-padding-tny: $button-pip-tny * 10;
-// $split-button-span-width-tny: $button-pip-tny * 6;
-// $split-button-pip-size-tny: $button-pip-tny;
-// $split-button-pip-top-tny: $button-pip-tny * 2;
-// $split-button-pip-default-float-tny: rem-calc(-6);
-
-// We use these to control small split buttons
-// $split-button-padding-sml: $button-pip-sml * 10;
-// $split-button-span-width-sml: $button-pip-sml * 6;
-// $split-button-pip-size-sml: $button-pip-sml;
-// $split-button-pip-top-sml: $button-pip-sml * 1.5;
-// $split-button-pip-default-float-sml: rem-calc(-6);
-
-// We use these to control medium split buttons
-// $split-button-padding-med: $button-pip-med * 9;
-// $split-button-span-width-med: $button-pip-med * 5.5;
-// $split-button-pip-size-med: $button-pip-med - rem-calc(3);
-// $split-button-pip-top-med: $button-pip-med * 1.5;
-// $split-button-pip-default-float-med: rem-calc(-6);
-
-// We use these to control large split buttons
-// $split-button-padding-lrg: $button-pip-lrg * 8;
-// $split-button-span-width-lrg: $button-pip-lrg * 5;
-// $split-button-pip-size-lrg: $button-pip-lrg - rem-calc(6);
-// $split-button-pip-top-lrg: $button-pip-lrg + rem-calc(5);
-// $split-button-pip-default-float-lrg: rem-calc(-6);
-
-// Sub Nav
-
-// $include-html-nav-classes: $include-html-classes;
-
-// We use these to control margin and padding
-// $sub-nav-list-margin: rem-calc(-4 0 18);
-// $sub-nav-list-padding-top: rem-calc(4);
-
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // We use this to control the definition
 // $sub-nav-font-family: $body-font-family;
 // $sub-nav-font-size: rem-calc(14);
@@ -1281,29 +972,13 @@ $column-gutter: rem-calc(30);
 // $sub-nav-font-weight: normal;
 // $sub-nav-text-decoration: none;
 // $sub-nav-border-radius: 3px;
-<<<<<<< HEAD
-// $sub-nav-font-color-hover: darken($sub-nav-font-color, 15%);
-=======
 // $sub-nav-font-color-hover: scale-color($sub-nav-font-color, $lightness: -25%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 
 // We use these to control the active item styles
 
 // $sub-nav-active-font-weight: normal;
 // $sub-nav-active-bg: $primary-color;
-<<<<<<< HEAD
-// $sub-nav-active-bg-hover: darken($sub-nav-active-bg, 5%);
-// $sub-nav-active-color: #fff;
-// $sub-nav-active-padding: rem-calc(3 16);
-// $sub-nav-active-cursor: default;
-
-// $sub-nav-item-divider: "";
-// $sub-nav-item-divider-margin: rem-calc(12);
-
-// Tables
-
-=======
 // $sub-nav-active-bg-hover: scale-color($sub-nav-active-bg, $lightness: -14%);
 // $sub-nav-active-color: #fff;
 // $sub-nav-active-padding: rem-calc(3 16);
@@ -1354,7 +1029,6 @@ $column-gutter: rem-calc(30);
 
 // Tables
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $include-html-table-classes: $include-html-classes;
 
 // These control the background color for the table and even rows
@@ -1382,33 +1056,6 @@ $column-gutter: rem-calc(30);
 // These are for controlling the display and margin of tables
 // $table-display: table-cell;
 // $table-margin-bottom: rem-calc(20);
-<<<<<<< HEAD
-
-//
-// TABS
-//
-
-// $include-html-tabs-classes: $include-html-classes;
-
-// $tabs-navigation-padding: rem-calc(16);
-// $tabs-navigation-bg-color: #efefef  ;
-// $tabs-navigation-hover-bg-color: darken($tabs-navigation-bg-color, 5%);
-// $tabs-navigation-font-color: #222;
-// $tabs-navigation-font-size: rem-calc(16);
-// $tabs-navigation-font-family: $body-font-family;
-
-// $tabs-content-margin-bottom: rem-calc(24);
-// $tabs-content-padding: $column-gutter/2;
-
-// $tabs-vertical-navigation-margin-bottom: 1.25rem;
-
-//
-// THUMBNAILS
-//
-
-// $include-html-media-classes: $include-html-classes;
-
-=======
 
 //
 // TABS
@@ -1435,7 +1082,6 @@ $column-gutter: rem-calc(30);
 
 // $include-html-media-classes: $include-html-classes;
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // We use these to control border styles
 // $thumb-border-style: solid;
 // $thumb-border-width: 4px;
@@ -1488,11 +1134,6 @@ $column-gutter: rem-calc(30);
 // $topbar-height: 45px;
 // $topbar-margin-bottom: 0;
 
-<<<<<<< HEAD
-// Control Input height for top bar
-
-=======
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: normal;
 // $topbar-title-font-size: rem-calc(17);
@@ -1501,10 +1142,7 @@ $column-gutter: rem-calc(30);
 // $topbar-dropdown-bg: #333;
 // $topbar-dropdown-link-color: #fff;
 // $topbar-dropdown-link-bg: #333;
-<<<<<<< HEAD
-=======
 // $topbar-dropdown-link-weight: normal;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
 // $topbar-dropdown-toggle-alpha: 0.4;
@@ -1513,17 +1151,6 @@ $column-gutter: rem-calc(30);
 // $topbar-link-color: #fff;
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
-<<<<<<< HEAD
-// $topbar-link-weight: normal;
-// $topbar-link-font-size: rem-calc(13);
-// $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg-hover: #272727  ;
-// $topbar-link-bg-active: $primary-color;
-// $topbar-link-bg-active-hover: darken($primary-color, 5%);
-// $topbar-link-font-family: $body-font-family;
-
-// $topbar-button-font-size: 0.75rem;
-=======
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
@@ -1537,7 +1164,6 @@ $column-gutter: rem-calc(30);
 
 // $topbar-button-font-size: 0.75rem;
 // $topbar-button-top: 7px;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // $topbar-dropdown-label-color: #777;
 // $topbar-dropdown-label-text-transform: uppercase;
@@ -1561,19 +1187,12 @@ $column-gutter: rem-calc(30);
 // $topbar-media-query: "only screen and (min-width: #{upper-bound($medium-range)})";
 
 // Divider Styles
-<<<<<<< HEAD
-// $topbar-divider-border-bottom: solid 1px lighten($topbar-bg-color, 10%);
-// $topbar-divider-border-top: solid 1px darken($topbar-bg-color, 10%);
-=======
 // $topbar-divider-border-bottom: solid 1px  scale-color($topbar-bg-color, $lightness: 13%);
 // $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // Sticky Class
 // $topbar-sticky-class: ".sticky";
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
-<<<<<<< HEAD
-=======
 
 //
 // VISIBILITY CLASSES
@@ -1585,4 +1204,3 @@ $column-gutter: rem-calc(30);
 $mainWidth: 80%;
 $complementaryWidth: 20%;
 $section-border-color: #ccc;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb

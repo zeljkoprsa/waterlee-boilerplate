@@ -1,0 +1,71 @@
+.messages,
+.messages ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.messages {
+  width:100%;
+  overflow:hidden;
+}
+.messages li {
+  margin:0 0 10px;
+}
+.messages li li {
+  margin:0 0 3px;
+}
+.error-msg,
+.success-msg,
+.note-msg,
+.notice-msg {
+  border-style:solid;
+  border-width:1px;
+  padding:4px 12px;
+  font-size:11px;
+  font-weight:bold;
+}
+.error-msg {
+  border-color:#f16048;
+  background-color:#faebe7;
+  color:#df280a;
+}
+.success-msg {
+  border-color:#446423;
+  background-color:#eff5ea;
+  color:#3d6611;
+}
+.note-msg,
+.notice-msg {
+  border-color:#fcd344;
+  background-color:#fafaec;
+  color:#3d6611;
+}
+.success {
+  color:#3d6611;
+  font-weight:bold;
+}
+.error {
+  color:#df280a;
+  font-weight:bold;
+}
+.notice {
+  color:#e26703;
+}
+
+#inchoo_global_messages{
+  position: relative;
+  padding: 0.3em;
+}
+#inchoo_global_messages_close{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: #FFF;
+  padding: 0em 0.3em 0.2em 0.3em;
+}
+#inchoo_global_messages .messages ul{
+  list-style-type: none;
+}
+#inchoo_global_messages .messages ul > li{
+  padding: 0.5em;
+}

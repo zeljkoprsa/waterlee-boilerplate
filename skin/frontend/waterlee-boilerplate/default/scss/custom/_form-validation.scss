@@ -1,0 +1,25 @@
+/* Form Validation */
+.validation-advice {
+  clear: both;
+  min-height: 13px;
+  margin: 3px 0 0;
+  padding-left: 9px;
+  font-size: 11px;
+  line-height: 13px;
+  background: rgba(255, 0, 0, 0.04);
+  color: #EB340A;
+  margin: -15px 0 10px 0;
+  padding: 1em;
+  border: 1px solid #EB340A;
+}
+.validation-failed {
+  border:1px solid #eb340a !important;
+  background:#faebe7 !important;
+}
+.validation-passed {}
+p.required {
+  font-size:11px; text-align:right; color:#EB340A;
+}
+/* Expiration date and CVV number validation fix */
+.v-fix { float:left; }
+.v-fix .validation-advice { display:block; width:12em; margin-right:-12em; position:relative; }

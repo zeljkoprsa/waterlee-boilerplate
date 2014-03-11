@@ -1,0 +1,34 @@
+.product-shop .product-name{
+  font-weight: 300;
+
+}
+
+.product-shop .email-friend, .product-shop .no-rating{
+  margin-bottom: 0;
+}
+
+.product-shop .input-text.qty{
+  width: 2em;
+  display: inline;
+}
+
+.product-shop .add-to-cart .inline-list li{
+  line-height: 3;
+}
+
+.product-shop .price-box{
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+
+.product-shop .short-description{
+  margin-bottom: 1em;
+}
+
+.product-shop .short-description h2{
+  font-weight: 300;
+}
+.product-shop .std{
+  /* @todo: Candidate for refactoring: global-css-rule; */
+  line-height: $paragraph-line-height;
+}
