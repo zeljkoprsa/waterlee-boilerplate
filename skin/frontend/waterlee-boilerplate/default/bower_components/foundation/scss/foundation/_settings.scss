@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-// 
-// FOUNDATION SETTINGS
-//
-
-// Uncomment to use rem-calc() in your settings
-// @import "foundation/functions";
-=======
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
@@ -19,16 +11,11 @@
 
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // $experimental: true;
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
-<<<<<<< HEAD
-// for compatibility with brower-based text zoom or user-set defaults.
-=======
 // for compatibility with browser-based text zoom or user-set defaults.
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 // If you want your base font-size to be different and not have it affect the grid breakpoints,
@@ -38,12 +25,6 @@
 // The $base-line-height is 100% while $base-font-size is 150%
 // $base-line-height: 150%;
 
-<<<<<<< HEAD
-// This is the default html and body font-size for the base rem value.
-// $rem-base: 16px;
-
-=======
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // We use this to control whether or not CSS classes come through in the gem files.
 // $include-html-classes: true;
 // $include-print-styles: true;
@@ -52,10 +33,7 @@
 // Grid
 
 // $include-html-grid-classes: $include-html-classes;
-<<<<<<< HEAD
-=======
 // $include-xl-html-grid-classes: false;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // $row-width: rem-calc(1000);
 // $column-gutter: rem-calc(30);
@@ -132,8 +110,6 @@
 // $cursor-help-value: help;
 // $cursor-text-value: text;
 
-<<<<<<< HEAD
-=======
 //
 // TYPOGRAPHY
 //
@@ -240,20 +216,14 @@
 // $microformat-abbr-font-weight: bold;
 // $microformat-abbr-font-decoration: none;
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // Accordion
 
 // $include-html-accordion-classes: $include-html-classes;
 
 // $accordion-navigation-padding: rem-calc(16);
 // $accordion-navigation-bg-color: #efefef  ;
-<<<<<<< HEAD
-// $accordion-navigation-hover-bg-color: darken($accordion-navigation-bg-color, 5%);
-// $accordion-navigation-active-bg-color: darken($accordion-navigation-bg-color, 3%);
-=======
 // $accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
 // $accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -3%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $accordion-navigation-font-color: #222;
 // $accordion-navigation-font-size: rem-calc(16);
 // $accordion-navigation-font-family: $body-font-family;
@@ -275,26 +245,15 @@
 // $alert-font-weight: normal;
 // $alert-font-size: rem-calc(13);
 // $alert-font-color: #fff;
-<<<<<<< HEAD
-// $alert-font-color-alt: darken($secondary-color, 60%);
-
-// We use this for close hover effect.
-// $alert-function-factor: 5%;
-=======
 // $alert-font-color-alt: scale-color($secondary-color, $lightness: -66%);
 
 // We use this for close hover effect.
 // $alert-function-factor: -14%;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // We use these to control border styles.
 // $alert-border-style: solid;
 // $alert-border-width: 1px;
-<<<<<<< HEAD
-// $alert-border-color: darken($primary-color, $alert-function-factor);
-=======
 // $alert-border-color: scale-color($primary-color, $lightness: $alert-function-factor);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $alert-bottom-margin: rem-calc(20);
 
 // We use these to style the close buttons
@@ -325,28 +284,17 @@
 // $include-html-nav-classes: $include-html-classes;
 
 // We use this to set the background color for the breadcrumb container.
-<<<<<<< HEAD
-// $crumb-bg: lighten($secondary-color, 5%);
-=======
 // $crumb-bg: scale-color($secondary-color, $lightness: 55%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // We use these to set the padding around the breadcrumbs.
 // $crumb-padding: rem-calc(9 14 9);
 // $crumb-side-padding: rem-calc(12);
 
 // We use these to control border styles.
-<<<<<<< HEAD
-// $crumb-function-factor: 10%;
-// $crumb-border-size: 1px;
-// $crumb-border-style: solid;
-// $crumb-border-color: darken($crumb-bg, $crumb-function-factor);
-=======
 // $crumb-function-factor: -10%;
 // $crumb-border-size: 1px;
 // $crumb-border-style: solid;
 // $crumb-border-color: scale-color($crumb-bg, $lightness: $crumb-function-factor);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $crumb-radius: $global-radius;
 
 // We use these to set various text styles for breadcrumbs.
@@ -361,8 +309,6 @@
 // $crumb-slash-color: #aaa;
 // $crumb-slash: "/";
 
-<<<<<<< HEAD
-=======
 //
 // BUTTONS
 //
@@ -404,7 +350,6 @@
 // We use this to set default opacity for disabled buttons.
 // $button-disabled-opacity: 0.7;
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // Button Groups
 
 // $include-html-button-classes: $include-html-classes;
@@ -444,11 +389,7 @@
 
 // Dropdown
 
-<<<<<<< HEAD
-// $include-html-button-classes: $include-html-classes;
-=======
 // $include-html-dropdown-classes: $include-html-classes;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // We use these to controls height and width styles.
 // $f-dropdown-max-width: 200px;
@@ -462,11 +403,7 @@
 // We use this to set the border styles for dropdowns.
 // $f-dropdown-border-style: solid;
 // $f-dropdown-border-width: 1px;
-<<<<<<< HEAD
-// $f-dropdown-border-color: darken(#fff, 20%);
-=======
 // $f-dropdown-border-color: scale-color(#fff, $lightness: -20%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // We use these to style the triangle pip.
 // $f-dropdown-triangle-size: 6px;
@@ -545,32 +482,19 @@
 // $form-label-pointer: pointer;
 // $form-label-font-size: rem-calc(14);
 // $form-label-font-weight: normal;
-<<<<<<< HEAD
-// $form-label-font-color: lighten(#000, 30%);
-// $form-label-bottom-margin: rem-calc(8);
-=======
 // $form-label-line-height: 1.5;
 // $form-label-font-color: scale-color(#000, $lightness: 30%);
 // $form-label-bottom-margin: 0;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: rem-calc(14);
 // $input-bg-color: #fff;
-<<<<<<< HEAD
-// $input-focus-bg-color: darken(#fff, 2%);
-// $input-border-color: darken(#fff, 20%);
-// $input-focus-border-color: darken(#fff, 40%);
-// $input-border-style: solid;
-// $input-border-width: 1px;
-=======
 // $input-focus-bg-color: scale-color(#fff, $lightness: -2%);
 // $input-border-color: scale-color(#fff, $lightness: -20%);
 // $input-focus-border-color: scale-color(#fff, $lightness: -40%);
 // $input-border-style: solid;
 // $input-border-width: 1px;
 // $input-border-radius: $global-radius;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $input-disabled-bg: #ddd;
 // $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 // $input-include-glowing-effect: true;
@@ -588,13 +512,8 @@
 // $legend-padding: rem-calc(0 3);
 
 // We use these to style the prefix and postfix input elements
-<<<<<<< HEAD
-// $input-prefix-bg: darken(#fff, 5%);
-// $input-prefix-border-color: darken(#fff, 20%);
-=======
 // $input-prefix-bg: scale-color(#fff, $lightness: -5%);
 // $input-prefix-border-color: scale-color(#fff, $lightness: -20%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $input-prefix-border-size: 1px;
 // $input-prefix-border-type: solid;
 // $input-prefix-overflow: hidden;
@@ -615,11 +534,7 @@
 // $glowing-effect-color: $input-focus-border-color;
 
 // Select variables
-<<<<<<< HEAD
-// $select-bg-color: #fafafa  ;
-=======
 // $select-bg-color: #fafafa;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // Inline Lists
 
@@ -684,27 +599,16 @@
 // $keystroke-font-size: rem-calc(14);
 // $keystroke-font-color: #222;
 // $keystroke-font-color-alt: #fff;
-<<<<<<< HEAD
-// $keystroke-function-factor: 7%;
-=======
 // $keystroke-function-factor: -7%;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // We use this to control keystroke padding.
 // $keystroke-padding: rem-calc(2 4 0);
 
 // We use these to control background and border styles.
-<<<<<<< HEAD
-// $keystroke-bg: darken(#fff, $keystroke-function-factor);
-// $keystroke-border-style: solid;
-// $keystroke-border-width: 1px;
-// $keystroke-border-color: darken($keystroke-bg, $keystroke-function-factor);
-=======
 // $keystroke-bg: scale-color(#fff, $lightness: $keystroke-function-factor);
 // $keystroke-border-style: solid;
 // $keystroke-border-width: 1px;
 // $keystroke-border-color: scale-color($keystroke-bg, $lightness: $keystroke-function-factor);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $keystroke-radius: $global-radius;
 
 // Labels
@@ -738,13 +642,8 @@
 // $tabbar-middle-padding: 0 rem-calc(10);
 
 // Off Canvas Divider Styles
-<<<<<<< HEAD
-// $tabbar-right-section-border: solid 1px lighten($tabbar-bg, 10%);
-// $tabbar-left-section-border: solid 1px darken($tabbar-bg, 10%);
-=======
 // $tabbar-right-section-border: solid 1px scale-color($tabbar-bg, $lightness: 13%);
 // $tabbar-left-section-border: solid 1px scale-color($tabbar-bg, $lightness: -50%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // Off Canvas Tab Bar Headers
 // $tabbar-header-color: #FFF;
@@ -762,28 +661,16 @@
 // $off-canvas-label-text-transform: uppercase;
 // $off-canvas-label-font-weight: bold;
 // $off-canvas-label-bg: #444;
-<<<<<<< HEAD
-// $off-canvas-label-border-top: 1px solid lighten(#444, 10%);
-=======
 // $off-canvas-label-border-top: 1px solid scale-color(#444, $lightness: 14%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $off-canvas-label-border-bottom: none;
 // $off-canvas-label-margin:0;
 // $off-canvas-link-padding: rem-calc(10, 15);
 // $off-canvas-link-color: rgba(#FFF, 0.7);
-<<<<<<< HEAD
-// $off-canvas-link-border-bottom: 1px solid darken($off-canvas-bg, 5%);
-
-// Off Canvas Menu Icon Variables
-// $tabbar-menu-icon-color: #FFF;
-// $tabbar-menu-icon-hover: darken($tabbar-menu-icon-color, 30%);
-=======
 // $off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
 
 // Off Canvas Menu Icon Variables
 // $tabbar-menu-icon-color: #FFF;
 // $tabbar-menu-icon-hover: scale-color($tabbar-menu-icon-color, $lightness: -30%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // $tabbar-menu-icon-text-indent: rem-calc(35);
 // $tabbar-menu-icon-width: $tabbar-height;
@@ -802,11 +689,7 @@
 // $off-canvas-overlay-background: rgba(#FFF, 0.2);
 // $off-canvas-overlay-background-hover: rgba(#FFF, 0.05);
 
-<<<<<<< HEAD
-// Transition Variabls
-=======
 // Transition Variables
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $menu-slide: "transform 500ms ease";
 
 // Orbit
@@ -819,11 +702,7 @@
 // $orbit-caption-font-color: #fff;
 // $orbit-caption-font-size: rem-calc(14);
 // $orbit-caption-position: "bottom"; // Supported values: "bottom", "under"
-<<<<<<< HEAD
-// $orbit-caption-padding: rem-calc(10,14);
-=======
 // $orbit-caption-padding: rem-calc(10 14);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $orbit-caption-height: auto;
 
 // We use these to control the left/right nav styles
@@ -868,11 +747,7 @@
 // We use these for the pagination anchor links
 // $pagination-link-pad: rem-calc(1 10 1);
 // $pagination-link-font-color: #999;
-<<<<<<< HEAD
-// $pagination-link-active-bg: darken(#fff, 10%);
-=======
 // $pagination-link-active-bg: scale-color(#fff, $lightness: -10%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // We use these for disabled anchor links
 // $pagination-link-unavailable-cursor: default;
@@ -891,22 +766,13 @@
 // $include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-<<<<<<< HEAD
-// $panel-bg: darken(#fff, 5%);
-=======
 // $panel-bg: scale-color(#fff, $lightness: -5%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 
 // We use this % to control how much we darken things on hover
-<<<<<<< HEAD
-// $panel-function-factor: 10%;
-// $panel-border-color: darken($panel-bg, $panel-function-factor);
-=======
 // $panel-function-factor: -11%;
 // $panel-border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // We use these to set default inner padding and bottom margin
 // $panel-margin-bottom: rem-calc(20);
@@ -980,11 +846,7 @@
 // $progress-bar-color: #f6f6f6  ;
 
 // We use these to control the border styles
-<<<<<<< HEAD
-// $progress-bar-border-color: darken(#fff, 20%);
-=======
 // $progress-bar-border-color: scale-color(#fff, $lightness: -20%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $progress-bar-border-size: 1px;
 // $progress-bar-border-style: solid;
 // $progress-bar-border-radius: $global-radius;
@@ -1043,12 +905,8 @@
 
 // We use these to control link styles.
 // $side-nav-link-color: $primary-color;
-<<<<<<< HEAD
-// $side-nav-link-color-active: lighten(#000, 30%);
-=======
 // $side-nav-link-color-active: scale-color($side-nav-link-color, $lightness: 30%);
 // $side-nav-link-color-hover: scale-color($side-nav-link-color, $lightness: 30%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $side-nav-font-size: rem-calc(14);
 // $side-nav-font-weight: normal;
 // $side-nav-font-family: $body-font-family;
@@ -1059,11 +917,7 @@
 // We use these to control border styles
 // $side-nav-divider-size: 1px;
 // $side-nav-divider-style: solid;
-<<<<<<< HEAD
-// $side-nav-divider-color: darken(#fff, 10%);
-=======
 // $side-nav-divider-color: scale-color(#fff, $lightness: -10%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // Split Buttons
 
@@ -1118,22 +972,14 @@
 // $sub-nav-font-weight: normal;
 // $sub-nav-text-decoration: none;
 // $sub-nav-border-radius: 3px;
-<<<<<<< HEAD
-// $sub-nav-font-color-hover: darken($sub-nav-font-color, 15%);
-=======
 // $sub-nav-font-color-hover: scale-color($sub-nav-font-color, $lightness: -25%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 
 // We use these to control the active item styles
 
 // $sub-nav-active-font-weight: normal;
 // $sub-nav-active-bg: $primary-color;
-<<<<<<< HEAD
-// $sub-nav-active-bg-hover: darken($sub-nav-active-bg, 5%);
-=======
 // $sub-nav-active-bg-hover: scale-color($sub-nav-active-bg, $lightness: -14%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $sub-nav-active-color: #fff;
 // $sub-nav-active-padding: rem-calc(3 16);
 // $sub-nav-active-cursor: default;
@@ -1141,8 +987,6 @@
 // $sub-nav-item-divider: "";
 // $sub-nav-item-divider-margin: rem-calc(12);
 
-<<<<<<< HEAD
-=======
 //
 // SWITCH
 //
@@ -1183,7 +1027,6 @@
 // Outline Style for tabbing through switches
 // $switch-label-outline: 1px dotted #888;
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // Tables
 
 // $include-html-table-classes: $include-html-classes;
@@ -1222,12 +1065,8 @@
 
 // $tabs-navigation-padding: rem-calc(16);
 // $tabs-navigation-bg-color: #efefef  ;
-<<<<<<< HEAD
-// $tabs-navigation-hover-bg-color: darken($tabs-navigation-bg-color, 5%);
-=======
 // $tabs-navigation-active-bg-color: #fff;
 // $tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: -6%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $tabs-navigation-font-color: #222;
 // $tabs-navigation-font-size: rem-calc(16);
 // $tabs-navigation-font-family: $body-font-family;
@@ -1263,11 +1102,7 @@
 // $has-tip-border-bottom: dotted 1px #ccc;
 // $has-tip-font-weight: bold;
 // $has-tip-font-color: #333;
-<<<<<<< HEAD
-// $has-tip-border-bottom-hover: dotted 1px darken($primary-color, 20%);
-=======
 // $has-tip-border-bottom-hover: dotted 1px scale-color($primary-color, $lightness: -55%);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $has-tip-font-color-hover: $primary-color;
 // $has-tip-cursor-type: help;
 
@@ -1282,10 +1117,7 @@
 // $tooltip-close-font-color: #777;
 // $tooltip-font-size-sml: rem-calc(14);
 // $tooltip-radius: $global-radius;
-<<<<<<< HEAD
-=======
 // $tooltip-rounded: $global-rounded;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $tooltip-pip-size: 5px;
 
 //
@@ -1302,11 +1134,6 @@
 // $topbar-height: 45px;
 // $topbar-margin-bottom: 0;
 
-<<<<<<< HEAD
-// Control Input height for top bar
-
-=======
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: normal;
 // $topbar-title-font-size: rem-calc(17);
@@ -1315,10 +1142,7 @@
 // $topbar-dropdown-bg: #333;
 // $topbar-dropdown-link-color: #fff;
 // $topbar-dropdown-link-bg: #333;
-<<<<<<< HEAD
-=======
 // $topbar-dropdown-link-weight: normal;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
 // $topbar-dropdown-toggle-alpha: 0.4;
@@ -1327,17 +1151,6 @@
 // $topbar-link-color: #fff;
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
-<<<<<<< HEAD
-// $topbar-link-weight: normal;
-// $topbar-link-font-size: rem-calc(13);
-// $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg-hover: #272727  ;
-// $topbar-link-bg-active: $primary-color;
-// $topbar-link-bg-active-hover: darken($primary-color, 5%);
-// $topbar-link-font-family: $body-font-family;
-
-// $topbar-button-font-size: 0.75rem;
-=======
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
@@ -1351,7 +1164,6 @@
 
 // $topbar-button-font-size: 0.75rem;
 // $topbar-button-top: 7px;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 // $topbar-dropdown-label-color: #777;
 // $topbar-dropdown-label-text-transform: uppercase;
@@ -1375,14 +1187,6 @@
 // $topbar-media-query: "only screen and (min-width: #{upper-bound($medium-range)})";
 
 // Divider Styles
-<<<<<<< HEAD
-// $topbar-divider-border-bottom: solid 1px lighten($topbar-bg-color, 10%);
-// $topbar-divider-border-top: solid 1px darken($topbar-bg-color, 10%);
-
-// Sticky Class
-// $topbar-sticky-class: ".sticky";
-// $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
-=======
 // $topbar-divider-border-bottom: solid 1px  scale-color($topbar-bg-color, $lightness: 13%);
 // $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
 
@@ -1397,4 +1201,3 @@
 // $include-html-visibility-classes: $include-html-classes;
 // $include-table-visibility-classes: true;
 // $include-legacy-visibility-classes: true;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb

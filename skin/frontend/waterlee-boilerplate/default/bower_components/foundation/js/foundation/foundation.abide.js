@@ -4,13 +4,10 @@
   Foundation.libs.abide = {
     name : 'abide',
 
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
-    version : '5.0.0',
-=======
     version : '5.2.0',
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
 
     settings : {
+      live_validate : true,
       focus_on_invalid : true,
       error_labels: true, // labels with a for="inputId" will recieve an `error` class
       timeout : 1000,
@@ -53,29 +50,19 @@
 
     events : function (scope) {
       var self = this,
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
-          form = $(scope).attr('novalidate', 'novalidate'),
-          settings = form.data('abide-init');
-=======
           form = self.S(scope).attr('novalidate', 'novalidate'),
           settings = form.data(this.attr_name(true) + '-init');
 
       this.invalid_attr = this.add_namespace('data-invalid');
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
 
       form
         .off('.abide')
         .on('submit.fndtn.abide validate.fndtn.abide', function (e) {
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
-          var is_ajax = /ajax/i.test($(this).attr('data-abide'));
-          return self.validate($(this).find('input, textarea, select').get(), e, is_ajax);
-=======
           var is_ajax = /ajax/i.test(self.S(this).attr(self.attr_name()));
           return self.validate(self.S(this).find('input, textarea, select').get(), e, is_ajax);
         })
         .on('reset', function() {
           return self.reset($(this));
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
         })
         .find('input, textarea, select')
           .off('.abide')
@@ -83,14 +70,6 @@
             self.validate([this], e);
           })
           .on('keydown.fndtn.abide', function (e) {
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
-            var settings = $(this).closest('form').data('abide-init');
-            clearTimeout(self.timer);
-            self.timer = setTimeout(function () {
-              self.validate([this], e);
-            }.bind(this), settings.timeout);
-          });
-=======
             var settings = $(this).closest('form').data(self.attr_name(true) + '-init');
             if (settings.live_validate === true) {
               clearTimeout(self.timer);
@@ -105,31 +84,20 @@
       form.removeAttr(this.invalid_attr);
       $(this.invalid_attr, form).removeAttr(this.invalid_attr);
       $('.error', form).not('small').removeClass('error');
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
     },
 
     validate : function (els, e, is_ajax) {
       var validations = this.parse_patterns(els),
           validation_count = validations.length,
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
-          form = $(els[0]).closest('form'),
-          submit_event = /submit/.test(e.type);
-
-=======
           form = this.S(els[0]).closest('form'),
           submit_event = /submit/.test(e.type);
 
       // Has to count up to make sure the focus gets applied to the top error
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
       for (var i=0; i < validation_count; i++) {
         if (!validations[i] && (submit_event || is_ajax)) {
           if (this.settings.focus_on_invalid) els[i].focus();
           form.trigger('invalid');
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
-          $(els[i]).closest('form').attr('data-invalid', '');
-=======
           this.S(els[i]).closest('form').attr(this.invalid_attr, '');
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
           return false;
         }
       }
@@ -139,8 +107,6 @@
       }
 
       form.removeAttr(this.invalid_attr);
-
-      if (is_ajax) return false;
 
       if (is_ajax) return false;
 
@@ -187,12 +153,8 @@
         var el = el_patterns[i][0],
             required = el_patterns[i][2],
             value = el.value,
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
-            is_equal = el.getAttribute('data-equalto'),
-=======
             direct_parent = this.S(el).parent(),
             is_equal = el.getAttribute(this.add_namespace('data-equalto')),
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
             is_radio = el.type === "radio",
             is_checkbox = el.type === "checkbox",
             label = this.S('label[for="' + el.getAttribute('id') + '"]'),
@@ -208,15 +170,10 @@
 
         if (is_radio && required) {
           validations.push(this.valid_radio(el, required));
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
-        } else if (is_equal && required) {
-          validations.push(this.valid_equal(el, required));
-=======
         } else if (is_checkbox && required) {
           validations.push(this.valid_checkbox(el, required));
         } else if (is_equal && required) {
           validations.push(this.valid_equal(el, required, parent));
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
         } else {
 
           if (el_patterns[i][1].test(value) && valid_length ||
@@ -277,35 +234,20 @@
       return valid;
     },
 
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
-    valid_equal: function(el, required) {
-      var from  = document.getElementById(el.getAttribute('data-equalto')).value,
-=======
     valid_equal: function(el, required, parent) {
       var from  = document.getElementById(el.getAttribute(this.add_namespace('data-equalto'))).value,
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
           to    = el.value,
           valid = (from === to);
 
       if (valid) {
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
-        $(el).removeAttr('data-invalid').parent().removeClass('error');
-      } else {
-        $(el).attr('data-invalid', '').parent().addClass('error');
-=======
         this.S(el).removeAttr(this.invalid_attr);
         parent.removeClass('error');
       } else {
         this.S(el).attr(this.invalid_attr, '');
         parent.addClass('error');
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
       }
 
       return valid;
     }
   };
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js
 }(jQuery, this, this.document));
-=======
-}(jQuery, this, this.document));
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/js/foundation/foundation.abide.js

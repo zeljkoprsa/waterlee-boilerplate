@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-=======
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 @import "global";
 
 //
@@ -15,11 +12,7 @@ $include-html-tooltip-classes: $include-html-classes !default;
 $has-tip-border-bottom: dotted 1px #ccc !default;
 $has-tip-font-weight: bold !default;
 $has-tip-font-color: #333 !default;
-<<<<<<< HEAD
-$has-tip-border-bottom-hover: dotted 1px darken($primary-color, 20%) !default;
-=======
 $has-tip-border-bottom-hover: dotted 1px scale-color($primary-color, $lightness: -55%) !default;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 $has-tip-font-color-hover: $primary-color !default;
 $has-tip-cursor-type: help !default;
 
@@ -34,10 +27,7 @@ $tooltip-close-font-weight: normal !default;
 $tooltip-close-font-color: #777 !default;
 $tooltip-font-size-sml: rem-calc(14) !default;
 $tooltip-radius: $global-radius !default;
-<<<<<<< HEAD
-=======
 $tooltip-rounded: $global-rounded !default;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 $tooltip-pip-size: 5px !default;
 
 @include exports("tooltip") {
@@ -73,10 +63,6 @@ $tooltip-pip-size: 5px !default;
       width: 100%;
       color: $tooltip-font-color;
       background: $tooltip-bg;
-<<<<<<< HEAD
-      @include radius($tooltip-radius);
-=======
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
       &>.nub {
         display: block;
@@ -87,8 +73,6 @@ $tooltip-pip-size: 5px !default;
         border: solid $tooltip-pip-size;
         border-color: transparent transparent $tooltip-bg transparent;
         top: -($tooltip-pip-size * 2);
-<<<<<<< HEAD
-=======
 
         &.rtl {
           left: auto;
@@ -104,7 +88,6 @@ $tooltip-pip-size: 5px !default;
         &>.nub {
           left: 2rem;
         }
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       }
 
       &.opened {

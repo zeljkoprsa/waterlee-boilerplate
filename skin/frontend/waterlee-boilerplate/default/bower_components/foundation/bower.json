@@ -1,15 +1,5 @@
 {
   "name": "foundation",
-<<<<<<< HEAD
-  "version": "5.0.2",
-  "main": ["css/foundation.css", "js/foundation.js"],
-  "dependencies": {
-    "jquery" : ">= 2.0.0",
-    "modernizr": ">= 2.6.2"
-  },
-  "private": true
-}
-=======
   "version": "5.2.0",
   "main": [
     "css/foundation.css",
@@ -28,4 +18,3 @@
   },
   "private": true
 }
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb

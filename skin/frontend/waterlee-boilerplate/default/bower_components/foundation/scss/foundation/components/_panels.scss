@@ -1,10 +1,7 @@
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_panels.scss
-=======
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_panels.scss
 @import "global";
 
 //
@@ -35,11 +32,7 @@ $callout-panel-link-color: $primary-color !default;
 // @mixins
 //
 // We use this mixin to create panels.
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_panels.scss
-// $bg - Sets the panel background color. Default: $panel-pg || darken(#fff, 5%) !default
-=======
 // $bg - Sets the panel background color. Default: $panel-pg || scale-color(#fff, $lightness: -5%) !default
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_panels.scss
 // $padding - Sets the panel padding amount. Default: $panel-padding || rem-calc(20)
 // $adjust - Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust || true
 @mixin panel($bg:$panel-bg, $padding:$panel-padding, $adjust:$panel-header-adjust) {
@@ -81,13 +74,8 @@ $callout-panel-link-color: $primary-color !default;
     .panel { @include panel;
 
       &.callout {
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_panels.scss
-        @include panel(lighten($primary-color, 60%));
-        a {
-=======
         @include panel(scale-color($primary-color, $lightness: 94%));
         a:not(.button) {
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_panels.scss
           color: $callout-panel-link-color;
         }
       }

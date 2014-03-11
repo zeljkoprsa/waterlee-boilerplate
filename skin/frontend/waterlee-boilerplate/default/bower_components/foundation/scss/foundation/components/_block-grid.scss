@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-=======
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 @import "global";
 
 //
@@ -16,14 +13,11 @@ $include-html-grid-classes: $include-html-classes !default;
 $block-grid-elements: 12 !default;
 $block-grid-default-spacing: rem-calc(20) !default;
 
-<<<<<<< HEAD
-=======
 $align-block-grid-to-grid: true;
 @if $align-block-grid-to-grid {
   $block-grid-default-spacing: $column-gutter;
 }
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 // Enables media queries for block-grid classes. Set to false if writing semantic HTML.
 $block-grid-media-queries: true !default;
 
@@ -39,25 +33,12 @@ $block-grid-media-queries: true !default;
 @mixin block-grid(
   $per-row:false, 
   $spacing:$block-grid-default-spacing, 
-<<<<<<< HEAD
-=======
   $include-spacing:true,
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
   $base-style:true) {
 
   @if $base-style {
     display: block;
     padding: 0;
-<<<<<<< HEAD
-    margin: 0 (-$spacing/2);
-    @include clearfix;
-
-    &>li {
-      display: inline;
-      height: auto;
-      float: $default-float;
-      padding: 0 ($spacing/2) $spacing;
-=======
     @if $align-block-grid-to-grid {
       margin: 0;
     } @else {
@@ -72,22 +53,12 @@ $block-grid-media-queries: true !default;
       @if $include-spacing {
         padding: 0 ($spacing/2) $spacing;
       }
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     }
   }
 
   @if $per-row {
     &>li {
       width: 100%/$per-row;
-<<<<<<< HEAD
-      padding: 0 ($spacing/2) $spacing;
-
-      &:nth-of-type(n) { clear: none; }
-      &:nth-of-type(#{$per-row}n+1) { clear: both; }
-    }
-  }
-
-=======
       @if $include-spacing {
         padding: 0 ($spacing/2) $spacing;
       }
@@ -115,23 +86,15 @@ $block-grid-media-queries: true !default;
       }
     }
   }
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 }
 
 // Generate presentational markup for block grid.
 //
 // $size - Name of class to use, i.e. "large" will generate .large-block-grid-1, .large-block-grid-2, etc.
-<<<<<<< HEAD
-@mixin block-grid-html-classes($size) {
-  @for $i from 1 through $block-grid-elements {
-    .#{$size}-block-grid-#{($i)} {
-      @include block-grid($i,$block-grid-default-spacing,false);
-=======
 @mixin block-grid-html-classes($size,$include-spacing) {
   @for $i from 1 through $block-grid-elements {
     .#{$size}-block-grid-#{($i)} {
       @include block-grid($i,$block-grid-default-spacing,$include-spacing,false);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     }
   }
 }
@@ -140,22 +103,6 @@ $block-grid-media-queries: true !default;
   @if $include-html-grid-classes {
     
     [class*="block-grid-"] { @include block-grid; }
-<<<<<<< HEAD
-
-    @media #{$small-up} {
-      @include block-grid-html-classes($size:small);
-    }
-
-    @media #{$medium-up} {
-      @include block-grid-html-classes($size:medium);
-    }
-
-    @media #{$large-up} {
-      @include block-grid-html-classes($size:large);
-    }
-  }
-}
-=======
     
     @if $block-grid-media-queries {
       @media #{$small-up} {
@@ -172,4 +119,3 @@ $block-grid-media-queries: true !default;
     }
   }
 }
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb

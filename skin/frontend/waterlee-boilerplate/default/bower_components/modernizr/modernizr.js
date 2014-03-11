@@ -1,9 +1,5 @@
 /*!
-<<<<<<< HEAD
- * Modernizr v2.7.1
-=======
  * Modernizr v2.7.2
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
  * www.modernizr.com
  *
  * Copyright (c) Faruk Ates, Paul Irish, Alex Sexton
@@ -28,11 +24,7 @@
 
 window.Modernizr = (function( window, document, undefined ) {
 
-<<<<<<< HEAD
-    var version = '2.7.1',
-=======
     var version = '2.7.2',
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
     Modernizr = {},
 
@@ -613,11 +605,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     // Note, Android < 4 will pass this test, but can only animate
     //   a single property at a time
-<<<<<<< HEAD
-    //   daneden.me/2011/12/putting-up-with-androids-bullshit/
-=======
     //   goo.gl/v3V4Gp
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     tests['cssanimations'] = function() {
         return testPropsAll('animationName');
     };

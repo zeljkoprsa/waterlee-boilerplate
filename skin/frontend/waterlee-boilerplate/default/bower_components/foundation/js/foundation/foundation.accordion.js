@@ -4,11 +4,7 @@
   Foundation.libs.accordion = {
     name : 'accordion',
 
-<<<<<<< HEAD
-    version : '5.0.1',
-=======
     version : '5.2.0',
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
     settings : {
       active_class: 'active',
@@ -20,23 +16,6 @@
     },
 
     events : function () {
-<<<<<<< HEAD
-      $(this.scope).off('.accordion').on('click.fndtn.accordion', '[data-accordion] > dd > a', function (e) {
-        var accordion = $(this).parent(),
-            target = $('#' + this.href.split('#')[1]),
-            siblings = $('> dd > .content', target.closest('[data-accordion]')),
-            settings = accordion.parent().data('accordion-init'),
-            active = $('> dd > .content.' + settings.active_class, accordion.parent());
-
-        e.preventDefault();
-
-        if (active[0] == target[0] && settings.toggleable) {
-          return target.toggleClass(settings.active_class);
-        }
-
-        siblings.removeClass(settings.active_class);
-        target.addClass(settings.active_class);
-=======
       var self = this;
       var S = this.S;
       S(this.scope)
@@ -61,7 +40,6 @@
         siblings.removeClass(settings.active_class);
         aunts.removeClass(settings.active_class);
         target.addClass(settings.active_class).parent().addClass(settings.active_class);
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       });
     },
 

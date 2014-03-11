@@ -1,10 +1,7 @@
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_alert-boxes.scss
-=======
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_alert-boxes.scss
 @import "global";
 
 //
@@ -25,20 +22,12 @@ $alert-font-color: #fff !default;
 $alert-font-color-alt: scale-color($secondary-color, $lightness: -66%) !default;
 
 // We use this for close hover effect.
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_alert-boxes.scss
-$alert-function-factor: 5% !default;
-=======
 $alert-function-factor: -14% !default;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_alert-boxes.scss
 
 // We use these to control border styles.
 $alert-border-style: solid !default;
 $alert-border-width: 1px !default;
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_alert-boxes.scss
-$alert-border-color: darken($primary-color, $alert-function-factor) !default;
-=======
 $alert-border-color: scale-color($primary-color, $lightness: $alert-function-factor) !default;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_alert-boxes.scss
 $alert-bottom-margin: rem-calc(20) !default;
 
 // We use these to style the close buttons

@@ -1,10 +1,7 @@
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_button-groups.scss
-=======
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_button-groups.scss
 @import "global";
 @import "buttons";
 
@@ -40,12 +37,6 @@ $button-group-border-width: 1px !default;
 // We use this to control styles for button groups
 @mixin button-group-style($radius:false, $even:false, $float:$default-float) {
 
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_button-groups.scss
-	> button, .button { 
-	border-#{$opposite-direction}: $button-group-border-width solid;
-	border-color: rgba(255, 255, 255, 0.5);	
-	}
-=======
   > button, .button {
     border-#{$default-float}: $button-group-border-width solid;
     border-color: rgba(255, 255, 255, 0.5);
@@ -56,7 +47,6 @@ $button-group-border-width: 1px !default;
       border-#{$default-float}: 0;
     }
   }
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_button-groups.scss
 
   // We use this to control the flow, or remove those styles completely.
   @if $float {
@@ -99,16 +89,6 @@ $button-group-border-width: 1px !default;
 @include exports("button-group") {
   @if $include-html-button-classes {
     .button-group { @include button-group-container;
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_button-groups.scss
-
-      &> * { @include button-group-style(); }
-
-      &.radius > * { @include button-group-style($radius:$button-radius, $float:null); }
-      &.round > * { @include button-group-style($radius:$button-round, $float:null); }
-
-      @for $i from 2 through 8 {
-        &.even#{-$i} li { @include button-group-style($even:$i, $float:null); }
-=======
 
       li { @include button-group-style(); }
 
@@ -117,7 +97,6 @@ $button-group-border-width: 1px !default;
 
       @for $i from 2 through 8 {
         &.even-#{$i} li { @include button-group-style($even:$i, $float:null); }
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_button-groups.scss
       }
     }
 

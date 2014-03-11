@@ -1,10 +1,7 @@
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_pagination.scss
-=======
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_pagination.scss
 @import "global";
 
 //
@@ -110,11 +107,7 @@ $pagination-link-current-active-bg: $primary-color !default;
         display: block;
         padding: $pagination-link-pad;
         color: $pagination-link-font-color;
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_pagination.scss
-        @include radius($global-radius)
-=======
         @include radius;
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_pagination.scss
       }
 
       &:hover a,

@@ -5,33 +5,6 @@
   Foundation.libs.tab = {
     name : 'tab',
 
-<<<<<<< HEAD
-    version : '5.0.1',
-
-    settings : {
-      active_class: 'active'
-    },
-
-    init : function (scope, method, options) {
-      this.bindings(method, options);
-    },
-
-    events : function () {
-      $(this.scope).off('.tab').on('click.fndtn.tab', '[data-tab] > dd > a', function (e) {
-        e.preventDefault();
-
-        var tab = $(this).parent(),
-            target = $('#' + this.href.split('#')[1]),
-            siblings = tab.siblings(),
-            settings = tab.closest('[data-tab]').data('tab-init');
-
-        tab.addClass(settings.active_class);
-        siblings.removeClass(settings.active_class);
-        target.siblings().removeClass(settings.active_class).end().addClass(settings.active_class);
-      });
-    },
-
-=======
     version : '5.2.0',
 
     settings : {
@@ -176,7 +149,6 @@
       return str;
     },
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     off : function () {},
 
     reflow : function () {}

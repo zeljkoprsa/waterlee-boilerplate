@@ -1,30 +1,20 @@
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
-=======
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
 @import "global";
 
 //
 // @name
 // @dependencies _global.scss
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
-// 
-=======
 //
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
 
 //
 // @variables
 //
 
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
-=======
 // NOTE: Switches have been deprecated in Foundation 5 and will be removed in the future.
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
 $include-html-form-classes: $include-html-classes !default;
 
 // Controlling border styles and background colors for the switch container
@@ -71,11 +61,7 @@ $switch-label-outline: 1px dotted #888 !default;
 // $transition-speed - Time in ms for switch to toggle. Default: $switch-paddle-transition-speed.
 // $transition-ease - Easing function to use for animation (i.e. ease-out). Default: $switch-paddle-transition-ease.
 @mixin switch-base(
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
-  $transition-speed:$switch-paddle-transition-speed, 
-=======
   $transition-speed:$switch-paddle-transition-speed,
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
   $transition-ease:$switch-paddle-transition-ease) {
 
   // Default position and structure for switch container.
@@ -180,13 +166,8 @@ $switch-label-outline: 1px dotted #888 !default;
 // $font-size - Font size of text in switch. Default: $switch-font-size-med.
 // $line-height - Line height of switch. Default: 2.3rem.
 @mixin switch-size(
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
-  $height: $switch-height-med, 
-  $font-size: $switch-font-size-med, 
-=======
   $height: $switch-height-med,
   $font-size: $switch-font-size-med,
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
   $line-height: 2.3rem) {
 
   height: rem-calc($height);
@@ -220,17 +201,10 @@ $switch-label-outline: 1px dotted #888 !default;
 // $radius - Radius to apply to switch. Default: false.
 // $base-style - Apply base styles? Default: true.
 @mixin switch-style(
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
-  $paddle-bg:$switch-paddle-bg, 
-  $positive-color:$switch-positive-color, 
-  $negative-color:$switch-negative-color, 
-  $radius:false, 
-=======
   $paddle-bg:$switch-paddle-bg,
   $positive-color:$switch-positive-color,
   $negative-color:$switch-negative-color,
   $radius:false,
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
   $base-style:true) {
 
   @if $base-style {
@@ -299,17 +273,6 @@ $switch-label-outline: 1px dotted #888 !default;
 // $radius - Radius to apply to switch. Default: false.
 // $base-style - Apply base styles? Default: true.
 @mixin switch(
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
-  $transition-speed: $switch-paddle-transition-speed, 
-  $transition-ease: $switch-paddle-transition-ease, 
-  $height: $switch-height-med, 
-  $font-size: $switch-font-size-med, 
-  $line-height: 2.3rem, 
-  $paddle-bg: $switch-paddle-bg, 
-  $positive-color: $switch-positive-color, 
-  $negative-color: $switch-negative-color, 
-  $radius:false, 
-=======
   $transition-speed: $switch-paddle-transition-speed,
   $transition-ease: $switch-paddle-transition-ease,
   $height: $switch-height-med,
@@ -319,7 +282,6 @@ $switch-label-outline: 1px dotted #888 !default;
   $positive-color: $switch-positive-color,
   $negative-color: $switch-negative-color,
   $radius:false,
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
   $base-style:true) {
     @include switch-base($transition-speed, $transition-ease);
     @include switch-size($height, $font-size, $line-height);
@@ -330,7 +292,6 @@ $switch-label-outline: 1px dotted #888 !default;
   @if $include-html-form-classes {
       div.switch {
         @include switch;
-<<<<<<< HEAD:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
 
         // Large radio switches
         &.large { @include switch-size($switch-height-lrg, $switch-font-size-lrg); }
@@ -341,18 +302,6 @@ $switch-label-outline: 1px dotted #888 !default;
         // Tiny radio switches
         &.tiny { @include switch-size($switch-height-tny, $switch-font-size-tny, 1.9rem); }
 
-=======
-
-        // Large radio switches
-        &.large { @include switch-size($switch-height-lrg, $switch-font-size-lrg); }
-
-        // Small radio switches
-        &.small { @include switch-size($switch-height-sml, $switch-font-size-sml, 2.1rem); }
-
-        // Tiny radio switches
-        &.tiny { @include switch-size($switch-height-tny, $switch-font-size-tny, 1.9rem); }
-
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb:skin/frontend/waterlee-boilerplate/default/bower_components/foundation/scss/foundation/components/_switch.scss
         // Add a radius to the switch
         &.radius { @include radius(4px);
           span:last-child{ @include radius(3px); }

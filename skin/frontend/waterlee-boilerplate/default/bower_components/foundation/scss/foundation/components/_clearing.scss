@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-=======
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 @import "global";
 
 //
@@ -44,11 +41,7 @@ $clearing-carousel-thumb-active-border: 1px solid rgb(255,255,255) !default;
     // The variables above should give enough control.
 
     /* Clearing Styles */
-<<<<<<< HEAD
-    [data-clearing] {
-=======
     .clearing-thumbs, #{data('clearing')} {
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       @include clearfix;
       margin-bottom: 0;
       margin-#{$default-float}: 0;
@@ -58,13 +51,10 @@ $clearing-carousel-thumb-active-border: 1px solid rgb(255,255,255) !default;
         float: $default-float;
         margin-#{$opposite-direction}: 10px;
       }
-<<<<<<< HEAD
-=======
 
       &[class*="block-grid-"] li {
         margin-#{$opposite-direction}: 0;
       }
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     }
 
     .clearing-blackout {
@@ -87,8 +77,6 @@ $clearing-carousel-thumb-active-border: 1px solid rgb(255,255,255) !default;
       margin: 0;
     }
 
-<<<<<<< HEAD
-=======
     .clearing-touch-label {
       position: absolute;
       top: 50%;
@@ -97,7 +85,6 @@ $clearing-carousel-thumb-active-border: 1px solid rgb(255,255,255) !default;
       font-size: 0.6em;
     }
 
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
     .visible-img {
       height: 95%;
       position: relative;
@@ -184,11 +171,7 @@ $clearing-carousel-thumb-active-border: 1px solid rgb(255,255,255) !default;
           border-#{$default-float}-color: $clearing-arrow-color;
         }
       }
-<<<<<<< HEAD
-  	
-=======
     
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
       .clearing-main-prev.disabled,
       .clearing-main-next.disabled { opacity: 0.3; }
 
