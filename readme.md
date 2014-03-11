@@ -1,16 +1,9 @@
 #Magento HTML5 responsive boilerplate [![endorse](http://api.coderwall.com/zeljkoprsa/endorsecount.png)](http://coderwall.com/zeljkoprsa)
-<<<<<<< HEAD
- - Built on Foundation 5. by ZURB.
-
-**Update**
-#WATERLEE on Foundation 5 is here.
-=======
  - Built on Foundation 5.2.0 by ZURB.
  - Works with Magento 1.8.1
 
 **Update**
 #WATERLEE on Foundation 5.2.0 is here.
->>>>>>> f21deea668bf64db73b5475062723accee28dfbb
 
 ## Create responsive Magento themes.
 #### Built on ZURB Foundation framework, waterlee has everything you need from the start.
