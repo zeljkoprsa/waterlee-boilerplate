@@ -38,6 +38,15 @@ It's pretty ugly but you know better than to expect a boilerplate to be good loo
 Once you install the Waterlee package and assuming you already installed the "Jake Sharp" extension used for the main category menu which is packed within the theme package., go to your Magento administration backend and look for "Jake Sharp" theme settings under "System -> Configuration | Configuration -> JAKESHARP WATERLEE -> Theme Settings -> Enable" to enable the theme's menu.
 For detailed instructions check knowledge base @ http://jakesharp.uservoice.com/ 
 
+To get your stylesheets compiled you'll need to install sass and compass with its dependencies & 'compass watch' will listen your sass changes and compile css.
+http://compass-style.org/install/
+http://sass-lang.com/install
+
+Despite our waterlee-boilerplate updates, you want to have latest foundation version, right? Do it yourself!
+'foundation update' should do the trick if you install bower & foundation client.
+Follow these simple instructions on ZURB's website:
+http://foundation.zurb.com/docs/sass.html
+
 ##SCSS Organization
 For starters, Waterlee is based on ZURB Foundation framework 5 which relies on mobile first approach. This means that all of the HTML classes for layout at your disposal are mobile-first so keep that in mind while developing. There is a folder named "custom" under the "/skin/frontend/waterlee-boilerplate/default/SCSS/".
 
@@ -55,6 +64,7 @@ What's inside:
 - Local XML for layout overrides
 - Implemented classes that adhere to foundation docs
 - **NEW**: Foundation now uses bower for easy updating from the command line
+- **NEW**: From now on by default, JS is loaded separately by components in local.xml. Use only what you need! If you want from some reason full foundation, comment components and uncomment foundation.js in js.phtml. The same applies for importing scss files in styles.scss
 
 
 ##What's next:
