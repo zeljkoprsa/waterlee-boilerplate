@@ -55,12 +55,12 @@
             <action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
             <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>
 
-            <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/vendor/modernizr.js</name><params/></action>
-            <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/vendor/jquery.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>bower_components/modernizr/modernizr.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>bower_components/jquery/dist/jquery.min.js</name><params/></action>
             <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.js</name><params/></action> 
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/vendor/fastclick.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/vendor/jquery.cookie.js</name><params/></action>-->            
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/vendor/placeholder.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/fastclick/lib/fastclick.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery.cookie/jquery.cookie.js</name><params/></action>-->            
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery-placeholder/jquery.placeholder.js</name><params/></action>-->
 
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.abide.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.accordion.js</name><params/></action>-->
