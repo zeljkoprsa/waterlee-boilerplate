@@ -1,6 +1,6 @@
 #Magento HTML5 responsive boilerplate [![endorse](http://api.coderwall.com/zeljkoprsa/endorsecount.png)](http://coderwall.com/zeljkoprsa)
  - Built on Foundation 5.2.2 by ZURB.
- - Works with Magento 1.8.1
+ - Works with Magento 1.7, 1.8 & 1.8.1
 
 **Update**
 #WATERLEE on Foundation 5.2.2 is here.
