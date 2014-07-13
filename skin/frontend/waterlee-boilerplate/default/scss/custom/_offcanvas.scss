@@ -26,7 +26,7 @@
   [role="navigation"]#topMenu { @include single-transition(.25s all ease-in); }
   [role="navigation"]#topMenu ul { margin-top: 0; }
 
-  [role="complementary"] { margin-left: -100%; width: 80%; float: left; z-index: 2; }
+  [role="complementary"] { margin-left: -15.5rem; width: 14rem; float: left; z-index: 2; }
   [role="main"] { margin-left: 0; float: right; z-index: 1; position: relative; }
 
   .paneled [role="main"] { background: #fff; width: 500%; overflow: hidden; float: none; position: relative; left: 0; @include single-transition(.15s all ease-in); }
@@ -41,7 +41,7 @@
   @media all and (min-width: 768px) {
 
     menu-button, .sidebar-button { display: none; }
-    [role="complementary"] { width: $complementaryWidth; margin-left: 0; float: left; padding: 0 15px; }
+    [role="complementary"] { width: $complementaryWidth; margin-left: 0; float: left; padding: 0 0px; }
     [role="main"] { width: $mainWidth; padding: 0 0px; }
 
     .paneled [role="main"] { width: 100%; padding: 0; background: #f4f4f4; left: 0 !important; }

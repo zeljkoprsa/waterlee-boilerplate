@@ -1,8 +1,8 @@
 <?php if($this->getCurrencyCount() > 1): ?>
-    <div class="store-currency switchers columns large-3 small-12">
+    <div class="store-currency custom-select switchers">
         <form action="#" class="custom">
         <label for="store-currency-selector"><?php echo $this->__('Your Currency:') ?></label>
-        <select onchange="window.location.href=this.value" name="store-currency-selector" id="store-currency-selector" class="expand">
+        <select onchange="window.location.href=this.value" name="store-currency-selector" id="store-currency-selector" class="expand custom-select">
             <?php foreach ($this->getCurrencies() as $_code => $_name): ?>
                 <option value="<?php echo $this->getSwitchCurrencyUrl($_code)?>"
                     <?php if($_code == $this->getCurrentCurrencyCode()): ?>

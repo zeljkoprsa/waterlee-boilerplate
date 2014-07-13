@@ -1,0 +1,92 @@
+.site-footer {
+  background: #efefef;
+}
+.site-footer-content {
+  max-width: 90%;
+}
+.site-footer-info {
+  max-width: 100%;
+  background: #f9f9f9;
+}
+.footer-content {
+  margin-top: 2rem;
+}
+.footer-content .input-text {
+  width: 40%;
+}
+.img-foot {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.co-page {
+  margin-top: 1rem;
+}
+.address-padd {
+  background: #f9f9f9;
+}
+.footer-touch {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.text-foot {
+  padding-right: 0rem;
+}
+.logo-foot {
+  padding-left: 0rem;
+}
+.co-page {
+  padding-left: 0rem;
+}
+.html-icon {
+  padding-right: 0rem;
+}
+@media only screen and (max-width: 40em) {
+  #uvTab {
+    display: none;
+  }
+  .footer-touch {
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+  }
+  .img-foot {
+    margin-bottom: 0rem;
+  }
+  .footer-content {
+    margin-top: 0rem;
+  }
+  .logo-foot {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .text-foot {
+    padding-right: 1rem;
+  }
+  .logo-foot {
+    padding-left: 1rem;
+  }
+  .co-page {
+    padding-left: 1rem;
+  }
+  .html-icon {
+    padding-right: 1rem;
+  }
+}
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .text-foot {
+    padding-right: 1rem;
+  }
+  .logo-foot {
+    padding-left: 1rem;
+  }
+  .co-page {
+    padding-left: 1rem;
+  }
+  .html-icon {
+    padding-right: 1rem;
+  }
+}

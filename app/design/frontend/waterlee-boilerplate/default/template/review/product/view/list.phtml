@@ -30,10 +30,11 @@
     <div class="columns small-12">
         <?php echo $this->getChildHtml('review_form') ?>
     </div>
-    <div class="columns small-12">
+    <div class="columns large-12">
         <?php if (count($_items)):?>
             <h2><?php echo $this->__('Customer Reviews') ?></h2>
             <?php echo $this->getChildHtml('toolbar') ?>
+            <div class="row inline-list">
             <dl>
                 <?php foreach ($_items as $_review):?>
                     <dt>
@@ -66,6 +67,7 @@
                     </dd>
                 <?php endforeach; ?>
             </dl>
+            </div>
             <?php echo $this->getChildHtml('toolbar') ?>
         <?php endif;?>
 

@@ -4,6 +4,7 @@ Cart styling
 
 .checkout-types{
   list-style-type: none;
+  margin-left: 0rem;
 }
 .checkout-cart-index table{
   width: 100%;
@@ -20,7 +21,94 @@ Cart styling
 .cart-table button{
   margin-bottom: 0;
 }
+.btn-empty {
+  margin-right: 0.5rem;
+  font-size: 1rem !important;
+}
+.btn-update {
+  font-size: 1rem !important;
+}
+.btn-continue {
+  font-size: 1rem !important;
+}
+#discount-coupon-form {
+  border: 1px solid #e7e7e7;
+  background: #f9f9f9;
+}
+.shipping {
+  border: 1px solid #e7e7e7;
+  background: #f9f9f9;
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+#shopping-cart-totals-table {
+  border: 1px solid #e7e7e7;
+  background: #f9f9f9;
+  margin-top: 1rem;
+}
+.inline-block {
+  display: inline-block;
+}
+.buttons-set {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-left: 0.7rem;
+}
+.discount {
+  margin: 0.5rem;
+}
+.shipping .form-list .shipping-city {
+  width: 49%;
+  display: inline-block;
+}
+.shipping .form-list .shipping-code {
+  width: 49%;
+  display: inline-block;
+}
+@media only screen and (max-width: 64em) {
+  #discount-coupon-form {
+    margin-top: 1rem;
+  }
+}
 
+
+@media only screen and (max-width: 40em) {
+.btn-empty {
+  width: 100%;
+  display: block;
+  margin-right: 0rem;
+  border: 1px solid #f9f9f9;
+  color: #999;
+  background: #f9f9f9;
+}
+.btn-update {
+  width: 100%;
+  display: block;
+  border: 1px solid #f9f9f9;
+  color: #999;
+  background: #f9f9f9;
+}
+.btn-continue {
+  width: 100%;
+  display: block;
+  border: 1px solid #f9f9f9;
+  color: #999;
+  background: #f9f9f9;
+}
+.item-image {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+.item-spec {
+  margin-left: 0.5rem;
+}
+.small-full-width {
+  width: 100%;
+  float: left;
+  text-align: center;
+  padding: 1em;
+}
+}
 /* Checkout Agreements */
 .checkout-agreements li { margin:30px 0; }
 .checkout-agreements .agreement-content { overflow:auto; height:12em; padding:10px; background:#fbfbfb; border:1px solid #e4e4e4; }
@@ -103,10 +191,10 @@ Cart styling
   margin-right: 0.3em;
 }
 .opc ul{list-style-type: none;margin: 0;}
-
-.opc .step-title { background:$primary-color; padding:0.5em 0.5em 0.7em 0.5em; text-align:right; clear: both;height: 2em;}
+.opc {margin-left: 0rem;}
+.opc .step-title { background: #f9f9f9; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; border-right: 1px solid #ccc; padding:0.5em 0.5em 0.7em 0.5em; text-align:right; clear: both;height: 2em;}
 .opc .step-title .number { float:left; background:$primary-color; border:1px solid $primary-color; padding:0 3px; margin:0 5px 0 0; font:normal 11px/12px arial, helvetica, sans-serif; color:#fff; }
-.opc .step-title h2 { float:left; margin:0; font:bold 12px/14px Arial, Helvetica, sans-serif;color: #fff; }
+.opc .step-title h2 { float:left; margin:0; font:bold 12px/14px Arial, Helvetica, sans-serif;color:$primary-color; }
 .opc .step-title a { display:none; float:right; font-size:11px; line-height:16px; }
 .opc .step-title form{
   margin-bottom:0;
@@ -116,12 +204,12 @@ Cart styling
 .opc .allow .step-title h2 { color:#fff; }
 .opc .allow .step-title a { display:block; font-size:10px; color:#fff; text-transform:uppercase; }
 
-.opc .active .step-title { background:#fff; border-color:$primary-color; border-top-color:$primary-color; border-bottom: 0 none; padding-bottom:5px; color:$body-font-color; cursor:default; }
+.opc .active .step-title { background:#fff; border-color:$primary-color; border-top-color:#ccc; border-bottom: 0 none; padding-bottom:5px; color:$body-font-color; cursor:default; }
 .opc .active .step-title .number {}
 .opc .active .step-title h2 { color:$primary-color; }
 .opc .active .step-title a { display:none; }
 
-.opc .step { padding:15px 30px; position:relative;border-right: 1px solid $primary-color; border-left: 1px solid $primary-color;}
+.opc .step { padding:15px 30px; position:relative;border-right: 1px solid #ccc; border-left: 1px solid #ccc;}
 .opc .step .tool-tip { right:30px; }
 
 #opc-login h3 { font-size:13px; border-bottom:1px solid #e4e4e4; padding-bottom:2px; text-transform:uppercase; }
@@ -238,3 +326,37 @@ Cart styling
 .remember-me-popup .remember-me-popup-body a span { display:inline-block; height:28px; background:transparent url(../images/bkg_btn.png) 0 0 no-repeat; padding:0 0 0 6px; font:bold 11px/25px Tahoma, Verdana, Arial, sans-serif; text-transform:uppercase; text-align:center; white-space:nowrap; color:#555; }
 .remember-me-popup .remember-me-popup-body a span { background-position:100% 0; padding:0 15px 0 9px; }
 /* Remember Me Popup ===================================================================== */
+
+.validate-select, .validate-select:hover {
+  background: white url("http://waterlee.jakesharp.co/demo/skin/frontend/waterlee-boilerplate/default/images/arrow.png") no-repeat scroll 98% center;
+}
+.image-cart {
+  max-width: inherit;
+}
+.cart {
+  margin-top: 1rem;
+}
+.checkout-types {
+  margin-bottom: 0rem;
+}
+.crosssell {
+  margin-top: 1rem;
+}
+.col-main {
+  margin-top: 1rem;
+  padding-left: 0rem;
+}
+.checkout-title {
+  margin-top: 1rem;
+  margin-left: -0.1rem;
+}
+@media only screen and (max-width: 40em) {
+.page-title {
+  margin-left: 1rem;
+}
+}
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+.page-title {
+  margin-left: 1rem;
+}
+}

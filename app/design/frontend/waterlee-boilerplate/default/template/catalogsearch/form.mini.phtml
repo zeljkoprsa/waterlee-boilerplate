@@ -27,18 +27,18 @@
 <form id="search_mini_form" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get">
 
 <div class="row collapse form-search">
-    <div class="columns large-10 ">
-        <input id="search" type="text" name="<?php echo $this->helper('catalogsearch')->getQueryParamName() ?>" value="<?php echo $this->helper('catalogsearch')->getEscapedQueryText() ?>" class="input-text" />
-    </div>
-    <div class="columns large-2 ">
-        <button type="submit" title="<?php echo $this->__('Search') ?>" class="button expand postfix">
-            <i class="icon-search"></i>
+    <div class="columns small-1 medium-2 large-2 ">
+        <button type="submit" title="<?php echo $this->__('Search') ?>" class="search-button expand postfix">
+            <i class="fa fa-search"></i>
         </button>
+    </div>
+    <div class="columns small-11 medium-10 large-10 ">
+        <input id="search" type="text" name="<?php echo $this->helper('catalogsearch')->getQueryParamName() ?>" value="<?php echo $this->helper('catalogsearch')->getEscapedQueryText() ?>" class="input-text" />
     </div>
     <div id="search_autocomplete" class="search-autocomplete"></div>
     <script type="text/javascript">
         //<![CDATA[
-        var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?php echo $this->__('Find me some...') ?>');
+        var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?php echo $this->__('Search') ?>');
         searchForm.initAutocomplete('<?php echo $this->helper('catalogsearch')->getSuggestUrl() ?>', 'search_autocomplete');
         //]]>
     </script>

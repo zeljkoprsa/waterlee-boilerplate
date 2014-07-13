@@ -1,5 +1,5 @@
 .site-logo{
-  margin: 0;
+  margin-top: 0rem;
   padding:0;
   font-size: 0;
 }
@@ -14,4 +14,107 @@
   display: inline-block;
   width: 100%;
   padding: 0.7em 0;
+}
+.site-search {
+  margin-top: 0rem;
+}
+#search_autocomplete {
+  background-color: #fff;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  z-index: 1;
+  left: 15px !important;
+}
+#search_mini_form .form-search .search-autocomplete ul {
+}
+#search_mini_form .form-search .search-autocomplete li {
+  list-style-type: none;
+  border-bottom: 1px dotted #ddd;
+}
+.search-button {
+  background-color: #fff;
+}
+.search-button:hover, .search-button:focus {
+  background-color: #fff;
+}
+.icon-search {
+  color: #b1adad;
+}
+.postfix {
+  border-color: #ccc;
+  border-right: none;
+}
+#search {
+  border-left: none;
+  box-shadow: none;
+  width: 93%;
+  background: #fff;
+  border-color: #ccc;
+}
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .top-cart {
+    margin-top: 0rem;
+  }
+}
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+  .top-cart {
+    margin-top: 0rem;
+  }
+  .site-identity {
+    padding-left: 0rem;
+  }
+  .top-cart-padd {
+    padding-right: 0rem;
+  }
+}
+@media only screen and (min-width: 90.063em) and (max-width: 120em) {
+  .top-cart {
+    margin-top: 0rem;
+  }
+  .site-identity {
+    padding-left: 0rem;
+  }
+  .top-cart-padd {
+    padding-right: 0rem;
+  }
+}
+@media only screen and (min-width: 120.063em) {
+  .top-cart {
+    margin-top: 0rem;
+  }
+  .site-identity {
+    padding-left: 0rem;
+  }
+  .top-cart-padd {
+    padding-right: 0rem;
+  }
+}
+.cartbutton-margin {
+  margin-top: 1rem;
+}
+@media only screen and (max-width: 40em) {
+  .site-search {
+    margin-left: 0rem;
+  }
+
+  .site-header {
+    margin-bottom: 0rem !important;
+    margin-top: 0rem !important;
+  }
+  #search {
+    width:100%;
+  }
+  .costum-column {
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    border-left: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+  }
+  .site-identity {
+    margin-bottom: 1rem;
+  }
+}
+#accmini {
+  padding-bottom: 1rem;
 }

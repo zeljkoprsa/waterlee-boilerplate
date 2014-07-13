@@ -66,7 +66,7 @@ $_helper = $this->helper('catalog/output');
                         <?php endif; ?>
                         <?php echo $this->getPriceHtml($_product, true) ?>
                         <?php if($_product->isSaleable()): ?>
-                        <button type="button" title="<?php echo $this->__('Buy Now') ?>" class="small button" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><?php echo $this->__('Buy Now') ?></button>
+                        <button type="button" title="<?php echo $this->__('Buy Now') ?>" class="small nephritis-flat-button nephritis-width" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><?php echo $this->__('Buy Now') ?></button>
                         <?php else: ?>
                         <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                         <?php endif; ?>
@@ -101,12 +101,13 @@ $_helper = $this->helper('catalog/output');
     <?php $_collectionSize = $_productCollection->count() ?>
     <?php $_columnCount = $this->getColumnCount(); ?>
     <div class="columns large-12 grid-mode">
-    <ul class="small-block-grid-2 large-block-grid-4 no-bullet">
+    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 no-bullet" data-equalizer>
         <?php $i=0; foreach ($_productCollection as $_product): ?>
         <?php if ($i++%$_columnCount==0): ?>
 
             <?php endif ?>
-        <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
+        <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>" data-equalizer-watch>
+           <div class="inner-wrapper" data-equalizer-watch>
             <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(232); ?>" class="th" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
             <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
             <?php if($_product->getRatingSummary()): ?>
@@ -115,11 +116,12 @@ $_helper = $this->helper('catalog/output');
             <div class="actions">
                 <?php echo $this->getPriceHtml($_product, true) ?>
                 <?php if($_product->isSaleable()): ?>
-                <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button small" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><?php echo $this->__('Add to Cart') ?></button>
+                <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="nephritis-flat-button small" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><?php echo $this->__('Add to Cart') ?></button>
                 <?php else: ?>
                 <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                 <?php endif; ?>
             </div>
+           </div>
         </li>
         <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
 
@@ -129,8 +131,6 @@ $_helper = $this->helper('catalog/output');
     </div>
     <script type="text/javascript">decorateGeneric($$('ul.products-grid li'), ['odd','even','first','last'])</script>
     <?php endif; ?>
-    <div class="toolbar-bottom">
-        <?php echo $this->getToolbarHtml() ?>
-    </div>
 </div>
+
 <?php endif; ?>

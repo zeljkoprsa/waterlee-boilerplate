@@ -33,11 +33,11 @@
 ?>
 
 <?php if(count($this->getStores())>1): ?>
-    <div class="site-language switchers columns large-3 small-12 end">
+    <div class="site-language custom-select switchers end">
     <div class="form-language">
         <form>
             <label for="select-language"><?php echo $this->__('Your Language:') ?></label>
-            <select id="select-language" title="<?php echo $this->__('Your Language') ?>" onchange="window.location.href=this.value" class="expand">
+            <select id="select-language" title="<?php echo $this->__('Your Language') ?>" onchange="window.location.href=this.value" class="expand custom-select">
                 <?php foreach ($this->getStores() as $_lang): ?>
                     <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' selected="selected"' : '' ?>
                     <option value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->htmlEscape($_lang->getName()) ?></option>

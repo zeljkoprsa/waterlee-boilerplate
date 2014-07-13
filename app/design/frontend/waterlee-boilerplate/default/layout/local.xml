@@ -28,6 +28,8 @@
             <block type="page/switch" name="store_switcher" as="store_switcher" template="page/switch/stores.phtml"/>
             <block type="customer/account" name="mini_account" as="mini_account" template="customer/account/mini-account.phtml"/>
             <block type="checkout/cart" name="top_cart" as="top_cart" template="checkout/cart/top-cart.phtml"/>
+            <block type="checkout/cart" name="mobile_top_cart" as="mobile_top_cart" template="checkout/cart/mobile-top-cart.phtml"/>
+
         </reference>
         <remove name="currency"/>
         <!-- Remove callouts and rarely used stuff globally -->
@@ -53,34 +55,40 @@
         <!-- Add js/css globally -->
         <reference name="head">
             <action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
-            <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>
-
-            <action method="addItem"><type>skin_js</type><name>bower_components/modernizr/modernizr.js</name><params/></action>
-            <action method="addItem"><type>skin_js</type><name>bower_components/jquery/dist/jquery.min.js</name><params/></action>
-            <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.js</name><params/></action> 
+            <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>         
+        
+        <!-- Required javascripts are concatenated into script.js / see gulpfile.js -->
+            <action method="addItem"><type>skin_js</type><name>dist/js/script.js</name><params/></action>
+                    
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/modernizr/modernizr.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery/dist/jquery.min.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/fastclick/lib/fastclick.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery.cookie/jquery.cookie.js</name><params/></action>-->            
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery.cookie/jquery.cookie.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery-placeholder/jquery.placeholder.js</name><params/></action>-->
 
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.abide.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.accordion.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.alert.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.clearing.js</name><params/></action>-->            
-            <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.dropdown.js</name><params/></action>
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.clearing.js</name><params/></action>-->
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.dropdown.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.equalizer.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.interchange.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.joyride.js</name><params/></action>-->                       
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.joyride.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.magellan.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.offcanvas.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.orbit.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.reveal.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.slider.js</name><params/></action>-->
-            <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.tab.js</name><params/></action>
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.tab.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.tooltip.js</name><params/></action>-->
-            <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.topbar.js</name><params/></action>
+            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.topbar.js</name><params/></action>-->
 
-            <!--<action method="addItem"><type>skin_js</type><name>js/app.js</name><params/></action>-->
-           
+            <!--<action method="addItem"><type>skin_js</type><name>js/easyResponsiveTabs.js</name><params/></action>-->
+
+            <!--<action method="addItem"><type>skin_js</type><name>js/elevatezoom/jquery.elevatezoom.js</name><params/></action>-->
+
+
 
 
         </reference>
@@ -171,7 +179,7 @@ just in case I want to add the block somewhere else -->
             <!--<action method="unsetChild"><name>footer_links</name></action> &lt;!&ndash; Magento 1.4.x &ndash;&gt;-->
             <block type="newsletter/subscribe" after="-" name="footer.newsletter"
                    template="newsletter/subscribe.phtml"/>
-            <block type="core/template" name="mobile.menu.footer" template="page/mobile-menu-footer.phtml"/>
+            <!--<block type="core/template" name="mobile.menu.footer" template="page/mobile-menu-footer.phtml"/>-->
         </reference>
         <!-- //Add/Remove Footer Links -->
 
@@ -295,5 +303,3 @@ Category layered navigation layout
     </checkout_onepage_index>
 
 </layout>
-
-

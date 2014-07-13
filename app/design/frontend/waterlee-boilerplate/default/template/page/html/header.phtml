@@ -1,65 +1,95 @@
-<div class="super-header">
-    <div class="super-header-content row">
-        <div class="welcome-msg columns large-2">
-            <p><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
-        </div>
-        <div class="columns large-10 site-utilities">
-
-                <div class="switchers columns large-9">
-                    <div class="row">
-                    <?php echo $this->getChildHtml('store_switcher') ?>
-                    <?php echo $this->getChildHtml('store_currency_selector') ?>
-                    <?php echo $this->getChildHtml('store_language') ?>
-                    </div>
-                </div>
-
-                 <?php echo $this->getChildHtml('top_cart') ?>
-
-
-            <div class="site-account columns large-2 small-4">
+<div class="show-for-large-up">
+<a href="#" class="scrollToTop"><i class="fa fa-chevron-circle-up fa-2x"></i></a>
+</div>
+<div class="super-header show-for-small-only">
+    <div class="super-header-content row collapse">
+        <div class="columns small-12">
+            <div class="right">
+                <?php echo $this->getChildHtml('mobile_top_cart') ?>
+            </div>
+            <div class="right">
                 <?php echo $this->getChildHtml('mini_account') ?>
             </div>
         </div>
     </div>
 </div>
 
+<div class="super-header show-for-medium-up">
+    <div class="super-header-content row collapse">
+        <div>
+                <div class="welcome-msg left">
+                    <p><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
+                </div>
+                <div class="right">
+                    <?php echo $this->getChildHtml('store_switcher') ?>
+                </div>
+                <div class="right lang-border">
+                    <?php echo $this->getChildHtml('store_language') ?>
+                </div>
+                <div class="right">
+                    <?php echo $this->getChildHtml('store_currency_selector') ?>
+                </div>
+                <div class="right">
+                    <?php echo $this->getChildHtml('mini_account') ?>
+                </div>
+        </div>
+    </div>
+</div>
+
 <header class="site-header">
     <div class="site-header-content row">
-        <div class="site-identity columns large-2 small-12">
+        <div class="site-identity columns large-3 medium-5 small-12">
         <?php if ($this->getIsHomePage()):?>
             <h1 class="site-logo">
                 <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="site-logo">
-                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" width="180px"/>
                 </a>
             </h1>
         <?php else:?>
             <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
-                <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+                <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" width="180px"/></a>
         <?php endif?>
         </div>
 
-        <div class="site-search columns large-10 small-12">
+
+            <div class="site nav columns small-12 costum-column show-for-small-only">
+                <nav class="top-bar" data-topbar>
+                    <ul class="title-area">
+                        <li class="name"></li>
+                        <li class="toggle-topbar menu-icon"><a href="#"><span><?php echo $this->__('Menu') ?></span></a></li>
+                    </ul>
+                    <section class="top-bar-section">
+
+                        <ul class="left">
+                            <?php echo $this->getChildHtml('topMenu') ?>
+                        </ul>
+                    </section>
+                </nav>
+            </div>
+
+
+        <div class="site-search columns large-6 medium-8 small-12">
             <?php echo $this->getChildHtml('topSearch') ?>
         </div>
+        <div class="columns large-3 medium-4 small-2 text-right top-cart-padd show-for-medium-up"><?php echo $this->getChildHtml('top_cart') ?></div>
 
 
 
     </div>
 </header>
-<div class="site-nav row">
-        <div class="columns large-12">
-            <nav class="top-bar" data-topbar>
-                <ul class="title-area">
-                    <li class="name"></li>
-                    <li class="toggle-topbar menu-icon"><a href="#"><span><?php echo $this->__('Menu') ?></span></a></li>
-                </ul>
-                <section class="top-bar-section">
-
-                    <ul class="left">
-                        <?php echo $this->getChildHtml('topMenu') ?>
+    <div class="site-nav row show-for-medium-up">
+            <div class="columns large-12 costum-column sticky">
+                <nav class="top-bar" data-topbar>
+                    <ul class="title-area">
+                        <li class="name"></li>
+                        <li class="toggle-topbar menu-icon"><a href="#"><span><?php echo $this->__('Menu') ?></span></a></li>
                     </ul>
-                </section>
-            </nav>
-        </div>
-</div>
+                    <section class="top-bar-section">
 
+                        <ul class="left">
+                            <?php echo $this->getChildHtml('topMenu') ?>
+                        </ul>
+                    </section>
+                </nav>
+            </div>
+    </div>

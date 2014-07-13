@@ -1,9 +1,9 @@
 #Magento HTML5 responsive boilerplate [![endorse](http://api.coderwall.com/zeljkoprsa/endorsecount.png)](http://coderwall.com/zeljkoprsa)
- - Built on Foundation 5.2.2 by ZURB.
- - Works with Magento 1.7, 1.8 & 1.8.1
+ - Built on Foundation 5.3 by ZURB.
+ - Works with Magento 1.7, 1.8 & 1.9
 
 **Update**
-#WATERLEE on Foundation 5.2.2 is here.
+#WATERLEE on Foundation 5.3 for sites is here.
 
 ## Create responsive Magento themes.
 #### Built on ZURB Foundation framework, waterlee has everything you need from the start.
@@ -65,7 +65,11 @@ What's inside:
 - Implemented classes that adhere to foundation docs
 - **NEW**: Foundation now uses bower for easy updating from the command line
 - **NEW**: From now on by default, JS is loaded separately by components in local.xml. Use only what you need! If you want from some reason full foundation, comment components and uncomment foundation.js in js.phtml. The same applies for importing scss files in styles.scss
-
+- **NEW**: Implemented easyResponsiveTabs [http://webtrendset.com/demo/easy-responsive-tabs/Index.html#horizontalTab2]
+- **NEW**: Implemented elevatezoom for product page with cool inner zoom on mobile layout [http://www.elevateweb.co.uk/image-zoom]
+- **NEW**: Implemented scroll to top
+- **NEW**: Gulp support with gulpfile.js (Check http://gulpjs.com/ on how to use it)
+- **NEW**: Implemented Fira font [https://github.com/mozilla/Fira] & HTML5 WYSIWYG Editor for Magento [https://www.meanbee.com/magento-extensions/meanbee-tinymce.html]
 
 ##What's next:
 

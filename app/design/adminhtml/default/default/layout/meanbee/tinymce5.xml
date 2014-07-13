@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Meanbee_Tinymce5
+ *
+ * This module was developed by Meanbee Internet Solutions.  If you require any
+ * support or have any questions please contact us at support@meanbee.com.
+ *
+ * @category   Meanbee
+ * @package    Meanbee_Tinymce5
+ * @author     Meanbee Internet Solutions <support@meanbee.com>
+ * @copyright  Copyright (c) 2011 Meanbee Internet Solutions (http://www.meanbee.com)
+ * @license    OSL v3.0
+ */
+-->
+<layout version="0.1.0">
+
+    <default>
+        <reference name="head">
+            <action method="removeItem"><type>js</type><name>mage/adminhtml/wysiwyg/tiny_mce/setup.js</name></action>
+            <action method="addItem"><type>js</type><name>meanbee/tinymce5/setup.js</name><params/><if/><condition>can_load_tiny_mce</condition></action>
+        </reference>
+    </default>
+
+</layout>

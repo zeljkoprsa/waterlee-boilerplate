@@ -1,5 +1,8 @@
-<div class="columns large-2 small-8 right">
-<a href="#" data-dropdown="site-mini-cart" class="site-mini-cart">Dropdown</a>
+<div class="top-cart">
+<a href="#" data-dropdown="site-mini-cart" data-options="is_hover:true; align:left" class="site-mini-cart cart-button">My Cart (<?php
+    $_cartQty = Mage::getSingleton('checkout/cart')->getItemsCount();
+    echo $_cartQty;
+    ?>)</a>
 <div id="site-mini-cart" class="f-dropdown" data-dropdown-content>
     <div class="site-cart">
         <!--<i class="icon-shopping-cart"></i>-->
@@ -18,7 +21,7 @@
             <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('%s Items', $count) ?></a>
         <?php endif; ?>
         <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
-        <a class="cartgo button tiny" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
+        <a class="cartgo button tiny cartbutton-margin" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
      </div>
 </div>
 </div>

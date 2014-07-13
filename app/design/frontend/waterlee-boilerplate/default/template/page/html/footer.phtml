@@ -28,20 +28,24 @@
 <footer class="site-footer">
     <div class="site-footer-content row">
         <?php echo $this->getChildHtml("mobile.menu.footer") ?>
-        <footer>
-            <div class="columns large-12">
+            <div class="columns large-12 footer-content">
                 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_demo_links')->toHtml(); ?>
-            </div>
-            <div class="columns large-12">
+
                 <div class="line-separator"></div>
-                <div class="row">
-                    <div class="newsletter columns large-6"><?php echo $this->getChildHtml("footer.newsletter") ?></div>
-                </div>
-                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('social_icons')->toHtml(); ?>
+
+                    <div class="newsletter columns large-12"><?php echo $this->getChildHtml("footer.newsletter") ?></div>
+
             </div>
-            <address class="columns large-12"><?php echo $this->getCopyright() ?></address>
-        </footer>
+
+    </div>
+    <div class="site-footer-info"
+        <div class="columns large-12 footer-info">
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_info')->toHtml(); ?>
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('social_icons')->toHtml(); ?>
+            <address class="columns large-12 address-padd text-right"><?php echo $this->getCopyright() ?></address>
+        </div>
+    </div>
 
         <?php echo $this->getChildHtml('js_files'); ?>
-    </div>
+
 </footer>

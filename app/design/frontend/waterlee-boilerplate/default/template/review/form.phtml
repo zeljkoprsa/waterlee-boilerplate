@@ -24,7 +24,8 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="form-add">
+<div class="form-add row">
+    <div class="columns large-5 medium-12 small-12 review-padding">
     <h2 class="toggle-review"><?php echo $this->__('Write Your Own Review') ?></h2>
 
     <?php if ($this->getAllowWriteReviewFlag()): ?>
@@ -32,9 +33,9 @@
         <?php echo $this->getBlockHtml('formkey'); ?>
         <fieldset class="fieldset-panel">
             <?php echo $this->getChildHtml('form_fields_before')?>
-            <h3><?php echo $this->__("You're reviewing:"); ?> <span><?php echo $this->htmlEscape($this->getProductInfo()->getName()) ?></span></h3>
+            <h5><?php echo $this->__("You're reviewing:"); ?> <span><?php echo $this->htmlEscape($this->getProductInfo()->getName()) ?></span></h5>
             <?php if( $this->getRatings() && $this->getRatings()->getSize()): ?>
-                <h4><?php echo $this->__('How do you rate this product?') ?> <em class="required">*</em></h4>
+                <h5><?php echo $this->__('How do you rate this product?') ?> <em class="required">*</em></h5>
                 <span id="input-message-box"></span>
                 <table class="data-table" id="product-review-table">
                     <col />
@@ -66,7 +67,9 @@
                 </table>
                 <input type="hidden" name="validate_rating" class="validate-rating" value="" />
                 <script type="text/javascript">decorateTable('product-review-table')</script>
-            <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+                <div class="columns large-7 medium-12 small-12 review-form-padding">
                 <ul class="form-list no-bullet">
                     <li>
                         <label for="nickname_field" class="required"><em>*</em><?php echo $this->__('Nickname') ?></label>
@@ -87,10 +90,12 @@
                         </div>
                     </li>
                 </ul>
+                    <div class="buttons-set columns large-12 text-right">
+                        <button type="submit" title="<?php echo $this->__('Submit Review') ?>" class="button"><span><span><?php echo $this->__('Submit Review') ?></span></span></button>
+                    </div>
             </fieldset>
-            <div class="buttons-set">
-                <button type="submit" title="<?php echo $this->__('Submit Review') ?>" class="button"><span><span><?php echo $this->__('Submit Review') ?></span></span></button>
-            </div>
+
+                </div>
     </form>
     <script type="text/javascript">
     //<![CDATA[
@@ -101,18 +106,18 @@
                     var trs = $('product-review-table').select('tr');
                     var inputs;
                     var error = 1;
-    
+
                     for( var j=0; j < trs.length; j++ ) {
                         var tr = trs[j];
                         if( j > 0 ) {
                             inputs = tr.select('input');
-    
+
                             for( i in inputs ) {
                                 if( inputs[i].checked == true ) {
                                     error = 0;
                                 }
                             }
-    
+
                             if( error == 1 ) {
                                 return false;
                             } else {

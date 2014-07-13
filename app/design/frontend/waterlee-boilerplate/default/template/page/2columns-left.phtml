@@ -45,17 +45,20 @@
         <?php echo $this->getChildHtml('header') ?>
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
                 <div class="main-container col2-left-layout row">
-                    <div class="columns small-12">
-                        <p class="show-for-small">
-                            <a class='menu-button button tiny' href="#bottomNav">Menu</a>
-                            <a class='sidebar-button button tiny' id='sidebarButton' href="#sidebar">Extra</a>
-                        </p>
-
-                        <section role="main">
-                            <?php echo $this->getChildHtml('global_messages') ?>
-                            <?php echo $this->getChildHtml('content') ?>
-                        </section>
-                        <section id="sidebar" role="complementary"><?php echo $this->getChildHtml('left') ?></section>
+                    <div>
+                        <div class="off-canvas-wrap" data-offcanvas>
+                            <a class="left-off-canvas-toggle sidebar-button" href="#sidebar" ><i class="fa fa-bars"></i></a>
+                            <div class="inner-wrap">
+                               <!--<p class="show-for-small-only">
+                                   <a class='menu-button button tiny' href="#bottomNav">Menu</a>-->
+                                <section id="sidebar" role="complementary"><?php echo $this->getChildHtml('left') ?></section>
+                                <section role="main">
+                                    <?php echo $this->getChildHtml('global_messages') ?>
+                                    <?php echo $this->getChildHtml('content') ?>
+                                </section>
+                                <a class="exit-off-canvas"></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
         <?php echo $this->getChildHtml('footer') ?>

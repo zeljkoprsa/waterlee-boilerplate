@@ -45,24 +45,29 @@
                 <input type="hidden" name="related_product" id="related-products-field" value="" />
             </div>
             <div class="row product-media">
-            <div class="product-img-box columns large-5 small-12">
+            <div class="product-img-box columns large-5 medium-5 small-12">
                 <?php echo $this->getChildHtml('media') ?>
-                <hr />
-                <section class="related-products-wrapper">
-                    <?php echo $this->getChildHtml('catalog_products_related') ?>
-                </section>
+
             </div>
 
-            <div class="product-shop columns large-7 small-12">
+            <div class="product-shop columns large-7 medium-7 small-12">
                 <h1 class="product-name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+
+                <?php if ($_product->getShortDescription()):?>
+                    <div class="short-description">
+                        <h2><?php echo $this->__('Quick Overview') ?></h2>
+                        <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+                    </div>
+                <?php endif;?>
+
                 <?php echo $this->getChildHtml('alert_urls') ?>
 
-                    <ul class="email-review_summary inline-list">
+                    <div class="email-review_summary row collapse">
                     <?php if ($this->canEmailToFriend()): ?>
-                    <p class="mailto-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"> <i class="icon-envelope-alt"></i> <?php echo $this->__('Email to a Friend') ?></a></p>
+                    <p class="mailto-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"> <i class="fa fa-envelope-o"></i> <?php echo $this->__('Email to a Friend') ?></a></p><br />
                     <?php endif; ?>
                     <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
-                    </ul>
+                    </div>
 
                     <?php echo $this->getChildHtml('product_type_data') ?>
 
@@ -72,11 +77,11 @@
                 <?php if (!$this->hasOptions()):?>
                 <div class="add-to-box row">
                     <?php if($_product->isSaleable()): ?>
-                        <div class="columns small-12">
+                        <div>
                             <?php echo $this->getChildHtml('addtocart') ?>
                         </div>
                     <?php endif; ?>
-                        <div class="columns small-12">
+                        <div>
                             <?php echo $this->getChildHtml('addto') ?>
                         </div>
                 </div>
@@ -86,13 +91,7 @@
                         <?php echo $this->getChildHtml('addto') ?>
                     </div>
                 <?php endif; ?>
-                <?php if ($_product->getShortDescription()):?>
-                    <div class="short-description">
-                        <h2><?php echo $this->__('Quick Overview') ?></h2>
-                        <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
-                    </div>
-                <?php endif;?>
-                <?php echo $this->getChildHtml('other');?>
+
                 <?php if ($_product->isSaleable() && $this->hasOptions()):?>
                     <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
                 <?php endif;?>
@@ -100,37 +99,45 @@
                     <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
                 <?php endif;?>
 
-                <dl class="tabs product-collateral" data-tab>
-                    <?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
-                            <dd class="title"><a href="#<?php echo "{$alias}"?>"><?php echo "{$alias}"?></a></dd>
+                <?php echo $this->getChildHtml('other');?>
+            </div>
+          </div>
 
 
-                    <?php endforeach;?>
-                </dl>
-                <div class="tabs-content <?php echo "box-{$alias}"?>">
-                    <?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
-                    <div class="content" id="<?php echo "{$alias}"?>">
-                        <p>
-                        <?php if ($title = $this->getChildData($alias, 'title')):?>
-                        <h2 class="panel-title"><?php echo $this->escapeHtml($title); ?></h2>
-                        <?php endif;?>
-                        <?php echo $html; ?>
-                        </p>
-                    </div>
-                    <?php endforeach;?>
-                </div>
-            </div>
-            </div>
         </form>
-        <section class="columns small-5 product-reviews">
-            <?php echo $this->getChildHtml('product_additional_data') ?>
-        </section>
-        <section class="columns small-7 additional-data">
-            <?php echo $this->getChildHtml('product_review') ?>
-        </section>
-        <div class="columns large-12">
-            <?php echo $this->getChildHtml('upsell_products') ?>
+
+        <div id="demoTab" class="tabs-padd">
+            <ul class="resp-tabs-list">
+                <?php $h = true;  ?>
+                  <?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
+                          <li class="title <?php if($h) echo "active" ?> "><a href="#<?php echo "{$alias}"?>"><?php echo "{$alias}"?></a></li>
+                <?php $h = false ?>
+                <?php endforeach;?>                
+                <li><a href="#panel3">related</a></li>
+                <li><a href="#panel4">upsell</a></li>
+                <li><a href="#panel5">tags</a></li>
+            </ul>
+
+            <div class="resp-tabs-container">
+              <?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
+              <div>
+              <?php if ($title = $this->getChildData($alias, 'title')):?>
+              <h2 class="panel-title"><?php echo $this->escapeHtml($title); ?></h2>
+              <?php endif;?>
+              <?php echo $html; ?>
+              </div>
+              <?php endforeach;?>
+                
+                <div><?php echo $this->getChildHtml('catalog_products_related') ?></div>
+                <div><?php echo $this->getChildHtml('upsell_products') ?></div>
+                <div><?php echo $this->getChildHtml('product_additional_data') ?></div>
+            </div>
         </div>
+            <div><?php echo $this->getChildHtml('product_review') ?></div>
+
+
+
+
         <script type="text/javascript">
             //<![CDATA[
             var productAddToCartForm = new VarienForm('product_addtocart_form');

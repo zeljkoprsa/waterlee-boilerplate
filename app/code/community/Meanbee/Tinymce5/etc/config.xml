@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Meanbee_Tinymce5
+ *
+ * This module was developed by Meanbee Internet Solutions.  If you require any
+ * support or have any questions please contact us at support@meanbee.com.
+ *
+ * @category   Meanbee
+ * @package    Meanbee_Tinymce5
+ * @author     Meanbee Internet Solutions <support@meanbee.com>
+ * @copyright  Copyright (c) 2011 Meanbee Internet Solutions (http://www.meanbee.com)
+ * @license    OSL v3.0
+ */
+-->
+<config>
+	<modules>
+		<Meanbee_Tinymce5>
+			<version>0.1.1</version>
+		</Meanbee_Tinymce5>
+	</modules>
+	
+	<global>
+		<helpers>
+			<tinymce5>
+				<class>Meanbee_Tinymce5_Helper</class>
+			</tinymce5>
+		</helpers>
+	</global>
+	
+	<admin>    
+        <routers>
+            <tinymce5>
+                <use>admin</use>
+                <args>
+                        <module>Meanbee_Tinymce5</module>
+                        <frontName>tinymce5</frontName>
+                </args>
+            </tinymce5>
+        </routers>
+    </admin>
+		
+    <adminhtml>
+        <layout>
+            <updates>
+                <tinymce5>
+                    <file>meanbee/tinymce5.xml</file>
+                </tinymce5>
+            </updates>
+        </layout>
+
+		<acl>
+			<all>
+				<title>Allow Everything</title>
+			</all>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<tinymce5 translate="title" module="tinymce5">
+											<title>WYSIWYG HTML 5</title>
+										</tinymce5>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+</config>

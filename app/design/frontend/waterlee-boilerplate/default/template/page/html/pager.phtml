@@ -61,9 +61,9 @@
     <?php endif ?>
 
     <?php if($this->getLastPageNum()>1): ?>
-    <div class="pages">
+    <div class="pages right">
 
-        <ul class="pagination">
+        <ul class="pagination inline-list">
         <?php if (!$this->isFirstPage()): ?>
             <li>
                 <a class="previous<?php if(!$this->getAnchorTextForPrevious()): ?> i-previous<?php endif;?>" href="<?php echo $this->getPreviousPageUrl() ?>" title="<?php echo $this->__('Previous') ?>">

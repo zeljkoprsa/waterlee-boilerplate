@@ -22,13 +22,99 @@
 }
 
 .product-shop .short-description{
-  margin-bottom: 1em;
+  margin-top: 0rem !important;
+  margin-bottom: 1rem !important;
 }
 
 .product-shop .short-description h2{
+  font-size: 1.4rem;
   font-weight: 300;
+  margin-left: -0.1rem;
 }
 .product-shop .std{
   /* @todo: Candidate for refactoring: global-css-rule; */
   line-height: $paragraph-line-height;
+}
+.col2-left-layout {
+  margin-top: 0rem;
+}
+.separator {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.tabs-content {
+  border: 1px solid #efefef;
+  padding-left: 1rem;
+}
+.additional-data {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+.configurable-option {
+  margin-bottom: 0rem;
+}
+.configurable-dd {
+  margin-bottom: 0rem;
+}
+.required-entry-conf, .required-entry-conf:hover {
+  background: white url("http://waterlee.jakesharp.co/demo/skin/frontend/waterlee-boilerplate/default/images/arrow.png") no-repeat scroll 98% center;
+}
+.price-box {
+  margin-left: 0.05rem !important;
+  margin-bottom: 1rem !important;
+}
+.product-shop {
+  padding-right: 0rem;
+}
+.product-img-box {
+  padding-left: 0rem;
+}
+.tabs-padd {
+  padding-left: 0;
+  padding-right: 1rem !important;
+  padding-top: 1rem;
+  margin-bottom: 2rem !important;
+}
+.availability {
+  margin-top: 1rem;
+}
+.list-style {
+  list-style-type: none;
+  float: left;
+  margin-right: 1em;
+}
+.product-shop .short-description {
+margin: 2em 0;
+}
+.product-image-gallery .gallery-image.visible {
+display: block;
+}
+.product-image-gallery .gallery-image {
+display: none;
+}
+.cart-margin {
+  margin-bottom: 0rem;
+}
+.add-to-links {
+  margin-bottom: 0.5rem;
+}
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .product-shop {
+    padding-right: 1rem;
+  }
+  .product-img-box {
+    padding-left: 1rem;
+  }
+}
+@media only screen and (max-width: 40em) {
+  .product-shop {
+    padding-right: 1rem;
+  }
+  .product-img-box {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+}
+#wrap {
+  z-index: 1 !important;
 }

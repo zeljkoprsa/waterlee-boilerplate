@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Meanbee_Tinymce5
+ *
+ * This module was developed by Meanbee Internet Solutions.  If you require any
+ * support or have any questions please contact us at support@meanbee.com.
+ *
+ * @category   Meanbee
+ * @package    Meanbee_Tinymce5
+ * @author     Meanbee Internet Solutions <support@meanbee.com>
+ * @copyright  Copyright (c) 2011 Meanbee Internet Solutions (http://www.meanbee.com)
+ * @license    OSL v3.0
+ */
+-->
+<config>
+	<sections>
+		<tinymce5 translate="label" module="tinymce5">
+			<label>WYSIWYG HTML 5</label>
+			<tab>general</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>1200</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<banner>
+					<label>Module Information</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<comment>
+					<![CDATA[
+						This module adds HTML5 compatibility with the default Magento WYSIWYG editor (TinyMCE).  
+					]]></comment>
+				</banner>
+			</groups>
+		</tinymce5>
+	</sections>
+</config>
