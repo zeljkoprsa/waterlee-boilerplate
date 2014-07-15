@@ -90,6 +90,7 @@
 /php.ini.sample
 /pkginfo/
 /RELEASE_NOTES.txt
+/sftp-config.json
 /shell/abstract.php
 /shell/compiler.php
 /shell/indexer.php
