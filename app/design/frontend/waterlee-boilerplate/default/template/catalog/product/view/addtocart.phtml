@@ -30,7 +30,7 @@
 <div class="add-to-cart columns large-6">
     <ul class="inline-list cart-margin">
     <?php if(!$_product->isGrouped()): ?>
-    <li><label for="qty"><?php echo $this->__('Qty:') ?></label></li>
+    <li><label for="qty" class="qty-align"><?php echo $this->__('Qty:') ?></label></li>
     <li><input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" /></li>
     <?php endif; ?>
     <li><button type="button" title="<?php echo $buttonTitle ?>" class="small nephritis-flat-button nephritis-width" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button></li>

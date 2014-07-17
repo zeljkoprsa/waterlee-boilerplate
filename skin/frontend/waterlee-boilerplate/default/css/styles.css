@@ -7017,7 +7017,7 @@ select, select:hover {
 .tabs-padd {
   padding-left: 0;
   padding-right: 1rem !important;
-  padding-top: 1rem;
+  padding-top: 2rem;
   margin-bottom: 2rem !important; }
 
 .availability {
@@ -7042,6 +7042,40 @@ select, select:hover {
 
 .add-to-links {
   margin-bottom: 0.5rem; }
+
+.qty-align {
+  position: relative;
+  top: 60%;
+  transform: translateY(60%); }
+
+.bundle-qty-align {
+  position: relative;
+  top: 40%;
+  transform: translateY(40%); }
+
+.bundle-option-select, .bundle-option-select:hover {
+  background: white url("http://waterlee.jakesharp.co/demo/skin/frontend/waterlee-boilerplate/default/images/arrow.png") no-repeat scroll 98% center; }
+
+.downloadable-links {
+  background-color: #fff;
+  color: #333;
+  margin-top: -0.2rem; }
+
+.downloadable-label {
+  display: inline;
+  margin-right: 1rem; }
+
+.sample-font {
+  font-size: 0.9rem; }
+
+.grouped-items-table {
+  width: 100%; }
+
+.grouped-table-price {
+  width: 15%; }
+
+.grouped-table-qty {
+  width: 20%; }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
   .product-shop {
