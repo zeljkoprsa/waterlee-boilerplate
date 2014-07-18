@@ -70,6 +70,7 @@ What's inside:
 - **NEW**: Implemented scroll to top
 - **NEW**: Gulp support with gulpfile.js (Check http://gulpjs.com/ on how to use it)
 - **NEW**: Implemented Fira font [https://github.com/mozilla/Fira] & HTML5 WYSIWYG Editor for Magento [https://www.meanbee.com/magento-extensions/meanbee-tinymce.html]
+- **NEW**: Implemented flexslider for product page thumb slides [http://www.woothemes.com/flexslider/]
 
 ##What's next:
 

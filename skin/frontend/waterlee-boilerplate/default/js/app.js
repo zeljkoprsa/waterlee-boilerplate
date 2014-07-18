@@ -59,4 +59,17 @@ function WidthChange(mq) {
 		jQuery('html, body').animate({scrollTop : 0},800);
 		return false;
 	});
+
 })
+
+	jQuery(window).load(function(){
+      jQuery('#carousel').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 210,
+        itemMargin: 5,
+        asNavFor: '#slider'
+      });
+    });

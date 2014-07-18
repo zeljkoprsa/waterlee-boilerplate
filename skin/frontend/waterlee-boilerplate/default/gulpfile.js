@@ -34,6 +34,7 @@ gulp.task('js', function() {
             'bower_components/foundation/js/foundation/foundation.topbar.js',
             'js/easyResponsiveTabs.js',
             'js/elevatezoom/jquery.elevatezoom.js',
+            'js/jquery.flexslider.js'
         ])
         .pipe(concat('script.js'))
         //.pipe(uglify())

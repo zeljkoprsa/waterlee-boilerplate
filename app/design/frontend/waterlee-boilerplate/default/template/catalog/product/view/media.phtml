@@ -64,7 +64,8 @@ $_helper = $this->helper('catalog/output');
 <?php if (count($this->getGalleryImages()) > 0): ?>
     <div class="more-views">
         <h5><?php echo $this->__('More Views') ?></h5>
-        <ul class="inline-list">
+        <div id="carousel" class="flexslider">
+        <ul class="slides">
             <?php foreach ($this->getGalleryImages() as $_image): ?>
                 <li>
                     <a class="th" href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile()); ?>" title="<?php echo $_product->getName();?>" onclick="$('image-main').src = this.href; return false;">
@@ -73,5 +74,6 @@ $_helper = $this->helper('catalog/output');
                 </li>
             <?php endforeach; ?>
         </ul>
+        </div>
     </div>
 <?php endif; ?>
