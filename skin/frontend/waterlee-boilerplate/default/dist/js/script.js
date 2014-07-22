@@ -1,5 +1,5 @@
 /*!
- * Modernizr v2.8.2
+ * Modernizr v2.8.3
  * www.modernizr.com
  *
  * Copyright (c) Faruk Ates, Paul Irish, Alex Sexton
@@ -24,7 +24,7 @@
 
 window.Modernizr = (function( window, document, undefined ) {
 
-    var version = '2.8.2',
+    var version = '2.8.3',
 
     Modernizr = {},
 
@@ -1685,7 +1685,7 @@ window.Modernizr = (function( window, document, undefined ) {
   window.Foundation = {
     name : 'Foundation',
 
-    version : '5.3.0',
+    version : '5.3.1',
 
     media_queries : {
       small : S('.foundation-mq-small').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
@@ -2025,7 +2025,7 @@ window.Modernizr = (function( window, document, undefined ) {
   Foundation.libs.dropdown = {
     name : 'dropdown',
 
-    version : '5.3.0',
+    version : '5.3.1',
 
     settings : {
       active_class: 'open',
@@ -2339,7 +2339,7 @@ window.Modernizr = (function( window, document, undefined ) {
   Foundation.libs.equalizer = {
     name : 'equalizer',
 
-    version : '5.3.0',
+    version : '5.3.1',
 
     settings : {
       use_tallest: true,
@@ -2404,7 +2404,7 @@ window.Modernizr = (function( window, document, undefined ) {
   Foundation.libs.offcanvas = {
     name : 'offcanvas',
 
-    version : '5.3.0',
+    version : '5.3.1',
 
     settings : {
       open_method: 'move',
@@ -2549,7 +2549,7 @@ window.Modernizr = (function( window, document, undefined ) {
     };
 
     self.update_active_link = function(index) {
-      var link = $('a[data-orbit-link="'+self.slides().eq(index).attr('data-orbit-slide')+'"]');
+      var link = $('[data-orbit-link="'+self.slides().eq(index).attr('data-orbit-slide')+'"]');
       link.siblings().removeClass(settings.bullets_active_class);
       link.addClass(settings.bullets_active_class);
     };
@@ -2911,7 +2911,7 @@ window.Modernizr = (function( window, document, undefined ) {
   Foundation.libs.orbit = {
     name: 'orbit',
 
-    version: '5.3.0',
+    version: '5.3.1',
 
     settings: {
       animation: 'slide',
@@ -2979,13 +2979,14 @@ window.Modernizr = (function( window, document, undefined ) {
 
     
 }(jQuery, window, window.document));
+
 ;(function ($, window, document, undefined) {
   'use strict';
 
   Foundation.libs.topbar = {
     name : 'topbar',
 
-    version: '5.3.0',
+    version: '5.3.1',
 
     settings : {
       index : 0,

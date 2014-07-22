@@ -28,7 +28,7 @@ gulp.task('js', function() {
             'bower_components/modernizr/modernizr.js',
             'bower_components/foundation/js/foundation/foundation.js',
             'bower_components/foundation/js/foundation/foundation.dropdown.js',
-            'bower_components/foundation/js/foundation/foundation.equalizer.js',
+            'js/foundation.equalizer.js',
             'bower_components/foundation/js/foundation/foundation.offcanvas.js',
             'bower_components/foundation/js/foundation/foundation.orbit.js',
             'bower_components/foundation/js/foundation/foundation.topbar.js',
