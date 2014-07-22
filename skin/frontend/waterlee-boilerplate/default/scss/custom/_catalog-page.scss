@@ -53,6 +53,11 @@
   border: 1px solid #efefef;
   padding: 0.5rem;
 }
+.inner-wrapper:hover {
+  -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.10);
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.10);
+  box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.10);
+}
 .category-image {
   padding-left: 0.1rem;
 }
