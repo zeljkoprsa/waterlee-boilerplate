@@ -1,0 +1,15 @@
+.account-login .content {
+  min-height: 100px;
+}
+.account-login {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+@media only screen and (max-width: 40.063rem) {
+	.login-heading {
+		margin-left: 0.5rem;
+	}
+	.account-login .content {
+		min-height: 120px !important;
+	}
+}

@@ -25,16 +25,24 @@ function WidthChange(mq) {
 	else {
 		// window width is less than 500px
 		 jQuery('.gallery-image.visible').elevateZoom({
-		    zoomType: "inner",
-			cursor: "crosshair",
+		    constrainType:"height",
+		    constrainSize:274,		   
+		    zoomType: "lens",
+		    containLensZoom: true,
+			cursor: "pointer",
+			galleryActiveClass: "active",
 			zoomWindowFadeIn: 500,
 			zoomWindowFadeOut: 750
 		    });
 
 		  jQuery('.more-views').click(function(){
 		    jQuery('.gallery-image.visible').elevateZoom({
-		    zoomType: "inner",
-			cursor: "crosshair",
+		    constrainType:"height",
+		    constrainSize:274,		   
+		    zoomType: "lens",
+		    containLensZoom: true,
+			cursor: "pointer",
+			galleryActiveClass: "active",
 			zoomWindowFadeIn: 500,
 			zoomWindowFadeOut: 750
    			});

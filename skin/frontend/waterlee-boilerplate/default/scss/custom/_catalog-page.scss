@@ -33,7 +33,6 @@
 .page-title {
   padding: 0rem;
   margin-top: 0.2rem;
-  margin-left: 1rem;
 }
 #sidebar {
   border: 2px solid #efefef;
@@ -133,7 +132,10 @@ margin-bottom: 0;
     padding-top: 4rem;
 }
 }
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 40.063em) {
+  .sidebar-button {
+    padding-top: 1rem;
+  }
   .colmargin {
     padding-left: 0rem;
     padding-right: 0rem;
@@ -145,9 +147,14 @@ margin-bottom: 0;
   padding-left: 0rem;
   padding-bottom: 2rem;
  }
+ .fa-bars {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+ }
+ .row.product-media {
+    margin: 2rem 0.5rem 0.5rem 0.5rem;
+  }
 }
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  .page-title {
-    margin-left: 1rem;
-  }
+  
 }

@@ -3,7 +3,7 @@
 </div>
 <div class="super-header show-for-small-only">
     <div class="super-header-content row collapse">
-        <div class="columns small-12">
+        <div class="columns small-12 sheader-height">
             <div class="right">
                 <?php echo $this->getChildHtml('mobile_top_cart') ?>
             </div>
@@ -38,41 +38,50 @@
 
 <header class="site-header">
     <div class="site-header-content row">
-        <div class="site-identity columns large-3 medium-5 small-12">
-        <?php if ($this->getIsHomePage()):?>
-            <h1 class="site-logo">
-                <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="site-logo">
-                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" width="180px"/>
-                </a>
-            </h1>
-        <?php else:?>
-            <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
-                <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" width="180px"/></a>
-        <?php endif?>
-        </div>
-
-
             <div class="site nav columns small-12 costum-column show-for-small-only">
                 <nav class="top-bar" data-topbar>
                     <ul class="title-area">
-                        <li class="name"></li>
+                        <li class="name">                                                    
+                            <?php if ($this->getIsHomePage()):?>
+                            <h1 class="site-logo">
+                                <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="site-logo">
+                                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="mobile-logo" width="200px"/>
+                                </a>
+                            </h1>
+                            <?php else:?>
+                                <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+                                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="mobile-logo" width="200px"/></a>
+                            <?php endif?>                                                    
+                        </li>
                         <li class="toggle-topbar menu-icon"><a href="#"><span><?php echo $this->__('Menu') ?></span></a></li>
                     </ul>
                     <section class="top-bar-section">
-
-                        <ul class="left">
+                        
+                        <ul class="right">
+                            <?php echo $this->getChildHtml('topSearch') ?>
                             <?php echo $this->getChildHtml('topMenu') ?>
                         </ul>
                     </section>
                 </nav>
             </div>
+            <div class="site-identity columns large-3 medium-5 hide-for-small">
+                <?php if ($this->getIsHomePage()):?>
+                    <h1 class="site-logo">
+                        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="site-logo">
+                            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" width="180px"/>
+                        </a>
+                    </h1>
+                <?php else:?>
+                    <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+                        <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" width="180px"/></a>
+                <?php endif?>
+                </div>
 
-
-        <div class="site-search columns large-6 medium-8 small-12">
-            <?php echo $this->getChildHtml('topSearch') ?>
-        </div>
-        <div class="columns large-3 medium-4 small-2 text-right top-cart-padd show-for-medium-up"><?php echo $this->getChildHtml('top_cart') ?></div>
-
+                <div class="site-search columns large-6 medium-8 hide-for-small">
+                    <?php echo $this->getChildHtml('topSearch') ?>
+                </div>
+                <div class="columns large-3 medium-4 small-2 text-right top-cart-padd show-for-medium-up"><?php echo $this->getChildHtml('top_cart') ?>
+            </div>
 
 
     </div>

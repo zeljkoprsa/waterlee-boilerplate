@@ -5808,6 +5808,19 @@ html[xmlns] .slides {
     opacity: 1;
     right: 10px; } }
 
+.account-login .content {
+  min-height: 100px; }
+
+.account-login {
+  padding-left: 0rem;
+  padding-right: 0rem; }
+
+@media only screen and (max-width: 40.063rem) {
+  .login-heading {
+    margin-left: 0.5rem; }
+  .account-login .content {
+    min-height: 120px !important; } }
+
 .form-list {
   list-style-type: none;
   margin: 0; }
@@ -5821,10 +5834,6 @@ select {
 .breadcrumbs-wrapper {
   padding-left: 0rem !important;
   padding-right: 0rem !important; }
-
-.account-login {
-  padding-left: 0rem;
-  padding-right: 0rem; }
 
 .category-products {
   padding-left: 0.2rem;
@@ -5990,7 +5999,6 @@ p.required {
 #search {
   border-left: none;
   box-shadow: none;
-  width: 93%;
   background: #fff;
   border-color: #ccc; }
 
@@ -6028,11 +6036,18 @@ p.required {
 @media only screen and (max-width: 40em) {
   .site-search {
     margin-left: 0rem; }
+  .row {
+    max-width: 100%; }
+  .sheader-height {
+    height: 30px; }
   .site-header {
     margin-bottom: 0rem !important;
     margin-top: 0rem !important; }
   #search {
-    width: 100%; }
+    width: 100%;
+    height: 2.3rem; }
+  .mobile-logo {
+    margin-top: 0.25rem; }
   .costum-column {
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
@@ -6790,13 +6805,9 @@ Cart styling
   margin-top: 1rem;
   margin-left: -0.1rem; }
 
-@media only screen and (max-width: 40em) {
-  .page-title {
-    margin-left: 1rem; } }
+@media only screen and (max-width: 40em) { }
 
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  .page-title {
-    margin-left: 1rem; } }
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { }
 
 .site-language ul, .site-language li, .site-language p {
   margin-bottom: 0;
@@ -6952,9 +6963,6 @@ select, select:hover {
 
   select, select:hover {
     padding: 0.19rem; } }
-
-.account-login .content {
-  min-height: 100px; }
 
 .per-page {
   font-size: 0.875em;
@@ -7123,7 +7131,7 @@ select, select:hover {
 
 @media only screen and (max-width: 40em) {
   .body-img {
-    margin-top: 0 !important; } }
+    margin-top: 2rem; } }
 
 .subtitle {
   margin-top: 2rem;
@@ -7142,7 +7150,7 @@ select, select:hover {
   list-style: none;
   border-style: solid;
   border-width: 0px;
-  background-color: #fff;
+  background-color: transparent;
   border-color: gainsboro;
   border-radius: 3px; }
 
@@ -7169,11 +7177,22 @@ select, select:hover {
 .checkout-types .nephritis-flat-button {
   padding: 0.5rem; }
 
+.noItems-page {
+  padding: 1rem 0rem; }
+
+@media only screen and (max-width: 40.063rem) {
+  .cart {
+    margin: 0 0.5rem 0 0.5rem; } }
+
 .current {
   color: #333; }
 
 .block-acc-margin {
   margin-top: 1rem; }
+
+@media only screen and (max-width: 40.063rem) {
+  .dashboard {
+    margin: 0 0.5rem 0 0.5rem; } }
 
 .site-nav {
   border-top: 1px solid #e7e7e7;
@@ -7189,6 +7208,12 @@ select, select:hover {
   border-bottom: 1px solid #efefef;
   padding-left: 12%;
   background: #f9f9f9; }
+
+@media only screen and (max-width: 40em) {
+  .top-bar button {
+    padding-top: 0rem; }
+  .site-logo {
+    padding-left: 0rem !important; } }
 
 .product-essential {
   padding-left: 0rem;
@@ -7333,7 +7358,17 @@ select, select:hover {
     padding-right: 1rem; }
   .product-img-box {
     padding-left: 0.8rem;
-    padding-right: 0.8rem; } }
+    padding-right: 0.8rem; }
+  .tabs-padd {
+    margin-left: 0.5rem !important; }
+  .review-padding {
+    margin-left: 0.5rem; }
+  .form-list {
+    margin-left: 0.5rem !important; }
+  .customer-reviews {
+    padding-left: 1.5rem; }
+  .custom-review-heading {
+    margin-left: -1rem; } }
 
 #wrap {
   z-index: 1 !important; }
@@ -7381,8 +7416,7 @@ select, select:hover {
 
 .page-title {
   padding: 0rem;
-  margin-top: 0.2rem;
-  margin-left: 1rem; }
+  margin-top: 0.2rem; }
 
 #sidebar {
   border: 2px solid #efefef;
@@ -7481,7 +7515,9 @@ nephritis-flat-button:hover, .nephritis-flat-button:hover {
   .review-form-padding {
     padding-top: 4rem; } }
 
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 40.063em) {
+  .sidebar-button {
+    padding-top: 1rem; }
   .colmargin {
     padding-left: 0rem;
     padding-right: 0rem; }
@@ -7489,11 +7525,14 @@ nephritis-flat-button:hover, .nephritis-flat-button:hover {
     margin-left: 0rem; }
   *[role="main"] {
     padding-left: 0rem;
-    padding-bottom: 2rem; } }
+    padding-bottom: 2rem; }
+  .fa-bars {
+    margin-top: 1rem;
+    margin-left: 0.5rem; }
+  .row.product-media {
+    margin: 2rem 0.5rem 0.5rem 0.5rem; } }
 
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  .page-title {
-    margin-left: 1rem; } }
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { }
 
 .fieldset-panel {
   border: 0 none;

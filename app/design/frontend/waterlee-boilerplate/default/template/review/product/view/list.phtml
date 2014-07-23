@@ -30,9 +30,9 @@
     <div class="columns small-12">
         <?php echo $this->getChildHtml('review_form') ?>
     </div>
-    <div class="columns large-12">
+    <div class="columns large-12 customer-reviews">
         <?php if (count($_items)):?>
-            <h2><?php echo $this->__('Customer Reviews') ?></h2>
+            <h2 class="custom-review-heading"><?php echo $this->__('Customer Reviews') ?></h2>
             <?php echo $this->getChildHtml('toolbar') ?>
             <div class="row inline-list">
             <dl>

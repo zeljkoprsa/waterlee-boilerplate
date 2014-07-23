@@ -13,3 +13,11 @@
   padding-left: 12%;
   background: #f9f9f9;
 }
+@media only screen and (max-width: 40em) {
+	.top-bar button {
+		padding-top: 0rem;
+	}
+	.site-logo {
+		padding-left: 0rem !important;
+	}
+}
