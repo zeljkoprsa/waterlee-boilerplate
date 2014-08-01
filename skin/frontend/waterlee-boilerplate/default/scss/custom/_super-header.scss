@@ -66,7 +66,6 @@ select, select:hover {
   cursor: pointer;
   line-height: normal;
   margin: 0 0 1.25rem;
-  position: relative;
   text-decoration: none;
   text-align: center;
   padding-top: 0.55rem;
@@ -81,39 +80,14 @@ select, select:hover {
   color: #747474;
   transition: background-color 300ms ease-out;
 }
-.cart-button {
-  border: 1px solid #e5e5e5;
-  cursor: pointer;
-  line-height: normal;
-  margin: 0 0 1.25rem;
-  position: relative;
-  text-decoration: none;
-  text-align: center;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
-  display: inline-block;
-  padding-top: 1rem;
-  padding-right: 2rem;
-  padding-bottom: 1.0625rem;
-  padding-left: 2rem;
-  font-size: 1rem;
-  background-color: #efefef;
-  color: #747474;
-  transition: background-color 300ms ease-out;
-}
-.cart-button {
-  padding-top: 0.55rem;
-  padding-right: 1.25rem;
-  padding-bottom: 0.55rem;
-  padding-left: 1.25rem;
-  font-size: 0.6875rem;
-}
+
 @media only screen and (max-width: 40em) {
+  .acc-button {
+    right: 5.4rem;
+
+  }
   .super-header {
     height: 2.45rem;
-  }
-  .cart-button {
-    background-color: #f9f9f9;
   }
   .site-identity {
     padding-left: 0rem;
@@ -137,16 +111,6 @@ select, select:hover {
   .top-cart-padd {
     padding-right: 0rem;
   }
-}
-.f-dropdown {
-  padding-top: 1rem;
-  padding-bottom: 0rem;
-  padding-left: 1.5rem;
-  padding-right: 2rem;
-}
-.site-cart {
-  margin-right: 1rem;
-  margin-left: 1rem;
 }
 @-moz-document url-prefix() {
   .super-header {

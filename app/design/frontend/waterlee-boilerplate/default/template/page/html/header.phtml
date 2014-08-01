@@ -5,7 +5,11 @@
     <div class="super-header-content row collapse">
         <div class="columns small-12 sheader-height">
             <div class="right">
-                <?php echo $this->getChildHtml('mobile_top_cart') ?>
+                <a class="right-off-canvas-toggle cart-button" href="#">My Cart (<?php
+    $_cartQty = Mage::getSingleton('checkout/cart')->getItemsCount();
+    echo $_cartQty;
+    ?>)</a>
+                <?php /*echo $this->getChildHtml('top_cart')*/ ?>
             </div>
             <div class="right">
                 <?php echo $this->getChildHtml('mini_account') ?>
@@ -80,7 +84,12 @@
                 <div class="site-search columns large-6 medium-8 hide-for-small">
                     <?php echo $this->getChildHtml('topSearch') ?>
                 </div>
-                <div class="columns large-3 medium-4 small-2 text-right top-cart-padd show-for-medium-up"><?php echo $this->getChildHtml('top_cart') ?>
+                <div class="columns large-3 medium-4 small-2 text-right top-cart-padd show-for-medium-up">
+                <a class="right-off-canvas-toggle cart-button" href="#">My Cart (<?php
+    $_cartQty = Mage::getSingleton('checkout/cart')->getItemsCount();
+    echo $_cartQty;
+    ?>)</a>
+                <?php /*echo $this->getChildHtml('top_cart')*/ ?>
             </div>
 
 

@@ -40,6 +40,9 @@
 <?php echo $this->getChildHtml('head') ?>
 </head>
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<div class="off-canvas-wrap" data-offcanvas>
+<div class="inner-wrap">
+<?php echo $this->getLayout()->createBlock('checkout/cart')->setTemplate('checkout/cart/top-cart.phtml')->toHtml(); ?>
 <?php echo $this->getChildHtml('after_body_start') ?>
     <?php echo $this->getChildHtml('global_notices') ?>
         <?php echo $this->getChildHtml('header') ?>
@@ -53,5 +56,8 @@
         <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('before_body_end') ?>
 <?php echo $this->getAbsoluteFooter() ?>
+</div>
+</div>
 </body>
 </html>
+

@@ -392,7 +392,7 @@ $column-gutter: rem-calc(30);
 // $include-html-dropdown-classes: $include-html-classes;
 
 // We use these to controls height and width styles.
-// $f-dropdown-max-width: 200px;
+$f-dropdown-max-width: 500px;
 // $f-dropdown-height: auto;
 // $f-dropdown-max-height: none;
 // $f-dropdown-margin-top: 2px;
@@ -652,7 +652,7 @@ $select-bg-color: #fff;
 // $tabbar-header-margin: 0;
 
 // Off Canvas Menu Variables
-// $off-canvas-width: 250px;
+$off-canvas-width: 340px;
 // $off-canvas-bg: #333;
 
 // Off Canvas Menu List Variables

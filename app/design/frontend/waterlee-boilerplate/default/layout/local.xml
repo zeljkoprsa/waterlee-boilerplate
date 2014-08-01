@@ -27,8 +27,8 @@
             <block type="directory/currency" name="store_currency_selector" template="currency/currency.phtml"/>
             <block type="page/switch" name="store_switcher" as="store_switcher" template="page/switch/stores.phtml"/>
             <block type="customer/account" name="mini_account" as="mini_account" template="customer/account/mini-account.phtml"/>
-            <block type="checkout/cart" name="top_cart" as="top_cart" template="checkout/cart/top-cart.phtml"/>
-            <block type="checkout/cart" name="mobile_top_cart" as="mobile_top_cart" template="checkout/cart/mobile-top-cart.phtml"/>
+            <!--<block type="checkout/cart" name="top_cart" as="top_cart" template="checkout/cart/top-cart.phtml"/>-->
+            
 
         </reference>
         <remove name="currency"/>
@@ -58,7 +58,7 @@
             <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>         
         
         <!-- Required javascripts are concatenated into script.js / see gulpfile.js -->
-            <action method="addItem"><type>skin_js</type><name>dist/js/script.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>js/script.js</name><params/></action>
                     
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/modernizr/modernizr.js</name><params/></action>-->
             <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery/dist/jquery.min.js</name><params/></action>-->

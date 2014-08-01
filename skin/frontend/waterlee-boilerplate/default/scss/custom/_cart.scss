@@ -1,6 +1,52 @@
+.inner-wrap {
+  margin-top: 0rem;
+}
+.right-off-canvas-menu {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+
+}
+.cart-button {
+  z-index: 1;
+  top: 6.8rem;
+  right: 4.4rem;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  line-height: normal;
+  margin: 0 0 1.25rem;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  display: inline-block;
+  padding-top: 0.6rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  color: #747474;
+  transition: background-color 300ms ease-out;
+  font-size: 0.7rem;
+}
+
+@media only screen and (max-width: 40em) {
+  .cart-button {
+      background-color: #f9f9f9;
+
+  }
+}
 .custom-width {
   width: 10rem !important;
 }
+.image-cart {
+  max-width: inherit;
+}
+.cart {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
 .checkout-types {
 	.nephritis-flat-button {
 		padding: 0.5rem;
@@ -8,6 +54,60 @@
 }
 .noItems-page {
 	padding: 1rem 0rem;
+}
+
+.right-off-canvas-menu {
+  padding-left: 0.4rem;
+  padding-right: 0.5rem;
+  h3 {
+    font-size: 1rem;
+  }
+  .image-cart {
+    margin-top: 0.5rem;
+    display: block;  
+  	border: 1px solid #efefef;
+  }
+  .product-name {
+    display: block;
+  }
+  .edit-param {
+    position: absolute;
+    right: 50px;
+    padding-top: 0.4rem;    
+  }
+  .cart-price {
+    display: inline;
+  }
+  .price-total {
+    background: #fff;
+    color: green;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .qty {
+    display: inline;
+    color: gray;
+  }
+  .fa-trash-o {
+    display: inline;
+    position: absolute;
+    right: 25px;
+  	padding-top: 0.25rem;
+  }
+  .checkbox {
+  	display: none;
+  }
+  .cart-link {
+    color: green;
+  }
+  .cartgo {
+    display: block;
+  }
+  .top-cart-price, .top-cart-qty, .top-cart-subtotal {
+    display: none !important;
+  }
 }
 @media only screen and (max-width: 40.063rem) {
 	.cart {

@@ -68,6 +68,8 @@ function WidthChange(mq) {
 		return false;
 	});
 
+ 
+
 })
 
 	jQuery(window).load(function(){
@@ -81,3 +83,5 @@ function WidthChange(mq) {
         asNavFor: '#slider'
       });
     });
+
+	

@@ -69,7 +69,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
     </td>
     <td class="a-center small-full-width">
         <?php if ($isVisibleProduct): ?>
-        <a href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo $this->__('Edit item parameters') ?>"><?php echo $this->__('Edit') ?></a>
+        <a href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo $this->__('Edit item parameters') ?>" class="edit-param"><?php echo $this->__('Edit') ?></a>
         <?php endif ?>
     </td>
     <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
@@ -94,7 +94,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
     <?php else: ?>
 
         <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
-        <td class="a-right small-full-width"><span class="show-for-small-only">Price:</span>
+        <td class="a-right small-full-width"><span class="show-for-small-only top-cart-price">Price:</span>
             <?php if (Mage::helper('weee')->typeOfDisplay($_item, array(1, 4), 'sales') && $_item->getWeeeTaxAppliedAmount()): ?>
                 <span class="cart-tax-total" onclick="taxToggle('eunit-item-tax-details<?php echo $_item->getId(); ?>', this, 'cart-tax-total-expanded');">
             <?php else: ?>
@@ -179,10 +179,10 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         <?php endif; ?>
     <?php endif; ?>
     <td class="a-center small-full-width">
-        <span class="show-for-small-only">QTY:</span><input name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" maxlength="12" />
+        <span class="show-for-small-only top-cart-qty">QTY:</span><input name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" maxlength="12" />
     </td>
     <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
-    <td class="a-right small-full-width"><span class="show-for-small-only">Subtotal:</span>
+    <td class="a-right small-full-width"><span class="show-for-small-only top-cart-subtotal">Subtotal:</span>
         <?php if (Mage::helper('weee')->typeOfDisplay($_item, array(1, 4), 'sales') && $_item->getWeeeTaxAppliedAmount()): ?>
             <span class="cart-tax-total" onclick="taxToggle('esubtotal-item-tax-details<?php echo $_item->getId(); ?>', this, 'cart-tax-total-expanded');">
         <?php else: ?>

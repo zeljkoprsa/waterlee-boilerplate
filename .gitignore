@@ -9,6 +9,7 @@
 /app/design/adminhtml/default/default/template
 /app/design/adminhtml/default/find/
 /app/design/frontend/base/
+/app/design/frontend/boilerplate/
 /app/design/frontend/default/blank/
 /app/design/frontend/default/default/
 /app/design/frontend/default/iphone/
@@ -32,6 +33,7 @@
 /app/etc/modules/Mage_Widget.xml
 /app/etc/modules/Mage_XmlConnect.xml
 /app/etc/modules/Phoenix_Moneybookers.xml
+/app/etc/modules/Webcomm_BootstrapNavigation.xml
 /app/etc/config.xml
 /app/etc/local.xml.additional
 /app/etc/local.xml.template
@@ -99,6 +101,7 @@
 /skin/frontend/base/
 /skin/frontend/default/blank/
 /skin/frontend/default/blue/
+/skin/frontend/boilerplate/
 /skin/frontend/default/default/
 /skin/frontend/default/french/
 /skin/frontend/default/german/

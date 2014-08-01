@@ -1,27 +1,27 @@
-<div class="top-cart">
-<a href="#" data-dropdown="site-mini-cart" data-options="is_hover:true; align:left" class="site-mini-cart cart-button">My Cart (<?php
-    $_cartQty = Mage::getSingleton('checkout/cart')->getItemsCount();
-    echo $_cartQty;
-    ?>)</a>
-<div id="site-mini-cart" class="f-dropdown" data-dropdown-content>
-    <div class="site-cart">
+
+<aside class="right-off-canvas-menu">
+
+  
         <!--<i class="icon-shopping-cart"></i>-->
         <?php
         $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
         $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
         ?>
-
         <?php if($count == 0):?>
-            <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('0 Items', $count) ?></a>
+            <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('You have no items in your shopping cart.') ?></a>
+        <?php else: ?>
+                
+                
+                <?php foreach($this->getItems() as $_item): ?>
+                    <?php echo $this->getItemHtml($_item) ?>
+                <?php endforeach ?>
+                
         <?php endif; ?>
-        <?php if($count == 1):?>
-            <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('1 Item', $count) ?></a>
-        <?php endif; ?>
-        <?php if($count >= 2):?>
-            <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('%s Items', $count) ?></a>
-        <?php endif; ?>
-        <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
+        <p class="price-total text-center"><span>SUBTOTAL:</span>
+        <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getSubtotal()); ?>
+        </p>
+        <a class="cart-link text-right" href="<?php echo $this->getUrl('checkout/cart'); ?>">
+                    <?php echo $this->__('View Shopping Cart'); ?></a>
         <a class="cartgo button tiny cartbutton-margin" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
-     </div>
-</div>
-</div>
+
+ </aside>
