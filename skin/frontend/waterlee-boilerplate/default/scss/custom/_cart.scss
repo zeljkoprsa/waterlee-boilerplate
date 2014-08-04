@@ -48,12 +48,12 @@
 }
 
 .checkout-types {
-	.nephritis-flat-button {
-		padding: 0.5rem;
-	}
+  .nephritis-flat-button {
+    padding: 0.5rem;
+  }
 }
 .noItems-page {
-	padding: 1rem 0rem;
+  padding: 1rem 0rem;
 }
 
 .right-off-canvas-menu {
@@ -65,7 +65,7 @@
   .image-cart {
     margin-top: 0.5rem;
     display: block;  
-  	border: 1px solid #efefef;
+    border: 1px solid #efefef;
   }
   .product-name {
     display: block;
@@ -94,10 +94,10 @@
     display: inline;
     position: absolute;
     right: 25px;
-  	padding-top: 0.25rem;
+    padding-top: 0.25rem;
   }
   .checkbox {
-  	display: none;
+    display: none;
   }
   .cart-link {
     color: green;
@@ -110,7 +110,7 @@
   }
 }
 @media only screen and (max-width: 40.063rem) {
-	.cart {
-		margin: 0 0.5rem 0 0.5rem;
-	}
+  .cart {
+    margin: 0 0.5rem 0 0.5rem;
+  }
 }

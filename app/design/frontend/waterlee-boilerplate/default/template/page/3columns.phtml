@@ -53,19 +53,18 @@
                 <div class="columns large-9 col3-padd">
                   <div class="off-canvas-wrap" data-offcanvas>
                   <a class="left-off-canvas-toggle sidebar-button" href="#sidebar" ><i class="fa fa-bars"></i></a>
-                    <div class="row inner-wrap">
+                    <div class="inner-wrap">
                         <div class="col-left sidebar"><section id="sidebar" role="complementary"><?php echo $this->getChildHtml('left') ?></section></div>
                         <div class="col-main">
                           <section role="main">
                             <?php echo $this->getChildHtml('global_messages') ?>
                             <?php echo $this->getChildHtml('content') ?>
                           </section>
-                          <a class="exit-off-canvas"></a>
                         </div>
                     </div>
                     </div>
                 </div>
-                <div class="sidebar columns large-3"><?php echo $this->getChildHtml('right') ?></div>
+                <div class="sidebar columns large-2"><?php echo $this->getChildHtml('right') ?></div>
             </div>
         </div>
         <?php echo $this->getChildHtml('footer') ?>
