@@ -7,9 +7,8 @@ var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     notify = require('gulp-notify'),
     clean = require('gulp-clean'),
-    browserSync = require('browser-sync');
-    
-var env = process.env.NODE_ENV;
+    browserSync = require('browser-sync');    
+var env = process.env.NODE_ENV || 'development';
 
 // SASS tasks
 gulp.task('sass', function() {
