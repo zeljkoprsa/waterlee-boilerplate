@@ -70,45 +70,6 @@ Cart styling
     margin-top: 1rem;
   }
 }
-
-
-@media only screen and (max-width: 40em) {
-.btn-empty {
-  width: 100%;
-  display: block;
-  margin-right: 0rem;
-  border: 1px solid #f9f9f9;
-  color: #999;
-  background: #f9f9f9;
-}
-.btn-update {
-  width: 100%;
-  display: block;
-  border: 1px solid #f9f9f9;
-  color: #999;
-  background: #f9f9f9;
-}
-.btn-continue {
-  width: 100%;
-  display: block;
-  border: 1px solid #f9f9f9;
-  color: #999;
-  background: #f9f9f9;
-}
-.item-image {
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
-}
-.item-spec {
-  margin-left: 0.5rem;
-}
-.small-full-width {
-  width: 100%;
-  float: left;
-  text-align: center;
-  padding: 1em;
-}
-}
 /* Checkout Agreements */
 .checkout-agreements li { margin:30px 0; }
 .checkout-agreements .agreement-content { overflow:auto; height:12em; padding:10px; background:#fbfbfb; border:1px solid #e4e4e4; }

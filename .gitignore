@@ -110,6 +110,7 @@
 /skin/frontend/rwd/
 /skin/frontend/waterlee-boilerplate/default/.sass-cache/*
 /skin/frontend/waterlee-boilerplate/default/node_modules/
+/skin/frontend/waterlee-boilerplate/default/bower_components/
 /skin/install/
 /var/
 /.htaccess
