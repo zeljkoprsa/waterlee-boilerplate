@@ -44,7 +44,8 @@
 
 // Custom SCSS from now on + Offcanvas
 @import "custom/offcanvas";
-@import "font-awesome/font-awesome"; // Shamelessly borrowed 'cause they're such great fonts
+$fa-font-path: "../bower_components/components-font-awesome/fonts";
+@import "../bower_components/components-font-awesome/scss/font-awesome"; // Shamelessly borrowed 'cause they're such great fonts
 @import "custom/fontawesome";
 @import "custom/easy-responsive-tabs";
 @import "custom/scroll-to-top";
