@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     gulpif = require('gulp-if'),
     notify = require('gulp-notify'),
-    clean = require('gulp-clean'),
+    rimraf = require('gulp-rimraf'),
     browserSync = require('browser-sync');    
 var env = process.env.NODE_ENV || 'development';
 
@@ -48,8 +48,9 @@ gulp.task('js', function() {
 
 // Clean
 gulp.task('clean', function() {
-    return gulp.src(['css/styles.css', 'js/script.js'], {read: false})
-        .pipe(clean());
+  return gulp
+    .src(['css', 'js'], {read: false})
+    .pipe(rimraf());
 });
 
 // BrowserSync
