@@ -13,7 +13,9 @@ var env = process.env.NODE_ENV || 'development';
 // SASS tasks
 gulp.task('sass', function() {
     return gulp.src('scss/styles.scss')
-        .pipe(gulpif(env === 'development', sass({errLogToConsole: true, sourceComments: 'map', sourceMap: 'scss'})))
+        .pipe(gulpif(env === 'development', sourcemaps.init()))
+        .pipe(gulpif(env === 'development', sass({errLogToConsole: true})))
+        .pipe(gulpif(env === 'development', sourcemaps.write()))
         .pipe(gulpif(env === 'production', sass({errLogToConsole: true})))
         .pipe(gulpif(env === 'production', minifycss()))
         .pipe(gulp.dest('css'))
