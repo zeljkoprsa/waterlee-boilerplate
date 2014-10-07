@@ -1,0 +1,16 @@
+{
+    "name": "waterlee/boilerplate",
+    "type": "magento-module",
+    "license": "GPL-2.0",
+    "description": "Magento HTML5 Responsive Theme Boilerplate",
+    "homepage": "https://github.com/romfr/waterlee-boilerplate",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors":[
+        {
+            "name":"WATERLEE Foundation"
+        }
+    ]
+}
+

@@ -1,5 +1,8 @@
 #JakeSharp_Waterlee
-app/code/community/JakeSharp/*              app/code/community/JakeSharp/
-app/design/frontend/waterlee-boilerplate    app/design/frontend/waterlee-boilerplate
-app/etc/modules/*.xml                       app/etc/modules/
-skin/frontend/waterlee-boilerplate          skin/frontend/waterlee-boilerplate
+app/code/community/JakeSharp/*                                       app/code/community/JakeSharp/
+app/code/community/Meanbee/*                                         app/code/community/Meanbee/
+app/etc/modules/*.xml                                                app/etc/modules/
+app/design/adminhtml/default/default/layout/meanbee/tinymce5.xml     app/design/adminhtml/default/default/layout/meanbee/tinymce5.xml
+app/design/frontend/waterlee-boilerplate/default                     app/design/frontend/waterlee-boilerplate/default
+js/meanbee/tinymce5                                                  js/meanbee/tinymce5
+skin/frontend/waterlee-boilerplate/default                           skin/frontend/waterlee-boilerplate/default
