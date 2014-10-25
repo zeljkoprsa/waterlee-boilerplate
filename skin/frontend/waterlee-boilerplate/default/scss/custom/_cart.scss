@@ -1,5 +1,5 @@
 .inner-wrap {
-  margin-top: 0rem;
+  margin-top: 0;
 }
 .right-off-canvas-menu {
   background: #f9f9f9;
@@ -113,7 +113,7 @@
   }
 }
 .noItems-page {
-  padding: 1rem 0rem;
+  padding: 1rem 0;
 }
 @media only screen and (max-width: 40.063rem) {
   .cart {
@@ -126,7 +126,7 @@
 .btn-empty {
   width: 100%;
   display: block;
-  margin-right: 0rem;
+  margin-right: 0;
   border: 1px solid #f9f9f9;
   color: #999;
   background: #f9f9f9;

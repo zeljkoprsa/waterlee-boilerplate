@@ -1,5 +1,5 @@
 .site-logo{
-  margin-top: 0rem;
+  margin-top: 0;
   padding:0;
   font-size: 0;
 }
@@ -16,7 +16,7 @@
   padding: 0.7em 0;
 }
 .site-search {
-  margin-top: 0rem;
+  margin-top: 0;
 }
 #search_autocomplete {
   background-color: #fff;
@@ -53,40 +53,40 @@
 }
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
   .top-cart {
-    margin-top: 0rem;
+    margin-top: 0;
   }
 }
 @media only screen and (min-width: 64.063em) and (max-width: 90em) {
   .top-cart {
-    margin-top: 0rem;
+    margin-top: 0;
   }
   .site-identity {
-    padding-left: 0rem;
+    padding-left: 0;
   }
   .top-cart-padd {
-    padding-right: 0rem;
+    padding-right: 0;
   }
 }
 @media only screen and (min-width: 90.063em) and (max-width: 120em) {
   .top-cart {
-    margin-top: 0rem;
+    margin-top: 0;
   }
   .site-identity {
-    padding-left: 0rem;
+    padding-left: 0;
   }
   .top-cart-padd {
-    padding-right: 0rem;
+    padding-right: 0;
   }
 }
 @media only screen and (min-width: 120.063em) {
   .top-cart {
-    margin-top: 0rem;
+    margin-top: 0;
   }
   .site-identity {
-    padding-left: 0rem;
+    padding-left: 0;
   }
   .top-cart-padd {
-    padding-right: 0rem;
+    padding-right: 0;
   }
 }
 .cartbutton-margin {
@@ -94,7 +94,7 @@
 }
 @media only screen and (max-width: 40em) {
   .site-search {
-    margin-left: 0rem;
+    margin-left: 0;
   }
   .row {
     max-width: 100%;
@@ -103,8 +103,8 @@
     height: 30px;
   }
   .site-header {
-    margin-bottom: 0rem !important;
-    margin-top: 0rem !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
   }
   #search {
     width:100%;

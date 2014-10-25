@@ -4,7 +4,7 @@ Cart styling
 
 .checkout-types{
   list-style-type: none;
-  margin-left: 0rem;
+  margin-left: 0;
 }
 .checkout-cart-index table{
   width: 100%;
@@ -51,7 +51,7 @@ Cart styling
 }
 .buttons-set {
   display: inline-block;
-  margin-bottom: 0rem;
+  margin-bottom: 0;
   margin-left: 0.7rem;
 }
 .discount {
@@ -152,7 +152,7 @@ Cart styling
   margin-right: 0.3em;
 }
 .opc ul{list-style-type: none;margin: 0;}
-.opc {margin-left: 0rem;}
+.opc {margin-left: 0;}
 .opc .step-title { background: #f9f9f9; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; border-right: 1px solid #ccc; padding:0.5em 0.5em 0.7em 0.5em; text-align:right; clear: both;height: 2em;}
 .opc .step-title .number { float:left; background:$primary-color; border:1px solid $primary-color; padding:0 3px; margin:0 5px 0 0; font:normal 11px/12px arial, helvetica, sans-serif; color:#fff; }
 .opc .step-title h2 { float:left; margin:0; font:bold 12px/14px Arial, Helvetica, sans-serif;color:$primary-color; }
@@ -292,14 +292,14 @@ Cart styling
   background: white url("http://waterlee.jakesharp.co/demo/skin/frontend/waterlee-boilerplate/default/images/arrow.png") no-repeat scroll 98% center;
 }
 .checkout-types {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 .crosssell {
   margin-top: 1rem;
 }
 .col-main {
   margin-top: 1rem;
-  padding-left: 0rem;
+  padding-left: 0;
 }
 .checkout-title {
   margin-top: 1rem;

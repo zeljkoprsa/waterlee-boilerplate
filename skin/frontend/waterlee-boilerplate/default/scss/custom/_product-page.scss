@@ -1,6 +1,6 @@
 .product-essential {
-  padding-left: 0rem;
-  padding-right: 0rem;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .product-shop .product-name{
@@ -27,7 +27,7 @@
 }
 
 .product-shop .short-description{
-  margin-top: 0rem !important;
+  margin-top: 0 !important;
   margin-bottom: 1rem !important;
 }
 
@@ -41,7 +41,7 @@
   line-height: $paragraph-line-height;
 }
 .col2-left-layout {
-  margin-top: 0rem;
+  margin-top: 0;
 }
 .separator {
   margin-left: 0.5rem;
@@ -52,14 +52,14 @@
   padding-left: 1rem;
 }
 .additional-data {
-  padding-left: 0rem;
-  padding-right: 0rem;
+  padding-left: 0;
+  padding-right: 0;
 }
 .configurable-option {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 .configurable-dd {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 .required-entry-conf, .required-entry-conf:hover {
   background: white url("http://waterlee.jakesharp.co/demo/skin/frontend/waterlee-boilerplate/default/images/arrow.png") no-repeat scroll 98% center;
@@ -69,7 +69,7 @@
   margin-bottom: 1rem !important;
 }
 .product-shop {
-  padding-right: 0rem;
+  padding-right: 0;
 }
 .tabs-padd {
   padding-left: 0;
@@ -95,7 +95,7 @@ display: block;
 display: none;
 }
 .cart-margin {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 .add-to-links {
   margin-bottom: 0.5rem;

@@ -19,7 +19,7 @@
   border-width: 1px;
   display: block;
   font-weight: normal;
-  margin-bottom: 0rem;
+  margin-bottom: 0;
   position: relative;
   padding: 1em;
   font-size: 0.8125rem;
@@ -90,12 +90,12 @@ select, select:hover {
     height: 2.45rem;
   }
   .site-identity {
-    padding-left: 0rem;
+    padding-left: 0;
   }
   .site-search {
     padding-top: 1rem;
-    padding-left: 0rem;
-    padding-right: 0rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
@@ -103,13 +103,13 @@ select, select:hover {
     
   }
   .site-identity {
-    padding-left: 0rem;
+    padding-left: 0;
   }
   .site-search {
-    padding-left: 0rem;
+    padding-left: 0;
   }
   .top-cart-padd {
-    padding-right: 0rem;
+    padding-right: 0;
   }
 }
 @-moz-document url-prefix() {
