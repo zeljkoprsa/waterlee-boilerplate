@@ -10,7 +10,7 @@
       use_tallest: true,
       before_height_change: $.noop,
       after_height_change: $.noop,
-      equalize_on_stack: false
+      equalize_on_stack: true
     },
 
     init : function (scope, method, options) {
