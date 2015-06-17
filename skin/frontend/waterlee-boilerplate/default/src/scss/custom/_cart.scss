@@ -70,21 +70,18 @@
 }
 .cart-button {
   z-index: 1;
+  height: 38px;
   top: 6.8rem;
   right: 4.4rem;
   border: 1px solid #e5e5e5;
   cursor: pointer;
   line-height: normal;
-  margin: 0 0 1.25rem;
   text-decoration: none;
   text-align: center;
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   display: inline-block;
-  padding-top: 0.6rem;
-  padding-right: 1rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
+  padding: 0.7rem 1.25rem 0.9rem 1.25rem;
   font-size: 1rem;
   background-color: #f9f9f9;
   color: #747474;

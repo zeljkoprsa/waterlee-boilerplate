@@ -7,21 +7,20 @@ var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     notify = require('gulp-notify'),
     rimraf = require('gulp-rimraf'),
-    browserSync = require('browser-sync');    
-var env = process.env.NODE_ENV || 'development';
+    browserSync = require('browser-sync'),    
+    env = process.env.NODE_ENV || 'development';
 
 // SASS tasks
 gulp.task('sass', function() {
-    return gulp.src('scss/styles.scss')
+    return gulp.src('src/scss/styles.scss')
         .pipe(gulpif(env === 'development', sourcemaps.init()))
-        .pipe(gulpif(env === 'development', sass({errLogToConsole: true})))
+        .pipe(gulpif(env === 'development', sass.sync().on('error', sass.logError)))
         .pipe(gulpif(env === 'development', sourcemaps.write()))
         .pipe(gulpif(env === 'production', sass({errLogToConsole: true})))
         .pipe(gulpif(env === 'production', minifycss()))
+        .pipe(browserSync.reload({stream:true}))
         .pipe(gulp.dest('css'))
-        .pipe(notify({
-            message: 'Successfully compiled SASS'
-        }));
+        .pipe(notify('Successfully compiled SASS'));
 });
 
 // JS tasks
@@ -30,22 +29,20 @@ gulp.task('js', function() {
             'bower_components/modernizr/modernizr.js',
             'bower_components/foundation/js/foundation/foundation.js',
             'bower_components/foundation/js/foundation/foundation.dropdown.js',
-            'src_js/foundation.equalizer.js',
+            'src/js/foundation.equalizer.js',
             'bower_components/foundation/js/foundation/foundation.offcanvas.js',
             'bower_components/foundation/js/foundation/foundation.orbit.js',
             'bower_components/foundation/js/foundation/foundation.topbar.js',
-            'src_js/easyResponsiveTabs.js',
-            'src_js/elevatezoom/jquery.elevatezoom.js',
-            'src_js/jquery.flexslider.js'
+            'src/js/easyResponsiveTabs.js',
+            'src/js/elevatezoom/jquery.elevatezoom.js',
+            'src/js/jquery.flexslider.js'
         ])
         .pipe(gulpif(env === 'development', sourcemaps.init()))
         .pipe(gulpif(env === 'production', uglify()))
         .pipe(concat('script.js'))
         .pipe(gulpif(env === 'development', sourcemaps.write()))
         .pipe(gulp.dest('js'))
-        .pipe(notify({
-            message: 'Successfully compiled JS'
-        }));
+        .pipe(notify('Successfully compiled JS'));
 });
 
 // Clean
@@ -57,8 +54,8 @@ gulp.task('clean', function() {
 
 // BrowserSync
 gulp.task('browser-sync', function() {
-    browserSync.init(['css/styles.css', 'js/script.js'], {
-        proxy: "localhost/mage19/",
+    browserSync({
+        proxy: "localhost/waterlee/",
         port: 8080
     });
 });
@@ -67,10 +64,10 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function() {
    
         // Watch .scss files
-        gulp.watch('scss/**/*.scss', ['sass']);      
+        gulp.watch('src/scss/**/*.scss', ['sass']);      
 
         // Watch .js files
-        gulp.watch('src_js/**/*.js', ['js']); 
+        gulp.watch('src/js/**/*.js', ['js', browserSync.reload]); 
     
 });
 
