@@ -1,0 +1,46 @@
+// Layout
+
+.col1-layout{
+	.col-wrapper{
+		@include grid-row();
+		.col-main{
+			@include grid-column(12);
+		}
+	}
+}
+
+.col2-left-layout{
+	.col-wrapper{
+		@include grid-row();
+		.sidebar{
+			@include grid-column(3);
+		}
+		.col-main{
+			@include grid-column(9);
+		}
+	}
+}
+
+.col2-right-layout{
+	.col-wrapper{
+		@include grid-row();
+		.sidebar{
+			@include grid-column(3);
+		}
+		.col-main{
+			@include grid-column(9);
+		}
+	}
+}
+
+.col3-layout{
+	.col-wrapper{
+		@include grid-row();
+		.sidebar{
+			@include grid-column(3);
+		}
+		.col-main{
+			@include grid-column(6);
+		}
+	}
+}

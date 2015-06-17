@@ -1,0 +1,29 @@
+//Product page
+
+.product-flexslider{
+	position: relative;
+	.flex-control-nav{
+		display: none;
+	}
+	.flex-direction-nav{
+		.flex-prev{
+			position: absolute;
+			bottom: 50px;
+			left: -10px;
+			visibility: hidden;
+		}
+		.flex-next{
+			position: absolute;
+			bottom: 50px;
+			right: -10px;
+			visibility: hidden;
+		}
+		
+	}
+	&:hover{
+		.flex-prev,
+		.flex-next{
+			visibility: visible;
+		}
+	}
+}

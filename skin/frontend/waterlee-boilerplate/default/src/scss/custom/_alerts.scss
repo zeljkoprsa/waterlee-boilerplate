@@ -1,0 +1,22 @@
+#inchoo_global_messages {
+	position: relative;
+	z-index: 9999;
+}
+#inchoo_global_messages_close {
+	position: absolute;
+	top: 13px;
+	right: 13px;
+	z-index: 10000;
+	display: block;
+	width: 15px;
+	height: 15px;
+	background: #666;
+	text-align: center;
+	color: #fff;
+	font-size: 15px;
+	line-height: 15px;
+	text-decoration: none;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
