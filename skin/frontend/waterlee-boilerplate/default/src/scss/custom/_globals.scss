@@ -7,11 +7,19 @@ ul.links li{
 	display: inline;
 }
 ul, ol, dd{
-	margin-left: 0;
+	margin: 0;
 }
 
 //Links
 
 a{
 	text-decoration: none;
+}
+
+.sidebar{
+	.block{
+		background: $snow;
+		margin: 1em;
+		padding: 1em;
+	}
 }

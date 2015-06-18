@@ -1,0 +1,68 @@
+//Toolbar
+.toolbar{
+	overflow: auto;
+	margin-bottom: 1em;
+	.pager{
+		display: inline-block;
+		.amount, .limiter{
+			display: inline-block;
+			vertical-align: middle;	
+			margin: 0;
+		}
+		.amount{
+			padding-right: 0.5em;
+			position: relative;
+			top: 4px;
+		}
+		.limiter{
+			float: right;
+			select, span{
+				display: inline-block;
+				margin: 0;
+				width: 70px;
+			}
+		}
+		.pages{
+			strong{
+				display: none;
+			}
+			ol li{
+				display: inline-block;
+			}
+		}
+	}
+	.sorter{
+		display: inline-block;
+		float: right;
+		.view-mode, .sort-by{
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+		}
+		.view-mode{
+			position: relative;
+			top: 4px;
+		}
+		.sort-by{
+			float: right;
+			select, a{
+				display: inline-block;
+				margin: 0;
+			}
+			select{
+				width: 80px;
+			}
+		}
+	}
+}
+
+//Products list
+.products-list{
+	li{
+		overflow: auto;
+		clear: both;
+		margin-bottom: 1em;
+	}
+}
+
+//Products-grid

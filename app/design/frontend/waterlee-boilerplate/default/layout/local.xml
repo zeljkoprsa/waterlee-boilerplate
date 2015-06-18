@@ -39,9 +39,14 @@
 
 
 		<reference name="footer">
-            <block type="newsletter/subscribe" name="footer.newsletter" after="-" template="newsletter/subscribe.phtml"/>
+            <block type="newsletter/subscribe" name="footer.newsletter" before="-" template="newsletter/subscribe.phtml"/>
             <remove name="store_switcher" />
     	</reference>
+
+		<block type="page/html_footer" name="footer" as="footer" template="page/html/footer.phtml">
+                <block type="page/template_links" name="footer_links" as="footer_links" template="page/template/links.phtml"/>
+        </block>
+
 
 	</default>
 	

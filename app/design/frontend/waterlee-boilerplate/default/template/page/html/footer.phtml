@@ -26,10 +26,12 @@
 ?>
 <div class="footer-container">
     <div class="footer">
-    	<div class="footer-links">
-        <?php echo $this->getChildHtml() ?>
-        </div>
+    	<?php echo $this->getChildHtml('footer.newsletter') ?>
+		<div class="footer-links">
+    	<?php echo $this->getChildHtml('footer_links') ?>
+    	</div>
         <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_demo_links')->toHtml(); ?>
+
         <address><?php echo $this->getCopyright() ?></address>
     </div>
 </div>

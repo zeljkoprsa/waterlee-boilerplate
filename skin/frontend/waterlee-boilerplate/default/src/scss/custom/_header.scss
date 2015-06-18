@@ -1,0 +1,44 @@
+.header-container{
+	.super-header{
+		.welcome{
+
+		}
+		.switchers{
+			.store-switcher,
+			.form-language,
+			.block-currency{
+				display: inline-block;
+				vertical-align: top;
+				width: 120px;
+			}
+		}
+		.top-links{
+			ul{
+				text-align: right;
+			}
+		}
+	}
+	.header{
+		.quick-access{
+			height: 74px;
+			position: relative;
+			.form-search{
+				float: right;
+				position: absolute;
+				bottom: 20px;
+				right: 0;
+				input,
+				button{
+					width: auto;
+					display: inline-block;
+					margin-bottom: 0;
+					vertical-align: top;
+					padding: 0.55rem 2rem 0.55rem 2rem;
+				}
+				input{
+					width: 200px;
+				}
+			}
+		}
+	}
+}

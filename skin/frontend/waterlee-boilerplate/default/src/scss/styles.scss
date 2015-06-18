@@ -1,55 +1,21 @@
+
+//Import Foundation by ZURB
 @import "settings";
-//@import "../bower_components/foundation/scss/foundation";
+@import "foundation";
 
-// Or selectively include foundation components
-@import "../../bower_components/foundation/scss/foundation/components/accordion";
-//@import "../../bower_components/foundation/scss/foundation/components/alert-boxes";
-@import "../../bower_components/foundation/scss/foundation/components/block-grid";
-@import "../../bower_components/foundation/scss/foundation/components/breadcrumbs";
-//@import "../../bower_components/foundation/scss/foundation/components/button-groups";
-@import "../../bower_components/foundation/scss/foundation/components/buttons";
-//@import "../../bower_components/foundation/scss/foundation/components/clearing";
-@import "../../bower_components/foundation/scss/foundation/components/dropdown";
-@import "../../bower_components/foundation/scss/foundation/components/dropdown-buttons";
-//@import "../../bower_components/foundation/scss/foundation/components/flex-video";
-@import "../../bower_components/foundation/scss/foundation/components/forms";
-//@import "../../bower_components/foundation/scss/foundation/components/global";
-@import "../../bower_components/foundation/scss/foundation/components/grid";
-//@import "../../bower_components/foundation/scss/foundation/components/icon-bar";
-@import "../../bower_components/foundation/scss/foundation/components/inline-lists";
-//@import "../../bower_components/foundation/scss/foundation/components/joyride";
-//@import "../../bower_components/foundation/scss/foundation/components/keystrokes";
-@import "../../bower_components/foundation/scss/foundation/components/labels";
-//@import "../../bower_components/foundation/scss/foundation/components/magellan";
-@import "../../bower_components/foundation/scss/foundation/components/offcanvas";
-@import "../../bower_components/foundation/scss/foundation/components/orbit";
-@import "../../bower_components/foundation/scss/foundation/components/pagination";
-//@import "../../bower_components/foundation/scss/foundation/components/panels";
-//@import "../../bower_components/foundation/scss/foundation/components/pricing-tables";
-//@import "../../bower_components/foundation/scss/foundation/components/progress-bars";
-//@import "../../bower_components/foundation/scss/foundation/components/range-slider";
-@import "../../bower_components/foundation/scss/foundation/components/reveal";
-//@import "../../bower_components/foundation/scss/foundation/components/side-nav";
-//@import "../../bower_components/foundation/scss/foundation/components/split-buttons";
-//@import "../../bower_components/foundation/scss/foundation/components/sub-nav";
-//@import "../../bower_components/foundation/scss/foundation/components/switches";
-@import "../../bower_components/foundation/scss/foundation/components/tables";
-@import "../../bower_components/foundation/scss/foundation/components/tabs";
-@import "../../bower_components/foundation/scss/foundation/components/thumbs";
-//@import "../../bower_components/foundation/scss/foundation/components/toolbar";
-//@import "../../bower_components/foundation/scss/foundation/components/tooltips";
-@import "../../bower_components/foundation/scss/foundation/components/top-bar";
-@import "../../bower_components/foundation/scss/foundation/components/type";
-@import "../../bower_components/foundation/scss/foundation/components/visibility";
-
-// Font Awesome
+//Import Font Awesome
 $fa-font-path: "../bower_components/components-font-awesome/fonts";
-@import "../../bower_components/components-font-awesome/scss/font-awesome"; // Shamelessly borrowed 'cause they're such great fonts
+@import "../../bower_components/components-font-awesome/scss/font-awesome";
 
 //Custom scss
-@import "custom/alerts";
-@import "custom/buttons";
-@import "custom/globals";
 @import "custom/grid";
+@import "custom/alerts";
+@import "custom/breadcrumbs";
+@import "custom/buttons";
+@import "custom/catalog";
+@import "custom/footer";
+@import "custom/globals";
+@import "custom/header";
 @import "custom/img";
+@import "custom/labels";
 @import "custom/product";

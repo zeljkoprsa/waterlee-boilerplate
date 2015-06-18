@@ -1,0 +1,16 @@
+.form-language, 
+.form-search, 
+.store-switcher, 
+.toolbar{
+	label{
+		display: none;
+	}
+}
+.view-mode, .block-title{
+	strong{
+		display: none;
+	}
+}
+.block-currency .block-title{
+	display: none;
+}

@@ -1,3 +1,10 @@
+.demo-notice{
+	@extend .hide-for-small;
+	.notice-inner{
+		text-align: center;
+	}
+}
+
 #inchoo_global_messages {
 	position: relative;
 	z-index: 9999;

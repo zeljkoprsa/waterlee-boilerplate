@@ -42,9 +42,11 @@
         <?php echo $this->getChildHtml('header') ?>
         <div class="main-container col1-layout">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="col-main">
-                    <?php echo $this->getChildHtml('global_messages') ?>
-                    <?php echo $this->getChildHtml('content') ?>
+                <div class="col-wrapper">
+                    <div class="col-main">
+                        <?php echo $this->getChildHtml('global_messages') ?>
+                        <?php echo $this->getChildHtml('content') ?>
+                    </div>
                 </div>
         </div>
         <?php echo $this->getChildHtml('footer') ?>

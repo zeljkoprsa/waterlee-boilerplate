@@ -116,7 +116,7 @@ $include-html-global-classes: $include-html-classes;
 // $black       : #000000;
 
 // We use these as default colors throughout
-   $primary-color: #a0a0a0;
+   $primary-color: #4a8ec2;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -407,7 +407,7 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-nav-classes: $include-html-classes;
 
 // We use this to set the background color for the breadcrumb container.
-// $crumb-bg: scale-color($secondary-color, $lightness: 55%);
+   $crumb-bg: $snow; //scale-color($secondary-color, $lightness: 55%);
 
 // We use these to set the padding around the breadcrumbs.
 // $crumb-padding: rem-calc(9 14 9);
@@ -415,10 +415,10 @@ $include-html-global-classes: $include-html-classes;
 
 // We use these to control border styles.
 // $crumb-function-factor: -10%;
-// $crumb-border-size: 1px;
+   $crumb-border-size: 0px;
 // $crumb-border-style: solid;
 // $crumb-border-color: scale-color($crumb-bg, $lightness: $crumb-function-factor);
-// $crumb-radius: $global-radius;
+   $crumb-radius: 0; // $global-radius;
 
 // We use these to set various text styles for breadcrumbs.
 // $crumb-font-size: rem-calc(11);
