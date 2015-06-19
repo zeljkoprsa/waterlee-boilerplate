@@ -119,14 +119,20 @@
 	.product-collateral{
 		#customer-reviews{
 			@include grid-row(nest);
-			h2{
-				@include grid-column(12);
-			}
-			dl{
+			h2, dl{
 				@include grid-column(12);
 			}
 			.form-add{
-				@include grid-column(12);
+				form{
+					@include grid-row(nest);
+					fieldset{
+						@include grid-column(12);
+					}
+				}
+				.buttons-set{
+					@include grid-column(12);
+				}
+				
 			}
 		}
 	}
@@ -144,6 +150,12 @@
 
 //Cart
 .cart{
+	& > form {
+		@include grid-row(nest);
+		.cart-table-wrapper{
+			@include grid-column(12);
+		}
+	}
 	.cart-collaterals{
 		.col-collaterals{
 			@include grid-row(nest);

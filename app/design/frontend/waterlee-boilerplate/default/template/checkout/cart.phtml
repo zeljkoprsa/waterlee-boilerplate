@@ -48,6 +48,7 @@
     <?php echo $this->getChildHtml('form_before') ?>
     <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
         <?php echo $this->getBlockHtml('formkey'); ?>
+        <div class="cart-table-wrapper">
         <fieldset>
             <table id="shopping-cart-table" class="data-table cart-table">
                 <col width="1" />
@@ -135,6 +136,7 @@
             </table>
             <script type="text/javascript">decorateTable('shopping-cart-table')</script>
         </fieldset>
+        </div>
     </form>
     <div class="cart-collaterals">
         <div class="col-collaterals">

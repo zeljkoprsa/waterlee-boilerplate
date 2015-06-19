@@ -9,13 +9,13 @@
 		.flex-prev{
 			position: absolute;
 			bottom: 50px;
-			left: -10px;
+			left: 0px;
 			visibility: hidden;
 		}
 		.flex-next{
 			position: absolute;
 			bottom: 50px;
-			right: -10px;
+			right: 0px;
 			visibility: hidden;
 		}
 		
@@ -41,6 +41,19 @@
 		input{
 			display: inline-block;
 			width: 50px;
+		}
+	}
+}
+
+.box-reviews{
+	.form-add{
+		#product-review-table{
+			width: 100%;
+		}
+		.buttons-set{
+			.button{
+				float: right;
+			}
 		}
 	}
 }
