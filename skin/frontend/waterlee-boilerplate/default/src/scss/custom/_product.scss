@@ -31,3 +31,16 @@
 .product-collateral{
 	clear: both;
 }
+
+.add-to-cart,
+.add-to-cart-alt{
+	.quantity{
+		i{
+			cursor: pointer;
+		}
+		input{
+			display: inline-block;
+			width: 50px;
+		}
+	}
+}

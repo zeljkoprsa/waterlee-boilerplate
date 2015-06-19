@@ -23,7 +23,7 @@
 		<reference name="header">
 			<block type="page/switch" name="top_store_switcher" as="top_store_switcher" template="page/switch/stores.phtml"/>
             <block type="directory/currency" name="currency_switcher" before="-" template="directory/currency.phtml"/>
-			<block type="checkout/cart" name="myCart" before="-" template="checkout/cart/topCart.phtml"/>
+			<block type="checkout/cart" name="topCart" template="checkout/cart/topCart.phtml"/>
     	</reference>
 
 		<!-- Add/Remove Top Links -->
@@ -61,6 +61,29 @@
                     </block>
                 </block>
 		</reference>
+		<reference name="product.info">
+			
+				<block type="catalog/product_list_related" name="catalog.product.related" as="related_products" before="-" template="catalog/product/list/related.phtml"/>
+			
+		</reference>
 	</catalog_product_view>
+	
+	<catalogsearch_result_index>
+		<reference name="root">
+			<action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+		</reference>
+	</catalogsearch_result_index>
+
+	<catalogsearch_advanced_result>
+		<reference name="root">
+			<action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+		</reference>
+	</catalogsearch_advanced_result>
+
+	<catalogsearch_advanced_index>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+	</catalogsearch_advanced_index>
 
 </layout>

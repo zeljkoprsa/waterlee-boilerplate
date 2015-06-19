@@ -14,7 +14,24 @@
 		}
 		.top-links{
 			ul{
-				text-align: right;
+				float: right;
+				display: inline-block;
+				padding-top: 0.3em;
+			}
+		}
+		.top--cart{
+			display: inline-block;
+			float: right;
+			padding-left: 1em;
+			.top--cart--content{
+				.buttons{
+					float: right;
+					.buttons__view,
+					.buttons__checkout{
+						@extend .button;
+						@extend .tiny;
+					}
+				}
 			}
 		}
 	}
@@ -24,9 +41,6 @@
 			position: relative;
 			.form-search{
 				float: right;
-				position: absolute;
-				bottom: 20px;
-				right: 0;
 				input,
 				button{
 					width: auto;

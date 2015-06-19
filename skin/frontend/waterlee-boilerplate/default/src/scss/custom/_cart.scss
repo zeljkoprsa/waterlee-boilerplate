@@ -1,0 +1,51 @@
+.cart{
+	.page-title{
+		h1{
+			& + ul{
+				display: none;
+			}
+		}
+	}
+	fieldset{
+		padding: 0;
+		#shopping-cart-table{
+			tbody{
+				img{
+					max-width: inherit;
+				}
+			}
+			width: 100%;
+		}
+	}
+	.cart-collaterals{
+		#discount-coupon-form{
+			.discount{
+				h2{
+					text-align: right;
+				}
+				.discount-form{
+					label,
+					input,
+					.buttons-set{
+						float: right;
+						clear: both;
+					}
+					input{
+						margin: 1em 0;
+					}
+				}
+			}
+		}
+		.totals{
+			table,
+			ul{
+				float: right;
+				display: block;
+				clear: both;
+			}
+			table{
+				margin-top: 1em;
+			}
+		}
+	}
+}

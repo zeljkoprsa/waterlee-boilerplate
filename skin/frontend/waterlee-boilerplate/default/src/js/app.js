@@ -47,15 +47,6 @@ jQuery(document).ready(function() {
       jQuery(this).append('<i class="fa fa-th"></i>');
   });
 
-  //Top cart
-  jQuery(".top--cart").click(function(e) {
-    e.stopPropagation();
-    jQuery(this).toggleClass('active');
-  });
-  jQuery(document).click(function() {
-    jQuery('.top--cart').removeClass('active');    
-  });
-
   //Scroll to top
 
   jQuery('.footer-container').after('<div class="scrollToTop"></div>');
