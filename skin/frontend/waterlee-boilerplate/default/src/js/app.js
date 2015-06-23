@@ -18,16 +18,20 @@ jQuery(document).ready(function() {
   // }
 
 
-  //Flexslider
+  //BX slider
 
-  jQuery(window).load(function() {
-    jQuery('.product-flexslider').flexslider({
-      animation: "slide",
-      slideshow: false,
-      maxItems: 2,
-      itemWidth: 50
-    });
+  jQuery('.more-views .slides').bxSlider({
+    pager: false,
+    minSlides: 2,
+    maxSlides: 2,
+    slideWidth: 150,
+    responsive: true,
+    infiniteLoop: false,
+    moveSlides: 1,
+    nextText: '',
+    prevText: ''
   });
+
 
   // Product page / wishlist - quantity increase/decrease
   jQuery(".quantity").append('<i id="add1" class="plus fa fa-plus" />').prepend('<i id="minus1" class="minus fa fa-minus" />');

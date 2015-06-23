@@ -34,7 +34,7 @@ gulp.task('js', function() {
             'bower_components/foundation/js/foundation/foundation.orbit.js',
             'bower_components/foundation/js/foundation/foundation.topbar.js',
             'src/js/elevatezoom/jquery.elevatezoom.js',
-            'src/js/jquery.flexslider.js'
+            'bower_components/dw-bxslider-4/src/js/jquery.bxslider.js'
         ])
         .pipe(gulpif(env === 'development', sourcemaps.init()))
         .pipe(gulpif(env === 'production', uglify()))

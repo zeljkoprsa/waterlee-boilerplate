@@ -10,30 +10,40 @@
 	}
 }
 
-.product-flexslider{
-	position: relative;
-	.flex-control-nav{
-		display: none;
-	}
-	.flex-direction-nav{
-		.flex-prev{
-			position: absolute;
-			bottom: 50px;
-			left: 0px;
-			visibility: hidden;
+.product-slider{
+	.bx-wrapper{
+		position: relative;
+		margin: 0 auto;
+		.slides{
+			li{
+				a{
+					width: 70px;
+					display: block; 
+					margin: 0 auto;
+				}
+			}
 		}
-		.flex-next{
-			position: absolute;
-			bottom: 50px;
-			right: 0px;
-			visibility: hidden;
-		}
-		
-	}
-	&:hover{
-		.flex-prev,
-		.flex-next{
-			visibility: visible;
+		.bx-controls-direction{
+			.bx-prev{
+				position: absolute;
+				top: 12px;
+				left: -10px;
+				&:before{
+					content: "\f104";
+					font-family: FontAwesome;
+					font-size: 30px;
+				}
+			}
+			.bx-next{
+				position: absolute;
+				top: 12px;
+				right: -10px;
+				&:before{
+					content: "\f105";
+					font-family: FontAwesome;	
+					font-size: 30px;
+				}
+			}
 		}
 	}
 }

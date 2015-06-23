@@ -63,9 +63,8 @@
 </p>
 
 <?php if (count($this->getGalleryImages()) > 0): ?>
-    <div class="product-flexslider more-views">
+    <div class="product-slider more-views">
         <h5><?php echo $this->__('More Views') ?></h5>
-        <div id="carousel">
         <ul class="slides">
             <?php foreach ($this->getGalleryImages() as $_image): ?>
                 <li>
@@ -75,6 +74,5 @@
                 </li>
             <?php endforeach; ?>
         </ul>
-        </div>
     </div>
 <?php endif; ?>
