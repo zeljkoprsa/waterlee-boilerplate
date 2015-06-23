@@ -4,6 +4,20 @@ jQuery(document).foundation();
 
 jQuery(document).ready(function() {
 
+  //Target specific browser
+  //Uncomment if you need it
+  // if (!!navigator.userAgent.match(/Trident\/7\./)) {
+  //     jQuery('body').addClass('ie-target');
+  // }
+  // if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+  //     jQuery('body').addClass('safari-target');
+  // }
+
+  // if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+  //     jQuery('body').addClass('chrome-target');
+  // }
+
+
   //Flexslider
 
   jQuery(window).load(function() {
