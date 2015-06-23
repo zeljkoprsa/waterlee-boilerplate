@@ -7,10 +7,7 @@
 		<action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
 		<action method="removeItem"><type>skin_css</type><name>css/widgets.css</name></action>
 		<action method="removeItem"><type>js</type><name>varien/menu.js</name></action>
-		<action method="removeItem" ifconfig="tm_easytabs/general/enabled">
-            <type>skin_css</type>
-            <name>css/tm/easytabs.css</name>
-        </action>
+
 	    <!-- Required javascripts are concatenated into script.js / see gulpfile.js -->
         <action method="addItem"><type>skin_js</type><name>js/script.js</name><params/></action>
         </reference>

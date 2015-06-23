@@ -91,37 +91,37 @@ jQuery(document).ready(function() {
   function WidthChange(mq) {
 
     if (mq.matches) {
-      // window width is at least 500px
+      // window width is at least 640px
         jQuery('.gallery-image.visible').elevateZoom();
         jQuery('.more-views').click(function(){
           jQuery('.gallery-image.visible').elevateZoom();
         })
     }
     else {
-      // window width is less than 500px
-       jQuery('.gallery-image.visible').elevateZoom({
-          constrainType:"height",
-          constrainSize:274,       
-          zoomType: "lens",
-          containLensZoom: true,
-        cursor: "pointer",
-        galleryActiveClass: "active",
-        zoomWindowFadeIn: 500,
-        zoomWindowFadeOut: 750
-          });
+      // window width is less than 640px
+       // jQuery('.gallery-image.visible').elevateZoom({
+       //    constrainType:"height",
+       //    constrainSize:274,       
+       //    zoomType: "lens",
+       //    containLensZoom: true,
+       //  cursor: "pointer",
+       //  galleryActiveClass: "active",
+       //  zoomWindowFadeIn: 500,
+       //  zoomWindowFadeOut: 750
+       //    });
 
-        jQuery('.more-views').click(function(){
-          jQuery('.gallery-image.visible').elevateZoom({
-          constrainType:"height",
-          constrainSize:274,       
-          zoomType: "lens",
-          containLensZoom: true,
-        cursor: "pointer",
-        galleryActiveClass: "active",
-        zoomWindowFadeIn: 500,
-        zoomWindowFadeOut: 750
-          });
-        })    
+       //  jQuery('.more-views').click(function(){
+       //    jQuery('.gallery-image.visible').elevateZoom({
+       //    constrainType:"height",
+       //    constrainSize:274,       
+       //    zoomType: "lens",
+       //    containLensZoom: true,
+       //  cursor: "pointer",
+       //  galleryActiveClass: "active",
+       //  zoomWindowFadeIn: 500,
+       //  zoomWindowFadeOut: 750
+       //    });
+       //  })    
     }
 
   }

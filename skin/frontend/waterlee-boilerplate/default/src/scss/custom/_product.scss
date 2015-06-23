@@ -1,5 +1,15 @@
 //Product page
 
+.product-img-box{ 
+	.product-image-gallery{
+		img{
+			max-width: 100%;
+			max-height: 750px;
+			margin: 0px auto;
+		}
+	}
+}
+
 .product-flexslider{
 	position: relative;
 	.flex-control-nav{

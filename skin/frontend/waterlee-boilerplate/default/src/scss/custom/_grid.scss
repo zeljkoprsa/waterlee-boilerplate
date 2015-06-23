@@ -105,7 +105,7 @@
 	.product-collateral{
 		#customer-reviews{
 			@include grid-row(nest);
-			dl, .form-add{
+			> h2, dl, .form-add{
 				@include grid-column(12);
 			}
 			.form-add{

@@ -33,7 +33,6 @@ gulp.task('js', function() {
             'bower_components/foundation/js/foundation/foundation.offcanvas.js',
             'bower_components/foundation/js/foundation/foundation.orbit.js',
             'bower_components/foundation/js/foundation/foundation.topbar.js',
-            'src/js/easyResponsiveTabs.js',
             'src/js/elevatezoom/jquery.elevatezoom.js',
             'src/js/jquery.flexslider.js'
         ])
