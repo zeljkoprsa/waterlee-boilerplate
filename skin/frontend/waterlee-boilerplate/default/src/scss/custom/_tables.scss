@@ -10,6 +10,8 @@
 		tbody{
 			tr{
 				position: relative;
+				background: $white;
+				border-bottom: 1px solid $silver;
 			}
 			td{
 				display: inline-block;
@@ -25,22 +27,47 @@
 					padding: 0 1em 0 0;
 				}
 			}
-			.even{
-				background: #fcfcfc;
-			}
 		}
 	}
 	#my-orders-table,
 	#my-downloadable-products-table,
-	#my-reviews-table,
-	#product-review-table{
+	#my-reviews-table{
 		overflow-x: auto;
 		display: block;
 	}
+
 }
+
 @media #{$medium-only} {
-	.cart-table-wrapper{
+	#my-orders-table,
+	#my-downloadable-products-table,
+	#my-reviews-table,
+	.cart-table-wrapper,
+	.wishlist-table-wrapper{
 		overflow-x: auto;
 		display: block;	
+	}
+}
+
+@media only screen and (max-width: $medium-breakpoint){
+	#product-review-table{
+		width: 100%;
+		th{
+			font-weight: 200;
+			padding: 0.3rem;
+		}
+	}
+}
+
+#my-tags-table{
+	width: 100%;
+	img{
+		max-width: inherit;
+	}
+}
+
+.wishlist-table-wrapper{
+	fieldset{
+		padding: 0;
 	}
 }

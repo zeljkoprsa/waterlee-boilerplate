@@ -26,9 +26,7 @@
 .col2-right-layout{
 	.col-wrapper{
 		@include grid-row(nest);
-		.sidebar{
-			@include grid-column(12);
-		}
+		.sidebar,
 		.col-main{
 			@include grid-column(12);
 		}
@@ -38,9 +36,7 @@
 .col3-layout{
 	.col-wrapper{
 		@include grid-row(nest);
-		.sidebar{
-			@include grid-column(12);
-		}
+		.sidebar,
 		.col-main{
 			@include grid-column(12);
 		}
@@ -55,21 +51,15 @@
 .header-container{
 	.super-header{
 		@include grid-row(nest);
-		.welcome{
-			@include grid-column(12);
-		}
-		.switchers{
-			@include grid-column(12);
-		}
+		.welcome,
+		.switchers,
 		.top-links{
 			@include grid-column(12);
 		}
 	}
 	.header{
 		@include grid-row(nest);
-		.logo{
-			@include grid-column(12);
-		}
+		.logo,
 		.quick-access{
 			@include grid-column(12);
 		}
@@ -79,9 +69,7 @@
 //Catalog
 .products-list{
 	li{
-		a{
-			@include grid-column(12);
-		}
+		a,
 		.product-shop{
 			@include grid-column(12);
 		}
@@ -108,24 +96,22 @@
 	.product-essential{
 		#product_addtocart_form{
 			@include grid-row(nest);
-			.product-img-box{
-				@include grid-column(12);
-			}
+			.product-img-box,
 			.product-shop{
-				@include grid-column(12);	
+				@include grid-column(12);
 			}
 		}
 	}
 	.product-collateral{
 		#customer-reviews{
 			@include grid-row(nest);
-			h2, dl{
+			dl, .form-add{
 				@include grid-column(12);
 			}
 			.form-add{
 				form{
 					@include grid-row(nest);
-					fieldset{
+					section{
 						@include grid-column(12);
 					}
 				}
@@ -172,14 +158,10 @@
 .footer-container{
 	.footer{
 		@include grid-row(nest);
-		.block-subscribe{
-			@include grid-column(12);
-		}
-		.footer-links{
-			@include grid-column(12);
-		}
+		.block-subscribe,
+		.footer-links,
 		address{
-			@include grid-column(12);	
+			@include grid-column(12);
 		}
 	}
 }
@@ -246,12 +228,7 @@
 		.product-collateral{
 			#customer-reviews{
 				@include grid-row(nest);
-				h2{
-					@include grid-column(12);
-				}
-				dl{
-					@include grid-column(6);
-				}
+				dl,
 				.form-add{
 					@include grid-column(6);
 				}
@@ -311,9 +288,7 @@
 			.welcome{
 				@include grid-column(2);
 			}
-			.switchers{
-				@include grid-column(5);
-			}
+			.switchers,
 			.top-links{
 				@include grid-column(5);
 			}
@@ -357,9 +332,7 @@
 				.shipping{
 					@include grid-column(6);
 				}
-				#discount-coupon-form{
-					@include grid-column(3);
-				}
+				#discount-coupon-form,
 				.totals{
 					@include grid-column(3);
 				}

@@ -6,15 +6,18 @@
 			}
 		}
 	}
-	fieldset{
-		padding: 0;
-		#shopping-cart-table{
-			tbody{
-				img{
-					max-width: inherit;
+	form{
+		overflow-x: hidden;
+		fieldset{
+			padding: 0;
+			#shopping-cart-table{
+				tbody{
+					img{
+						max-width: inherit;
+					}
 				}
+				width: 100%;
 			}
-			width: 100%;
 		}
 	}
 	.cart-collaterals{
