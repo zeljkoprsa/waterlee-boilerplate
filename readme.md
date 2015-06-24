@@ -1,6 +1,5 @@
 #Magento HTML5 responsive boilerplate [![endorse](http://api.coderwall.com/zeljkoprsa/endorsecount.png)](http://coderwall.com/zeljkoprsa)
- - Built on Foundation 5.5.2 by ZURB.
- - Works with Magento 1.7, 1.8 & 1.9
+ - Built on Foundation 5.5.2 by ZURB & Magento 1.9.1.
 
 **Update**
 #WATERLEE on Foundation 5.5.2 for sites is here.
@@ -34,28 +33,49 @@ Checkout the demo:
 It's pretty ugly but you know better than to expect a boilerplate to be good looking, right?
 [http://waterlee.jakesharp.co](http://waterlee.jakesharp.co)
 
-##Installation
-Once you install the Waterlee package and assuming you already installed the "Jake Sharp" extension used for the main category menu which is packed within the theme package., go to your Magento administration backend and look for "Jake Sharp" theme settings under "System -> Configuration | Configuration -> JAKESHARP WATERLEE -> Theme Settings -> Enable" to enable the theme's menu.
-For detailed instructions check knowledge base @ http://jakesharp.uservoice.com/ 
+##Things you'll need to have:
+ - [Modman](https://github.com/colinmollenhour/modman) 
+ - [NodeJS](http://nodejs.org/) - download & install
+ - [Gulp](https://github.com/gulpjs/gulp) - `$ npm install -g gulp`
+ - [Bower](http://bower.io/) - `$ npm install -g bower`
 
-To get your stylesheets compiled you'll need to have Bower. Run 'bower install' to get Foundation with its dependencies. You'll also need to install sass and compass with its dependencies & 'compass watch' will listen your sass changes and compile css.
-http://compass-style.org/install/
-http://sass-lang.com/install
+##Installation
+
+ - Run `modman init` in magento root dir. Modman creates this way .modman folder in which you will have your modules installed.
+ - Install modules with modman that you want
+ - We guess there is possibility that you want to install our new boilerplate, so you'll need to type something like this:
+   `modman clone waterlee-boilerplate https://github.com/zeljkoprsa/waterlee-boilerplate.git`
+ - You'll also want TMeasytabs installed because you'll probably want to use it on Magento product page: `modman clone easytabs https://github.com/tmhub/easytabs.git`
+ - To make things work with modman, you need to have symlinks turned on. This option is in Magento admin>sys>config>advanced>developer>Template Settings.
+ - Inside the waterlee-boilerplate/skin/frontend/waterlee-boilerplate/default run `npm install` to install node_modules locally
+ - Run `bower install` to install bower_components (Foundations with it's dependencies and the rest...)
+
+Once you install the Waterlee package and assuming you already installed the "Jake Sharp" extension used for the main category menu which is packed within the theme package, go to your Magento administration backend and look for "Jake Sharp" theme settings under "System -> Configuration | Configuration -> JAKESHARP WATERLEE -> Theme Settings -> Enable" to enable the theme's menu.
+For detailed instructions check knowledge base @ http://jakesharp.uservoice.com/ 
 
 Despite our waterlee-boilerplate updates, you want to have latest foundation version, right? Do it yourself!
 'foundation update' should do the trick if you install bower & foundation client.
 Follow these simple instructions on ZURB's website:
 http://foundation.zurb.com/docs/sass.html
 
+##Usage:
+Run this in shell (Inside waterlee-boilerplate/skin/frontend/waterlee-boilerplate/default) and you'll get CSS injection into your browser, file watching, browser synchronisation, concatenation, minification, sourcemaps ...
+```shell
+$ gulp
+```
+ - In gulpfile.js you can easily switch between development and production environment.
+
 ##SCSS Organization
-For starters, Waterlee is based on ZURB Foundation framework 5 which relies on mobile first approach. This means that all of the HTML classes for layout at your disposal are mobile-first so keep that in mind while developing. There is a folder named "custom" under the "/skin/frontend/waterlee-boilerplate/default/SCSS/".
+For starters, Waterlee is based on ZURB Foundation framework 5 which relies on mobile first approach. This means that all of the HTML classes for layout at your disposal are mobile-first so keep that in mind while developing. There is a folder named "custom" under the "/skin/frontend/waterlee-boilerplate/default/src/scss/".
 
 The "custom" folder is already configured following the OOCSS principles of separating as many styling areas such as: page views, global components etc. All of the files are then imported into one main style.scss. Feel free to adapt it to your needs or not use it at all. Our recommendation is that you build upon it, suggest improvements for organization or just first take it for a spin to see the benefits.
 
 It's refreshing to have the that final SCSS organized by maintaining focus using separate .scss files where you can easily find redundant code. If you get lost you can always find that HTML class using the find function in your IDE.
 
 What's inside:
-- **NEW** All of the Foundation Javascript is now placed in the footer for faster loading.
+- ***NEW*** Waterlee is rewritten in order to use existing Magento classes as much as it can so we can have less phtml files in boilerplate for easier updates to next Magento releases. 
+- ***NEW*** Foundation grid is made on sass from now. 
+- **NEW** Responsive tables. From now on, all Magento tables are responsive.
 - **NEW** Theme top menu extension. Find it under "JAKE SHARP WATERLEE" system settings after installation (Remember, you'll need to install the extension separately.)
 - **NEW**: Off Canvas menu (http://www.zurb.com/playground/off-canvas-layouts)
 - **NEW**: Current SubCategory menu for mobile view
@@ -64,13 +84,12 @@ What's inside:
 - Local XML for layout overrides
 - Implemented classes that adhere to foundation docs
 - **NEW**: Foundation now uses bower for easy updating from the command line
-- **NEW**: From now on by default, JS is loaded separately by components in local.xml. Use only what you need! If you want from some reason full foundation, comment components and uncomment foundation.js in js.phtml. The same applies for importing scss files in styles.scss
-- **NEW**: Implemented easyResponsiveTabs [http://webtrendset.com/demo/easy-responsive-tabs/Index.html#horizontalTab2]
-- **NEW**: Implemented elevatezoom for product page with cool inner zoom on mobile layout [http://www.elevateweb.co.uk/image-zoom]
+- **NEW**: From now on by default, JS is loaded separately in gulpfile. Use only what you need! The same applies for importing scss files in styles.scss & _foundation.scss.
+- **NEW**: Implemented elevatezoom for product page images [http://www.elevateweb.co.uk/image-zoom]
 - **NEW**: Implemented scroll to top
 - **NEW**: Gulp support with gulpfile.js (Check http://gulpjs.com/ on how to use it)
-- **NEW**: Implemented Fira font [https://github.com/mozilla/Fira] & HTML5 WYSIWYG Editor for Magento [https://www.meanbee.com/magento-extensions/meanbee-tinymce.html]
-- **NEW**: Implemented flexslider for product page thumb slides [http://www.woothemes.com/flexslider/]
+- **NEW**: Implemented HTML5 WYSIWYG Editor for Magento [https://www.meanbee.com/magento-extensions/meanbee-tinymce.html]
+- **NEW**: Implemented bxSlider for product page thumb slides [http://bxslider.com/]
 
 ##What's next:
 
