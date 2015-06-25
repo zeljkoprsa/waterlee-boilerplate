@@ -27,7 +27,8 @@
 	.col-wrapper{
 		@include grid-row(nest);
 		.sidebar,
-		.col-main{
+		.col-main,
+		> a{
 			@include grid-column(12);
 		}
 	}
@@ -39,6 +40,9 @@
 		.sidebar,
 		.col-main{
 			@include grid-column(12);
+		}
+		> span{
+			@include grid-column(6);	
 		}
 	}
 }

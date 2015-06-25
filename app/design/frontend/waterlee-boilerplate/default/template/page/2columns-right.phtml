@@ -42,12 +42,16 @@
         <?php echo $this->getChildHtml('header') ?>
         <div class="main-container col2-right-layout">
             <?php echo $this->getChildHtml('breadcrumbs') ?>
-            <div class="col-wrapper">
-                <div class="col-main">
-                    <?php echo $this->getChildHtml('global_messages') ?>
-                    <?php echo $this->getChildHtml('content') ?>
+            <div class="off-canvas-wrap" data-offcanvas>
+                <div class="col-wrapper">
+                    <a class="right-off-canvas-toggle" href="#" >Menu</a>
+                    <div class="col-main">
+                        <?php echo $this->getChildHtml('global_messages') ?>
+                        <?php echo $this->getChildHtml('content') ?>
+                    </div>
+                    <div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>
+                    <a class="exit-off-canvas"></a>
                 </div>
-                <div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>
             </div>
         </div>
         <?php echo $this->getChildHtml('footer') ?>

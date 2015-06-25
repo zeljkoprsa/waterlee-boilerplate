@@ -1,0 +1,30 @@
+.col2-left-layout{
+	.left-off-canvas-toggle{
+		@extend .hidden-for-medium-up;
+	}
+}
+.col2-right-layout{
+	.right-off-canvas-toggle{
+		@extend .hidden-for-medium-up;
+	}
+}
+.col3-layout{
+	.left-off-canvas-toggle{
+		@extend .hidden-for-medium-up;
+	}
+	.right-off-canvas-toggle{
+		@extend .hidden-for-medium-up;
+	}
+	span + span{
+		text-align: right;
+	}
+}
+@media #{$small-only}{
+	.col-left,
+	.col-right{
+		width: 205px!important;
+	}
+}
+.right-off-canvas-toggle{
+	text-align: right;
+}

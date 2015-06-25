@@ -130,4 +130,28 @@ jQuery(document).ready(function() {
 
   }
 
+  //Offcanvas
+  if (jQuery(window).width()<625){     
+      jQuery('.col-wrapper').addClass('inner-wrap');
+      jQuery('.col-left.sidebar').addClass('left-off-canvas-menu');
+      jQuery('.col-right.sidebar').addClass('right-off-canvas-menu');
+    }
+  else{
+    jQuery('.col-wrapper').removeClass('inner-wrap');
+    jQuery('.col-left.sidebar').removeClass('left-off-canvas-menu');
+    jQuery('.col-right.sidebar').removeClass('right-off-canvas-menu');
+  }
+  jQuery(window).on('resize', function(){
+    if (jQuery(window).width()<625){     
+      jQuery('.col-wrapper').addClass('inner-wrap');
+      jQuery('.col-left.sidebar').addClass('left-off-canvas-menu');
+      jQuery('.col-right.sidebar').addClass('right-off-canvas-menu');
+    }
+    else{
+      jQuery('.col-wrapper').removeClass('inner-wrap');
+      jQuery('.col-left.sidebar').removeClass('left-off-canvas-menu');
+      jQuery('.col-right.sidebar').removeClass('right-off-canvas-menu');
+    }
+  });
+
 });
