@@ -166,6 +166,29 @@
 	}
 }
 
+//Login
+.account-login{
+	@include grid-row(nest);
+	.page-title{
+		@include grid-column(12);
+	}
+	.registered-users,
+	.new-users{
+		@include grid-column(12);
+	}
+}
+
+//Checkout
+#checkout-step-login{
+	.col2-set{
+		@include grid-row(nest);
+		.col-1,
+		.col-2{
+			@include grid-column(12);
+		}
+	}
+}
+
 @media #{$medium-up}{
 	.col2-left-layout,
 	.col2-right-layout{
@@ -266,7 +289,24 @@
 				@include grid-column(6);
 			}
 		}
-	}	
+	}
+
+	//Login
+	.account-login{
+		.registered-users,
+		.new-users{
+			@include grid-column(6);
+		}
+	}
+	.account-create{
+		.page-title{
+			@include grid-column(12);
+		}
+		@include grid-row(nest);
+		.fieldset{
+			@include grid-column(6);
+		}
+	}
 }
 
 @media #{$large-up}{
@@ -339,5 +379,16 @@
 			}
 		}
 	}
+
+	//Checkout
+	#checkout-step-login{
+		.col2-set{
+			@include grid-row(nest);
+			.col-1,
+			.col-2{
+				@include grid-column(6);
+			}
+		}
+	}	
 
 }
