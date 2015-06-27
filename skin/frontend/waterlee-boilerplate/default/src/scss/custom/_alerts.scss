@@ -2,6 +2,7 @@
 	@extend .hide-for-small;
 	.notice-inner{
 		text-align: center;
+		color: $warning-color;
 	}
 }
 

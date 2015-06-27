@@ -25,9 +25,23 @@
 
 		<!-- Add/Remove Top Links -->
 		<reference name="root">
-			<!--<remove name="top.links" />-->
-			<remove name="checkout_cart_link"/>
-			<remove name="global_messages" />			
+			<reference name="top.links">
+				<!--<remove name="top.links" />-->
+				<remove name="checkout_cart_link"/>
+				<remove name="global_messages" />
+				<action method="addLink" translate="label title">
+					<label>Compare</label>
+					<url>catalog/product_compare/index/</url>
+					<title>Compare</title>
+					<prepare>true</prepare>
+					<urlParams helper="core/url/getHomeUrl"/>
+					<position>0</position>
+					<liParams/>
+					<aParams>class="top-link-compare" target="_blank"</aParams>
+					<beforeText></beforeText>
+					<afterText></afterText>
+	         	</action>
+			</reference>			
 		</reference>
 
 		<reference name="after_body_start">

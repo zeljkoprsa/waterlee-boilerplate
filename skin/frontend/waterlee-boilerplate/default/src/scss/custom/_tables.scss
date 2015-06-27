@@ -31,7 +31,8 @@
 	}
 	#my-orders-table,
 	#my-downloadable-products-table,
-	#my-reviews-table{
+	#my-reviews-table,
+	#product_comparison{
 		overflow-x: auto;
 		display: block;
 	}
@@ -43,7 +44,8 @@
 	#my-downloadable-products-table,
 	#my-reviews-table,
 	.cart-table-wrapper,
-	.wishlist-table-wrapper{
+	.wishlist-table-wrapper,
+	#product_comparison{
 		overflow-x: auto;
 		display: block;	
 	}
