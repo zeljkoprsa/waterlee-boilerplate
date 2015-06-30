@@ -1,0 +1,21 @@
+<aside class="top-cart right-off-canvas-menu">
+  <a class="right-off-canvas-toggle" href="#"><i class="fa fa-long-arrow-right"></i></a>
+  <!--<i class="icon-shopping-cart"></i>-->
+  <?php
+  $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
+  $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
+  ?>
+  <?php if($count == 0):?>
+      <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('You have no items in your shopping cart.') ?></a>
+  <?php else: ?> 
+    <?php foreach($this->getItems() as $_item): ?>
+        <?php echo $this->getItemHtml($_item) ?>
+    <?php endforeach ?>
+  <?php endif; ?>
+  <p class="price-total"><span><?php echo $this->__('SUBTOTAL:') ?></span>
+  <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getSubtotal()); ?>
+  </p>
+  <a class="btn-cart" href="<?php echo $this->getUrl('checkout/cart'); ?>">
+  <?php echo $this->__('Cart'); ?></a>
+  <a class="btn-checkout" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
+ </aside>

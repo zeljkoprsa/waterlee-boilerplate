@@ -233,10 +233,10 @@
 		.header{
 			@include grid-row(nest);
 			.logo{
-				@include grid-column(4);
+				@include grid-column(5);
 			}
 			.quick-access{
-				@include grid-column(8);
+				@include grid-column(7);
 			}
 		}
 	}

@@ -35,30 +35,37 @@
 <?php echo $this->getChildHtml('head') ?>
 </head>
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
-<?php echo $this->getChildHtml('after_body_start') ?>
-<div class="wrapper">
-    <?php echo $this->getChildHtml('global_notices') ?>
-    <div class="page">
-        <?php echo $this->getChildHtml('header') ?>
-        <div class="main-container col2-right-layout">
-            <?php echo $this->getChildHtml('breadcrumbs') ?>
-            <div class="off-canvas-wrap" data-offcanvas>
-                <div class="col-wrapper">
-                    <a class="right-off-canvas-toggle" href="#" >Menu</a>
-                    <div class="col-main">
-                        <?php echo $this->getChildHtml('global_messages') ?>
-                        <?php echo $this->getChildHtml('content') ?>
+
+<div class="off-canvas-wrap" data-offcanvas>
+    <div class="col-wrapper cart-aside">
+        <?php echo $this->getLayout()->createBlock('checkout/cart')->setTemplate('checkout/cart/top-cart.phtml')->toHtml(); ?>
+        <?php echo $this->getChildHtml('after_body_start') ?>
+        <div class="wrapper">
+            <?php echo $this->getChildHtml('global_notices') ?>
+            <div class="page">
+                <?php echo $this->getChildHtml('header') ?>
+                <div class="main-container col2-right-layout">
+                    <?php echo $this->getChildHtml('breadcrumbs') ?>
+                    <div class="off-canvas-wrap" data-offcanvas>
+                        <div class="col-wrapper">
+                            <a class="right-off-canvas-toggle" href="#" >Menu</a>
+                            <div class="col-main">
+                                <?php echo $this->getChildHtml('global_messages') ?>
+                                <?php echo $this->getChildHtml('content') ?>
+                            </div>
+                            <div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>
+                            <a class="exit-off-canvas"></a>
+                        </div>
                     </div>
-                    <div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>
-                    <a class="exit-off-canvas"></a>
                 </div>
+                <?php echo $this->getChildHtml('footer') ?>
+                <?php echo $this->getChildHtml('global_cookie_notice') ?>
+                <?php echo $this->getChildHtml('before_body_end') ?>
             </div>
         </div>
-        <?php echo $this->getChildHtml('footer') ?>
-        <?php echo $this->getChildHtml('global_cookie_notice') ?>
-        <?php echo $this->getChildHtml('before_body_end') ?>
+        <?php echo $this->getAbsoluteFooter() ?>
     </div>
 </div>
-<?php echo $this->getAbsoluteFooter() ?>
+
 </body>
 </html>

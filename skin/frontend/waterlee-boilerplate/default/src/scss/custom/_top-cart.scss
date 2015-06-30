@@ -1,0 +1,24 @@
+.top-cart{
+	padding: 1em;
+	width: 220px;
+	.right-off-canvas-toggle{
+		text-align: left;
+		display: block;
+	}
+	.btn-remove{
+		display: block;
+	}
+	.price-total{
+		margin: 1em 0;
+		color: $success-color;
+		text-align: center;
+	}
+	.btn-cart,
+	.btn-checkout{
+		@extend .button;
+		@extend .tiny;
+	}
+	.btn-checkout{
+		float: right;
+	}
+}

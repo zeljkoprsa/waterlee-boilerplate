@@ -13,3 +13,4 @@
  - Some product image zoom fixes.
  - Replacing flexslider with bxslider for product image thumbs.
  - Removing easyResponsiveTabs.js because of TM easyTabs extension.
+ - Updated offcanvas for top-cart, 2col-left, 2col-right & 3column layouts.

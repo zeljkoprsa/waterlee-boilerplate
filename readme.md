@@ -77,7 +77,7 @@ What's inside:
 - ***NEW*** Foundation grid is made on sass from now. 
 - **NEW** Responsive tables. From now on, all Magento tables are responsive.
 - **NEW** Theme top menu extension. Find it under "JAKE SHARP WATERLEE" system settings after installation (Remember, you'll need to install the extension separately.)
-- **NEW**: Off Canvas menu (http://www.zurb.com/playground/off-canvas-layouts)
+- **NEW**: Off Canvas menu for top-cart, 2col-left, 2col-right & 3column layouts (http://www.zurb.com/playground/off-canvas-layouts)
 - **NEW**: Current SubCategory menu for mobile view
 - Foundation 5 by ZURB built in (http://foundation.zurb.com/)
 - OOCSS SASS implemented (http://compass-style.org/)

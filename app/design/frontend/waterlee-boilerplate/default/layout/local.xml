@@ -20,7 +20,6 @@
 		<reference name="header">
 			<block type="page/switch" name="top_store_switcher" as="top_store_switcher" template="page/switch/stores.phtml"/>
             <block type="directory/currency" name="currency_switcher" before="-" template="directory/currency.phtml"/>
-			<block type="checkout/cart" name="topCart" template="checkout/cart/topCart.phtml"/>
     	</reference>
 
 		<!-- Add/Remove Top Links -->

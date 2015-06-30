@@ -16,25 +16,45 @@
 			ul{
 				float: right;
 				display: inline-block;
-				padding-top: 0.3em;
-			}
-		}
-		.top--cart{
-			display: inline-block;
-			float: right;
-			padding-left: 1em;
-			.top--cart--content{
-				.buttons{
-					float: right;
-					.buttons__view,
-					.buttons__checkout{
-						@extend .button;
-						@extend .tiny;
+				li{
+					padding: 0 0 0 0.5em;
+					a{
+						font-size: 0;
+						&:before{
+							font-family: FontAwesome;
+							font-size: 30px;
+						}
+					}
+					&:first-child{
+						a:before{
+							content: "\f007";
+						}
+					}
+					&:nth-child(2){
+						a:before{
+							content: "\f004";
+						}
+					}
+					&:nth-child(3){
+						a:before{
+							content: "\f0ec";
+						}
+					}
+					&:nth-child(4){
+						a:before{
+							content: "\f090";
+						}
 					}
 				}
-				.btn-remove{
-					display: block;
-				}
+			}
+		}
+		.btn-cart{
+			float: right;
+			padding: 0 0 0 0.5em;
+			&:before{
+				content: "\f07a";
+				font-family: FontAwesome;
+				font-size: 30px;
 			}
 		}
 	}

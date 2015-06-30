@@ -5,6 +5,9 @@
 		color: $warning-color;
 	}
 }
+.welcome-msg{
+	@extend .hide-for-small;
+}
 
 #inchoo_global_messages {
 	background: $snow;
