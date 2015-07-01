@@ -86,7 +86,7 @@ jQuery(document).ready(function() {
 
   // media query event handler
   if (matchMedia) {
-    var mq = window.matchMedia("(min-width: 640px)");
+    var mq = window.matchMedia("(min-width: 690px)");
     mq.addListener(WidthChange);
     WidthChange(mq);
   }
@@ -95,44 +95,44 @@ jQuery(document).ready(function() {
   function WidthChange(mq) {
 
     if (mq.matches) {
-      // window width is at least 640px
+      // window width is at least 690px
         jQuery('.gallery-image.visible').elevateZoom();
         jQuery('.more-views').click(function(){
           jQuery('.gallery-image.visible').elevateZoom();
         })
     }
     else {
-      // window width is less than 640px
-       // jQuery('.gallery-image.visible').elevateZoom({
-       //    constrainType:"height",
-       //    constrainSize:274,       
-       //    zoomType: "lens",
-       //    containLensZoom: true,
-       //  cursor: "pointer",
-       //  galleryActiveClass: "active",
-       //  zoomWindowFadeIn: 500,
-       //  zoomWindowFadeOut: 750
-       //    });
+      //window width is less than 690px
+        jQuery('.gallery-image.visible').elevateZoom({
+          constrainType:"height",
+          constrainSize:274,       
+          zoomType: "lens",
+          containLensZoom: true,
+          cursor: "pointer",
+          galleryActiveClass: "active",
+          zoomWindowFadeIn: 500,
+          zoomWindowFadeOut: 750
+        });
 
-       //  jQuery('.more-views').click(function(){
-       //    jQuery('.gallery-image.visible').elevateZoom({
-       //    constrainType:"height",
-       //    constrainSize:274,       
-       //    zoomType: "lens",
-       //    containLensZoom: true,
-       //  cursor: "pointer",
-       //  galleryActiveClass: "active",
-       //  zoomWindowFadeIn: 500,
-       //  zoomWindowFadeOut: 750
-       //    });
-       //  })    
+        jQuery('.more-views').click(function(){
+          jQuery('.gallery-image.visible').elevateZoom({
+            constrainType:"height",
+            constrainSize:274,       
+            zoomType: "lens",
+            containLensZoom: true,
+            cursor: "pointer",
+            galleryActiveClass: "active",
+            zoomWindowFadeIn: 500,
+            zoomWindowFadeOut: 750
+          });
+       })    
     }
 
   }
 
   //Offcanvas trigger for mobile except top-cart offcanvas
   function offCanvas(){
-    if (jQuery(window).width()<625){     
+    if (Modernizr.mq('(max-width: 640px)')){     
         jQuery('.col-wrapper').addClass('inner-wrap');
         jQuery('.col-left.sidebar').addClass('left-off-canvas-menu');
         jQuery('.col-right.sidebar').addClass('right-off-canvas-menu');

@@ -1,6 +1,5 @@
 // MOBILE FIRST
 
-//Breadcrumbs
 .top-bar,
 .header-container,
 .demo-notice,
@@ -47,6 +46,7 @@
 	}
 }
 
+//Breadcrumbs
 .breadcrumbs{
 	@include grid-column(12);
 }
