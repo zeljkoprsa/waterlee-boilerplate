@@ -38,10 +38,10 @@
             <?php echo $this->getChildHtml('currency_switcher') ?>
         </div>
         <div class="top-links">
-        <a class="btn-cart right-off-canvas-toggle" href="#">(<?php
+        <a class="btn-cart right-off-canvas-toggle" href="#"><span><?php
         $_cartQty = Mage::getSingleton('checkout/cart')->getItemsCount();
         echo $_cartQty;
-        ?>)</a>
+        ?></span></a>
         <?php echo $this->getChildHtml('topLinks') ?>
         </div>
     </div>

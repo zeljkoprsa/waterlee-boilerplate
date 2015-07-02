@@ -9,20 +9,28 @@
 			.block-currency{
 				display: inline-block;
 				vertical-align: top;
-				width: 120px;
+				width: 5.4em;
+				select{
+					padding: 0.1em 1.4em 0.1em 0.1em;
+					height: 1.6em;
+				}
 			}
 		}
 		.top-links{
+			text-align: center;
 			ul{
-				float: right;
 				display: inline-block;
 				li{
-					padding: 0 0 0 0.5em;
+					margin: 0 0 0 1em;
 					a{
-						font-size: 0;
+						font-size: 0.8em;
+						@media #{$small-only}{
+							font-size: 0em;
+						}
 						&:before{
 							font-family: FontAwesome;
-							font-size: 30px;
+							font-size: 20px;
+							padding: 0 0.5em 0 0;
 						}
 					}
 					&:first-child{
@@ -46,34 +54,55 @@
 						}
 					}
 				}
+				@media #{$medium-up}{
+					float: right;
+					li{
+						margin: 0 0 0 2em;
+					}
+				}
 			}
 		}
 		.btn-cart{
-			float: right;
-			padding: 0 0 0 0.5em;
+			position: fixed;
+			top: 2.5em;
+			@media #{$medium-up}{
+				top: 2.8em;
+			}
+			right: 0;
+			padding: 0.5em;
+			margin-top: -0.5em;
+			background: $primary-color;
+			z-index: 5;
+			span{
+				background: $white;
+				border-radius: 50%;
+				padding: 0 0.3em;
+			}
 			&:before{
 				content: "\f07a";
 				font-family: FontAwesome;
-				font-size: 30px;
+				color: $white;
+				font-size: 20px;
+				padding: 0 0.3em 0 0;
 			}
 		}
 	}
 	.header{
 		.quick-access{
-			height: 74px;
 			position: relative;
 			.form-search{
-				float: right;
-				input,
+				float: left;
+				input{
+					display: inline-block;
+					width: auto;
+					height: 2.4em;
+				}
 				button{
 					width: auto;
 					display: inline-block;
 					margin-bottom: 0;
 					vertical-align: top;
-					padding: 0.55rem 2rem 0.55rem 2rem;
-				}
-				input{
-					width: 200px;
+					@extend .tiny;
 				}
 			}
 		}

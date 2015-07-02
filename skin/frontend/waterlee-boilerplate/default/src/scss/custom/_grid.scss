@@ -332,9 +332,11 @@
 			.welcome{
 				@include grid-column(2);
 			}
-			.switchers,
+			.switchers{
+				@include grid-column(4);
+			}
 			.top-links{
-				@include grid-column(5);
+				@include grid-column(6);
 			}
 		}
 	}
