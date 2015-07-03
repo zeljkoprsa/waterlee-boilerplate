@@ -10,17 +10,17 @@
  * http://opensource.org/licenses/afl-3.0.php
  * If you did not receive a copy of the license and are unable to
  * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
+ * to license@magento.com so we can send you a copy immediately.
  *
  * DISCLAIMER
  *
  * Do not edit or add to this file if you wish to upgrade Magento to newer
  * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
+ * needs please refer to http://www.magento.com for more information.
  *
  * @category    design
  * @package     base_default
- * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
@@ -34,13 +34,21 @@
 <div class="cart">
     <div class="page-title title-buttons">
         <h1><?php echo $this->__('Shopping Cart') ?></h1>
+        <?php if(!$this->hasError()): ?>
+        <ul class="checkout-types">
+        <?php foreach ($this->getMethods('top_methods') as $method): ?>
+            <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+            <li><?php echo $methodHtml; ?></li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        </ul>
+        <?php endif; ?>
     </div>
-    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <?php echo $this->getMessagesBlock()->toHtml() ?>
     <?php echo $this->getChildHtml('form_before') ?>
-    <div class="row">
-      <div class="columns large-8">
-        <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
+    <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
         <?php echo $this->getBlockHtml('formkey'); ?>
+        <div class="cart-table-wrapper">
         <fieldset>
             <table id="shopping-cart-table" class="data-table cart-table">
                 <col width="1" />
@@ -65,7 +73,7 @@
                 <col width="1" />
 
             <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
-                <thead class="hide-for-small-only">
+                <thead>
                     <tr>
                         <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
                         <th rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Product Name') ?></span></th>
@@ -90,13 +98,11 @@
                 <tfoot>
                     <tr>
                         <td colspan="50" class="a-right">
-                        <div class="row collapse">
-                            <div class="columns small-12">
                             <?php if($this->getContinueShoppingUrl()): ?>
-                                <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button tiny btn-continue" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
+                                <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-continue" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
                             <?php endif; ?>
-                            <button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update Shopping Cart'); ?>" class="button tiny btn-update right"><span><span><?php echo $this->__('Update Shopping Cart'); ?></span></span></button>
-                            <button type="submit" name="update_cart_action" value="empty_cart" title="<?php echo $this->__('Clear Shopping Cart'); ?>" class="button tiny btn-empty right" id="empty_cart_button"><span><span><?php echo $this->__('Clear Shopping Cart'); ?></span></span></button>
+                            <button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update Shopping Cart'); ?>" class="button btn-update"><span><span><?php echo $this->__('Update Shopping Cart'); ?></span></span></button>
+                            <button type="submit" name="update_cart_action" value="empty_cart" title="<?php echo $this->__('Clear Shopping Cart'); ?>" class="button btn-empty" id="empty_cart_button"><span><span><?php echo $this->__('Clear Shopping Cart'); ?></span></span></button>
                             <!--[if lt IE 8]>
                             <input type="hidden" id="update_cart_action_container" />
                             <script type="text/javascript">
@@ -119,12 +125,10 @@
                             //]]>
                             </script>
                             <![endif]-->
-                            </div>
-                        </div>
                         </td>
                     </tr>
                 </tfoot>
-                <tbody class="body-margin">
+                <tbody>
                 <?php foreach($this->getItems() as $_item): ?>
                     <?php echo $this->getItemHtml($_item) ?>
                 <?php endforeach ?>
@@ -132,34 +136,27 @@
             </table>
             <script type="text/javascript">decorateTable('shopping-cart-table')</script>
         </fieldset>
-        </form>
-      </div>
-
-        <div class="cart-collaterals columns large-4">
-            <div class="col2-set">
-                
-                <div class="col-2">
-                    <?php /* Extensions placeholder */ ?>                    
-                    <?php echo $this->getChildHtml('coupon') ?>
-                    <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
-                </div>
-            </div>
-            <div class="totals">
-                <?php echo $this->getChildHtml('totals'); ?>
-                <?php if(!$this->hasError()): ?>
-                <ul class="checkout-types">
-                <?php foreach ($this->getMethods('methods') as $method): ?>
-                    <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-                    <li><?php echo $methodHtml; ?></li>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-                </ul>
-                <?php endif; ?>
-            </div>
         </div>
-    </div>
-    <div class="columns large-12">
-        <?php echo $this->getChildHtml('checkout.cart.extra') ?>
-        <?php echo $this->getChildHtml('crosssell') ?>               
+    </form>
+    <div class="cart-collaterals">
+        <div class="col-collaterals">
+                <?php /* Extensions placeholder */ ?>
+                <?php echo $this->getChildHtml('checkout.cart.extra') ?>
+                <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
+                <?php echo $this->getChildHtml('coupon') ?>
+                <div class="totals">
+                    <?php echo $this->getChildHtml('totals'); ?>
+                    <?php if(!$this->hasError()): ?>
+                    <ul class="checkout-types">
+                    <?php foreach ($this->getMethods('methods') as $method): ?>
+                        <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+                        <li><?php echo $methodHtml; ?></li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                    </ul>
+                    <?php endif; ?>
+                </div>
+        </div>
+        <?php echo $this->getChildHtml('crosssell') ?>
     </div>
 </div>

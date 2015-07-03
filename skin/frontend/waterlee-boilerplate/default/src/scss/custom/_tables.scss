@@ -1,0 +1,75 @@
+//Responsive tables
+
+@media #{$small-only} {
+	#shopping-cart-table,
+	#wishlist-table,
+	#my-tags-table{
+		thead{
+			display: none;
+		}
+		tbody{
+			tr{
+				position: relative;
+				background: $white;
+				border-bottom: 1px solid $silver;
+			}
+			td{
+				display: inline-block;
+				text-align: left;
+			}
+			dl{
+				dt{
+					display: inline-block;
+					padding: 0 0 0 1em;
+				}
+				dd{
+					display: inline-block;
+					padding: 0 1em 0 0;
+				}
+			}
+		}
+	}
+	#my-orders-table,
+	#my-downloadable-products-table,
+	#my-reviews-table,
+	#product_comparison{
+		overflow-x: auto;
+		display: block;
+	}
+
+}
+
+@media #{$medium-only} {
+	#my-orders-table,
+	#my-downloadable-products-table,
+	#my-reviews-table,
+	.cart-table-wrapper,
+	.wishlist-table-wrapper,
+	#product_comparison{
+		overflow-x: auto;
+		display: block;	
+	}
+}
+
+@media only screen and (max-width: $medium-breakpoint){
+	#product-review-table{
+		width: 100%;
+		th{
+			font-weight: 200;
+			padding: 0.3rem;
+		}
+	}
+}
+
+#my-tags-table{
+	width: 100%;
+	img{
+		max-width: inherit;
+	}
+}
+
+.wishlist-table-wrapper{
+	fieldset{
+		padding: 0;
+	}
+}

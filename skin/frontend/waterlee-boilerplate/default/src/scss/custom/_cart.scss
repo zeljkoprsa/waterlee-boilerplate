@@ -1,0 +1,85 @@
+.cart{
+	.page-title{
+		h1{
+			& + ul{
+				display: none;
+			}
+		}
+	}
+	form{
+		overflow-x: hidden;
+		fieldset{
+			padding: 0;
+			#shopping-cart-table{
+				tbody{
+					img{
+						max-width: inherit;
+					}
+				}
+				width: 100%;
+				tfoot{
+					button{
+						@extend .tiny;
+						margin-bottom: 1em;
+					}
+					.btn-empty{
+						float: left;
+					}
+					.btn-update,
+					.btn-continue{
+						float: right;
+					}
+					.btn-update{
+						margin: 0 0.5em;
+					}
+					@media #{$small-only}{
+						button{
+							clear: both;
+						}
+						.btn-empty{
+							margin: 1em 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	.cart-collaterals{
+		.shipping{
+			.buttons-set{
+				.button{
+					float: right;
+				}
+			}
+		}
+		#discount-coupon-form{
+			.discount{
+				h2{
+					text-align: right;
+				}
+				.discount-form{
+					label,
+					input,
+					.buttons-set{
+						float: right;
+						clear: both;
+					}
+					input{
+						margin: 1em 0;
+					}
+				}
+			}
+		}
+		.totals{
+			table,
+			ul{
+				float: right;
+				display: block;
+				clear: both;
+			}
+			table{
+				margin-top: 1em;
+			}
+		}
+	}
+}

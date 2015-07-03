@@ -1,8 +1,0 @@
-<?php $_product = $this->getProduct() ?>
-<meta property="og:locale" content="en_US" />
-<meta property="og:title" content="<?php echo $this->helper('catalog/output')->productAttribute($_product, $_product->getName(), 'name') ?>" />
-<meta property="og:type" content="product" />
-<meta property="og:url" content="<?php echo $this->getUrl($_product->getUrlKey()) ?>" />
-<meta property="og:image" content="<?php echo Mage::helper('catalog/image')->init($_product, 'small_image')->resize(200, 200) ?>" />
-<meta property="og:site_name" content="" /> <!-- Insert Site domain in the content atributte -->
-<meta property="og:description" content="<?php echo $this->stripTags($_product->getDescription(), null, true); ?>" />

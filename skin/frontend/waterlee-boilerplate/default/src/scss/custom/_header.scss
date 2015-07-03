@@ -1,0 +1,126 @@
+.header-container{
+	.super-header{
+		.welcome{
+
+		}
+		.switchers{
+			.store-switcher,
+			.form-language,
+			.block-currency{
+				display: inline-block;
+				vertical-align: top;
+				width: 5.4em;
+				select{
+					padding: 0.1em 1.4em 0.1em 0.1em;
+					height: 1.6em;
+				}
+			}
+		}
+		.top-links{
+			text-align: center;
+			ul{
+				display: inline-block;
+				li{
+					margin: 0 0 0 1em;
+					a{
+						font-size: 0;
+						&:before{
+							font-family: FontAwesome;
+							font-size: 20px;
+							padding: 0 0.5em 0 0;
+						}
+					}
+					&:first-child{
+						a:before{
+							content: "\f007";
+						}
+					}
+					&:nth-child(2){
+						a:before{
+							content: "\f004";
+						}
+					}
+					&:nth-child(3){
+						a:before{
+							content: "\f0ec";
+						}
+					}
+					&:nth-child(4){
+						a:before{
+							content: "\f090";
+						}
+					}
+				}
+				@media #{$medium-up}{
+					float: right;
+					li{
+						margin: 0 0 0 2em;
+						a{
+							font-size: 0.8em;
+						}
+					}
+				}
+			}
+		}
+		.btn-cart{
+			position: fixed;
+			top: 2.5em;
+			right: 0;
+			padding: 0.5em;
+			margin-top: -0.5em;
+			background: $primary-color;
+			z-index: 5;
+			span{
+				background: $white;
+				border-radius: 50%;
+				padding: 0 0.3em;
+				position: relative;
+				bottom: 7px;
+			}
+			&:before{
+				content: "\f07a";
+				font-family: FontAwesome;
+				color: $white;
+				font-size: 20px;
+				padding: 0 0.3em 0 0;
+			}
+			@media #{$medium-up}{
+				top: 2.8em;
+			}
+		}
+	}
+	.header{
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+		.quick-access{
+			position: relative;
+			.form-search{
+				float: left;
+				margin: 0.5em 0 0 0;
+				width: 100%;
+				input{
+					display: inline-block;
+					height: 2.35em;
+				}
+				button{
+					display: inline-block;
+					margin-bottom: 0;
+					vertical-align: top;
+					@extend .tiny;
+					height: 3em;
+				}
+				@media #{$medium-up}{
+					margin: 1.3em 0 0 0;
+				}
+				#search_autocomplete{
+					ul li{
+						border: 1px solid $iron;
+						border-top: 0;
+						color: $primary-color;
+					}
+					z-index: 10;
+				}
+			}
+		}
+	}
+}

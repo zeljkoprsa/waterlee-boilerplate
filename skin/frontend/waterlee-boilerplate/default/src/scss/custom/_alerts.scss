@@ -1,0 +1,55 @@
+.demo-notice{
+	@extend .hide-for-small;
+	.notice-inner{
+		text-align: center;
+		color: $warning-color;
+	}
+}
+.welcome-msg{
+	@extend .hide-for-small;
+}
+
+#inchoo_global_messages {
+	background: $snow;
+	position: relative;
+	z-index: 9999;
+}
+
+#inchoo_global_messages_close {
+	position: absolute;
+	top: 0;
+	right: 15px;
+	z-index: 10000;
+	display: block;
+	color: $primary-color;
+	font-size: 24px;
+	line-height: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+.validation-advice,
+.required{
+	color: $warning-color;
+}
+
+.success-msg{
+	ul{
+		li{
+			span{
+				color: $success-color;
+			}
+		}
+	}
+}
+
+.error-msg{
+	ul{
+		li{
+			span{
+				color: $warning-color;
+			}
+		}
+	}
+}

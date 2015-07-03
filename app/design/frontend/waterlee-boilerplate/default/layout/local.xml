@@ -1,305 +1,99 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-/**
- * @category    design
- * @package     waterlee-boilerplate
- * CC BY 3.0    2013 Željko Prša. (http://www.zeljkoprsa.com)
- * modified by Tomislav Grgić
- * Attribute this work:  <div xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" about="http://waterlee.zeljkoprsa.com/1tb-7200rpm"><span property="dct:title">WaterleeBoilerplate</span> (<a rel="cc:attributionURL" property="cc:attributionName" href="http://zeljkoprsa.com">Želko Prša</a>) / <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></div>
- */
--->
-
+<?xml version="1.0"?>
 
 <layout>
-    <!-- Global Operations -->
-    <default>
-        <reference name="root">
-            <action method="setTemplate">
-                <template>page/2columns-left.phtml</template>
-                <remove name="global_messages"/>
-            </action>
-            <reference name="after_body_start">
-                <block type="core/template" name="inchoo_global_messages" template="core/inchoo_global_messages.phtml"
-                       before="-"/>
-            </reference>
-        </reference>
-        <reference name="header">
-            <block type="directory/currency" name="store_currency_selector" template="currency/currency.phtml"/>
-            <block type="page/switch" name="store_switcher" as="store_switcher" template="page/switch/stores.phtml"/>
-            <block type="customer/account" name="mini_account" as="mini_account" template="customer/account/mini-account.phtml"/>
-            <!--<block type="checkout/cart" name="top_cart" as="top_cart" template="checkout/cart/top-cart.phtml"/>-->
-            
+	<default>
 
-        </reference>
-        <remove name="currency"/>
-        <!-- Remove callouts and rarely used stuff globally -->
-        <remove name="right.poll"/>
-        <remove name="right.permanent.callout"/>
-        <remove name="left.permanent.callout"/>
-        <remove name="paypal.partner.right.logo"/>
-        <remove name="tags_popular"/>
-        <!--<remove name="product_tag_list"/>-->
-        <remove name="catalog.compare.sidebar"/>
-        <!--<remove name="checkout.cart.shipping"/>-->
-	    <!--<remove name="cart_sidebar"/>-->
-        <!--<remove name="breadcrumbs"/>-->
-        <remove name="left.newsletter"/>
-        <!--<remove name="catalog.leftnav"/>-->
-        <!--<remove name="catalogsearch.leftnav"/>-->
-        <remove name="right.reports.product.viewed"/>
-        <remove name="left.reports.product.viewed"/>
+		<reference name="head">
+		<action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
+		<action method="removeItem"><type>skin_css</type><name>css/widgets.css</name></action>
+		<action method="removeItem"><type>js</type><name>varien/menu.js</name></action>
 
-
-        <!-- //Remove callouts and rarely used stuff globally -->
-
-        <!-- Add js/css globally -->
-        <reference name="head">
-            <action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
-            <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>         
-        
-        <!-- Required javascripts are concatenated into script.js / see gulpfile.js -->
-            <action method="addItem"><type>skin_js</type><name>js/script.js</name><params/></action>
-                    
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/modernizr/modernizr.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery/dist/jquery.min.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/fastclick/lib/fastclick.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery.cookie/jquery.cookie.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery-placeholder/jquery.placeholder.js</name><params/></action>-->
-
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.abide.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.accordion.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.alert.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.clearing.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.dropdown.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.equalizer.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.interchange.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.joyride.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.magellan.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.offcanvas.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.orbit.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.reveal.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.slider.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.tab.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.tooltip.js</name><params/></action>-->
-            <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.topbar.js</name><params/></action>-->
-
-            <!--<action method="addItem"><type>skin_js</type><name>js/easyResponsiveTabs.js</name><params/></action>-->
-
-            <!--<action method="addItem"><type>skin_js</type><name>js/elevatezoom/jquery.elevatezoom.js</name><params/></action>-->
-
-
-
-
+	    <!-- Required javascripts are concatenated into script.js / see gulpfile.js -->
+        <action method="addItem"><type>skin_js</type><name>js/script.js</name><params/></action>
         </reference>
 
-        <reference name="footer">
-            <block type="core/template" name="js_files" template="page/html/js.phtml"/>
-        </reference>
-        <!-- //Add js/css globally -->
+		<remove name="right.permanent.callout"/>
+    	<remove name="left.permanent.callout"/>
+		<remove name="left.newsletter" />
+		<remove name="currency" />
+
+		<reference name="header">
+			<block type="page/switch" name="top_store_switcher" as="top_store_switcher" template="page/switch/stores.phtml"/>
+            <block type="directory/currency" name="currency_switcher" before="-" template="directory/currency.phtml"/>
+    	</reference>
+
+		<!-- Add/Remove Top Links -->
+		<reference name="root">
+			<reference name="top.links">
+				<!--<remove name="top.links" />-->
+				<remove name="checkout_cart_link"/>
+				<remove name="global_messages" />
+				<action method="addLink" translate="label title">
+					<label>Compare</label>
+					<url>catalog/product_compare/index/</url>
+					<title>Compare</title>
+					<prepare>true</prepare>
+					<urlParams helper="core/url/getHomeUrl"/>
+					<position>0</position>
+					<liParams/>
+					<aParams>class="top-link-compare" target="_blank"</aParams>
+					<beforeText></beforeText>
+					<afterText></afterText>
+	         	</action>
+			</reference>			
+		</reference>
+
+		<reference name="after_body_start">
+			<block type="core/template" name="inchoo_global_messages" template="core/inchoo_global_messages.phtml" before="-" />
+		</reference>
 
 
-        <!-- Add/Remove Top Links -->
-        <reference name="root">
+		<reference name="footer">
+            <block type="newsletter/subscribe" name="footer.newsletter" before="-" template="newsletter/subscribe.phtml"/>
+            <remove name="store_switcher" />
+    	</reference>
 
-            <remove name="global_messages"/>
-            <!-- Remove Global Messages in favor of "inchoo_global_messages" -->
-            <reference name="top.links">
-
-                <!-- Add Top Links -->
-                <action method="addLink" translate="label title">
-                    <label>About Us</label>
-                    <url>about</url>
-                    <title>About Us</title>
-                    <prepare>true</prepare>
-                    <urlParams helper="core/url/getHomeUrl"/>
-                    <position>1</position>
-                    <liParams/>
-                    <aParams>class="top-link-about-us"</aParams>
-                    <beforeText></beforeText>
-                    <afterText></afterText>
-                </action>
-                <!-- ... -->
-                <!-- //Add Top Links -->
-
-                <!-- Remove Top Links -->
-                <action method="removeLinkByUrl">
-                    <url helper="customer/getAccountUrl"/>
-                </action>
-                <remove name="checkout_cart_link"/>
-                <!-- ... -->
-                <!-- //Remove Top Links -->
-
-            </reference>
-
-        </reference>
-        <!-- //Add/Remove Top Links -->
-
-        <!-- Add/Remove Footer Links -->
+		<block type="page/html_footer" name="footer" as="footer" template="page/html/footer.phtml">
+                <block type="page/template_links" name="footer_links" as="footer_links" template="page/template/links.phtml"/>
+        </block>
 
 
-        <reference name="footer_links">
+	</default>
+	
+	<catalog_product_view>
+		<reference name="product.info">
+			<block type="review/product_view_list" name="product.info.product_additional_data" as="product_review" template="review/product/view/list.phtml">
+                    <block type="review/form" name="product.review.form" as="review_form">
+                        <block type="page/html_wrapper" name="product.review.form.fields.before" as="form_fields_before" translate="label">
+                            <label>Review Form Fields Before</label>
+                            <action method="setMayBeInvisible"><value>1</value></action>
+                        </block>
+                    </block>
+                </block>
+		</reference>
+		<reference name="product.info">
+			
+				<block type="catalog/product_list_related" name="catalog.product.related" as="related_products" before="-" template="catalog/product/list/related.phtml"/>
+			
+		</reference>
+	</catalog_product_view>
+	
+	<catalogsearch_result_index>
+		<reference name="root">
+			<action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+		</reference>
+	</catalogsearch_result_index>
 
-            <!-- Add Footer Links -->
-            <action method="addLink" translate="label title">
-                <label>About Us</label>
-                <url>about</url>
-                <title>About Us</title>
-                <prepare>true</prepare>
-                <urlParams helper="core/url/getHomeUrl"/>
-                <position>1</position>
-                <liParams/>
-                <aParams>class="top-link-about-us"</aParams>
-                <beforeText></beforeText>
-                <afterText></afterText>
-            </action>
-            <!-- //Add Footer Links -->
+	<catalogsearch_advanced_result>
+		<reference name="root">
+			<action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+		</reference>
+	</catalogsearch_advanced_result>
 
-            <!-- Remove 'Site Map' Link -->
-            <!--<action method="removeLinkByUrl"><url helper="catalog/map/getCategoryUrl" /></action>-->
-            <!-- Remove 'Search Terms' Link -->
-            <!--<action method="removeLinkByUrl"><url helper="catalogsearch/getSearchTermUrl" /></action>-->
-            <!-- Remove 'Advanced Search' -->
-            <!--<action method="removeLinkByUrl"><url helper="catalogsearch/getAdvancedSearchUrl" /></action>-->
-
-        </reference>
-
-        <!-- By default, Magento sets a static footer block. Find it in the admin under
- CMS > Static Blocks.-->
-        <reference name="footer">
-            <!-- Remove Magento's default static block and use the 'addLink' method above
-to add your custom and inline links.  I use the 'unsetChild' method as often as
-possible as opposed using the more final <remove name="cms_footer_links"/>
-just in case I want to add the block somewhere else -->
-
-            <!--<action method="unsetChild"><name>cms_footer_links</name></action>-->
-
-            <!-- Remove all the other Magento links - "Site Map, Search Terms, Advanced Search, and
-      Contact Us" -->
-            <!--<action method="unsetChild"><name>footer_links</name></action> &lt;!&ndash; Magento 1.4.x &ndash;&gt;-->
-            <block type="newsletter/subscribe" after="-" name="footer.newsletter"
-                   template="newsletter/subscribe.phtml"/>
-            <!--<block type="core/template" name="mobile.menu.footer" template="page/mobile-menu-footer.phtml"/>-->
-        </reference>
-        <!-- //Add/Remove Footer Links -->
-
-        <!-- Left Column Changes globally... -->
-        <reference name="left">
-            <!-- ... -->
-        </reference>
-        <!-- //Left Column Changes globally... -->
-
-        <!-- Right Column Changes globally... -->
-        <reference name="right">
-            <!-- ... -->
-        </reference>
-        <!-- //Right Column Changes globally... -->
-
-    </default>
-    <!-- //Global Operations -->
-
-    <!-- When Customer is Logged out -->
-    <customer_logged_out>
-        <reference name="top.links">
-            <action method="removeLinkByUrl">
-                <url helper="customer/getLoginUrl"/>
-            </action>
-        </reference>
-    </customer_logged_out>
-    <!-- //When Customer is Logged out -->
-
-    <!-- When Customer is Logged in -->
-    <customer_logged_in>
-        <reference name="top.links">
-            <action method="removeLinkByUrl">
-                <url helper="customer/getLogoutUrl"/>
-            </action>
-        </reference>
-    </customer_logged_in>
-    <!-- //When Customer is Logged in -->
-
-
-    <catalog_category_default translate="label">
-        <label>Catalog Category (Non-Anchor)</label>
-        <reference name="root">
-            <action method="setTemplate">
-                <template>page/2columns-left.phtml</template>
-            </action>
-        </reference>
-        <reference name="left">
-            <remove name="left.permanent.callout"/>
-        </reference>
-        <reference name="right">
-            <remove name="right.permanent.callout"/>
-        </reference>
-    </catalog_category_default>
-
-
-<!--
-Category layered navigation layout
--->
-
-    <catalog_category_layered translate="label">
-        <label>Catalog Category (Anchor)</label>
-        <reference name="root">
-        </reference>
-        <reference name="left">
-            <remove name="left.permanent.callout"/>
-        </reference>
-        <reference name="right">
-            <remove name="right.permanent.callout"/>
-        </reference>
-    </catalog_category_layered>
-
-
-    <!-- Module Specific Operations -->
-    <catalog_product_view>
-        <!-- ... -->
-    </catalog_product_view>
-    <!-- ... -->
-    <!-- //Module Specific Operations -->
-    <catalog_product_view translate="label">
-        <remove name="catalog.product.related"></remove>
-        <label>Catalog Product View (Any)</label>
-        <!-- Mage_Catalog -->
-        <reference name="root">
-            <action method="setTemplate">
-                <template>page/1column.phtml</template>
-            </action>
-            <remove name="wishlist"/>
-        </reference>
-        <reference name="head">
-            <block type="catalog/product_view_description" name="facebook.og" as="facebook_og"
-                   template="catalog/product/view/fb-og.phtml"/>
-        </reference>
-        <reference name="product.info">
-            <block type="review/product_view_list" name="product.info.product_additional_data" as="product_review"
-                   template="review/product/view/list.phtml">
-                <block type="review/form" name="product.review.form" as="review_form"/>
-            </block>
-        </reference>
-        <reference name="product.info">
-
-                <block type="catalog/product_list_related" name="catalog.products.related" as="catalog_products_related" template="catalog/product/list/related.phtml"/>
-        </reference>
-
-    </catalog_product_view>
-
-<!-- Catalog Search Result page -->
-    <catalogsearch_result_index>
-        <reference name="root">
-            <action method="setTemplate">
-                <template>page/2columns-left.phtml</template>
-            </action>
-        </reference>
-    </catalogsearch_result_index>
-    <customer_account>
-        <reference name="customer_account_navigation">
-
-        </reference>
-    </customer_account>
-    <checkout_onepage_index>
-
-    </checkout_onepage_index>
+	<catalogsearch_advanced_index>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+	</catalogsearch_advanced_index>
 
 </layout>

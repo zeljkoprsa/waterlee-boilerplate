@@ -1,0 +1,443 @@
+// MOBILE FIRST
+
+.top-bar,
+.header-container,
+.demo-notice,
+.footer-container,
+.col1-layout,
+.col2-left-layout,
+.col2-right-layout,
+.col3-layout{
+	@include grid-row();
+}
+
+// Layout
+.col1-layout{
+	.col-wrapper{
+		@include grid-row(nest);
+		.col-main{
+			@include grid-column(12);
+		}
+	}
+}
+
+.col2-left-layout,
+.col2-right-layout{
+	.col-wrapper{
+		@include grid-row(nest);
+		.sidebar,
+		.col-main,
+		> a{
+			@include grid-column(12);
+		}
+	}
+}
+
+.col3-layout{
+	.col-wrapper{
+		@include grid-row(nest);
+		.sidebar,
+		.col-main{
+			@include grid-column(12);
+		}
+		> span{
+			@include grid-column(6);	
+		}
+	}
+}
+
+//Breadcrumbs
+.breadcrumbs{
+	@include grid-column(12);
+}
+
+//Header
+.header-container{
+	.super-header{
+		@include grid-row(nest);
+		.welcome,
+		.switchers,
+		.top-links{
+			@include grid-column(12);
+		}
+	}
+	.header{
+		@include grid-row(nest);
+		.logo,
+		.quick-access{
+			@include grid-column(12);	
+			input{
+				@include grid-column(9);	
+			}
+			button{
+				@include grid-column(3);
+			}
+		}
+	}
+}
+
+//Catalog
+.products-list{
+	li{
+		a,
+		.product-shop{
+			@include grid-column(12);
+		}
+	}
+}
+
+.products-grid{
+	@include block-grid(
+		// This controls how many elements will be on each row of the block grid. Set this to whatever number you need, up to the max allowed in the variable.
+		// Available options: 1-12 by default, and false.
+		$per-row: 2,
+
+		// This controls how much space is between each item in the block grid.
+		// Use a variable or any pixel or em values.
+		$spacing: $block-grid-default-spacing,
+
+		// This controls whether or not base styles come through, set to false to leave out.
+		$base-style: true
+	);
+}
+
+//Product
+.product-view{
+	.product-essential{
+		#product_addtocart_form{
+			@include grid-row(nest);
+			.product-img-box,
+			.product-shop{
+				@include grid-column(12);
+			}
+		}
+	}
+	.product-collateral{
+		#customer-reviews{
+			@include grid-row(nest);
+			> h2, dl, .form-add{
+				@include grid-column(12);
+			}
+			.form-add{
+				form{
+					@include grid-row(nest);
+					section{
+						@include grid-column(12);
+					}
+				}
+				.buttons-set{
+					@include grid-column(12);
+				}
+				
+			}
+		}
+	}
+}
+
+.box-up-sell,
+.block-related,
+.crosssell{
+	ul{
+		@include block-grid(
+			$per-row: 2
+		);
+	}
+}
+
+//Cart
+.cart{
+	& > form {
+		@include grid-row(nest);
+		.cart-table-wrapper{
+			@include grid-column(12);
+		}
+	}
+	.cart-collaterals{
+		.col-collaterals{
+			@include grid-row(nest);
+			.shipping,
+			#discount-coupon-form,
+			.totals{
+				@include grid-column(12);
+			}
+		}
+	}
+}
+
+//Footer
+.footer-container{
+	.footer{
+		@include grid-row(nest);
+		.footer-links,
+		address{
+			@include grid-column(12);
+		}
+		.block-subscribe{
+			@include grid-column(12);
+			form{
+				@include grid-row(nest);
+				.block-content{
+					@include grid-column(12);
+					.form-subscribe-header{
+						//@include grid-column(12);
+					}
+					.input-box{
+						@include grid-column($columns:8, $collapse:true);
+					}
+					.actions{
+						@include grid-column($columns:4, $collapse: true);
+					}
+				}
+			}
+		}
+	}
+}
+
+//Login
+.account-login{
+	@include grid-row(nest);
+	.page-title{
+		@include grid-column(12);
+	}
+	.registered-users,
+	.new-users{
+		@include grid-column(12);
+	}
+}
+
+//Checkout
+#checkout-step-login{
+	.col2-set{
+		@include grid-row(nest);
+		.col-1,
+		.col-2{
+			@include grid-column(12);
+		}
+	}
+}
+
+@media #{$medium-up}{
+	.col2-left-layout,
+	.col2-right-layout{
+		.col-wrapper{
+			.sidebar{
+				@include grid-column(5);
+			}
+			.col-main{
+				@include grid-column(7);
+			}
+		}
+	}
+
+	.col3-layout{
+	.col-wrapper{
+			.sidebar{
+				@include grid-column(3);
+			}
+			.col-main{
+				@include grid-column(6);
+			}
+		}
+	}
+
+	.header-container{
+		.super-header{
+			@include grid-row(nest);
+			.welcome{
+				@include grid-column(4);
+			}
+			.switchers{
+				@include grid-column(8);
+			}
+			.top-links{
+				@include grid-column(12);
+			}
+		}
+		.header{
+			@include grid-row(nest);
+			.logo{
+				@include grid-column(5);
+			}
+			.quick-access{
+				@include grid-column(7);
+			}
+		}
+	}
+
+	.product-view{
+		.product-essential{
+			#product_addtocart_form{
+				.product-img-box{
+					@include grid-column(5);
+				}
+				.product-shop{
+					@include grid-column(7);	
+				}
+			}
+		}
+		.product-collateral{
+			#customer-reviews{
+				@include grid-row(nest);
+				dl,
+				.form-add{
+					@include grid-column(6);
+				}
+			}
+		}
+	}
+
+	.box-up-sell,
+	.block-related,
+	.crosssell{
+		ul{
+			@include block-grid(
+				$per-row: 3
+			);
+		}
+	}
+
+	//Cart
+	.cart{
+		.cart-collaterals{
+			.col-collaterals{
+				@include grid-row(nest);
+				#discount-coupon-form,
+				.totals{
+					@include grid-column(6);
+				}
+			}
+		}
+	}
+
+	//Login
+	.account-login{
+		.registered-users,
+		.new-users{
+			@include grid-column(6);
+		}
+	}
+	.account-create{
+		.page-title{
+			@include grid-column(12);
+		}
+		@include grid-row(nest);
+		.fieldset{
+			@include grid-column(6);
+		}
+	}
+
+	//Footer
+	.footer-container{
+		.footer{
+			.block-subscribe{
+				@include grid-column(8);
+			}
+		}
+	}
+
+}
+
+@media #{$large-up}{
+	.col2-left-layout,
+	.col2-right-layout{
+		.col-wrapper{
+			.sidebar{
+				@include grid-column(3);
+			}
+			.col-main{
+				@include grid-column(9);
+			}
+		}
+	}
+
+	.header-container{
+		.super-header{
+			@include grid-row(nest);
+			.welcome{
+				@include grid-column(2);
+			}
+			.switchers{
+				@include grid-column(4);
+			}
+			.top-links{
+				@include grid-column(6);
+			}
+		}
+		.header{
+			.quick-access{
+				input{
+					@include grid-column(10);	
+				}
+				button{
+					@include grid-column(2);
+				}
+			}
+		}
+	}
+
+	.products-grid{
+		@include block-grid(
+		$per-row: 3,
+		$spacing: $block-grid-default-spacing,
+		$base-style: true
+		);
+	}
+
+	.products-list{
+		li{
+			> a{
+				@include grid-column(4);
+			}
+			.product-shop{
+				@include grid-column(8);
+			}
+		}
+	}
+
+	.box-up-sell,
+	.block-related,
+	.crosssell{
+		ul{
+			@include block-grid(
+				$per-row: 4
+			);
+		}
+	}
+
+	//Cart
+	.cart{
+		.cart-collaterals{
+			.col-collaterals{
+				@include grid-row(nest);
+				.shipping{
+					@include grid-column(6);
+				}
+				#discount-coupon-form,
+				.totals{
+					@include grid-column(3);
+				}
+			}
+		}
+	}
+
+	//Checkout
+	#checkout-step-login{
+		.col2-set{
+			@include grid-row(nest);
+			.col-1,
+			.col-2{
+				@include grid-column(6);
+			}
+		}
+	}
+
+	//Footer
+	.footer-container{
+		.footer{
+			.block-subscribe{
+				@include grid-column(5);
+			}
+		}
+	}
+		
+}

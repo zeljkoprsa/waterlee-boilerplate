@@ -10,42 +10,29 @@
  * http://opensource.org/licenses/afl-3.0.php
  * If you did not receive a copy of the license and are unable to
  * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
+ * to license@magento.com so we can send you a copy immediately.
  *
  * DISCLAIMER
  *
  * Do not edit or add to this file if you wish to upgrade Magento to newer
  * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
+ * needs please refer to http://www.magento.com for more information.
  *
  * @category    design
  * @package     base_default
- * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+<div class="footer-container">
+    <div class="footer">
+    	<?php echo $this->getChildHtml('footer.newsletter') ?>
+		<div class="footer-links">
+    	<?php echo $this->getChildHtml('footer_links') ?>
+    	</div>
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_demo_links')->toHtml(); ?>
 
-<footer class="site-footer">
-    <div class="site-footer-content row">
-        <?php echo $this->getChildHtml("mobile.menu.footer") ?>
-            <div class="columns large-12 footer-content">
-                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_demo_links')->toHtml(); ?>
-
-                <div class="line-separator"></div>
-
-                    <div class="newsletter columns large-12"><?php echo $this->getChildHtml("footer.newsletter") ?></div>
-
-            </div>
-
+        <address><?php echo $this->getCopyright() ?></address>
     </div>
-    <div class="site-footer-info"
-        <div class="columns large-12 footer-info">
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_info')->toHtml(); ?>
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('social_icons')->toHtml(); ?>
-            <address class="columns large-12 address-padd text-right"><?php echo $this->getCopyright() ?></address>
-        </div>
-    </div>
-
-        <?php echo $this->getChildHtml('js_files'); ?>
-
-</footer>
+</div>
+<script src="<?php echo $this->getSkinUrl('src/js/app.js') ?>"></script>

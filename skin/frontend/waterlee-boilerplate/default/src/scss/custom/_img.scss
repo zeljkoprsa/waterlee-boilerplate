@@ -1,0 +1,26 @@
+.rating-box{ 
+	width: 69px;
+	height: 13px;
+	font-size: 0;
+	line-height: 0;
+	background: url(../images/bkg_rating.gif) 0 0 repeat-x;
+	text-indent: -999em;
+	overflow: hidden;
+	clear: both;
+	.rating{
+		float: left;
+		height: 13px;
+		background: url(../images/bkg_rating.gif) 0 100% repeat-x;
+	}
+}
+
+//Product image gallery
+
+.product-image-gallery{
+	.gallery-image{
+		display: none;
+	}
+	.gallery-image.visible{
+		display: block;
+	}
+}

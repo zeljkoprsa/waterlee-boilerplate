@@ -1,0 +1,25 @@
+//Lists
+
+ul, ol{
+	list-style-type: none;
+}
+ul.links li{
+	display: inline;
+}
+ul, ol, dd{
+	margin: 0;
+}
+
+//Links
+
+a{
+	text-decoration: none;
+}
+
+.sidebar{
+	.block{
+		background: $snow;
+		margin-top: 1em;
+		padding: 1em;
+	}
+}

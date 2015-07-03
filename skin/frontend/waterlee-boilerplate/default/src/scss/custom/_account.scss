@@ -1,0 +1,10 @@
+#wishlist-table{
+	img{
+		max-width: inherit;
+	}
+}
+#wishlist-view-form{
+	button{
+		@extend .tiny;
+	}
+}

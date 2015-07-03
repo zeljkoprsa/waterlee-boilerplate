@@ -1,0 +1,116 @@
+//Toolbar
+.toolbar{
+	overflow: auto;
+	margin-bottom: 1em;
+	.pager{
+		display: inline-block;
+		.amount, .limiter{
+			display: inline-block;
+			vertical-align: middle;	
+			margin: 0;
+		}
+		.amount{
+			padding-right: 0.5em;
+			position: relative;
+			top: 4px;
+		}
+		.limiter{
+			float: right;
+			select, span{
+				display: inline-block;
+				margin: 0;
+				width: 70px;
+			}
+		}
+		.pages{
+			strong{
+				display: none;
+			}
+			ol li{
+				display: inline-block;
+			}
+		}
+	}
+	.sorter{
+		display: inline-block;
+		float: right;
+		.view-mode, .sort-by{
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+		}
+		.view-mode{
+			position: relative;
+			top: 4px;
+		}
+		.sort-by{
+			float: right;
+			select, a{
+				display: inline-block;
+				margin: 0;
+			}
+			select{
+				width: 80px;
+			}
+		}
+	}
+}
+
+//Products list
+.products-list{
+	li{
+		overflow: hidden;
+		clear: both;
+		margin-bottom: 1em;
+	}
+}
+.products-grid{
+	h2{
+		a{
+			font-size: 0.8em;
+		}
+	}
+}
+.products-list,
+.products-grid{
+	.btn-cart{
+		margin-bottom: 0.5em;
+	}
+	.product-shop{
+		a{
+			padding: 0;
+		}
+	}
+	.btn-cart{
+		@extend .small;
+	}
+}
+.add-to-links{
+	margin: 0;
+	li{
+		display: inline-block;
+		vertical-align: top;
+		.separator{
+			display: none;
+		}
+		a{
+			font-size: 0;
+			&:before{
+				font-family: FontAwesome;
+				font-size: 20px;
+			}
+		}
+		&:first-child{
+			a:before{
+				padding: 0 0.5em 0 0;
+				content: "\f004";
+			}
+		}
+		&:nth-child(2){
+			a:before{
+				padding: 0 0 0 0.5em;
+				content: "\f0ec";
+			}
+		}
+	}
+}
