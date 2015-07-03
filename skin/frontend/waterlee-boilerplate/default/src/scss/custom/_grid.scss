@@ -173,10 +173,11 @@
 			@include grid-column(12);
 		}
 		.block-subscribe{
-			@include grid-row(nest);
+			@include grid-column(12);
 			form{
-				@include grid-column(12);
+				@include grid-row(nest);
 				.block-content{
+					@include grid-column(12);
 					.form-subscribe-header{
 						//@include grid-column(12);
 					}
@@ -329,13 +330,10 @@
 	.footer-container{
 		.footer{
 			.block-subscribe{
-				form{
-					@include grid-column(8);
-				}
+				@include grid-column(8);
 			}
 		}
 	}
-
 
 }
 
@@ -437,9 +435,7 @@
 	.footer-container{
 		.footer{
 			.block-subscribe{
-				form{
-					@include grid-column(4);
-				}
+				@include grid-column(5);
 			}
 		}
 	}
