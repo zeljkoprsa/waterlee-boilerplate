@@ -1,6 +1,6 @@
 ##Changelog
 
-### 1.9.1 - (2015-07-xx)
+### 1.9.1 - (2015-07-03)
  - Update gulpfile.js, package.json & bower.json.
  - Moving skin source js and scss folders to src folder.
  - Cleaning unnecessary files.
