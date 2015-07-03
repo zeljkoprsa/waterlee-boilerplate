@@ -1,6 +1,6 @@
 {
   "name": "waterlee-boilerplate",
-  "version": "1.9",
+  "version": "1.9.1",
   "private": "true",
   "dependencies": {
     "foundation": "zurb/bower-foundation",

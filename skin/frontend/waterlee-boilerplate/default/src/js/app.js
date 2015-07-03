@@ -83,7 +83,10 @@ jQuery(document).ready(function() {
     return false;
   });
 
-
+  jQuery('.btn-cart.right-off-canvas-toggle').click(function(){
+    jQuery(".scrollToTop")[0].click();
+  });
+  
   // media query event handler
   if (matchMedia) {
     var mq = window.matchMedia("(min-width: 690px)");

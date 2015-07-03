@@ -17,6 +17,30 @@
 					}
 				}
 				width: 100%;
+				tfoot{
+					button{
+						@extend .tiny;
+						margin-bottom: 1em;
+					}
+					.btn-empty{
+						float: left;
+					}
+					.btn-update,
+					.btn-continue{
+						float: right;
+					}
+					.btn-update{
+						margin: 0 0.5em;
+					}
+					@media #{$small-only}{
+						button{
+							clear: both;
+						}
+						.btn-empty{
+							margin: 1em 0;
+						}
+					}
+				}
 			}
 		}
 	}

@@ -65,7 +65,13 @@
 		@include grid-row(nest);
 		.logo,
 		.quick-access{
-			@include grid-column(12);
+			@include grid-column(12);	
+			input{
+				@include grid-column(9);	
+			}
+			button{
+				@include grid-column(3);
+			}
 		}
 	}
 }
@@ -162,10 +168,26 @@
 .footer-container{
 	.footer{
 		@include grid-row(nest);
-		.block-subscribe,
 		.footer-links,
 		address{
 			@include grid-column(12);
+		}
+		.block-subscribe{
+			@include grid-row(nest);
+			form{
+				@include grid-column(12);
+				.block-content{
+					.form-subscribe-header{
+						//@include grid-column(12);
+					}
+					.input-box{
+						@include grid-column($columns:8, $collapse:true);
+					}
+					.actions{
+						@include grid-column($columns:4, $collapse: true);
+					}
+				}
+			}
 		}
 	}
 }
@@ -286,15 +308,6 @@
 		}
 	}
 
-	.footer-container{
-		.footer{
-			@include grid-row(nest);
-			.block-subscribe{
-				@include grid-column(6);
-			}
-		}
-	}
-
 	//Login
 	.account-login{
 		.registered-users,
@@ -311,6 +324,19 @@
 			@include grid-column(6);
 		}
 	}
+
+	//Footer
+	.footer-container{
+		.footer{
+			.block-subscribe{
+				form{
+					@include grid-column(8);
+				}
+			}
+		}
+	}
+
+
 }
 
 @media #{$large-up}{
@@ -337,6 +363,16 @@
 			}
 			.top-links{
 				@include grid-column(6);
+			}
+		}
+		.header{
+			.quick-access{
+				input{
+					@include grid-column(10);	
+				}
+				button{
+					@include grid-column(2);
+				}
 			}
 		}
 	}
@@ -395,6 +431,17 @@
 				@include grid-column(6);
 			}
 		}
-	}	
+	}
 
+	//Footer
+	.footer-container{
+		.footer{
+			.block-subscribe{
+				form{
+					@include grid-column(4);
+				}
+			}
+		}
+	}
+		
 }

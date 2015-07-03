@@ -59,10 +59,58 @@
 //Products list
 .products-list{
 	li{
-		overflow: auto;
+		overflow: hidden;
 		clear: both;
 		margin-bottom: 1em;
 	}
 }
-
-//Products-grid
+.products-grid{
+	h2{
+		a{
+			font-size: 0.8em;
+		}
+	}
+}
+.products-list,
+.products-grid{
+	.add-to-links{
+		margin: 0;
+		li{
+			display: inline-block;
+			vertical-align: top;
+			.separator{
+				display: none;
+			}
+			a{
+				font-size: 0;
+				&:before{
+					font-family: FontAwesome;
+					font-size: 20px;
+				}
+			}
+			&:first-child{
+				a:before{
+					padding: 0 0.5em 0 0;
+					content: "\f004";
+				}
+			}
+			&:nth-child(2){
+				a:before{
+					padding: 0 0 0 0.5em;
+					content: "\f0ec";
+				}
+			}
+		}
+	}
+	.btn-cart{
+		margin-bottom: 0.5em;
+	}
+	.product-shop{
+		a{
+			padding: 0;
+		}
+	}
+	.btn-cart{
+		@extend .small;
+	}
+}
