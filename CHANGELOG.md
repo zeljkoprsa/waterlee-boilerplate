@@ -1,5 +1,9 @@
 ##Changelog
 
+### 1.9.2 - (2015-08-22)
+ - Update package.json & bower.json.
+ - Tested with Magento 1.9.2.1
+
 ### 1.9.1 - (2015-07-03)
  - Update gulpfile.js, package.json & bower.json.
  - Moving skin source js and scss folders to src folder.

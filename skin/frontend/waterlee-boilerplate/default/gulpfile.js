@@ -54,7 +54,7 @@ gulp.task('clean', function() {
 // BrowserSync
 gulp.task('browser-sync', function() {
     browserSync({
-        proxy: "localhost/waterlee/",
+        proxy: "localhost/mage192/",
         port: 8080
     });
 });
