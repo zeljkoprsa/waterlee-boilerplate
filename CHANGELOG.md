@@ -1,5 +1,9 @@
 ##Changelog
 
+### 1.9.21 - (2015-09-20)
+ - Easytabs related/reviews unset fix. 
+ - Small product page layout fixes related to Easytabs.
+
 ### 1.9.2 - (2015-08-22)
  - Update package.json & bower.json.
  - Tested with Magento 1.9.2.1

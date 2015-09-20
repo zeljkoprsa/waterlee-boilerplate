@@ -26,12 +26,11 @@ gulp.task('sass', function() {
 // JS tasks
 gulp.task('js', function() {
     return gulp.src([
-            'bower_components/modernizr/modernizr.js',
+            'bower_components/foundation/js/vendor/modernizr.js',
             'bower_components/foundation/js/foundation/foundation.js',
             'bower_components/foundation/js/foundation/foundation.dropdown.js',
             'src/js/foundation.equalizer.js',
             'bower_components/foundation/js/foundation/foundation.offcanvas.js',
-            'bower_components/foundation/js/foundation/foundation.orbit.js',
             'bower_components/foundation/js/foundation/foundation.topbar.js',
             'src/js/elevatezoom/jquery.elevatezoom.js',
             'bower_components/dw-bxslider-4/src/js/jquery.bxslider.js'
@@ -54,7 +53,7 @@ gulp.task('clean', function() {
 // BrowserSync
 gulp.task('browser-sync', function() {
     browserSync({
-        proxy: "localhost/mage192/",
+        proxy: "localhost/waterlee/",
         port: 8080
     });
 });

@@ -62,20 +62,24 @@
 	
 	<catalog_product_view>
 		<reference name="product.info">
-			<block type="review/product_view_list" name="product.info.product_additional_data" as="product_review" template="review/product/view/list.phtml">
-                    <block type="review/form" name="product.review.form" as="review_form">
-                        <block type="page/html_wrapper" name="product.review.form.fields.before" as="form_fields_before" translate="label">
-                            <label>Review Form Fields Before</label>
-                            <action method="setMayBeInvisible"><value>1</value></action>
-                        </block>
+			<block type="review/product_view_list" name="product.info.product_additional_data" as="reviews" template="review/product/view/list.phtml">
+                <block type="review/form" name="product.review.form" as="review_form">
+                    <block type="page/html_wrapper" name="product.review.form.fields.before" as="form_fields_before" translate="label">
+                        <label>Review Form Fields Before</label>
+                        <action method="setMayBeInvisible"><value>1</value></action>
                     </block>
                 </block>
+            </block>    
+			<block type="catalog/product_list_related" name="product.info.related" as="related_products" before="-" template="catalog/product/list/related.phtml"/>
 		</reference>
-		<reference name="product.info">
-			
-				<block type="catalog/product_list_related" name="catalog.product.related" as="related_products" before="-" template="catalog/product/list/related.phtml"/>
-			
-		</reference>
+		<reference name="product.info.additional">
+			<remove name="product.info.tabs" />
+            <block type="easytabs/tabs" name="product.info.easytabs" as="info_tabs">
+                <action method="setTemplate" ifconfig="tm_easytabs/general/enabled">
+                    <template>tm/easytabs/tabs.phtml</template>
+                </action>
+            </block>
+        </reference>
 	</catalog_product_view>
 	
 	<catalogsearch_result_index>

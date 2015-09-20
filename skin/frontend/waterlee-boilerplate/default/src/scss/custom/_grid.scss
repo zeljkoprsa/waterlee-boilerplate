@@ -131,6 +131,16 @@
 				
 			}
 		}
+		#easytabs{
+			@include grid-row(nest);
+			.easytabs-ul-wrapper,
+			.easytabs-content-wrapper{
+				@include grid-column(12);
+				#customer-reviews{
+					@include grid-column(12);
+				}
+			}
+		}
 	}
 }
 
@@ -281,6 +291,16 @@
 				dl,
 				.form-add{
 					@include grid-column(6);
+				}
+			}
+			#easytabs{
+				@include grid-row(nest);
+				.easytabs-ul-wrapper,
+				.easytabs-content-wrapper{
+					@include grid-column(12);
+					#customer-reviews{
+						@include grid-column(12);
+					}
 				}
 			}
 		}

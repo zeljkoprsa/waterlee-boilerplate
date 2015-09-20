@@ -50,6 +50,14 @@
 
 .product-collateral{
 	clear: both;
+	margin: 2em 0 0 0;
+	#easytabs{
+		.box-up-sell{
+			.block-title{
+				display: none;
+			}
+		}
+	}
 }
 
 .add-to-cart,
