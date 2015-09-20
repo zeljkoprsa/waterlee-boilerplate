@@ -31,6 +31,7 @@ gulp.task('js', function() {
             'bower_components/foundation/js/foundation/foundation.dropdown.js',
             'src/js/foundation.equalizer.js',
             'bower_components/foundation/js/foundation/foundation.offcanvas.js',
+            'bower_components/foundation/js/foundation/foundation.orbit.js',
             'bower_components/foundation/js/foundation/foundation.topbar.js',
             'src/js/elevatezoom/jquery.elevatezoom.js',
             'bower_components/dw-bxslider-4/src/js/jquery.bxslider.js'
