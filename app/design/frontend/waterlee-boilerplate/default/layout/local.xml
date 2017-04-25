@@ -74,11 +74,11 @@
 		</reference>
 		<reference name="product.info.additional">
 			<remove name="product.info.tabs" />
-            <block type="easytabs/tabs" name="product.info.easytabs" as="info_tabs">
-                <action method="setTemplate" ifconfig="tm_easytabs/general/enabled">
-                    <template>tm/easytabs/tabs.phtml</template>
-                </action>
-            </block>
+			<block type="easytabs/products" name="product.info.easytabs" as="info_tabs">
+				<action method="setTemplate" ifconfig="tm_easytabs/general/enabled">
+				    <template>tm/easytabs/tabs.phtml</template>
+				</action>
+			</block>
         </reference>
 	</catalog_product_view>
 	
